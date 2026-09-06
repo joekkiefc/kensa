@@ -11,7 +11,7 @@ LIMIT="${WORKER_EBAY_LIMIT:-20}"
 PARALLEL="${WORKER_EBAY_PARALLEL:-1}"
 
 # Storage-migratie: writes direct naar Supabase (analyze._save_trap/_mark_slab_status/enqueue_cardmarket).
-# Claim-logic (worker_claim) blijft SQLite (lock-mechanisme voor parallelle workers).
+# Pick/claim gaat via Supabase (pick_ebay_batch_supabase) zodra KENSA_READ_STORAGE=supabase; worker_claim (SQLite-lock) is alleen nog de terugval zonder die env-var.
 export KENSA_WRITE_STORAGE=dual
 # CUTOVER 2026-09-05 17:07 — reads uit Supabase (rollback: comment onderstaande regel uit)
 export KENSA_READ_STORAGE=supabase
