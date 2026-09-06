@@ -101,6 +101,72 @@ def _warn(msg: str) -> None:
     print(f"[storage_supabase] {msg}", file=sys.stderr)
 
 
+# ---------------------------------------------------------------------------
+# Schrijf-log (cutover-monitoring): één JSON-regel per write, ALLE uitkomsten.
+# Bestand: pipeline_supabase_writes.log  — gelezen door report_supabase_writes.py
+# Velden: ts, worker, method, table, outcome (ok|queued|failed), status,
+#         err_class (dns|connect_timeout|read_timeout|tls|conn_reset|conn_error|
+#                    http_5xx|http_429|http_4xx|ok), ms, retry_id, err
+# ---------------------------------------------------------------------------
+WRITE_LOG_PATH = Path("/home/pi/.openclaw/workspace/agents/kensa/pipeline_supabase_writes.log")
+_WORKER = Path(sys.argv[0]).stem if sys.argv and sys.argv[0] else "unknown"
+
+
+def classify_error(exc: BaseException | None = None, status: int | None = None) -> str:
+    """Vertaal exception/status naar een korte foutklasse voor de monitoring.
+
+    Bewust grof: het doel is trends zien (DNS? timeouts? Cloudflare 5xx?), niet
+    elke exception apart. Kijkt door de requests-wrapper heen naar de tekst,
+    want urllib3 verpakt de echte oorzaak (gaierror, ConnectTimeoutError, ...).
+    """
+    if exc is not None:
+        name = type(exc).__name__
+        text = f"{name}: {exc}".lower()
+        if "nameresolution" in text or "gaierror" in text or "name or service not known" in text \
+                or "temporary failure in name resolution" in text:
+            return "dns"
+        if isinstance(exc, requests.exceptions.SSLError) or "sslerror" in text or "ssl" in text and "handshake" in text:
+            return "tls"
+        if isinstance(exc, requests.exceptions.ConnectTimeout) or "connecttimeout" in text:
+            return "connect_timeout"
+        if isinstance(exc, requests.exceptions.ReadTimeout) or "readtimeout" in text or "read timed out" in text:
+            return "read_timeout"
+        if "reset by peer" in text or "remotedisconnected" in text or "connection aborted" in text:
+            return "conn_reset"
+        if isinstance(exc, requests.exceptions.ConnectionError) or "connection" in text:
+            return "conn_error"
+        return f"exc_{name.lower()}"
+    if status is None:
+        return "ok"
+    if status == 429:
+        return "http_429"
+    if status >= 500:
+        return "http_5xx"
+    if status >= 400:
+        return "http_4xx"
+    return "ok"
+
+
+def _log_write(method: str, table: str, outcome: str, status: int | None, err_class: str,
+               ms: int, retry_id: int | None = None, err: str = "") -> None:
+    try:
+        from datetime import datetime, timezone
+        rec = {
+            "ts": datetime.now(timezone.utc).isoformat(timespec="milliseconds"),
+            "worker": _WORKER, "method": method, "table": table, "outcome": outcome,
+            "status": status, "err_class": err_class, "ms": ms,
+        }
+        if retry_id is not None:
+            rec["retry_id"] = retry_id
+        if err:
+            rec["err"] = err[:200]
+        WRITE_LOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with WRITE_LOG_PATH.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception:
+        pass  # logging mag nooit een write laten falen
+
+
 class _QueuedResponse(requests.Response):
     """Synthetische Response voor een write die in sync_retry geparkeerd is.
 
@@ -162,51 +228,85 @@ def _queue_patch(table: str, schema: str, query: dict, patch_body: dict, error: 
 
 def post(table: str, schema: str, payload: dict | list, prefer: str = "return=minimal",
          timeout=TIMEOUT, params: dict | None = None) -> requests.Response:
+    import time as _t
     url = f"{_creds()[0]}/rest/v1/{table}"
+    t0 = _t.perf_counter()
     try:
         r = _session().post(url, json=payload, headers=_headers(schema, prefer=prefer),
                              params=params, timeout=timeout)
     except requests.RequestException as e:  # netwerk/timeout ná de urllib3-retries
-        rid = _queue_post(table, schema, payload, prefer, params, f"netwerk: {e!r}")
+        ms = int((_t.perf_counter() - t0) * 1000)
+        cls = classify_error(e)
+        rid = _queue_post(table, schema, payload, prefer, params, f"{cls}: {e!r}")
         if rid is None:
+            _log_write("POST", table, "failed", None, cls, ms, err=repr(e))
             raise
+        _log_write("POST", table, "queued", None, cls, ms, retry_id=rid, err=repr(e))
         return _QueuedResponse(201, rid, table)
+    ms = int((_t.perf_counter() - t0) * 1000)
     if _is_transient_status(r.status_code):
+        cls = classify_error(status=r.status_code)
         rid = _queue_post(table, schema, payload, prefer, params, f"HTTP {r.status_code}: {r.text[:200]}")
         if rid is not None:
+            _log_write("POST", table, "queued", r.status_code, cls, ms, retry_id=rid, err=r.text)
             return _QueuedResponse(201, rid, table)
+        _log_write("POST", table, "failed", r.status_code, cls, ms, err=r.text)
     elif r.status_code >= 400:
         _warn(f"POST {table} BLIJVENDE fout HTTP {r.status_code} — niet geparkeerd: {r.text[:200]}")
+        _log_write("POST", table, "failed", r.status_code, classify_error(status=r.status_code), ms, err=r.text)
+    else:
+        _log_write("POST", table, "ok", r.status_code, "ok", ms)
     return r
 
 
 def patch(table: str, schema: str, query: dict, patch_body: dict, timeout=TIMEOUT) -> requests.Response:
+    import time as _t
     url = f"{_creds()[0]}/rest/v1/{table}"
+    t0 = _t.perf_counter()
     try:
         r = _session().patch(url, params=query, json=patch_body, headers=_headers(schema), timeout=timeout)
     except requests.RequestException as e:
-        rid = _queue_patch(table, schema, query, patch_body, f"netwerk: {e!r}")
+        ms = int((_t.perf_counter() - t0) * 1000)
+        cls = classify_error(e)
+        rid = _queue_patch(table, schema, query, patch_body, f"{cls}: {e!r}")
         if rid is None:
+            _log_write("PATCH", table, "failed", None, cls, ms, err=repr(e))
             raise
+        _log_write("PATCH", table, "queued", None, cls, ms, retry_id=rid, err=repr(e))
         return _QueuedResponse(204, rid, table)
+    ms = int((_t.perf_counter() - t0) * 1000)
     if _is_transient_status(r.status_code):
+        cls = classify_error(status=r.status_code)
         rid = _queue_patch(table, schema, query, patch_body, f"HTTP {r.status_code}: {r.text[:200]}")
         if rid is not None:
+            _log_write("PATCH", table, "queued", r.status_code, cls, ms, retry_id=rid, err=r.text)
             return _QueuedResponse(204, rid, table)
+        _log_write("PATCH", table, "failed", r.status_code, cls, ms, err=r.text)
     elif r.status_code >= 400:
         _warn(f"PATCH {table} BLIJVENDE fout HTTP {r.status_code} — niet geparkeerd: {r.text[:200]}")
+        _log_write("PATCH", table, "failed", r.status_code, classify_error(status=r.status_code), ms, err=r.text)
+    else:
+        _log_write("PATCH", table, "ok", r.status_code, "ok", ms)
     return r
 
 
 def delete(table: str, schema: str, query: dict, timeout=TIMEOUT) -> requests.Response:
     """Geen vangnet: de drainer kent geen DELETE-replay. Tijdelijke fouten
     worden luid gelogd; de aanroeper beslist (deletes zijn zeldzaam en idempotent)."""
+    import time as _t
     url = f"{_creds()[0]}/rest/v1/{table}"
+    t0 = _t.perf_counter()
     try:
         r = _session().delete(url, params=query, headers=_headers(schema, prefer="return=minimal"), timeout=timeout)
     except requests.RequestException as e:
+        ms = int((_t.perf_counter() - t0) * 1000)
         _warn(f"DELETE {table} netwerkfout, NIET geparkeerd (geen DELETE-replay): {e!r}")
+        _log_write("DELETE", table, "failed", None, classify_error(e), ms, err=repr(e))
         raise
+    ms = int((_t.perf_counter() - t0) * 1000)
     if r.status_code >= 400:
         _warn(f"DELETE {table} HTTP {r.status_code}, NIET geparkeerd (geen DELETE-replay): {r.text[:200]}")
+        _log_write("DELETE", table, "failed", r.status_code, classify_error(status=r.status_code), ms, err=r.text)
+    else:
+        _log_write("DELETE", table, "ok", r.status_code, "ok", ms)
     return r

@@ -18,7 +18,9 @@ export KENSA_USE_MULTIMODAL=1
 # over zijn. Uitzetten = deze regel weghalen → valt terug op SQLite-reads.
 export KENSA_READ_STORAGE=supabase
 # Writes ook direct naar Supabase (analyze._save_trap / _mark_slab_status via dispatcher).
-export KENSA_WRITE_STORAGE=dual
+# CUTOVER BATCH 1 — 2026-09-06 21:13: OCR-worker schrijft ALLEEN naar Supabase (vangnet: sync_retry).
+# ROLLBACK: zet onderstaande regel terug op =dual (SQLite+Supabase). Monitoring: report_supabase_writes.py
+export KENSA_WRITE_STORAGE=supabase
 
 cd "$KENSA_DIR" || exit 1
 

@@ -45,6 +45,12 @@ class _FakeSession:
         return self._do("DELETE", url, **kw)
 
 
+@pytest.fixture(autouse=True)
+def _geen_echte_schrijflog(monkeypatch, tmp_path):
+    """Tests mogen NOOIT de productie-log pipeline_supabase_writes.log raken."""
+    monkeypatch.setattr(_http, "WRITE_LOG_PATH", tmp_path / "writes.log")
+
+
 @pytest.fixture
 def queue(monkeypatch):
     """Vangt enqueue-calls op i.p.v. SQLite te raken."""
@@ -72,7 +78,7 @@ def test_post_netwerkfout_wordt_geparkeerd_met_synthetische_201(monkeypatch, que
     r = _http.post("analysis", "kensa", {"item_id": "m1"}, prefer="return=minimal")
     assert r.status_code == 201 and r.queued_retry_id == 41
     assert queue == [("POST", "analysis", [{"item_id": "m1"}], "return=minimal", queue[0][4])]
-    assert "netwerk" in queue[0][4]
+    assert queue[0][4].startswith("conn_error: ")  # foutklasse voorop, dan de exception
 
 
 def test_post_on_conflict_blijft_in_pad_voor_drainer(monkeypatch, queue):
@@ -138,3 +144,48 @@ def test_delete_heeft_geen_vangnet_en_raiset_bij_netwerkfout(monkeypatch, queue)
     with pytest.raises(requests.ConnectionError):
         _http.delete("listings", "kensa", {"item_id": "eq.m1"})
     assert queue == []
+
+
+# --- Schrijf-log + foutklasse (cutover-monitoring) ---------------------------
+
+def test_classify_error_herkent_dns_timeouts_tls_en_statussen():
+    import urllib3
+    c = _http.classify_error
+    assert c(requests.ConnectionError("HTTPSConnectionPool: Max retries ... NameResolutionError: Failed to resolve 'x.supabase.co' ([Errno -3] Temporary failure in name resolution)")) == "dns"
+    assert c(requests.ConnectTimeout("connect timed out")) == "connect_timeout"
+    assert c(requests.ReadTimeout("Read timed out. (read timeout=25)")) == "read_timeout"
+    assert c(requests.exceptions.SSLError("SSL: HANDSHAKE_FAILURE")) == "tls"
+    assert c(requests.ConnectionError("('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))")) == "conn_reset"
+    assert c(requests.ConnectionError("iets anders")) == "conn_error"
+    assert c(status=503) == "http_5xx" and c(status=429) == "http_429" and c(status=400) == "http_4xx"
+    assert c(status=201) == "ok" and c() == "ok"
+
+
+def _read_log(path):
+    import json as _j
+    return [_j.loads(l) for l in path.read_text().splitlines() if l.strip()]
+
+
+def test_schrijflog_registreert_ok_queued_en_failed(monkeypatch, queue, tmp_path):
+    log = tmp_path / "writes.log"
+    monkeypatch.setattr(_http, "WRITE_LOG_PATH", log)
+    _use(monkeypatch, _Resp(201));                       _http.post("analysis", "kensa", {"a": 1})
+    _use(monkeypatch, requests.ReadTimeout("traag"));     _http.post("analysis", "kensa", {"a": 1})
+    _use(monkeypatch, _Resp(400, b"kolom bestaat niet")); _http.post("photos", "kensa", {"a": 1})
+    _use(monkeypatch, _Resp(503));                       _http.patch("listings", "kensa", {"item_id": "eq.m1"}, {"x": 1})
+    recs = _read_log(log)
+    assert [(r["method"], r["table"], r["outcome"], r["err_class"]) for r in recs] == [
+        ("POST", "analysis", "ok", "ok"),
+        ("POST", "analysis", "queued", "read_timeout"),
+        ("POST", "photos", "failed", "http_4xx"),
+        ("PATCH", "listings", "queued", "http_5xx"),
+    ]
+    assert recs[1]["retry_id"] == 41 and recs[3]["retry_id"] == 42
+    assert all("ts" in r and "ms" in r and "worker" in r for r in recs)
+    assert "kolom bestaat niet" in recs[2]["err"]
+
+
+def test_schrijflog_fout_laat_write_nooit_falen(monkeypatch, queue):
+    monkeypatch.setattr(_http, "WRITE_LOG_PATH", Path("/proc/onmogelijk/writes.log"))
+    _use(monkeypatch, _Resp(201))
+    assert _http.post("analysis", "kensa", {"a": 1}).status_code == 201
