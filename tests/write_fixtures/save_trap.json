@@ -1,0 +1,1425 @@
+[
+  {
+    "case": "insert_new",
+    "item_id": "z673854722_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 0,
+      "verdict": "onbetrouwbaar",
+      "base": 0,
+      "delta_title": 0,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR niet gelukt (base 0)",
+        "titel-check overgeslagen / neutraal",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "skip",
+      "check2_status": "skip",
+      "check3_status": "skip",
+      "cert": null,
+      "cert_times_seen": 0,
+      "cert_first_seen": null,
+      "ocr_calls": 2,
+      "photos_tried": 2,
+      "took_ms": 0,
+      "ebay_query": null,
+      "ebay_stats": null,
+      "ebay_from_cache": null,
+      "roi_avg3_pct": null,
+      "roi_avg3_eur": null,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 0.0,
+    "card_id": null
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z672619940_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 65,
+      "verdict": "twijfel",
+      "base": 80,
+      "delta_title": -15,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel mismatcht (-15)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "fail",
+      "check3_status": "skip",
+      "cert": "166307559",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:41:53.698088+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 17345,
+      "ebay_query": "Tohoku's Pikachu 200 SV-P PSA 8",
+      "ebay_stats": {
+        "n_sales": 3,
+        "last_sale": {
+          "price_usd": 52.0,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        }
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": 34.8,
+      "roi_avg3_eur": 19.47,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "llm",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 65.0,
+    "card_id": "166307559"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z672619940_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Tohoku's Pikachu 200 SV-P PSA 8",
+      "query_source": "llm",
+      "fetched_at": "2026-09-03T07:41:53.401004+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "188836056515",
+          "title": "TOHOKU'S PIKACHU PSA 8 2025 POKEMON SV BLACK STAR PROMOS JAPANESE #260/SV-P 0177",
+          "price_usd": 52.0,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/188836056515"
+        },
+        {
+          "item_id": "287384127589",
+          "title": "PSA 8 Tohoku's Pikachu 260/SV-P Special Box Pokemon Cards 2025 Holo Japanese",
+          "price_usd": 105.0,
+          "sold_date": "2026-06-13",
+          "url": "https://www.ebay.com/itm/287384127589"
+        },
+        {
+          "item_id": "366513479436",
+          "title": "PSA 8 Tohoku's Pikachu 260/SV-P Special Box Pokemon Center Tohoku Pokemon Card",
+          "price_usd": 105.19,
+          "sold_date": "2026-07-05",
+          "url": "https://www.ebay.com/itm/366513479436"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 12,
+      "filter_trimmed_count": 0,
+      "filter_removed_reasons": [
+        "'2025 POKEMON JAPANESE SV-P SPECIAL BOX POKEMON CENTER TOHOKU' → grade psa10 != query psa8",
+        "'TOHOKU'S PIKACHU SPECI4L BOX PC TOHOKU POKEMON JAP SV-P PRM ' → grade psa10 != query psa8",
+        "'2025 POKEMON JAPANESE SV-P PROMO #260 TOHOKU'S PIKACHU PSA 1' → grade psa10 != query psa8",
+        "'2025 POKEMON JAPANESE SV-P PROMO #260 TOHOKU'S PIKACHU PSA 1' → grade psa10 != query psa8",
+        "'PSA 10 TOHOKU'S PIKACHU 260/SV-P Special Box Promo Pokemon C' → grade psa10 != query psa8",
+        "'Pokemon Tohoku's Pikachu Japanese Pokemon Center Promo 260/S' → grade psa9 != query psa8",
+        "'TOHOKU'S PIKACHU POKEMON 260/SV-P 2025 CENTER SPECI4L BOX GE' → grade psa10 != query psa8",
+        "'2017 POKEMON JAPANESE SM POKEMON CENTER TOHOKU REOPENING TOH' → grade psa10 != query psa8",
+        "'2025 POKEMON JAPANESE SV-P PROMO #260 TOHOKU'S PIKACHU PSA 1' → grade psa10 != query psa8",
+        "'TOHOKU'S PIKACHU POKEMON 260/SV-P 2025 CENTER SPECI4L BOX GE' → grade psa10 != query psa8",
+        "'PSA 10 Tohoku Hiroshima Fukuoka Pikachu 260 261 289/SV-P Spe' → grade psa10 != query psa8",
+        "'Pokemon PSA 9 Tohoku's Pikachu Promo 2025 260/SV-P Special B' → grade psa9 != query psa8"
+      ],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 3,
+        "last_sale": {
+          "price_usd": 52.0,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        }
+      },
+      "from_cache": false
+    },
+    "confidence": null,
+    "card_id": "166307559"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z673858434_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 0,
+      "verdict": "onbetrouwbaar",
+      "base": 0,
+      "delta_title": 0,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR niet gelukt (base 0)",
+        "titel-check overgeslagen / neutraal",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "skip",
+      "check2_status": "skip",
+      "check3_status": "skip",
+      "cert": null,
+      "cert_times_seen": 0,
+      "cert_first_seen": null,
+      "ocr_calls": 2,
+      "photos_tried": 2,
+      "took_ms": 0,
+      "ebay_query": null,
+      "ebay_stats": null,
+      "ebay_from_cache": null,
+      "roi_avg3_pct": null,
+      "roi_avg3_eur": null,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 0.0,
+    "card_id": null
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674694696_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 65,
+      "verdict": "twijfel",
+      "base": 80,
+      "delta_title": -15,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel mismatcht (-15)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "fail",
+      "check3_status": "skip",
+      "cert": "174223304",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:41:31.456286+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 18288,
+      "ebay_query": "Fukuoka's Pikachu 289 SV-P PSA 10",
+      "ebay_stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 200.5,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 204.5,
+          "to_date": "2026-09-02",
+          "from_date": "2026-09-02",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 208.3,
+          "to_date": "2026-09-02",
+          "from_date": "2026-09-02",
+          "n": 5
+        }
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": 4.1,
+      "roi_avg3_eur": 7.03,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "llm",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 65.0,
+    "card_id": "174223304"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674694696_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Fukuoka's Pikachu 289 SV-P PSA 10",
+      "query_source": "llm",
+      "fetched_at": "2026-09-03T07:41:31.269833+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "117377056930",
+          "title": "2025 POKEMON JAPANESE SV-P SPECIAL BOX POKEMON CENTER FUKUOKA'S PIKACHU PSA 10",
+          "price_usd": 200.5,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/117377056930"
+        },
+        {
+          "item_id": "117377055101",
+          "title": "2025 POKEMON JAPANESE SV-P SPECIAL BOX POKEMON CENTER FUKUOKA'S PIKACHU PSA 10",
+          "price_usd": 187.5,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/117377055101"
+        },
+        {
+          "item_id": "117375109166",
+          "title": "2025 POKEMON JAPANESE SV-P SPECIAL BOX POKEMON CENTER FUKUOKA'S PIKACHU PSA 10",
+          "price_usd": 225.5,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/117375109166"
+        },
+        {
+          "item_id": "117391426713",
+          "title": "2025 POKEMON JAPANESE SV-P PROMO #289 FUKUOKA'S PIKACHU PSA 10",
+          "price_usd": 220.0,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/117391426713"
+        },
+        {
+          "item_id": "298638233669",
+          "title": "2025 POKEMON JAPANESE SV-P PROMO #289 FUKUOKA'S PIKACHU PSA 10",
+          "price_usd": 208.0,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/298638233669"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 0,
+      "filter_trimmed_count": 10,
+      "filter_removed_reasons": [],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 200.5,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 204.5,
+          "to_date": "2026-09-02",
+          "from_date": "2026-09-02",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 208.3,
+          "to_date": "2026-09-02",
+          "from_date": "2026-09-02",
+          "n": 5
+        }
+      },
+      "from_cache": false
+    },
+    "confidence": null,
+    "card_id": "174223304"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674829520_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 90,
+      "verdict": "geverifieerd",
+      "base": 80,
+      "delta_title": 10,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel matcht (+10)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "pass",
+      "check3_status": "skip",
+      "cert": "80282826",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:41:02.602186+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 11481,
+      "ebay_query": "Clefairy 028 PSA 10",
+      "ebay_stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 355.0,
+          "sold_date": "2026-08-21"
+        },
+        "avg_last_3": {
+          "avg_usd": 297.83,
+          "to_date": "2026-08-21",
+          "from_date": "2026-08-08",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 247.8,
+          "to_date": "2026-08-21",
+          "from_date": "2026-07-31",
+          "n": 5
+        }
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": -25.4,
+      "roi_avg3_eur": -87.45,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 90.0,
+    "card_id": "80282826"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674829520_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Clefairy 028 PSA 10",
+      "query_source": "regex",
+      "fetched_at": "2026-09-03T07:41:02.316457+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "298567436184",
+          "title": "2001 POKEMON JAPANESE EXPEDITION 1ST EDITION #028 CLEFAIRY PSA 10",
+          "price_usd": 355.0,
+          "sold_date": "2026-08-21",
+          "url": "https://www.ebay.com/itm/298567436184"
+        },
+        {
+          "item_id": "117354438097",
+          "title": "2001 POKEMON JAPANESE EXPEDITION 1ST EDITION #028 CLEFAIRY PSA 10",
+          "price_usd": 345.0,
+          "sold_date": "2026-08-20",
+          "url": "https://www.ebay.com/itm/117354438097"
+        },
+        {
+          "item_id": "117333616401",
+          "title": "2001 POKEMON JAPANESE EXPEDITION 1ST EDITION #028 CLEFAIRY PSA 10",
+          "price_usd": 193.5,
+          "sold_date": "2026-08-08",
+          "url": "https://www.ebay.com/itm/117333616401"
+        },
+        {
+          "item_id": "307081794641",
+          "title": "2001 POKEMON JAPANESE EXPEDITION 1ST EDITION #028 CLEFAIRY PSA 10",
+          "price_usd": 176.0,
+          "sold_date": "2026-07-31",
+          "url": "https://www.ebay.com/itm/307081794641"
+        },
+        {
+          "item_id": "117318744111",
+          "title": "2001 POKEMON JAPANESE EXPEDITION 1ST EDITION #028 CLEFAIRY PSA 10",
+          "price_usd": 169.5,
+          "sold_date": "2026-07-31",
+          "url": "https://www.ebay.com/itm/117318744111"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 8,
+      "filter_trimmed_count": 2,
+      "filter_removed_reasons": [
+        "'POKEMON LILLIE'S CLEFAIRY ex 2025 JOURNEY TOGETHER #184 SPCL' → match 67% (mist ['028'])",
+        "'2019 POKEMON JAPANESE SM PROMO #381 FA/CLEFAIRY DREAM LEAGUE' → match 67% (mist ['028'])",
+        "'Pokemon Clefairy Perfect Order Illustration Rare #094 PSA 10' → match 67% (mist ['028'])",
+        "'2025 Pokemon JTG Lillie's Clefairy ex 184 Special Illustrati' → match 67% (mist ['028'])",
+        "'2026 Pokemon Clefairy Illustration Rare #094/088 PSA 10 GEM ' → match 67% (mist ['028'])",
+        "'2026 POKEMON POR EN-PERFECT ORDER ILLUSTRATION RARE #094 CLE' → match 67% (mist ['028'])",
+        "'1998 POCKET CLEFAIRY SEALDASS STITCH TOUCH JP MONSTERS #11 P' → match 67% (mist ['028'])",
+        "'LILLIE'S CLEFAIRY EX SPECI4L ILL RARE POKEMON EN-ASCENDED HE' → match 67% (mist ['028'])"
+      ],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 355.0,
+          "sold_date": "2026-08-21"
+        },
+        "avg_last_3": {
+          "avg_usd": 297.83,
+          "to_date": "2026-08-21",
+          "from_date": "2026-08-08",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 247.8,
+          "to_date": "2026-08-21",
+          "from_date": "2026-07-31",
+          "n": 5
+        }
+      },
+      "from_cache": false
+    },
+    "confidence": null,
+    "card_id": "80282826"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "2JWGfuWCKqYuPEYT9grAsx_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 90,
+      "verdict": "geverifieerd",
+      "base": 80,
+      "delta_title": 10,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel matcht (+10)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "pass",
+      "check3_status": "skip",
+      "cert": null,
+      "cert_times_seen": 0,
+      "cert_first_seen": null,
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 9962,
+      "ebay_query": "Moltres & Zapdos & Articuno GX 060/054 Full Art PSA 10",
+      "ebay_stats": {
+        "n_sales": 0,
+        "last_sale": null,
+        "avg_last_3": null,
+        "avg_last_5": null
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": null,
+      "roi_avg3_eur": null,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "llm",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 90.0,
+    "card_id": null
+  },
+  {
+    "case": "insert_new",
+    "item_id": "2JWGfuWCKqYuPEYT9grAsx_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Moltres & Zapdos & Articuno GX 060/054 Full Art PSA 10",
+      "query_source": "llm",
+      "fetched_at": null,
+      "error": "fetch_failed",
+      "sales": [],
+      "sales_raw_count": 0,
+      "filter_removed_count": 0,
+      "filter_trimmed_count": 0,
+      "filter_removed_reasons": [],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 0,
+        "last_sale": null,
+        "avg_last_3": null,
+        "avg_last_5": null
+      },
+      "from_cache": false
+    },
+    "confidence": null,
+    "card_id": null
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m19278136926_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 100,
+      "verdict": "geverifieerd",
+      "base": 80,
+      "delta_title": 10,
+      "delta_desc": 10,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel matcht (+10)",
+        "beschrijving matcht (+10)"
+      ],
+      "check1_status": "pass",
+      "check2_status": "pass",
+      "check3_status": "pass",
+      "cert": "134419993",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:40:34.433910+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 10866,
+      "ebay_query": "Diancie 027 PSA 10",
+      "ebay_stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 68.78,
+          "sold_date": "2026-08-23"
+        },
+        "avg_last_3": {
+          "avg_usd": 92.3,
+          "to_date": "2026-08-23",
+          "from_date": "2026-08-16",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 89.73,
+          "to_date": "2026-08-23",
+          "from_date": "2026-08-02",
+          "n": 5
+        }
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": -17.4,
+      "roi_avg3_eur": -16.85,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 100.0,
+    "card_id": "134419993"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m19278136926_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Diancie 027 PSA 10",
+      "query_source": "regex",
+      "fetched_at": "2026-09-03T07:40:34.139461+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "366609554705",
+          "title": "2016 Pokemon Japanese Diancie 1st Edition Pokekyun Collection CP3 027/032 PSA 10",
+          "price_usd": 68.78,
+          "sold_date": "2026-08-23",
+          "url": "https://www.ebay.com/itm/366609554705"
+        },
+        {
+          "item_id": "188772423860",
+          "title": "Diancie 027/032 1st Edition Pokekyun Collection Pokemon Japanese PSA 10",
+          "price_usd": 100.0,
+          "sold_date": "2026-08-18",
+          "url": "https://www.ebay.com/itm/188772423860"
+        },
+        {
+          "item_id": "366588456342",
+          "title": "2016 Pokemon Japanese Diancie 1st Edition Pokekyun Collection CP3 027/032 PSA 10",
+          "price_usd": 108.12,
+          "sold_date": "2026-08-16",
+          "url": "https://www.ebay.com/itm/366588456342"
+        },
+        {
+          "item_id": "188629555630",
+          "title": "Diancie 027/032 1st Edition Pokekyun Collection Pokemon Japanese PSA 10",
+          "price_usd": 100.0,
+          "sold_date": "2026-08-10",
+          "url": "https://www.ebay.com/itm/188629555630"
+        },
+        {
+          "item_id": "366566942429",
+          "title": "2016 Pokemon Japanese Diancie 1st Edition Pokekyun Collection CP3 027/032 PSA 10",
+          "price_usd": 71.76,
+          "sold_date": "2026-08-02",
+          "url": "https://www.ebay.com/itm/366566942429"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 0,
+      "filter_trimmed_count": 10,
+      "filter_removed_reasons": [],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 68.78,
+          "sold_date": "2026-08-23"
+        },
+        "avg_last_3": {
+          "avg_usd": 92.3,
+          "to_date": "2026-08-23",
+          "from_date": "2026-08-16",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 89.73,
+          "to_date": "2026-08-23",
+          "from_date": "2026-08-02",
+          "n": 5
+        }
+      },
+      "from_cache": false
+    },
+    "confidence": null,
+    "card_id": "134419993"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "2JWGfbpnc5jHm94hygXSZh_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 90,
+      "verdict": "geverifieerd",
+      "base": 80,
+      "delta_title": 10,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel matcht (+10)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "pass",
+      "check3_status": "skip",
+      "cert": "168974759",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:40:20.047276+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 15767,
+      "ebay_query": "Shieldon 007 PSA 10",
+      "ebay_stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 127.5,
+          "sold_date": "2026-08-30"
+        },
+        "avg_last_3": {
+          "avg_usd": 116.17,
+          "to_date": "2026-08-30",
+          "from_date": "2026-08-27",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 97.69,
+          "to_date": "2026-08-30",
+          "from_date": "2026-02-01",
+          "n": 5
+        }
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": 7.6,
+      "roi_avg3_eur": 7.11,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 90.0,
+    "card_id": "168974759"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674832084_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 65,
+      "verdict": "twijfel",
+      "base": 80,
+      "delta_title": -15,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel mismatcht (-15)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "fail",
+      "check3_status": "skip",
+      "cert": "72057762",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:40:20.270561+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 3,
+      "ebay_query": "Marnie SR 068/060 S1H Shield PSA 10",
+      "ebay_stats": {
+        "n_sales": 2,
+        "last_sale": {
+          "price_usd": 530.2,
+          "sold_date": "2026-08-07"
+        },
+        "avg_last_3": {
+          "avg_usd": 502.6,
+          "to_date": "2026-08-07",
+          "from_date": "2026-06-29",
+          "n": 2
+        },
+        "avg_last_5": {
+          "avg_usd": 502.6,
+          "to_date": "2026-08-07",
+          "from_date": "2026-06-29",
+          "n": 2
+        }
+      },
+      "ebay_from_cache": true,
+      "roi_avg3_pct": -29.6,
+      "roi_avg3_eur": -182.71,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "llm",
+      "score_phase_mode": "cache_only"
+    },
+    "confidence": 65.0,
+    "card_id": "72057762"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674832084_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Marnie SR 068/060 S1H Shield PSA 10",
+      "query_source": "llm",
+      "fetched_at": "2026-09-02T10:41:05.424895+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "800451516971",
+          "title": "Pokemon PSA 10 Marnie SR 2019 068/060 S1H Japanese",
+          "price_usd": 530.2,
+          "sold_date": "2026-08-07",
+          "url": "https://www.ebay.com/itm/800451516971"
+        },
+        {
+          "item_id": "377285541436",
+          "title": "2019 Pokemon Japanese Shield Marnie SR Foil #068/060 PSA 10 GEM MINT",
+          "price_usd": 475.0,
+          "sold_date": "2026-06-29",
+          "url": "https://www.ebay.com/itm/377285541436"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 13,
+      "filter_trimmed_count": 0,
+      "filter_removed_reasons": [
+        "'B6 Pokemon TCG Marnie Trainer 068/060 S1H SR Full Art Holo 2' → match 71% (mist ['shield', '_grade_10'])",
+        "'Pokemon 2019 Japanese Marnie 072/060 S1h Shield FA Hyper Rar' → match 71% (mist ['sr', '068'])",
+        "'MARNIE PSA 10 2019 POKEMON SWSH JPN #068/060 SHIELD SUPER RA' → match 71% (mist ['sr', 's1h'])",
+        "'Marnie HR 072/060 S1H Shield - Pokemon Card Japanese' → match 57% (mist ['sr', '068', '_grade_10'])",
+        "'PSA 10 Snorlax VMAX 046/060 S1h: Shield Holo Pokemon Card Ja' → match 57% (mist ['marnie', 'sr', '068'])",
+        "'Pokemon TCG - 2019 Marnie 068/060 S1h: Shield Holo (Japanese' → grade psa9 != query psa10",
+        "'Pokemon card s1H 067/060 Team Yell Grunt SR Sword & Shield J' → match 57% (mist ['marnie', '068', '_grade_10'])",
+        "'[BRG 8.5] Pokemon Card MARNIE S1H D 067 060 SR SHIELD V Kore' → match 71% (mist ['068', '_grade_10'])",
+        "'2019 Pokemon Japanese SWSH FA/Quick Ball Shield S1H 074/060 ' → match 57% (mist ['marnie', 'sr', '068'])",
+        "'33674# Team Yell Grunt 067/060 SR PSA 10 GEM MT S1H Pokemon ' → match 71% (mist ['marnie', '068'])",
+        "'[LP] Zamazenta V SR 065/060 S1H Shield - Japanese #1849' → match 57% (mist ['marnie', '068', '_grade_10'])",
+        "'Torkoal V SR 061/060 S1H Shield - Pokemon Card Japanese-Pyxi' → match 57% (mist ['marnie', '068', '_grade_10'])",
+        "'Marnie SR 068/060 S1H Pokemon Card Shield Heavily Played' → prijs $52.75 outlier (median $475.00)"
+      ],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 2,
+        "last_sale": {
+          "price_usd": 530.2,
+          "sold_date": "2026-08-07"
+        },
+        "avg_last_3": {
+          "avg_usd": 502.6,
+          "to_date": "2026-08-07",
+          "from_date": "2026-06-29",
+          "n": 2
+        },
+        "avg_last_5": {
+          "avg_usd": 502.6,
+          "to_date": "2026-08-07",
+          "from_date": "2026-06-29",
+          "n": 2
+        }
+      },
+      "from_cache": true,
+      "cache_source": "price_cache"
+    },
+    "confidence": null,
+    "card_id": "72057762"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "2JWGfbpnc5jHm94hygXSZh_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Shieldon 007 PSA 10",
+      "query_source": "regex",
+      "fetched_at": "2026-09-03T07:40:19.790104+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "287541277470",
+          "title": "Pokemon Shieldon Holo 11th Movie Commemoration Set 007/009 Japanese PSA 10",
+          "price_usd": 127.5,
+          "sold_date": "2026-08-30",
+          "url": "https://www.ebay.com/itm/287541277470"
+        },
+        {
+          "item_id": "287541277425",
+          "title": "Pokemon Shieldon Holo 11th Movie Commemoration Set 007/009 Japanese PSA 10",
+          "price_usd": 107.5,
+          "sold_date": "2026-08-30",
+          "url": "https://www.ebay.com/itm/287541277425"
+        },
+        {
+          "item_id": "298602430068",
+          "title": "2008 POKEMON JAPANESE 11TH MOVIE COMMEMORATION SET #007 SHIELDON-HOLO PSA 10",
+          "price_usd": 113.5,
+          "sold_date": "2026-08-27",
+          "url": "https://www.ebay.com/itm/298602430068"
+        },
+        {
+          "item_id": "177712112082",
+          "title": "SHIELDON PSA 10 007/009 11th Movie Commemoration Set Japanese Pokemon Graded",
+          "price_usd": 49.95,
+          "sold_date": "2026-02-01",
+          "url": "https://www.ebay.com/itm/177712112082"
+        },
+        {
+          "item_id": "128021823931",
+          "title": "2008 Pokemon Japanese 11th Movie Commemoration Shieldon Holo PSA 10 #007",
+          "price_usd": 90.0,
+          "sold_date": "2026-08-23",
+          "url": "https://www.ebay.com/itm/128021823931"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 3,
+      "filter_trimmed_count": 7,
+      "filter_removed_reasons": [
+        "'PSA 10 Gem Mint Shieldon Holo 11th Movie Commemoration Set P' → match 67% (mist ['007'])",
+        "'POKEMON DARKRAI 2007 JAPANESE PROMO #007 FAN CLUB 10,000 EXP' → match 67% (mist ['shieldon'])",
+        "'POKEMON MEDICHAM EX-HOLO 2005 JP 1ST Edition FIGHTING QUICK ' → match 67% (mist ['shieldon'])"
+      ],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 127.5,
+          "sold_date": "2026-08-30"
+        },
+        "avg_last_3": {
+          "avg_usd": 116.17,
+          "to_date": "2026-08-30",
+          "from_date": "2026-08-27",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 97.69,
+          "to_date": "2026-08-30",
+          "from_date": "2026-02-01",
+          "n": 5
+        }
+      },
+      "from_cache": false
+    },
+    "confidence": null,
+    "card_id": "168974759"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m69389228591_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 100,
+      "verdict": "geverifieerd",
+      "base": 80,
+      "delta_title": 10,
+      "delta_desc": 10,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel matcht (+10)",
+        "beschrijving matcht (+10)"
+      ],
+      "check1_status": "pass",
+      "check2_status": "pass",
+      "check3_status": "pass",
+      "cert": "133464658",
+      "cert_times_seen": 2,
+      "cert_first_seen": "2026-07-26T06:36:39.999652+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 18012,
+      "ebay_query": "Pikachu 210 S-P PSA 10",
+      "ebay_stats": {
+        "n_sales": 0,
+        "last_sale": null,
+        "avg_last_3": null,
+        "avg_last_5": null
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": null,
+      "roi_avg3_eur": null,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "confidence": 100.0,
+    "card_id": "133464658"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m69389228591_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Pikachu 210 S-P PSA 10",
+      "query_source": "regex",
+      "fetched_at": null,
+      "error": "fetch_failed",
+      "sales": [],
+      "sales_raw_count": 0,
+      "filter_removed_count": 0,
+      "filter_trimmed_count": 0,
+      "filter_removed_reasons": [],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 0,
+        "last_sale": null,
+        "avg_last_3": null,
+        "avg_last_5": null
+      },
+      "from_cache": false
+    },
+    "confidence": null,
+    "card_id": "133464658"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m22568437192_saveTrapTest",
+    "trap": "summary",
+    "result": {
+      "score": 65,
+      "verdict": "twijfel",
+      "base": 80,
+      "delta_title": -15,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel mismatcht (-15)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "fail",
+      "check3_status": "skip",
+      "cert": "147077341",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:35:24.510874+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 3,
+      "ebay_query": "Mega Charizard X ex SAR 110/080 M2 PSA 10",
+      "ebay_stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 1075.0,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 1154.33,
+          "to_date": "2026-09-02",
+          "from_date": "2026-08-22",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 1147.59,
+          "to_date": "2026-09-02",
+          "from_date": "2026-08-20",
+          "n": 5
+        }
+      },
+      "ebay_from_cache": true,
+      "roi_avg3_pct": 2.9,
+      "roi_avg3_eur": 28.23,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "llm",
+      "score_phase_mode": "cache_only"
+    },
+    "confidence": 65.0,
+    "card_id": "147077341"
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m22568437192_saveTrapTest",
+    "trap": "ebay_prices",
+    "result": {
+      "query": "Mega Charizard X ex SAR 110/080 M2 PSA 10",
+      "query_source": "llm",
+      "fetched_at": "2026-09-03T07:31:27.622473+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "147417374556",
+          "title": "Pokemon TCG Mega Charizard X ex 110/080 M2: Inferno X SAR Holo JP 2025 PSA 10",
+          "price_usd": 1075.0,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/147417374556"
+        },
+        {
+          "item_id": "168483207749",
+          "title": "PSA 10 Mega Charizard X ex SAR 110/080 Inferno X M2 Pokemon Card Japanese 2025",
+          "price_usd": 1248.98,
+          "sold_date": "2026-08-30",
+          "url": "https://www.ebay.com/itm/168483207749"
+        },
+        {
+          "item_id": "820036908746",
+          "title": "Pokemon Mega Charizard X ex 110/080 SAR Holo JP M2 Inferno X PSA 10",
+          "price_usd": 1139.0,
+          "sold_date": "2026-08-22",
+          "url": "https://www.ebay.com/itm/820036908746"
+        },
+        {
+          "item_id": "306746002380",
+          "title": "2025 Pokémon Mega Charizard X ex SAR 110/080 Inferno X M2 Japanese PSA 10",
+          "price_usd": 1179.99,
+          "sold_date": "2026-08-20",
+          "url": "https://www.ebay.com/itm/306746002380"
+        },
+        {
+          "item_id": "407147704252",
+          "title": "Mega Charizard X ex 110/080 M2: Inferno X SAR Holo JP Pokemon 2025 PSA 10 Gem",
+          "price_usd": 1095.0,
+          "sold_date": "2026-08-20",
+          "url": "https://www.ebay.com/itm/407147704252"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 2,
+      "filter_trimmed_count": 8,
+      "filter_removed_reasons": [
+        "'MEGA CHARIZARD X EX SAR 110/080 PSA 10 INFERNO X M2 POKEMON ' → prijs $215.99 outlier (median $1095.00)",
+        "'2025 Pokemon Mega Charizard X ex SAR 110/080 Japanese M2 Spe' → prijs $1.00 outlier (median $1095.00)"
+      ],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 1075.0,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 1154.33,
+          "to_date": "2026-09-02",
+          "from_date": "2026-08-22",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 1147.59,
+          "to_date": "2026-09-02",
+          "from_date": "2026-08-20",
+          "n": 5
+        }
+      },
+      "from_cache": true,
+      "cache_source": "price_cache"
+    },
+    "confidence": null,
+    "card_id": "147077341"
+  },
+  {
+    "case": "update_replace",
+    "item_id": "z673854722_saveTrapTest",
+    "trap": "summary",
+    "first_result": {
+      "stub": "first"
+    },
+    "first_confidence": 50.0,
+    "second_result": {
+      "score": 0,
+      "verdict": "onbetrouwbaar",
+      "base": 0,
+      "delta_title": 0,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR niet gelukt (base 0)",
+        "titel-check overgeslagen / neutraal",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "skip",
+      "check2_status": "skip",
+      "check3_status": "skip",
+      "cert": null,
+      "cert_times_seen": 0,
+      "cert_first_seen": null,
+      "ocr_calls": 2,
+      "photos_tried": 2,
+      "took_ms": 0,
+      "ebay_query": null,
+      "ebay_stats": null,
+      "ebay_from_cache": null,
+      "roi_avg3_pct": null,
+      "roi_avg3_eur": null,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "second_confidence": 0.0,
+    "second_card_id": null
+  },
+  {
+    "case": "update_replace",
+    "item_id": "z672619940_saveTrapTest",
+    "trap": "summary",
+    "first_result": {
+      "stub": "first"
+    },
+    "first_confidence": 50.0,
+    "second_result": {
+      "score": 65,
+      "verdict": "twijfel",
+      "base": 80,
+      "delta_title": -15,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel mismatcht (-15)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "fail",
+      "check3_status": "skip",
+      "cert": "166307559",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:41:53.698088+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 17345,
+      "ebay_query": "Tohoku's Pikachu 200 SV-P PSA 8",
+      "ebay_stats": {
+        "n_sales": 3,
+        "last_sale": {
+          "price_usd": 52.0,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        }
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": 34.8,
+      "roi_avg3_eur": 19.47,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "llm",
+      "score_phase_mode": "ebay_only"
+    },
+    "second_confidence": 65.0,
+    "second_card_id": "166307559"
+  },
+  {
+    "case": "update_replace",
+    "item_id": "z672619940_saveTrapTest",
+    "trap": "ebay_prices",
+    "first_result": {
+      "stub": "first"
+    },
+    "first_confidence": 50.0,
+    "second_result": {
+      "query": "Tohoku's Pikachu 200 SV-P PSA 8",
+      "query_source": "llm",
+      "fetched_at": "2026-09-03T07:41:53.401004+00:00",
+      "error": null,
+      "sales": [
+        {
+          "item_id": "188836056515",
+          "title": "TOHOKU'S PIKACHU PSA 8 2025 POKEMON SV BLACK STAR PROMOS JAPANESE #260/SV-P 0177",
+          "price_usd": 52.0,
+          "sold_date": "2026-09-02",
+          "url": "https://www.ebay.com/itm/188836056515"
+        },
+        {
+          "item_id": "287384127589",
+          "title": "PSA 8 Tohoku's Pikachu 260/SV-P Special Box Pokemon Cards 2025 Holo Japanese",
+          "price_usd": 105.0,
+          "sold_date": "2026-06-13",
+          "url": "https://www.ebay.com/itm/287384127589"
+        },
+        {
+          "item_id": "366513479436",
+          "title": "PSA 8 Tohoku's Pikachu 260/SV-P Special Box Pokemon Center Tohoku Pokemon Card",
+          "price_usd": 105.19,
+          "sold_date": "2026-07-05",
+          "url": "https://www.ebay.com/itm/366513479436"
+        }
+      ],
+      "sales_raw_count": 15,
+      "filter_removed_count": 12,
+      "filter_trimmed_count": 0,
+      "filter_removed_reasons": [
+        "'2025 POKEMON JAPANESE SV-P SPECIAL BOX POKEMON CENTER TOHOKU' → grade psa10 != query psa8",
+        "'TOHOKU'S PIKACHU SPECI4L BOX PC TOHOKU POKEMON JAP SV-P PRM ' → grade psa10 != query psa8",
+        "'2025 POKEMON JAPANESE SV-P PROMO #260 TOHOKU'S PIKACHU PSA 1' → grade psa10 != query psa8",
+        "'2025 POKEMON JAPANESE SV-P PROMO #260 TOHOKU'S PIKACHU PSA 1' → grade psa10 != query psa8",
+        "'PSA 10 TOHOKU'S PIKACHU 260/SV-P Special Box Promo Pokemon C' → grade psa10 != query psa8",
+        "'Pokemon Tohoku's Pikachu Japanese Pokemon Center Promo 260/S' → grade psa9 != query psa8",
+        "'TOHOKU'S PIKACHU POKEMON 260/SV-P 2025 CENTER SPECI4L BOX GE' → grade psa10 != query psa8",
+        "'2017 POKEMON JAPANESE SM POKEMON CENTER TOHOKU REOPENING TOH' → grade psa10 != query psa8",
+        "'2025 POKEMON JAPANESE SV-P PROMO #260 TOHOKU'S PIKACHU PSA 1' → grade psa10 != query psa8",
+        "'TOHOKU'S PIKACHU POKEMON 260/SV-P 2025 CENTER SPECI4L BOX GE' → grade psa10 != query psa8",
+        "'PSA 10 Tohoku Hiroshima Fukuoka Pikachu 260 261 289/SV-P Spe' → grade psa10 != query psa8",
+        "'Pokemon PSA 9 Tohoku's Pikachu Promo 2025 260/SV-P Special B' → grade psa9 != query psa8"
+      ],
+      "filter_source": "regex",
+      "stats": {
+        "n_sales": 3,
+        "last_sale": {
+          "price_usd": 52.0,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 87.4,
+          "to_date": "2026-09-02",
+          "from_date": "2026-06-13",
+          "n": 3
+        }
+      },
+      "from_cache": false
+    },
+    "second_confidence": null,
+    "second_card_id": "166307559"
+  },
+  {
+    "case": "update_replace",
+    "item_id": "z673858434_saveTrapTest",
+    "trap": "summary",
+    "first_result": {
+      "stub": "first"
+    },
+    "first_confidence": 50.0,
+    "second_result": {
+      "score": 0,
+      "verdict": "onbetrouwbaar",
+      "base": 0,
+      "delta_title": 0,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR niet gelukt (base 0)",
+        "titel-check overgeslagen / neutraal",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "skip",
+      "check2_status": "skip",
+      "check3_status": "skip",
+      "cert": null,
+      "cert_times_seen": 0,
+      "cert_first_seen": null,
+      "ocr_calls": 2,
+      "photos_tried": 2,
+      "took_ms": 0,
+      "ebay_query": null,
+      "ebay_stats": null,
+      "ebay_from_cache": null,
+      "roi_avg3_pct": null,
+      "roi_avg3_eur": null,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "regex",
+      "score_phase_mode": "ebay_only"
+    },
+    "second_confidence": 0.0,
+    "second_card_id": null
+  },
+  {
+    "case": "update_replace",
+    "item_id": "z674694696_saveTrapTest",
+    "trap": "summary",
+    "first_result": {
+      "stub": "first"
+    },
+    "first_confidence": 50.0,
+    "second_result": {
+      "score": 65,
+      "verdict": "twijfel",
+      "base": 80,
+      "delta_title": -15,
+      "delta_desc": 0,
+      "reasons": [
+        "slab OCR gelukt (+80)",
+        "titel mismatcht (-15)",
+        "beschrijving-check overgeslagen / neutraal"
+      ],
+      "check1_status": "pass",
+      "check2_status": "fail",
+      "check3_status": "skip",
+      "cert": "174223304",
+      "cert_times_seen": 1,
+      "cert_first_seen": "2026-09-03T07:41:31.456286+00:00",
+      "ocr_calls": 1,
+      "photos_tried": 1,
+      "took_ms": 18288,
+      "ebay_query": "Fukuoka's Pikachu 289 SV-P PSA 10",
+      "ebay_stats": {
+        "n_sales": 5,
+        "last_sale": {
+          "price_usd": 200.5,
+          "sold_date": "2026-09-02"
+        },
+        "avg_last_3": {
+          "avg_usd": 204.5,
+          "to_date": "2026-09-02",
+          "from_date": "2026-09-02",
+          "n": 3
+        },
+        "avg_last_5": {
+          "avg_usd": 208.3,
+          "to_date": "2026-09-02",
+          "from_date": "2026-09-02",
+          "n": 5
+        }
+      },
+      "ebay_from_cache": false,
+      "roi_avg3_pct": 4.1,
+      "roi_avg3_eur": 7.03,
+      "llm_needed_but_failed": false,
+      "llm_retry_count": 0,
+      "is_bundle": false,
+      "query_source": "llm",
+      "score_phase_mode": "ebay_only"
+    },
+    "second_confidence": 65.0,
+    "second_card_id": "174223304"
+  }
+]

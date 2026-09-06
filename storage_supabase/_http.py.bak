@@ -1,0 +1,62 @@
+"""Gedeelde HTTP-helpers voor Supabase REST calls binnen storage_supabase.
+
+Klein en zelfstandig — geen dependency op supabase_sync (die is voor de
+oude sync-laag). Deze helpers zijn schema-parametrisch: elke call kiest
+`kensa` of `kensa_test` via Accept-Profile / Content-Profile headers.
+"""
+from __future__ import annotations
+import json
+from pathlib import Path
+import requests
+
+SECRETS_PATH = "/home/pi/.openclaw/secrets.json"
+_CREDS_CACHE: tuple[str, str] | None = None
+
+
+def _creds() -> tuple[str, str]:
+    global _CREDS_CACHE
+    if _CREDS_CACHE is None:
+        s = json.loads(Path(SECRETS_PATH).read_text())["supabase"]
+        _CREDS_CACHE = (s["url"], s["service_role_key"])
+    return _CREDS_CACHE
+
+
+def _headers(schema: str, prefer: str = "return=representation") -> dict:
+    _, key = _creds()
+    return {
+        "apikey": key,
+        "Authorization": f"Bearer {key}",
+        "Accept-Profile": schema,
+        "Content-Profile": schema,
+        "Content-Type": "application/json",
+        "Prefer": prefer,
+    }
+
+
+def get(table: str, schema: str, params: dict, timeout: float = 10.0) -> list[dict]:
+    url = f"{_creds()[0]}/rest/v1/{table}"
+    r = requests.get(url, params=params, headers=_headers(schema, prefer="count=none"), timeout=timeout)
+    if r.status_code == 200:
+        return r.json()
+    if r.status_code == 404:
+        return []
+    r.raise_for_status()
+    return []
+
+
+def post(table: str, schema: str, payload: dict | list, prefer: str = "return=minimal", timeout: float = 10.0) -> requests.Response:
+    url = f"{_creds()[0]}/rest/v1/{table}"
+    r = requests.post(url, json=payload, headers=_headers(schema, prefer=prefer), timeout=timeout)
+    return r
+
+
+def patch(table: str, schema: str, query: dict, patch_body: dict, timeout: float = 10.0) -> requests.Response:
+    url = f"{_creds()[0]}/rest/v1/{table}"
+    r = requests.patch(url, params=query, json=patch_body, headers=_headers(schema), timeout=timeout)
+    return r
+
+
+def delete(table: str, schema: str, query: dict, timeout: float = 10.0) -> requests.Response:
+    url = f"{_creds()[0]}/rest/v1/{table}"
+    r = requests.delete(url, params=query, headers=_headers(schema, prefer="return=minimal"), timeout=timeout)
+    return r

@@ -1,0 +1,99 @@
+"""Blok B2 — dispatcher-consistency tests voor analyze_split/ebay_phase.
+
+Verifieert dat _price_cache_get en _cached_ebay_for_query identieke output
+geven onder READ=pi (default) en READ=supabase.
+"""
+from __future__ import annotations
+import json
+import os
+
+BASELINE_CARD_KEY = "pikachu:223/284:10"
+
+
+def _run_with_env(env_val, callable_):
+    old = os.environ.get("KENSA_READ_STORAGE")
+    if env_val is None:
+        os.environ.pop("KENSA_READ_STORAGE", None)
+    else:
+        os.environ["KENSA_READ_STORAGE"] = env_val
+    try:
+        return callable_()
+    finally:
+        if old is None:
+            os.environ.pop("KENSA_READ_STORAGE", None)
+        else:
+            os.environ["KENSA_READ_STORAGE"] = old
+
+
+def test_price_cache_get_pi_vs_supabase_identical():
+    from analyze_split.ebay_phase import _price_cache_get
+    pi = _run_with_env(None, lambda: _price_cache_get(BASELINE_CARD_KEY))
+    sb = _run_with_env("supabase", lambda: _price_cache_get(BASELINE_CARD_KEY))
+    assert pi is not None
+    assert sb is not None
+    # Kernvelden matchen
+    assert pi["card_key"] == sb["card_key"]
+    assert pi["ebay_query"] == sb["ebay_query"]
+    # jsonb-velden moeten in BEIDE takken string zijn (backwards-compat)
+    assert isinstance(sb["ebay_result_json"], str), "Supabase-tak moet jsonb → string serialiseren"
+    assert isinstance(pi["ebay_result_json"], str)
+    # Parsed inhoud moet identiek
+    assert json.loads(pi["ebay_result_json"]) == json.loads(sb["ebay_result_json"])
+    if pi.get("cm_listings_json") or sb.get("cm_listings_json"):
+        assert json.loads(pi["cm_listings_json"]) == json.loads(sb["cm_listings_json"])
+
+
+def test_price_cache_get_returns_none_for_unknown():
+    from analyze_split.ebay_phase import _price_cache_get
+    for env in (None, "supabase"):
+        result = _run_with_env(env, lambda: _price_cache_get("this-does-not-exist:0:0"))
+        assert result is None, f"env={env}: verwachtte None, kreeg {result!r}"
+
+
+def test_cached_ebay_for_query_returns_none_for_unknown_query():
+    """Er is geen ebay_prices trap met deze query — beide takken moeten None geven."""
+    from analyze_split.ebay_phase import _cached_ebay_for_query
+    q = "impossible-query-that-will-not-be-in-cache-12345xyz"
+    for env in (None, "supabase"):
+        result = _run_with_env(env, lambda: _cached_ebay_for_query(q))
+        assert result is None, f"env={env}: verwachtte None, kreeg {type(result)}"
+
+
+def test_cached_ebay_for_query_shape_when_hit():
+    """Roep beide takken aan met een realistische query.
+
+    We weten niet vooraf welke exacte query in de laatste 24u een hit geeft,
+    dus we testen shape-consistency: als Pi iets teruggeeft, moet Supabase
+    dat ook doen (of allebei None).
+    """
+    from analyze_split.ebay_phase import _cached_ebay_for_query
+    # Pak een recente ebay_prices query uit Pi
+    import sqlite3
+    from pathlib import Path
+    conn = sqlite3.connect(str(Path("/home/pi/.openclaw/workspace/agents/kensa/kensa.db")))
+    conn.row_factory = sqlite3.Row
+    try:
+        row = conn.execute(
+            "SELECT result_json FROM analysis "
+            "WHERE trap='ebay_prices' AND created_at >= datetime('now', '-1 hour') "
+            "ORDER BY analysis_id DESC LIMIT 1"
+        ).fetchone()
+    finally:
+        conn.close()
+    if not row:
+        # Geen recente ebay_prices — skip (nog geen data om te testen)
+        return
+    try:
+        recent_query = json.loads(row["result_json"]).get("query")
+    except Exception:
+        return
+    if not recent_query:
+        return
+    pi = _run_with_env(None, lambda: _cached_ebay_for_query(recent_query))
+    sb = _run_with_env("supabase", lambda: _cached_ebay_for_query(recent_query))
+    # Beide None OF beide gevuld met zelfde query
+    assert (pi is None) == (sb is None), (
+        f"asymmetrie: pi={type(pi)}, sb={type(sb)} voor query {recent_query!r}"
+    )
+    if pi is not None and sb is not None:
+        assert pi.get("query") == sb.get("query") == recent_query

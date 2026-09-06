@@ -1,0 +1,49 @@
+# === Kensa .gitignore ===
+# Doel: alleen broncode versioneren. Data, logs, fixtures en caches blijven lokaal.
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Logs (alle pipeline-/cron-/monitor-logs)
+*.log
+
+# Databases & lokale state (regenereerbaar / draait live op de Pi)
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.coverage
+data/proxy_usage.json
+
+# Runtime caches & drift-state (regenereerbaar)
+.fx_cache.json
+sync_drift_state.json
+last_scrape.json
+monitor_cutover_cache.*
+
+# Test-fixtures & spikes (groot, regenereerbaar)
+*refactor_fixtures*/
+spike_*_media/
+analyze_split/*_fixtures*/
+
+# Gearchiveerde / verwijderde code (historie zit al in backup-repo)
+_removed_*/
+_legacy_*/
+
+# Auth-/cookie-DATA (nooit committen; scripts zelf wel)
+*.cookies
+cookies.json
+*_cookies.json
+*storage_state*.json
+*.pem
+
+# Secrets worden centraal geladen uit /home/pi/.openclaw/secrets.json — nooit lokaal
+secrets.json
+.env

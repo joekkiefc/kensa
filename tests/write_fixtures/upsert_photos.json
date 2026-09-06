@@ -1,0 +1,762 @@
+[
+  {
+    "case": "insert_new",
+    "item_id": "z674836062",
+    "input_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494xvq5wd.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494o1ypiy.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494ab6dkg.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494zmbrm2.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494mhnlcj.jpg"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494xvq5wd.jpg"
+      },
+      {
+        "photo_index": 3,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494o1ypiy.jpg"
+      },
+      {
+        "photo_index": 4,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494ab6dkg.jpg"
+      },
+      {
+        "photo_index": 5,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494zmbrm2.jpg"
+      },
+      {
+        "photo_index": 6,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494mhnlcj.jpg"
+      }
+    ],
+    "expected_return": 7
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674835966",
+    "input_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img805x1200-1788414936876n2ksqu.jpg"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img805x1200-1788414936876n2ksqu.jpg"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674834938",
+    "input_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img822x1200-1788415084636evc8s9.jpg"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img822x1200-1788415084636evc8s9.jpg"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674835916",
+    "input_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img778x1200-1788415241982afzt9i.jpg"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img778x1200-1788415241982afzt9i.jpg"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674834298",
+    "input_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img832x1200-178841536706864hdv3.jpg"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img832x1200-178841536706864hdv3.jpg"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674833244",
+    "input_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188guenz8.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188guenz8.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188cj593o.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-178834207118869i3ya.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-17883420711887y679a.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-17883420711887mkn67.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188hkn4ga.jpg"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188guenz8.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188guenz8.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188cj593o.jpg"
+      },
+      {
+        "photo_index": 3,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-178834207118869i3ya.jpg"
+      },
+      {
+        "photo_index": 4,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-17883420711887y679a.jpg"
+      },
+      {
+        "photo_index": 5,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-17883420711887mkn67.jpg"
+      },
+      {
+        "photo_index": 6,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/88a8f8b19fd6bb6caa244800c4331087d620c65c/i-img900x1200-1788342071188hkn4ga.jpg"
+      }
+    ],
+    "expected_return": 7
+  },
+  {
+    "case": "insert_new",
+    "item_id": "z674832086",
+    "input_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/dec1b859bdfd569a094a55541fb5cbdc32254dc1/i-img1200x1200-1788416895530gc80nr.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/dec1b859bdfd569a094a55541fb5cbdc32254dc1/i-img1200x1200-1788416895530gc80nr.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/dec1b859bdfd569a094a55541fb5cbdc32254dc1/i-img1200x1200-17884168955300x1i8d.jpg"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/dec1b859bdfd569a094a55541fb5cbdc32254dc1/i-img1200x1200-1788416895530gc80nr.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/dec1b859bdfd569a094a55541fb5cbdc32254dc1/i-img1200x1200-1788416895530gc80nr.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/dec1b859bdfd569a094a55541fb5cbdc32254dc1/i-img1200x1200-17884168955300x1i8d.jpg"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m10686623384",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m10686623384_1.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_1.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_2.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_3.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_4.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_5.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_6.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_7.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_8.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_9.jpg?1788420594",
+      "https://static.mercdn.net/item/detail/orig/photos/m10686623384_10.jpg?1788420594"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m10686623384_1.jpg?1788420594"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_1.jpg?1788420594"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_2.jpg?1788420594"
+      },
+      {
+        "photo_index": 3,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_3.jpg?1788420594"
+      },
+      {
+        "photo_index": 4,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_4.jpg?1788420594"
+      },
+      {
+        "photo_index": 5,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_5.jpg?1788420594"
+      },
+      {
+        "photo_index": 6,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_6.jpg?1788420594"
+      },
+      {
+        "photo_index": 7,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_7.jpg?1788420594"
+      },
+      {
+        "photo_index": 8,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_8.jpg?1788420594"
+      },
+      {
+        "photo_index": 9,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_9.jpg?1788420594"
+      },
+      {
+        "photo_index": 10,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m10686623384_10.jpg?1788420594"
+      }
+    ],
+    "expected_return": 11
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m24418529704",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m24418529704_1.jpg?1788420400",
+      "https://static.mercdn.net/item/detail/orig/photos/m24418529704_1.jpg?1788420400",
+      "https://static.mercdn.net/item/detail/orig/photos/m24418529704_2.jpg?1788420400"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m24418529704_1.jpg?1788420400"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m24418529704_1.jpg?1788420400"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m24418529704_2.jpg?1788420400"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m16226588949",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m16226588949_1.jpg?1788420438",
+      "https://static.mercdn.net/item/detail/orig/photos/m16226588949_1.jpg?1788420438",
+      "https://static.mercdn.net/item/detail/orig/photos/m16226588949_2.jpg?1788420438"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m16226588949_1.jpg?1788420438"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m16226588949_1.jpg?1788420438"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m16226588949_2.jpg?1788420438"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m81904055992",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m81904055992_1.jpg?1788420270",
+      "https://static.mercdn.net/item/detail/orig/photos/m81904055992_1.jpg?1788420270",
+      "https://static.mercdn.net/item/detail/orig/photos/m81904055992_2.jpg?1788420270"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m81904055992_1.jpg?1788420270"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m81904055992_1.jpg?1788420270"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m81904055992_2.jpg?1788420270"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m50281521046",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m50281521046_1.jpg?1788420268",
+      "https://static.mercdn.net/item/detail/orig/photos/m50281521046_1.jpg?1788420268",
+      "https://static.mercdn.net/item/detail/orig/photos/m50281521046_2.jpg?1788420268",
+      "https://static.mercdn.net/item/detail/orig/photos/m50281521046_3.jpg?1788420268",
+      "https://static.mercdn.net/item/detail/orig/photos/m50281521046_4.jpg?1788420268",
+      "https://static.mercdn.net/item/detail/orig/photos/m50281521046_5.jpg?1788420268"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m50281521046_1.jpg?1788420268"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m50281521046_1.jpg?1788420268"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m50281521046_2.jpg?1788420268"
+      },
+      {
+        "photo_index": 3,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m50281521046_3.jpg?1788420268"
+      },
+      {
+        "photo_index": 4,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m50281521046_4.jpg?1788420268"
+      },
+      {
+        "photo_index": 5,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m50281521046_5.jpg?1788420268"
+      }
+    ],
+    "expected_return": 6
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m78561267470",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m78561267470_1.jpg?1788420248",
+      "https://static.mercdn.net/item/detail/orig/photos/m78561267470_1.jpg?1788420248",
+      "https://static.mercdn.net/item/detail/orig/photos/m78561267470_2.jpg?1788420248"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m78561267470_1.jpg?1788420248"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78561267470_1.jpg?1788420248"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78561267470_2.jpg?1788420248"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m35381731944",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m35381731944_1.jpg?1788420190",
+      "https://static.mercdn.net/item/detail/orig/photos/m35381731944_1.jpg?1788420190",
+      "https://static.mercdn.net/item/detail/orig/photos/m35381731944_2.jpg?1788420190",
+      "https://static.mercdn.net/item/detail/orig/photos/m35381731944_3.jpg?1788420190"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m35381731944_1.jpg?1788420190"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m35381731944_1.jpg?1788420190"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m35381731944_2.jpg?1788420190"
+      },
+      {
+        "photo_index": 3,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m35381731944_3.jpg?1788420190"
+      }
+    ],
+    "expected_return": 4
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m36200310112",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m36200310112_1.jpg?1788420167",
+      "https://static.mercdn.net/item/detail/orig/photos/m36200310112_1.jpg?1788420167",
+      "https://static.mercdn.net/item/detail/orig/photos/m36200310112_2.jpg?1788420167"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m36200310112_1.jpg?1788420167"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m36200310112_1.jpg?1788420167"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m36200310112_2.jpg?1788420167"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m78081045226",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m78081045226_1.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_1.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_2.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_3.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_4.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_5.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_6.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_7.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_8.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_9.jpg?1788420084",
+      "https://static.mercdn.net/item/detail/orig/photos/m78081045226_10.jpg?1788420084"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m78081045226_1.jpg?1788420084"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_1.jpg?1788420084"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_2.jpg?1788420084"
+      },
+      {
+        "photo_index": 3,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_3.jpg?1788420084"
+      },
+      {
+        "photo_index": 4,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_4.jpg?1788420084"
+      },
+      {
+        "photo_index": 5,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_5.jpg?1788420084"
+      },
+      {
+        "photo_index": 6,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_6.jpg?1788420084"
+      },
+      {
+        "photo_index": 7,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_7.jpg?1788420084"
+      },
+      {
+        "photo_index": 8,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_8.jpg?1788420084"
+      },
+      {
+        "photo_index": 9,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_9.jpg?1788420084"
+      },
+      {
+        "photo_index": 10,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m78081045226_10.jpg?1788420084"
+      }
+    ],
+    "expected_return": 11
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m38465229363",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m38465229363_1.jpg?1788420063",
+      "https://static.mercdn.net/item/detail/orig/photos/m38465229363_1.jpg?1788420063"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m38465229363_1.jpg?1788420063"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m38465229363_1.jpg?1788420063"
+      }
+    ],
+    "expected_return": 2
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m57936495742",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m57936495742_1.jpg?1788420004",
+      "https://static.mercdn.net/item/detail/orig/photos/m57936495742_1.jpg?1788420004",
+      "https://static.mercdn.net/item/detail/orig/photos/m57936495742_2.jpg?1788420004",
+      "https://static.mercdn.net/item/detail/orig/photos/m57936495742_3.jpg?1788420004"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m57936495742_1.jpg?1788420004"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m57936495742_1.jpg?1788420004"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m57936495742_2.jpg?1788420004"
+      },
+      {
+        "photo_index": 3,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m57936495742_3.jpg?1788420004"
+      }
+    ],
+    "expected_return": 4
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m61793369551",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m61793369551_1.jpg?1788419997",
+      "https://static.mercdn.net/item/detail/orig/photos/m61793369551_1.jpg?1788419997",
+      "https://static.mercdn.net/item/detail/orig/photos/m61793369551_2.jpg?1788419997"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m61793369551_1.jpg?1788419997"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m61793369551_1.jpg?1788419997"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m61793369551_2.jpg?1788419997"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "insert_new",
+    "item_id": "m28064030971",
+    "input_urls": [
+      "https://static.mercdn.net/thumb/item/jpeg/m28064030971_1.jpg?1788419958",
+      "https://static.mercdn.net/item/detail/orig/photos/m28064030971_1.jpg?1788419958",
+      "https://static.mercdn.net/item/detail/orig/photos/m28064030971_2.jpg?1788419958"
+    ],
+    "expected_rows": [
+      {
+        "photo_index": 0,
+        "url_original": "https://static.mercdn.net/thumb/item/jpeg/m28064030971_1.jpg?1788419958"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m28064030971_1.jpg?1788419958"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://static.mercdn.net/item/detail/orig/photos/m28064030971_2.jpg?1788419958"
+      }
+    ],
+    "expected_return": 3
+  },
+  {
+    "case": "update_partial_dupe",
+    "item_id": "z674836062_upd",
+    "first_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg"
+    ],
+    "second_urls": [
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494xvq5wd.jpg"
+    ],
+    "expected_rows_after": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283493vxvr7j.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/a83a575b9a3dafd48c113699d4e73fb5e831c4aa/i-img1200x1200-1788417283494xvq5wd.jpg"
+      }
+    ],
+    "expected_return_first": 2,
+    "expected_return_second": 1
+  },
+  {
+    "case": "update_partial_dupe",
+    "item_id": "z674835966_upd",
+    "first_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg"
+    ],
+    "second_urls": [
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img805x1200-1788414936876n2ksqu.jpg"
+    ],
+    "expected_rows_after": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img793x1200-1788414936876h6r5f3.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img805x1200-1788414936876n2ksqu.jpg"
+      }
+    ],
+    "expected_return_first": 2,
+    "expected_return_second": 1
+  },
+  {
+    "case": "update_partial_dupe",
+    "item_id": "z674834938_upd",
+    "first_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg"
+    ],
+    "second_urls": [
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img822x1200-1788415084636evc8s9.jpg"
+    ],
+    "expected_rows_after": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img800x1200-1788415084636hqdm6a.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img822x1200-1788415084636evc8s9.jpg"
+      }
+    ],
+    "expected_return_first": 2,
+    "expected_return_second": 1
+  },
+  {
+    "case": "update_partial_dupe",
+    "item_id": "z674835916_upd",
+    "first_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg"
+    ],
+    "second_urls": [
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img778x1200-1788415241982afzt9i.jpg"
+    ],
+    "expected_rows_after": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img833x1200-178841524198242u4ec.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img778x1200-1788415241982afzt9i.jpg"
+      }
+    ],
+    "expected_return_first": 2,
+    "expected_return_second": 1
+  },
+  {
+    "case": "update_partial_dupe",
+    "item_id": "z674834298_upd",
+    "first_urls": [
+      "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg"
+    ],
+    "second_urls": [
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg",
+      "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img832x1200-178841536706864hdv3.jpg"
+    ],
+    "expected_rows_after": [
+      {
+        "photo_index": 0,
+        "url_original": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200"
+      },
+      {
+        "photo_index": 1,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img792x1200-1788415367067435omm.jpg"
+      },
+      {
+        "photo_index": 2,
+        "url_original": "https://cdnyauction.buyee.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1f35a8dac1c79e9c9ccd13970f616a42b2e9f608/i-img832x1200-178841536706864hdv3.jpg"
+      }
+    ],
+    "expected_return_first": 2,
+    "expected_return_second": 1
+  }
+]
