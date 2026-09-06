@@ -57,7 +57,7 @@ _Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-06._
 ## Vóór de laatste stap (SQLite echt uit)
 
 - [ ] alle 6 systemen 🟢 over 24u
-- [ ] 82 oude `sync_retry`-rijen opgeruimd (55× photos `photo_url` stale, 25× analysis 409-dup, 2× photos dup — geen dataverlies)
+- [x] 82 oude `sync_retry`-rijen opgeruimd op 2026-09-06 21:24 (55× photos `photo_url` stale, 25× analysis 409-dup, 2× photos dup — backup in /home/pi/kensa-backups/)
 - [ ] ~350 historische `analysis[roi]`-misses (17 aug–2 sep) gebackfilld, andere traps met dezelfde per-dag-methode gecheckt
 - [ ] drift-monitor `scripts/sync-drift-check.py` verbreed naar álle tabellen (per-dag count) — nu alleen listings
 - [ ] `scripts/monitor-cutover-cache.py` gerepareerd (valt sinds update 2026.9.2 over `openclaw`-ownership) of verwijderd
