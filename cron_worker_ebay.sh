@@ -10,9 +10,11 @@ LOCK="/tmp/kensa-worker-ebay.lock"
 LIMIT="${WORKER_EBAY_LIMIT:-20}"
 PARALLEL="${WORKER_EBAY_PARALLEL:-1}"
 
-# Storage-migratie: writes direct naar Supabase (analyze._save_trap/_mark_slab_status/enqueue_cardmarket).
+# Storage-migratie: writes direct naar Supabase (analyze._save_trap/_mark_slab_status + ebay_phase._price_cache_upsert_ebay).
 # Pick/claim gaat via Supabase (pick_ebay_batch_supabase) zodra KENSA_READ_STORAGE=supabase; worker_claim (SQLite-lock) is alleen nog de terugval zonder die env-var.
-export KENSA_WRITE_STORAGE=dual
+# CUTOVER BATCH 3 — 2026-09-07 09:2x: eBay-worker schrijft ALLEEN naar Supabase (vangnet: sync_retry).
+# Rollback: zet onderstaande regel terug naar "dual" → worker schrijft weer beide (1 min).
+export KENSA_WRITE_STORAGE=supabase
 # CUTOVER 2026-09-05 17:07 — reads uit Supabase (rollback: comment onderstaande regel uit)
 export KENSA_READ_STORAGE=supabase
 

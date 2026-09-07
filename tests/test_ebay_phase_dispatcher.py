@@ -97,3 +97,94 @@ def test_cached_ebay_for_query_shape_when_hit():
     )
     if pi is not None and sb is not None:
         assert pi.get("query") == sb.get("query") == recent_query
+
+
+# ---------------------------------------------------------------------------
+# Write-dispatcher: _price_cache_upsert_ebay routeert per KENSA_WRITE_STORAGE
+# (zelfde valkuil als batch 2: zonder schakelaar blijft de Pi stiekem gevuld)
+# ---------------------------------------------------------------------------
+
+def _run_with_write_env(env_val, callable_):
+    old = os.environ.get("KENSA_WRITE_STORAGE")
+    if env_val is None:
+        os.environ.pop("KENSA_WRITE_STORAGE", None)
+    else:
+        os.environ["KENSA_WRITE_STORAGE"] = env_val
+    try:
+        return callable_()
+    finally:
+        if old is None:
+            os.environ.pop("KENSA_WRITE_STORAGE", None)
+        else:
+            os.environ["KENSA_WRITE_STORAGE"] = old
+
+
+def _maak_lege_price_cache_db(tmp_path):
+    import sqlite3
+    db = tmp_path / "test_kensa.db"
+    conn = sqlite3.connect(db)
+    conn.execute("""CREATE TABLE price_cache (
+        card_key TEXT PRIMARY KEY, ebay_query TEXT, ebay_result_json TEXT,
+        ebay_fetched_at TEXT, cm_url TEXT, cm_listings_json TEXT, cm_fetched_at TEXT)""")
+    conn.commit()
+    conn.close()
+    return db
+
+
+def test_upsert_ebay_supabase_mode_raakt_sqlite_niet(tmp_path, monkeypatch):
+    """WRITE=supabase → alleen native route, geen enkele Pi-write."""
+    import analyze_split.ebay_phase as ep
+    import storage_supabase.price_cache as sb_pc
+    db = _maak_lege_price_cache_db(tmp_path)
+    monkeypatch.setattr(ep, "DB_PATH", db)
+    calls = []
+    monkeypatch.setattr(sb_pc, "upsert_ebay",
+                        lambda ck, q, r, ts=None, schema="kensa": calls.append((ck, q, r)))
+    _run_with_write_env("supabase",
+                        lambda: ep._price_cache_upsert_ebay("test:1/1:10", "q", {"sales": []}))
+    assert calls == [("test:1/1:10", "q", {"sales": []})]
+    import sqlite3
+    conn = sqlite3.connect(db)
+    assert conn.execute("SELECT COUNT(*) FROM price_cache").fetchone()[0] == 0
+    conn.close()
+
+
+def test_upsert_ebay_dual_mode_schrijft_beide(tmp_path, monkeypatch):
+    """WRITE=dual → SQLite én native route."""
+    import analyze_split.ebay_phase as ep
+    import storage_supabase.price_cache as sb_pc
+    db = _maak_lege_price_cache_db(tmp_path)
+    monkeypatch.setattr(ep, "DB_PATH", db)
+    calls = []
+    monkeypatch.setattr(sb_pc, "upsert_ebay",
+                        lambda ck, q, r, ts=None, schema="kensa": calls.append(ck))
+    _run_with_write_env("dual",
+                        lambda: ep._price_cache_upsert_ebay("test:2/2:10", "q2", {"sales": [1]}))
+    assert calls == ["test:2/2:10"]
+    import sqlite3
+    conn = sqlite3.connect(db)
+    row = conn.execute("SELECT card_key, ebay_query FROM price_cache").fetchone()
+    conn.close()
+    assert row == ("test:2/2:10", "q2")
+
+
+def test_upsert_ebay_default_sqlite_plus_legacy_sync(tmp_path, monkeypatch):
+    """Geen env (default) → SQLite + oude best-effort sync, géén native route."""
+    import analyze_split.ebay_phase as ep
+    import storage_supabase.price_cache as sb_pc
+    import supabase_sync as sbs
+    db = _maak_lege_price_cache_db(tmp_path)
+    monkeypatch.setattr(ep, "DB_PATH", db)
+    native, legacy = [], []
+    monkeypatch.setattr(sb_pc, "upsert_ebay",
+                        lambda *a, **k: native.append(a))
+    monkeypatch.setattr(sbs, "sync_price_cache_ebay",
+                        lambda ck, q, r, ts: legacy.append(ck))
+    _run_with_write_env(None,
+                        lambda: ep._price_cache_upsert_ebay("test:3/3:10", "q3", {}))
+    assert native == []
+    assert legacy == ["test:3/3:10"]
+    import sqlite3
+    conn = sqlite3.connect(db)
+    assert conn.execute("SELECT COUNT(*) FROM price_cache").fetchone()[0] == 1
+    conn.close()

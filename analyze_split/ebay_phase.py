@@ -163,6 +163,12 @@ def _cache_is_fresh(fetched_at: str | None) -> bool:
 
 def _price_cache_upsert_ebay(card_key: str, query: str, result: dict) -> None:
     now = now_iso()
+    # Dispatcher: env KENSA_WRITE_STORAGE stuurt naar Supabase-native i.p.v. SQLite+sync.
+    mode = os.environ.get("KENSA_WRITE_STORAGE", "sqlite")
+    if mode == "supabase":
+        from storage_supabase.price_cache import upsert_ebay as _sb_upsert_ebay
+        _sb_upsert_ebay(card_key, query, result, now)
+        return
     conn = sqlite3.connect(str(DB_PATH))
     try:
         conn.execute(
@@ -177,6 +183,10 @@ def _price_cache_upsert_ebay(card_key: str, query: str, result: dict) -> None:
         conn.commit()
     finally:
         conn.close()
+    if mode == "dual":
+        from storage_supabase.price_cache import upsert_ebay as _sb_upsert_ebay
+        _sb_upsert_ebay(card_key, query, result, now)
+        return
     try:
         import supabase_sync as _sbs
         _sbs.sync_price_cache_ebay(card_key, query, result, now)
