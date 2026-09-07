@@ -78,7 +78,11 @@ def upsert_listing(row: dict, schema: str = "kensa", table: str = "listings") ->
     non_null["last_seen_at"] = ts
 
     if is_new:
-        non_null["first_seen_at"] = ts
+        # Bewaar de ECHTE geboortedatum als de aanroeper 'm meegeeft (bv. een
+        # bestaande Pi-listing die voor 't eerst naar Supabase geschreven wordt).
+        # Anders = nu (echt nieuwe listing). Voorkomt de first_seen-corruptie die
+        # bij de 5-sept cutover ~31k rijen raakte (INSERT stempelde first_seen=nu).
+        non_null["first_seen_at"] = row.get("first_seen_at") or ts
         r = _http.post(table, schema, non_null, prefer="return=minimal")
         if r.status_code not in (200, 201, 204):
             raise RuntimeError(f"insert {table} failed {r.status_code}: {r.text[:200]}")
