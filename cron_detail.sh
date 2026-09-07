@@ -24,7 +24,10 @@ PROXY_LIMIT=30
 # Storage-migratie: writes via storage.py (upsert_listing/upsert_photos/download-metadata)
 # dispatchen op Supabase. `save_raw_page` blijft LOKAAL op Pi (Tommy 2026-09-03:
 # raw_pages retentie 7 dagen, geen langere opslag nodig).
-export KENSA_WRITE_STORAGE=dual
+# CUTOVER BATCH 4 — 2026-09-07 20:00: detail schrijft ALLEEN naar Supabase
+# (vangnet: sync_retry). Voorwaarde gedaan: stuck_detector + dead_marker lezen Supabase.
+# Rollback: onderstaande regel terug naar =dual (1 min).
+export KENSA_WRITE_STORAGE=supabase
 
 cd "$KENSA_DIR" || exit 1
 
@@ -43,16 +46,16 @@ find /tmp -maxdepth 1 -name "kensa-ebay-*" -type d -mmin +5 -exec rm -rf {} + 2>
 # CUTOVER 2026-09-05 17:55 — mercapi leest queue uit Supabase.
 # Snelheids-monster: eerst mercapi voor alle m*-ids (verwacht 1-2s per item, dus 200 items in ~5 min)
 echo "--- fetch_detail_mercapi --all $MERCAPI_LIMIT (max 8 min, READ=supabase) ---"
-/usr/bin/timeout --kill-after=30s 480s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=dual "$VENV_PY" fetch_detail_mercapi.py --all "$MERCAPI_LIMIT" 2>&1 | tail -20
+/usr/bin/timeout --kill-after=30s 480s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail_mercapi.py --all "$MERCAPI_LIMIT" 2>&1 | tail -20
 
 # Recheck: bestaande deal-items opnieuw langs mercapi om verkochte kaarten te markeren (sold=1)
 echo "--- fetch_detail_mercapi --recheck $MERCAPI_RECHECK_LIMIT ${MERCAPI_RECHECK_MIN_AGE_HOURS}u (max 3 min, READ=supabase) ---"
-/usr/bin/timeout --kill-after=30s 180s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=dual "$VENV_PY" fetch_detail_mercapi.py --recheck "$MERCAPI_RECHECK_LIMIT" "$MERCAPI_RECHECK_MIN_AGE_HOURS" 2>&1 | tail -10
+/usr/bin/timeout --kill-after=30s 180s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail_mercapi.py --recheck "$MERCAPI_RECHECK_LIMIT" "$MERCAPI_RECHECK_MIN_AGE_HOURS" 2>&1 | tail -10
 
 # Rest via Buyee-scrape: PayPay (z*-ids) + eventuele mercapi-fails (m*-ids die faalden)
 # CUTOVER 2026-09-05 17:52 — fetch_detail leest queue uit Supabase (mercapi/proxy nog Pi).
 echo "--- fetch_detail --all $BUYEE_LIMIT (max 10 min, READ=supabase) ---"
-/usr/bin/timeout --kill-after=30s 600s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=dual "$VENV_PY" fetch_detail.py --all "$BUYEE_LIMIT" 2>&1 | tail -20
+/usr/bin/timeout --kill-after=30s 600s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail.py --all "$BUYEE_LIMIT" 2>&1 | tail -20
 
 # Backlog-check: proxy alleen inzetten bij grote inhaal (bijv. na een captcha-storm)
 # CUTOVER 2026-09-05 17:55 — leest count uit Supabase (Pi-fallback bij HTTP-fail).
@@ -75,7 +78,7 @@ except Exception:
 echo "--- detail-fetch backlog: $BACKLOG (activate proxy >= $PROXY_ACTIVATE_THRESHOLD, drain < $PROXY_DRAIN_THRESHOLD) ---"
 if [ "$BACKLOG" -ge "$PROXY_ACTIVATE_THRESHOLD" ]; then
   echo "--- fetch_detail_proxy --all $PROXY_LIMIT (via boilingproxies NL residential, max 8 min, READ=supabase) ---"
-  /usr/bin/timeout --kill-after=30s 480s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=dual "$VENV_PY" fetch_detail_proxy.py --all "$PROXY_LIMIT" 2>&1 | tail -20
+  /usr/bin/timeout --kill-after=30s 480s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail_proxy.py --all "$PROXY_LIMIT" 2>&1 | tail -20
 elif [ "$BACKLOG" -lt "$PROXY_DRAIN_THRESHOLD" ]; then
   echo "  [proxy] backlog laag, proxy-worker slaapt"
 else

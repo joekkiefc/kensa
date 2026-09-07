@@ -14,6 +14,10 @@ MERCAPI_LIMIT="${MERCAPI_LIMIT:-250}"
 MERCAPI_RECHECK_LIMIT="${MERCAPI_RECHECK_LIMIT:-100}"
 MERCAPI_RECHECK_MIN_AGE_HOURS="${MERCAPI_RECHECK_MIN_AGE_HOURS:-6}"
 
+# CUTOVER BATCH 4 — 2026-09-07 20:00: detail schrijft ALLEEN naar Supabase
+# (vangnet: sync_retry). raw_pages blijft sowieso Pi-lokaal (geen dispatcher).
+# Rollback: KENSA_WRITE_STORAGE hieronder terug naar =dual (1 min).
+
 cd "$KENSA_DIR" || exit 1
 
 exec 9>"$LOCK"
@@ -27,9 +31,9 @@ echo "======== $(date -Iseconds) kensa detail-mercapi start ========"
 
 # CUTOVER 2026-09-05 17:55 — mercapi leest queue uit Supabase.
 echo "--- fetch_detail_mercapi --all $MERCAPI_LIMIT (max 8 min, READ=supabase) ---"
-/usr/bin/timeout --kill-after=30s 480s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=dual "$VENV_PY" fetch_detail_mercapi.py --all "$MERCAPI_LIMIT" 2>&1 | tail -20
+/usr/bin/timeout --kill-after=30s 480s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail_mercapi.py --all "$MERCAPI_LIMIT" 2>&1 | tail -20
 
 echo "--- fetch_detail_mercapi --recheck $MERCAPI_RECHECK_LIMIT ${MERCAPI_RECHECK_MIN_AGE_HOURS}u (max 3 min, READ=supabase) ---"
-/usr/bin/timeout --kill-after=30s 180s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=dual "$VENV_PY" fetch_detail_mercapi.py --recheck "$MERCAPI_RECHECK_LIMIT" "$MERCAPI_RECHECK_MIN_AGE_HOURS" 2>&1 | tail -10
+/usr/bin/timeout --kill-after=30s 180s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail_mercapi.py --recheck "$MERCAPI_RECHECK_LIMIT" "$MERCAPI_RECHECK_MIN_AGE_HOURS" 2>&1 | tail -10
 
 echo "======== $(date -Iseconds) kensa detail-mercapi done ========"
