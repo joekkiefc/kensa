@@ -14,7 +14,10 @@ PARALLEL="${WORKER_CACHE_PARALLEL:-4}"
 # nog niet volledig Supabase-first zijn. pick_batch swap zonder analyze-migratie
 # leverde "no slab data" crashes op (item wel bekend op Supabase, slab-JSON alleen
 # op Pi). Volledige switch komt in gecombineerde sessie met detail+ebay reads.
-export KENSA_WRITE_STORAGE=dual
+# CUTOVER BATCH 2 — 2026-09-07 08:24: cache-worker schrijft ALLEEN naar Supabase (vangnet: sync_retry).
+# CM-bestellingen lopen NIET meer via deze worker maar via cm_bevoorrader.py (die schrijft dual).
+# ROLLBACK: zet onderstaande regel terug op =dual.
+export KENSA_WRITE_STORAGE=supabase
 # Fase F1 (dev-mode cutover 2026-09-05): reads via Supabase.
 # Als er problemen zijn: comment deze regel uit → worker leest weer Pi (rollback in 1 min).
 # Cutover 2e poging 2026-09-05 12:35 — na fix in pick_cache_batch_supabase:

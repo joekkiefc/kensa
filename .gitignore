@@ -47,3 +47,4 @@ cookies.json
 # Secrets worden centraal geladen uit /home/pi/.openclaw/secrets.json — nooit lokaal
 secrets.json
 .env
+cm_bevoorrader_administratie.json

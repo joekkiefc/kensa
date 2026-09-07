@@ -8,7 +8,7 @@ identiek return-dict shape, identieke mode-guards.
 
 Helpers hergebruikt uit `ebay_phase.py` (`_build_card_key`, `_price_cache_get`,
 `_cache_is_fresh`) en uit `enqueue_cardmarket.py` (`_looks_like_bundle`).
-`run_ebay_phase_v2` en `enqueue_cardmarket_if_possible_v2` worden gebruikt als
+`run_ebay_phase_v2` wordt gebruikt als
 al-gerefactorde v2-helpers. Kleine analyze.py-helpers (`_load_listing`,
 `_load_stored_slab_llm`, `_save_trap`, `_mark_slab_status`) zijn hier
 gekopieerd — DB-only, geen semantiek-drift. `_llm_enrich_slab` wordt lazy
@@ -39,7 +39,6 @@ from analyze_split.ebay_phase import (
 )
 from analyze_split.enqueue_cardmarket import (
     _looks_like_bundle,
-    enqueue_cardmarket_if_possible_v2,
 )
 
 
@@ -131,6 +130,13 @@ def _save_trap(
     confidence: float | None = None,
     card_id: str | None = None,
 ) -> None:
+    # Dispatcher: zelfde patroon als analyze.py (2026-09-07 gelijkgetrokken
+    # t.b.v. cutover). KENSA_WRITE_STORAGE=supabase -> alleen Supabase-native.
+    mode = os.environ.get("KENSA_WRITE_STORAGE", "sqlite")
+    if mode == "supabase":
+        from storage_supabase.analysis import save_trap as _sb_save_trap
+        _sb_save_trap(item_id, trap, result, confidence, card_id)
+        return
     ts = now_iso()
     conn = sqlite3.connect(str(DB_PATH))
     try:
@@ -144,6 +150,10 @@ def _save_trap(
         conn.commit()
     finally:
         conn.close()
+    if mode == "dual":
+        from storage_supabase.analysis import save_trap as _sb_save_trap
+        _sb_save_trap(item_id, trap, result, confidence, card_id)
+        return
     try:
         import supabase_sync as _sbs
         _sbs.sync_replace_analysis(item_id, trap, result, confidence, card_id, ts)
@@ -152,6 +162,12 @@ def _save_trap(
 
 
 def _mark_slab_status(item_id: str, status: str, card_key: str | None = None) -> None:
+    # Dispatcher: zelfde patroon als analyze.py (2026-09-07 gelijkgetrokken).
+    mode = os.environ.get("KENSA_WRITE_STORAGE", "sqlite")
+    if mode == "supabase":
+        from storage_supabase.listings import mark_slab_status as _sb_mark
+        _sb_mark(item_id, status, card_key)
+        return
     conn = sqlite3.connect(str(DB_PATH))
     try:
         if card_key is not None:
@@ -162,6 +178,10 @@ def _mark_slab_status(item_id: str, status: str, card_key: str | None = None) ->
         conn.commit()
     finally:
         conn.close()
+    if mode == "dual":
+        from storage_supabase.listings import mark_slab_status as _sb_mark
+        _sb_mark(item_id, status, card_key)
+        return
     try:
         import supabase_sync as _sbs
         _sbs.sync_slab_status(item_id, status, card_key)
@@ -325,7 +345,7 @@ def _score_post_process(
     desc: dict,
     verbose: bool,
 ) -> dict:
-    """Cert-sighting + ROI + trap-writes + Cardmarket-enqueue.
+    """Cert-sighting + ROI + trap-writes.
 
     Zelfde volgorde als origineel:
       1. cert_sighting (indien slab.cert)
@@ -333,7 +353,9 @@ def _score_post_process(
       3. _save_trap desc_match
       4. _save_trap ebay_prices (indien ebay.query)
       5. compute_roi + _save_trap roi (indien stats+price_eur+truthy)
-      6. enqueue_cardmarket_if_possible_v2
+
+    Cardmarket-enqueue zit hier sinds 2026-09-07 NIET meer in: die beslissing
+    heeft één eigenaar, cm_bevoorrader.py (cron */3). Workers scoren alleen.
 
     Returns dict `{"sighting", "roi_data"}` voor F6.
     """
@@ -356,9 +378,7 @@ def _score_post_process(
         if roi_data:
             _save_trap(item_id, "roi", roi_data, card_id=slab.get("cert"))
 
-    # Cardmarket-enqueue via v2-helper (interne guards kunnen zelf skippen)
-    enqueue_cardmarket_if_possible_v2(item_id, slab, llm_data, verbose, listing=listing)
-
+    # Cardmarket-enqueue is verhuisd naar cm_bevoorrader.py (één beslisser).
     return {"sighting": sighting, "roi_data": roi_data}
 
 

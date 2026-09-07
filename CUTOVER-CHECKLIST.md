@@ -2,7 +2,7 @@
 
 _Doel: alle bedrijfsdata van Kensa alleen nog in Supabase. De Pi houdt alleen
 transport-buffers (retry-wachtrij), tijdelijke caches en bestanden._
-_Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-06._
+_Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-07._
 
 ## Hoe we omzetten (de regels)
 
@@ -25,8 +25,8 @@ _Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-06._
 | # | Systeem (cron) | Status | Voorwaarden vóór omzetten | Omgezet op | 24u-oordeel |
 |---|---|---|---|---|---|
 | 1 | **OCR-worker** (`cron_worker_ocr.sh`) | 🔄 **LIVE Supabase-only sinds 2026-09-06 21:13** | geen — alle afnemers lezen Supabase | 2026-09-06 21:13 | _open — beoordelen 2026-09-07 ~21:15_ |
-| 2 | **Cache-worker** (`cron_worker_cache.sh`) | ⏳ wacht | CM-opdrachten gaan in supabase-stand ALLEEN naar Supabase → Windows CM-worker (leest Pi via `cm_queue_api`) ziet ze niet. Oplossen: `cm_queue_api` uit Supabase laten serveren, óf CM-enqueue tijdelijk dual houden | | |
-| 3 | **eBay-worker** (`cron_worker_ebay.sh`) | ⏳ wacht | zelfde CM-voorwaarde als #2. Pick/claim is al Supabase ✔ | | |
+| 2 | **Cache-worker** (`cron_worker_cache.sh`) | 🔄 **LIVE Supabase-only sinds 2026-09-07 08:21** | ✔ CM-blokkade opgelost: enqueue verhuisd naar `cm_bevoorrader.py` (schrijft dual); score_only raakt CM niet meer aan. Dispatchers in score_only gelijkgetrokken met analyze.py | 2026-09-07 08:21 | _beoordelen 2026-09-08 ~08:30_ |
+| 3 | **eBay-worker** (`cron_worker_ebay.sh`) | ⏳ ONTBLOKKEERD | CM-blokkade weg (bevoorrader). Pick/claim al Supabase ✔. Flippen ná 24u groen op #2 | | |
 | 4 | **Detail** (`cron_detail.sh`, `cron_detail_mercapi.sh`) | ⏳ wacht | `detail_stuck_detector.py` + `detail_dead_marker.py` lezen `detail_scraped_at` op de Pi. Zonder Pi-writes lijken ALLE z-items "nooit gedetaild" → dead-marker zet ze **dood in Supabase**. Beide scripts éérst op Supabase laten lezen. | | |
 | 5 | **Scraper** (`cron_scrape.sh`) | ⏳ wacht | `alerts.py` (Discord nieuwe-listing-alerts = thermometer) leest Pi; `dedup_listings.py` beslist op Pi-data. Beide éérst op Supabase. | | |
 | 6 | **Cardmarket-wachtrij + Windows-worker** | ⏳ LAATSTE (Tommy) | `cm_queue_api.py` serveert uit Pi-SQLite; 16k oude Pi-only rijen bewust niet gesynct (niet backfillen). Apart project. | | |
@@ -41,6 +41,7 @@ _Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-06._
 | `detail_dead_marker.py` | listings + retry-vlag | status=dead op beide | Supabase lezen — vóór #4 |
 | `stale_lock_cleanup.py` | — | locks op beide | Pi-deel weg bij einde |
 | `cm_queue_api.py` | cardmarket_queue | dual | Supabase serveren — #6 |
+| `cm_bevoorrader.py` | wachtrij-pending (Pi, CM-domein) | CM-wachtrij dual | bij #6: schrijfadres omzetten — dé enige plek |
 | `worker_claim.py` | listings (lock) | Pi-only | alleen terugval; verwijderen bij einde |
 | `llm_client.py` | llm_slab_cache | Pi-only (Gemini-antwoorden, 30d) | beslissing: tabel in Supabase of accepteren (kostencache, geen correctheid) |
 
@@ -79,3 +80,5 @@ _Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-06._
 - 2026-09-06 07:36 — netwerk-fixes (timeout-split, Session-pool, upsert merge-dup, backoff). Lees-fouten: 198 in de nacht, 2 daarna.
 - 2026-09-06 21:05 — vangnet op Supabase-only route (`_http.py`), end-to-end bewezen, 10 tests.
 - 2026-09-06 21:13 — **#1 OCR-worker → Supabase-only.** Schrijf-log + rapport live.
+- 2026-09-07 08:15 — **`cm_bevoorrader.py` live** (cron */3): één beslisser voor CM-prijzen (Tommy's architectuur-wens, simpele NL naam). Leest Supabase, wachtrij dual. Dempers: 40/ronde nieuwste-eerst, skip bij >150 pending, 24u herprobeer-administratie. CM-enqueue **verwijderd** uit score_only (workers scoren alleen nog).
+- 2026-09-07 08:21 — **#2 Cache-worker → Supabase-only.** Vooraf: `_save_trap`/`_mark_slab_status` in score_only kregen dezelfde KENSA_WRITE_STORAGE-dispatcher als analyze.py (hadden die niet — flip zou anders stil dual blijven voor traps).
