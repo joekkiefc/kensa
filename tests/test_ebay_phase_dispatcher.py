@@ -60,43 +60,31 @@ def test_cached_ebay_for_query_returns_none_for_unknown_query():
 
 
 def test_cached_ebay_for_query_shape_when_hit():
-    """Roep beide takken aan met een realistische query.
+    """Supabase-leesroute vindt een recente ebay_prices query terug (juiste shape).
 
-    We weten niet vooraf welke exacte query in de laatste 24u een hit geeft,
-    dus we testen shape-consistency: als Pi iets teruggeeft, moet Supabase
-    dat ook doen (of allebei None).
+    Pre-cutover vergeleek deze test Pi vs Supabase op symmetrie. Sinds batch 3
+    (2026-09-07) schrijft de eBay-worker alleen nog Supabase — de Pi-kant is
+    bevroren en per definitie asymmetrisch. Bron voor de recente query is nu
+    Supabase zelf (de productie-route).
     """
     from analyze_split.ebay_phase import _cached_ebay_for_query
-    # Pak een recente ebay_prices query uit Pi
-    import sqlite3
-    from pathlib import Path
-    conn = sqlite3.connect(str(Path("/home/pi/.openclaw/workspace/agents/kensa/kensa.db")))
-    conn.row_factory = sqlite3.Row
-    try:
-        row = conn.execute(
-            "SELECT result_json FROM analysis "
-            "WHERE trap='ebay_prices' AND created_at >= datetime('now', '-1 hour') "
-            "ORDER BY analysis_id DESC LIMIT 1"
-        ).fetchone()
-    finally:
-        conn.close()
-    if not row:
-        # Geen recente ebay_prices — skip (nog geen data om te testen)
-        return
-    try:
-        recent_query = json.loads(row["result_json"]).get("query")
-    except Exception:
-        return
+    from storage_supabase import _http
+    rows = _run_with_env("supabase", lambda: _http.get("analysis", "kensa", {
+        "trap": "eq.ebay_prices",
+        "select": "result_json",
+        "order": "analysis_id.desc",
+        "limit": "1",
+    }))
+    if not rows:
+        return  # nog geen data om te testen
+    data = rows[0].get("result_json")
+    recent_query = data.get("query") if isinstance(data, dict) else None
     if not recent_query:
         return
-    pi = _run_with_env(None, lambda: _cached_ebay_for_query(recent_query))
     sb = _run_with_env("supabase", lambda: _cached_ebay_for_query(recent_query))
-    # Beide None OF beide gevuld met zelfde query
-    assert (pi is None) == (sb is None), (
-        f"asymmetrie: pi={type(pi)}, sb={type(sb)} voor query {recent_query!r}"
-    )
-    if pi is not None and sb is not None:
-        assert pi.get("query") == sb.get("query") == recent_query
+    # De net-opgehaalde nieuwste rij ligt binnen het 24u-venster → moet hit zijn
+    assert sb is not None, f"supabase-route vindt recente query {recent_query!r} niet terug"
+    assert sb.get("query") == recent_query
 
 
 # ---------------------------------------------------------------------------
