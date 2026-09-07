@@ -1,7 +1,8 @@
 #!/bin/bash
 # Kensa worker 3/3: eBay-fetcher voor cache-misses. Pakt slab_status=ocr_done
 # zonder verse price_cache. Traag — 30-80s per item.
-# Elke 10 min. Kleine batch om binnen timeout te blijven.
+# Elke 4 min (sinds 2026-09-07, was */8 — fijnere rondes, zelfde request-volume/dag).
+# Kleine batch om binnen timeout te blijven.
 
 set -u
 KENSA_DIR="/home/pi/.openclaw/workspace/agents/kensa"
