@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sqlite3
 import subprocess
@@ -202,13 +203,35 @@ def build_report(hours: int) -> tuple[str, str]:
     return verdict, "\n".join(L)
 
 
+def _openclaw_bin() -> str:
+    # Cron heeft een kale PATH zonder nvm-bin; na een node-upgrade wijzigt dat pad ook nog.
+    from shutil import which
+    p = which("openclaw")
+    if p:
+        return p
+    import glob
+    import re
+
+    def _ver(path: str):
+        m = re.search(r"/node/v(\d+)\.(\d+)\.(\d+)/", path)
+        return tuple(int(x) for x in m.groups()) if m else (0, 0, 0)
+
+    cands = sorted(glob.glob("/home/pi/.nvm/versions/node/*/bin/openclaw"), key=_ver)
+    return cands[-1] if cands else "openclaw"
+
+
 def post_discord(text: str) -> bool:
     # openclaw routeert Discord; expliciete agent i.v.m. agents.ownership=explicit sinds 2026.9.2
+    _bin = _openclaw_bin()
+    # openclaw is een node-CLI: diens bin-dir (met `node`) voorop het PATH, cron mist nvm.
+    _env = dict(os.environ)
+    # NB: bewust géén realpath — de symlink-dir is de nvm bin-dir waar ook `node` staat.
+    _env["PATH"] = os.path.dirname(_bin) + os.pathsep + _env.get("PATH", "")
     for extra in (["--agent", "main"], []):
         try:
-            r = subprocess.run(["openclaw", "message", "send", "--channel", "discord",
+            r = subprocess.run([_bin, "message", "send", "--channel", "discord",
                                 "--target", ALERT_CHANNEL_ID, *extra, "-m", text],
-                               capture_output=True, text=True, timeout=60)
+                               capture_output=True, text=True, timeout=60, env=_env)
             if r.returncode == 0:
                 return True
             sys.stderr.write(f"[report] openclaw send rc={r.returncode}: {(r.stderr or r.stdout)[:200]}\n")

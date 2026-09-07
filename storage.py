@@ -340,7 +340,7 @@ def upsert_photos(item_id: str, photo_urls, db_path=None) -> int:
                     print(f"[dual] upsert_photos supabase-write faalt voor {item_id}: {e}", file=__import__('sys').stderr)
                     # Duurzame recovery: enqueue elke (url, index)-paar als upsert-POST.
                     if _sbs is not None:
-                        _rows = [{"item_id": item_id, "photo_url": u, "photo_index": idx}
+                        _rows = [{"item_id": item_id, "url_original": u, "photo_index": idx}
                                  for (u, idx) in new_pairs]
                         _sbs._enqueue_post_retry(
                             "photos", _rows,
