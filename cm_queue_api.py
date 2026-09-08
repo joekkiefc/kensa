@@ -10,14 +10,16 @@ Levert de 3 endpoints die de externe Windows CM-scraper nodig heeft:
 Draait op poort 8898 (was 8899 in oude kensa-webapp).
 Losgekoppeld van de Flask-dashboard — dashboard kan permanent uit.
 
-Storage: schrijft naar Pi SQLite + best-effort dual-write naar Supabase
-(zelfde pad als de oude webapp, zodat scraper-code onveranderd blijft).
+Storage: schrijft naar Pi SQLite + ROBUUSTE dual-write naar Supabase via
+storage_supabase._http (tijdelijke fouten -> sync_retry-vangnet, drainer speelt af).
+De Windows-worker praat onveranderd met deze Pi-API (#6 Supabase-brug, stap 1).
 """
 from __future__ import annotations
 
 import json
 import os
 import sqlite3
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -104,21 +106,30 @@ def api_cm_result():
     finally:
         conn.close()
 
-    # Dual-write naar Supabase (best-effort, faalt-stil — zelfde pad als oude webapp).
+    # Dual-write naar Supabase via het ROBUUSTE _http-pad: tijdelijke fouten
+    # (netwerk/5xx/429) parkeren automatisch in sync_retry en worden door de drainer
+    # afgespeeld — i.p.v. de oude fire-and-forget die stil verloren ging. Blijvende
+    # 4xx worden luid gelogd. Nog steeds dual: de Pi-UPDATE hierboven blijft de bron
+    # tot #6-stap-2 (/pending lezen uit Supabase).
     try:
-        import supabase_sync as _sbs  # type: ignore
-        if cm_url_for_sync:
+        from storage_supabase import _http
+        from storage_supabase.price_cache import upsert_cm as _sb_upsert_cm
+        # 1. Queue-resultaat: dezelfde 3 velden als de Pi-UPDATE. listings_json is
+        #    jsonb op Supabase -> de lijst zelf doorgeven, niet de JSON-string.
+        _sb_listings = None if error else (payload.get("listings") or [])
+        try:
+            _http.patch("cardmarket_queue", "kensa",
+                        {"item_id": f"eq.{item_id}"},
+                        {"fetched_at": now, "listings_json": _sb_listings, "error": error})
+        except Exception as e:
+            print(f"[cm-api] supabase queue-result blijvend mislukt {item_id}: {e}", file=sys.stderr)
+        # 2. price_cache CM-prijs — alleen bij succes met card_key.
+        if card_key_for_sync and not error:
             try:
-                _sbs.sync_cm_queue_result(item_id, cm_url_for_sync, now,
-                                          payload.get("listings") or [], error)
-            except Exception:
-                pass
-        if card_key_for_sync:
-            try:
-                _sbs.sync_price_cache_cm(card_key_for_sync, cm_url_for_sync,
-                                          payload.get("listings") or [], now)
-            except Exception:
-                pass
+                _sb_upsert_cm(card_key_for_sync, cm_url_for_sync,
+                              payload.get("listings") or [], now)
+            except Exception as e:
+                print(f"[cm-api] supabase price_cache blijvend mislukt {card_key_for_sync}: {e}", file=sys.stderr)
     except ImportError:
         pass
 
