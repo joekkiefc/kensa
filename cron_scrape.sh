@@ -9,9 +9,13 @@ KENSA_DIR="/home/pi/.openclaw/workspace/agents/kensa"
 VENV_PY="/home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3"
 LOCK="/tmp/kensa-scrape.lock"
 
-# Storage-migratie: scrape-writes (upsert_listing / mark_seen_in_search /
-# record_cert_sighting) direct naar Supabase. save_raw_page blijft LOKAAL op Pi.
-export KENSA_WRITE_STORAGE=dual
+# CUTOVER BATCH 5 — 2026-09-08: scrape-writes (upsert_listing / mark_seen_in_search /
+# record_cert_sighting / upsert_photos) ALLEEN naar Supabase (vangnet: sync_retry).
+# Voorwaarden gecheckt: alle vier hebben een supabase-pad; is_new komt correct uit
+# Supabase (alerts vuren goed, geen spam/stilte); dedup_listings is Supabase-native
+# (sb_ids_to_delete); alerts.py leest de watches-tabel (blijft Pi). save_raw_page blijft Pi.
+# Rollback: onderstaande regel terug naar =dual (1 min).
+export KENSA_WRITE_STORAGE=supabase
 
 cd "$KENSA_DIR" || exit 1
 

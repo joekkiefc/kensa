@@ -28,15 +28,15 @@ _Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-07._
 | 2 | **Cache-worker** (`cron_worker_cache.sh`) | 🔄 **LIVE Supabase-only sinds 2026-09-07 08:21** | ✔ CM-blokkade opgelost: enqueue verhuisd naar `cm_bevoorrader.py` (schrijft dual); score_only raakt CM niet meer aan. Dispatchers in score_only gelijkgetrokken met analyze.py | 2026-09-07 08:21 | _beoordelen 2026-09-08 ~08:30_ |
 | 3 | **eBay-worker** (`cron_worker_ebay.sh`) | 🔄 **LIVE Supabase-only sinds 2026-09-07 09:09** | ✔ CM-blokkade weg (bevoorrader). Pick/claim al Supabase. Verstopte valkuil gefixt: `_price_cache_upsert_ebay` kreeg de write-dispatcher (schreef altijd Pi, negeerde schakelaar) — 3 regressietests | 2026-09-07 09:09 | _beoordelen 2026-09-08 ~09:15_ |
 | 4 | **Detail** (`cron_detail.sh`, `cron_detail_mercapi.sh`) | 🔄 **LIVE Supabase-only sinds 2026-09-07 20:00** | ✔ `detail_stuck_detector.py` + `detail_dead_marker.py` geport naar Supabase (lezen+schrijven; extra_json is daar **jsonb**, dus key-filter i.p.v. LIKE en dicts i.p.v. strings; dead-PATCH server-side geconditioneerd op status=new + detail=null; retry op transiente netwerkfouten). 24u-gate bewust overgeslagen op besluit Tommy (batches 1-3 al 11-23u schoon). | 2026-09-07 20:00 | _beoordelen 2026-09-08 ~20:00_ |
-| 5 | **Scraper** (`cron_scrape.sh`) | ⏳ wacht | `alerts.py` (Discord nieuwe-listing-alerts = thermometer) leest Pi; `dedup_listings.py` beslist op Pi-data. Beide éérst op Supabase. | | |
+| 5 | **Scraper** (`cron_scrape.sh`) | 🔄 **LIVE Supabase-only sinds 2026-09-08 13:03** | ✔ voorwaarden bleken al veilig: upsert_listing/mark_seen_in_search/record_cert_sighting/upsert_photos hebben supabase-pad; `is_new` komt correct uit Supabase (alerts vuren goed); `dedup_listings.py` is al Supabase-native (`sb_ids_to_delete`); `alerts.py` leest de `alerts`-watches-tabel (blijft Pi, migreert niet). save_raw_page blijft Pi. | 2026-09-08 13:03 | _beoordelen 2026-09-09 ~13:00_ |
 | 6 | **Cardmarket-wachtrij + Windows-worker** | ⏳ LAATSTE (Tommy) | `cm_queue_api.py` serveert uit Pi-SQLite; 16k oude Pi-only rijen bewust niet gesynct (niet backfillen). Apart project. | | |
 
 ## Afhankelijkheden op de Pi (wie leest nog SQLite)
 
 | Script | Leest op Pi | Schrijft | Actie |
 |---|---|---|---|
-| `alerts.py` | listings + alerts | alerts (Pi-only) | ompunten naar Supabase (alerts-tabel bestaat al) — vóór #5 |
-| `dedup_listings.py` | listings (ranking per card_key) | delete op Pi én Supabase | ranking uit Supabase halen — vóór #5. NB: sinds #1 krijgen nieuwe items op de Pi geen card_key meer → dedup neemt ze op de Pi niet mee (veilige kant: minder verwijderen) |
+| `alerts.py` | ~~listings~~ + `alerts`-watches | Discord-melding | ✔ klaar: leest géén listings (item komt van caller), alleen de `alerts`-watches-tabel (blijft Pi, migreert niet). is_new uit Supabase. |
+| `dedup_listings.py` | `listings` (ranking per card_key) — **Pi én Supabase apart** | delete op Pi én Supabase | ✔ klaar: `sb_ids_to_delete()` leest+rankt Supabase-native; Pi-tak raakt alleen de bevroren mirror. NB: nieuwe Pi-items hebben geen card_key (veilige kant: minder verwijderen) |
 | `detail_stuck_detector.py` | ~~Pi~~ → **Supabase** (sinds 2026-09-07) | retry-vlag in Supabase extra_json | ✔ klaar |
 | `detail_dead_marker.py` | ~~Pi~~ → **Supabase** (sinds 2026-09-07) | status=dead op beide (Supabase leidend) | ✔ klaar |
 | `stale_lock_cleanup.py` | — | locks op beide | Pi-deel weg bij einde |
