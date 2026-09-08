@@ -162,14 +162,24 @@ def build_report(hours: int) -> tuple[str, str]:
             per_hour_lat[h].append(int(w.get("ms", 0)))
 
     queued = outcome.get("queued", 0)
-    failed = outcome.get("failed", 0)
+    # 409 / Postgres 23505 = unique-constraint "rij bestaat al" = idempotente her-write
+    # na een timeout-retry. Data staat er al één keer: GEEN fout, telt niet als
+    # 'blijvend mislukt' (was de false-positive ROOD van 8 sept). Wel apart tonen.
+    failed_recs = [w for w in writes if w.get("outcome") == "failed"]
+    benign_dups = [w for w in failed_recs
+                   if str(w.get("status")) == "409" or "23505" in (w.get("err") or "")]
+    failed = len(failed_recs) - len(benign_dups)
+    n_dups = len(benign_dups)
     queued_pct = (queued / n * 100) if n else 0.0
     bad_classes = {k: v for k, v in err_cls.items() if k in ("dns", "tls")}
 
     # verdict
     if failed > 0 or q["dead_new"] > 0 or queued_pct > 10 or q["pending_new"] > 100:
         verdict = "🔴 ROOD"
-    elif queued_pct >= 2 or bad_classes or q["pending_new"] > 20 or read_errs:
+    # lees-fouten: een handvol transiente TLS-resets/timeouts per dag is normaal op deze
+    # route (<0,1% van de reads) — pas ORANJE bij een echte storm (>20 in het venster),
+    # anders staat de monitor permanent oranje en gaat niemand er nog naar kijken.
+    elif queued_pct >= 2 or bad_classes or q["pending_new"] > 20 or len(read_errs) > 20:
         verdict = "🟠 ORANJE"
     else:
         verdict = "🟢 GROEN"
@@ -179,7 +189,8 @@ def build_report(hours: int) -> tuple[str, str]:
     if n == 0:
         L.append("• nog geen writes gelogd op de Supabase-only route in dit venster")
     else:
-        L.append(f"• writes: **{n}** → ok {outcome.get('ok',0)} · geparkeerd {queued} ({queued_pct:.1f}%) · blijvend mislukt {failed}")
+        L.append(f"• writes: **{n}** → ok {outcome.get('ok',0)} · geparkeerd {queued} ({queued_pct:.1f}%) · blijvend mislukt {failed}"
+                 + (f" · {n_dups} onschuldige duplicaten (rij bestond al, geen fout)" if n_dups else ""))
         L.append(f"• latency ok-writes: p50 {_pct(lat,0.5)} ms · p95 {_pct(lat,0.95)} ms · max {max(lat) if lat else 0} ms")
         if err_cls:
             L.append("• foutklassen: " + ", ".join(f"{k} {v}" for k, v in err_cls.most_common()))
@@ -227,7 +238,8 @@ def post_discord(text: str) -> bool:
     _env = dict(os.environ)
     # NB: bewust géén realpath — de symlink-dir is de nvm bin-dir waar ook `node` staat.
     _env["PATH"] = os.path.dirname(_bin) + os.pathsep + _env.get("PATH", "")
-    for extra in (["--agent", "main"], []):
+    # Plain send eerst (huidige CLI kent --agent niet meer); --agent alleen als fallback.
+    for extra in ([], ["--agent", "main"]):
         try:
             r = subprocess.run([_bin, "message", "send", "--channel", "discord",
                                 "--target", ALERT_CHANNEL_ID, *extra, "-m", text],

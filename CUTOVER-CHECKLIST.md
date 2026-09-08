@@ -59,14 +59,15 @@ _Levend document. Bijwerken bij elke stap. Laatste update: 2026-09-07._
 
 - [ ] alle 6 systemen 🟢 over 24u
 - [x] 82 oude `sync_retry`-rijen opgeruimd op 2026-09-06 21:24 (55× photos `photo_url` stale, 25× analysis 409-dup, 2× photos dup — backup in /home/pi/kensa-backups/)
-- [ ] ~350 historische `analysis[roi]`-misses (17 aug–2 sep) gebackfilld, andere traps met dezelfde per-dag-methode gecheckt
-- [ ] drift-monitor `scripts/sync-drift-check.py` verbreed naar álle tabellen (per-dag count) — nu alleen listings
-- [ ] `scripts/monitor-cutover-cache.py` gerepareerd (valt sinds update 2026.9.2 over `openclaw`-ownership) of verwijderd
-- [ ] beslissing Gemini-cache (`llm_slab_cache`) en `alerts` genomen en uitgevoerd
-- [ ] Windows CM-worker op Supabase (#6)
+- [x] ~~historische `analysis[roi]`-misses backfillen~~ — **VERVALT** (Tommy 2026-09-08: Kensa is snel-en-vluchtig, augustus-listings zijn verkocht/oninteressant; nooit meer voorstellen)
+- [x] **Monitoring geconsolideerd → `kensa_bewaker.py`** (2026-09-08, cron `0 */6` naar #algemeen). Vervangt: `sync-drift-check.py` (UIT — Pi bevroren na cutover, drift verwacht + backfill = risico), `monitor-cutover-cache.py` (UIT — transitie batch 2, klaar + kapot) en de losse 6u-cron van `report_supabase_writes.py` (logica hergebruikt). Vier secties: schrijven / doorstroom / workers / cardmarket, één verdict. Fixes: 409/23505-duplicaten tellen niet als fout; lees-hikjes pas ORANJE bij >20 per venster.
+- [x] beslissing Gemini-cache (`llm_slab_cache`) en `alerts`-watches: **blijven bewust op de Pi** (Tommy 2026-09-08) — kostencache resp. eigen watch-regels, geen bedrijfsdata
+- [~] Windows CM-worker op Supabase (#6): stap 1 klaar 2026-09-08 (CM-resultaat robuust naar Supabase via `cm_queue_api`); stap 2 gepland 2026-09-09 14:00 (`/pending` uit Supabase, bevoorrader Supabase-only). Windows-worker zelf blijft onaangeraakt (praat met de Pi-API = Supabase-brug).
 - [ ] `raw_pages` (HTML-cache 3d) en `sync_retry` (wachtrij) mogen op de Pi blijven — dat is geen bedrijfsdata
 
 ## Opruimen ná de cutover (code)
+
+_**GEPARKEERD** (Tommy 2026-09-08): pas oppakken als alles aantoonbaar een tijd stabiel loopt. Geen functionele wijziging, alleen vereenvoudiging._
 
 - [ ] dual/sqlite-takken uit `storage.py`, `analyze.py`, `analyze_split/*`, `storage.py` dispatchers
 - [ ] `supabase_sync.py` sync_* helpers (dual-route) → alleen retry/drain-deel bewaren
