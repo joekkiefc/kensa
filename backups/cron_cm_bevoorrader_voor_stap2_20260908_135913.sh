@@ -1,13 +1,11 @@
 #!/bin/bash
 # CM-bevoorrader — dé plek die beslist welke kaarten een Cardmarket-prijs nodig hebben.
 # Zie cm_bevoorrader.py. Cron: */3 * * * *
-# #6 stap 2 (2026-09-08): alles Supabase-only — kaart-data, wachtrij-stand én de
-# bestellingen zelf. De Windows-CM-worker krijgt z'n werk via cm_queue_api.py
-# (KENSA_STORAGE=supabase in de systemd-unit) óók uit Supabase.
-# Rollback = alle drie op `dual` (Pi + Supabase) + unit terug op dual.
+# Lezen uit Supabase (bron van waarheid); wachtrij dual (Pi + Supabase) want de
+# Windows-CM-worker leest de Pi tot de CM-migratie als laatste cutover-stap.
 export KENSA_READ_STORAGE=supabase
-export KENSA_WRITE_STORAGE=supabase
-export KENSA_STORAGE=supabase
+export KENSA_WRITE_STORAGE=dual
+export KENSA_STORAGE=dual
 
 cd /home/pi/.openclaw/workspace/agents/kensa || exit 1
 exec 9>/tmp/cm_bevoorrader.lock

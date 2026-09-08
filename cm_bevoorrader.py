@@ -16,18 +16,23 @@ ongewijzigd in analyze_split/enqueue_cardmarket.enqueue_cardmarket_if_possible_v
 De bevoorrader kiest alleen WIE er langs die regels gaat — één eigenaar.
 
 Draait via cron_cm_bevoorrader.sh met:
-  KENSA_READ_STORAGE=supabase  (kaart-data lezen uit Supabase = bron van waarheid)
-  KENSA_WRITE_STORAGE=dual     (wachtrij naar Pi én Supabase; de Windows-worker
-                                leest de Pi tot de CM-migratie als laatste stap)
+  KENSA_READ_STORAGE=supabase   (kaart-data én wachtrij-stand lezen uit Supabase)
+  KENSA_WRITE_STORAGE=supabase  (wachtrij ALLEEN naar Supabase — #6 stap 2,
+                                 2026-09-08; de Windows-worker krijgt z'n werk
+                                 via cm_queue_api.py óók uit Supabase)
+  Rollback = beide op `dual` (Pi + Supabase) zoals vóór stap 2.
 
 Dempers tegen overbelasting:
   - nieuwste kaarten eerst, maximaal MAX_BESTELLINGEN_PER_RUN per ronde
-  - hele ronde overslaan als de Pi-wachtrij > WACHTRIJ_MAX_PENDING staat
+  - hele ronde overslaan als de wachtrij > WACHTRIJ_MAX_PENDING staat
+  - bestellingen die > VERLOPEN_UREN pending staan (worker kwam er niet aan toe)
+    worden opgeruimd — dezelfde regel die cron_scrape.sh op de Pi-wachtrij toepaste
 """
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import sqlite3
 import sys
 from datetime import datetime, timedelta, timezone
@@ -44,9 +49,12 @@ from storage_supabase import _http  # noqa: E402
 KIJK_DAGEN = 3                  # hoe ver terug we naar actieve kaarten kijken
 CM_VERS_DAGEN = PRICE_CACHE_DAYS  # zelfde versheid als de rest van het systeem (3d)
 MAX_BESTELLINGEN_PER_RUN = 40   # dosering: nieuwste eerst, rest volgende ronde
-WACHTRIJ_MAX_PENDING = 150      # Pi-wachtrij voller dan dit? -> ronde overslaan
+WACHTRIJ_MAX_PENDING = 150      # wachtrij voller dan dit? -> ronde overslaan
 HERPROBEER_UREN = 24            # kaart zonder CM-match pas na 24u opnieuw proberen
+VERLOPEN_UREN = 5               # pending zonder resultaat ouder dan dit -> opruimen (was cron_scrape.sh)
 ADMINISTRATIE = HIER / "cm_bevoorrader_administratie.json"
+READ_STORAGE = os.environ.get("KENSA_READ_STORAGE", "sqlite")
+WRITE_STORAGE = os.environ.get("KENSA_WRITE_STORAGE", "sqlite")
 
 
 def _nu() -> datetime:
@@ -108,10 +116,10 @@ def haal_kaarten_met_verse_cm(card_keys: list[str]) -> set[str]:
 
 
 # ---------------------------------------------------------------------------
-# Stap 3 — wat staat er al in de wachtrij? (Pi = de live wachtrij tot CM-migratie)
+# Stap 3 — wat staat er al in de wachtrij? (Supabase = de live wachtrij sinds #6 stap 2)
 # ---------------------------------------------------------------------------
 
-def haal_wachtrij_stand() -> tuple[int, set[str]]:
+def _wachtrij_stand_pi() -> tuple[int, set[str]]:
     conn = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True, timeout=10)
     try:
         pending = conn.execute(
@@ -121,6 +129,66 @@ def haal_wachtrij_stand() -> tuple[int, set[str]]:
         return pending, keys
     finally:
         conn.close()
+
+
+def _wachtrij_stand_supabase() -> tuple[int, set[str]]:
+    """Alle pending rijen ophalen (gepagineerd; de wachtrij is per ontwerp klein)."""
+    pending = 0
+    keys: set[str] = set()
+    offset = 0
+    while True:
+        rows = _http.get("cardmarket_queue", "kensa", {
+            "fetched_at": "is.null",
+            "select": "item_id,card_key",
+            "order": "queued_at.asc",
+            "limit": "1000",
+            "offset": str(offset),
+        })
+        if not rows:
+            break
+        pending += len(rows)
+        keys.update(r["card_key"] for r in rows if r.get("card_key"))
+        offset += len(rows)
+        if len(rows) < 1000:
+            break
+    return pending, keys
+
+
+def haal_wachtrij_stand() -> tuple[int, set[str]]:
+    if READ_STORAGE == "supabase":
+        return _wachtrij_stand_supabase()
+    return _wachtrij_stand_pi()
+
+
+# ---------------------------------------------------------------------------
+# Stap 3b — verlopen bestellingen opruimen (Supabase-wachtrij)
+# ---------------------------------------------------------------------------
+
+def ruim_verlopen_bestellingen_op(dry_run: bool) -> int:
+    """Pending rijen zonder resultaat ouder dan VERLOPEN_UREN weghalen.
+
+    Letterlijke port van de cm-cleanup in cron_scrape.sh (die alleen de Pi-SQLite
+    raakt en sinds stap 2 dus niets meer doet). Zo'n rij bevat geen data — alleen
+    een bestelling waar de Windows-worker niet aan toekwam; is de kaart nog
+    relevant, dan bestelt de bevoorrader 'm gewoon opnieuw.
+    Alleen actief als de wachtrij in Supabase leeft (WRITE_STORAGE=supabase).
+    """
+    if WRITE_STORAGE != "supabase":
+        return 0
+    grens = (_nu() - timedelta(hours=VERLOPEN_UREN)).isoformat()
+    filters = {"fetched_at": "is.null", "error": "is.null", "queued_at": f"lt.{grens}"}
+    oud = _http.get("cardmarket_queue", "kensa", dict(filters, select="item_id", limit="1000"))
+    if not oud:
+        return 0
+    if dry_run:
+        _log(f"DRY-RUN zou {len(oud)} verlopen bestellingen (>{VERLOPEN_UREN}u pending) opruimen")
+        return 0
+    r = _http.delete("cardmarket_queue", "kensa", filters)
+    if r.status_code >= 400:
+        _log(f"FOUT opruimen verlopen bestellingen: HTTP {r.status_code} {r.text[:120]}")
+        return 0
+    _log(f"{len(oud)} verlopen bestellingen (>{VERLOPEN_UREN}u pending) opgeruimd")
+    return len(oud)
 
 
 # ---------------------------------------------------------------------------
@@ -172,6 +240,11 @@ def main() -> int:
     ap.add_argument("--dry-run", action="store_true", help="alleen tonen wat besteld zou worden")
     ap.add_argument("--limit", type=int, default=MAX_BESTELLINGEN_PER_RUN)
     args = ap.parse_args()
+
+    try:
+        ruim_verlopen_bestellingen_op(args.dry_run)
+    except Exception as e:
+        _log(f"FOUT bij opruimen verlopen bestellingen (ronde gaat door): {type(e).__name__}: {e}")
 
     pending, in_wachtrij = haal_wachtrij_stand()
     if pending > WACHTRIJ_MAX_PENDING:

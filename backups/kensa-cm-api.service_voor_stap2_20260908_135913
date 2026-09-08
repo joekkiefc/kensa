@@ -1,0 +1,19 @@
+[Unit]
+Description=Kensa CM-queue API (standalone, port 8898)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/.openclaw/workspace/agents/kensa
+Environment=KENSA_STORAGE=dual
+Environment=KENSA_CM_API_PORT=8898
+ExecStart=/home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3 -u cm_queue_api.py
+StandardOutput=append:/home/pi/.openclaw/workspace/agents/kensa/cm_queue_api.log
+StandardError=append:/home/pi/.openclaw/workspace/agents/kensa/cm_queue_api.log
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target
