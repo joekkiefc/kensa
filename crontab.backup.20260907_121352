@@ -1,0 +1,99 @@
+
+# OpenClaw Watchdog - check elke minuut
+*/1 * * * * /home/pi/.openclaw/watchdog-v2.sh
+
+
+# Tweewekelijkse Review - backup 30 min na OpenClaw cron (20:30 op donderdag)
+30 20 * * 4 /bin/bash /home/pi/.openclaw/workspace/agents/review/biweekly-review.sh >> /home/pi/.openclaw/workspace/agents/review/review.log 2>&1
+
+# Takumi — Mercari AR deal hunter (elke 8 min)
+# TAKUMI-STOP 2026-08-27: */9 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/takumi/run.sh >> /home/pi/.openclaw/workspace/agents/takumi/takumi.log 2>&1
+
+# Discord Community Stats — dagelijks rapport om 08:00
+0 8 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/discord-stats/stats.py >> /home/pi/.openclaw/workspace/agents/discord-stats/stats.log 2>&1
+
+# Memory Consolidatie — Jowi analyseert daily memory van alle agents (dagelijks 18:00)
+0 18 * * * /bin/bash /home/pi/.openclaw/workspace/agents/memory-consolidation/run.sh >> /home/pi/.openclaw/workspace/agents/memory-consolidation/consolidation.log 2>&1
+
+# OpenClaw Update Check — wekelijks maandag 09:00
+0 9 * * 1 /bin/bash /home/pi/.openclaw/workspace/agents/update-check/run.sh >> /home/pi/.openclaw/workspace/agents/update-check/update-check.log 2>&1
+
+# WooCommerce Order Watcher — elke 5 minuten
+*/5 * * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/orders/order-watcher.py >> /home/pi/.openclaw/workspace/agents/orders/orders.log 2>&1
+
+# Sentinel — Self-healing monitor (elke 10 min)
+*/10 * * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/sentinel/sentinel_loop.py >> /home/pi/.openclaw/workspace/agents/sentinel/data/sentinel.log 2>&1
+0 23 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/dashboard/token-dashboard.py >> /home/pi/.openclaw/workspace/agents/dashboard/dashboard.log 2>&1
+0 4 * * * /bin/bash /home/pi/.openclaw/backup.sh >> /home/pi/.openclaw/backup.log 2>&1
+
+# Collect data (na scraper runs van 06:00 en 14:00)
+# Dagverslag (08:00 en 18:00)
+# Weekverslag (08:15 en 18:15)
+# Maandverslag (08:30 en 18:30)
+0 * * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/whatnot/whatnot-agenda.py >> /home/pi/.openclaw/workspace/agents/whatnot/data/agenda-cron.log 2>&1
+
+# Competitor Scanner — dagelijks 03:00 (script bepaalt zelf welke producten aan de beurt zijn)
+0 3 * * * /home/pi/.openclaw/workspace/agents/webshop/.venv/bin/python3 /home/pi/.openclaw/workspace/agents/webshop/competitor-scanner.py >> /home/pi/.openclaw/workspace/agents/webshop/data/scanner.log 2>&1
+
+
+# Quality Checker — dagelijkse kwaliteitscontrole van alle agents (10:00 CET)
+0 10 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/quality-checker/quality-checker.py >> /home/pi/.openclaw/workspace/agents/quality-checker/quality-checker.log 2>&1
+5 8 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/instagram-stats/stats.py >> /home/pi/.openclaw/workspace/agents/instagram-stats/stats.log 2>&1
+
+# Cleanup — dagelijks oude data en grote logs opruimen (03:30)
+30 3 * * * /bin/bash /home/pi/.openclaw/workspace/agents/cleanup.sh >> /home/pi/.openclaw/workspace/agents/cleanup.log 2>&1
+
+# Whatnot Live Monitor — continu draaien (herstart na reboot)
+@reboot sleep 30 && /usr/bin/python3 -u /home/pi/.openclaw/workspace/agents/whatnot/go-live.py --monitor >> /home/pi/.openclaw/workspace/agents/whatnot/data/go-live.log 2>&1 &
+
+# Failover Bot — noodswitch, draait onafhankelijk van OpenClaw
+@reboot sleep 45 && setsid /home/pi/.openclaw/workspace/agents/cardladder/.venv/bin/python3 /home/pi/.openclaw/workspace/agents/failover/failover-bot.py > /tmp/failover-bot.log 2>&1 &
+
+# WhatsApp Twilio Sandbox Keep-Alive — elke 48 uur
+# TAKUMI-STOP 2026-08-27: 0 10 */2 * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/takumi/notify-whatsapp.py --keepalive >> /home/pi/.openclaw/workspace/agents/takumi/takumi.log 2>&1
+
+# Whatnot Agenda Cleanup — dagelijks 09:00 (orphan-detectie + delete)
+0 9 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/whatnot/whatnot-agenda.py --cleanup >> /home/pi/.openclaw/workspace/agents/whatnot/data/agenda-cleanup.log 2>&1
+
+# Sales Manager v2 — dagelijks prijzenrapport 09:00
+0 9 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/sales-manager/report.py >> /home/pi/.openclaw/workspace/agents/sales-manager/sales-manager.log 2>&1
+
+
+# System monitor — RAM/disk melding in #algemeen (2x per dag)
+0 9,21 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/system-monitor/check.py >> /home/pi/.openclaw/workspace/agents/system-monitor/monitor.log 2>&1
+KENSA_STORAGE=dual
+# Kensa — pipeline gesplitst in 3 aparte crons (elk eigen flock, parallel toegestaan)
+*/15 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_scrape.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_scrape.log 2>&1
+*/10 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_detail.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_detail.log 2>&1
+# Kensa mercari-only detail (snelle path — geen Buyee scraping)
+*/3 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_detail_mercapi.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_detail_mercapi.log 2>&1
+# [uitgezet 2026-08-01] vervangen door 3-worker pipeline (worker_ocr/cache/ebay)
+# */10 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_analyze.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_analyze.log 2>&1
+*/2 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_worker_ocr.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_worker_ocr.log 2>&1
+* * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_worker_cache.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_worker_cache.log 2>&1
+*/8 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_worker_ebay.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_worker_ebay.log 2>&1
+0 4 * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_cleanup_raw_pages.sh >> /home/pi/.openclaw/workspace/agents/kensa/pipeline_cleanup.log 2>&1
+* * * * * /home/pi/.openclaw/cpu-profile.sh
+# CM-queue monitor — meld in #algemeen bij >15 pending items
+*/10 * * * * /usr/bin/python3 /home/pi/.openclaw/workspace/scripts/monitor-cm-queue.py >> /home/pi/.openclaw/workspace/agents/kensa/cm_monitor.log 2>&1
+
+# Kensa sync-retry drain — probeert gefaalde Supabase writes elke 2 min opnieuw
+*/2 * * * * /home/pi/.openclaw/workspace/agents/kensa/sync_retry_drain.py --limit 200 >> /home/pi/.openclaw/workspace/agents/kensa/sync_retry_drain.cron.log 2>&1
+# Kensa sync-drift check — herstelt stille Pi↔Supabase drift binnen 1 uur
+5 * * * * /home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3 /home/pi/.openclaw/workspace/scripts/sync-drift-check.py >> /home/pi/.openclaw/workspace/agents/kensa/sync_drift.cron.log 2>&1
+
+30 3 * * * /bin/bash -c 'cd /home/pi/.openclaw/workspace/agents/kensa && /home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3 dedup_listings.py --apply >> /home/pi/.openclaw/workspace/agents/kensa/dedup_listings.cron.log 2>&1'
+# Preventie: stale-lock cleanup elke 30 min (voorkomt opbouw van worker-crash locks)
+*/30 * * * * /home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3 /home/pi/.openclaw/workspace/agents/kensa/stale_lock_cleanup.py >> /home/pi/.openclaw/workspace/agents/kensa/stale_lock_cleanup.log 2>&1
+# Preventie: z-item retry-then-dead elke 15 min
+*/15 * * * * /home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3 /home/pi/.openclaw/workspace/agents/kensa/detail_dead_marker.py >> /home/pi/.openclaw/workspace/agents/kensa/detail_dead_marker.log 2>&1
+# Preventie: stuck-detector elke uur (zet retry-flag op oude niet-verwerkte z-items)
+11 * * * * /home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3 /home/pi/.openclaw/workspace/agents/kensa/detail_stuck_detector.py >> /home/pi/.openclaw/workspace/agents/kensa/detail_stuck_detector.log 2>&1
+0 */12 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/scripts/report-supabase-reads.py >> /home/pi/.openclaw/workspace/agents/kensa/report_supabase_reads.log 2>&1
+0 */12 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/scripts/monitor-cutover-cache.py >> /home/pi/.openclaw/workspace/agents/kensa/monitor_cutover_cache.log 2>&1
+# Kensa eigen repo backup (5 min na hoofd-backup)
+5 4 * * * /bin/bash /home/pi/.openclaw/kensa-backup.sh >> /home/pi/.openclaw/kensa-backup.log 2>&1
+# Kensa cutover-monitor: 6-uurs rapport Supabase-only writes naar #algemeen (batch 1 sinds 2026-09-06 21:13)
+0 */6 * * * /usr/bin/python3 /home/pi/.openclaw/workspace/agents/kensa/report_supabase_writes.py --hours 6 --discord --quiet >> /home/pi/.openclaw/workspace/agents/kensa/report_supabase_writes.log 2>&1
+# Kensa CM-bevoorrader — één beslisser voor Cardmarket-prijzen (vervangt enqueue in cache/eBay-worker)
+*/3 * * * * /bin/bash /home/pi/.openclaw/workspace/agents/kensa/cron_cm_bevoorrader.sh >> /home/pi/.openclaw/workspace/agents/kensa/cm_bevoorrader.log 2>&1
