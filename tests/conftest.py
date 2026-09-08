@@ -17,6 +17,18 @@ FIXTURE_ROOT = KENSA_DIR
 sys.path.insert(0, str(KENSA_DIR))
 
 
+@pytest.fixture(autouse=True)
+def _geen_productie_opslag_via_env(monkeypatch):
+    """Slot: de KENSA_*_STORAGE-schakelaars mogen de tests nooit naar de échte
+    Supabase-tabellen sturen. Op 2026-09-08 draaide de suite met
+    KENSA_WRITE_STORAGE=supabase geëxporteerd — de SQLite-storage-tests
+    schreven toen m1..m7 in kensa.listings (productie). Tests die Supabase
+    nodig hebben, gebruiken expliciet de test_*-tabellen of zetten de
+    variabele zelf via monkeypatch (dat gebeurt ná deze fixture)."""
+    for var in ("KENSA_STORAGE", "KENSA_READ_STORAGE", "KENSA_WRITE_STORAGE"):
+        monkeypatch.delenv(var, raising=False)
+
+
 def _load_baseline(subdir: str) -> list[dict]:
     path = FIXTURE_ROOT / subdir / "baseline.json"
     if not path.exists():
