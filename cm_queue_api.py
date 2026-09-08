@@ -121,6 +121,15 @@ def _sb_result(item_id: str, error: str | None, listings: list, now: str) -> Non
         return
     card_key = rows[0].get("card_key")
     cm_url = rows[0].get("url")
+    # Zelfde CM-pagina = zelfde resultaat: wachtende rijen met dezelfde URL
+    # meteen invullen, dan haalt de Windows-worker ze niet nóg een keer op.
+    try:
+        n_filled = _sb_fill_same_url(cm_url, item_id, listings, now)
+    except Exception as e:
+        n_filled = 0
+        _log(f"same-url-vulling voor {item_id} mislukt (worker haalt ze zelf op): {e!r}")
+    if n_filled:
+        _log(f"queue-result {item_id}: {n_filled} wachtende rij(en) met dezelfde URL direct ingevuld")
     if not card_key:
         return
     try:
@@ -128,6 +137,40 @@ def _sb_result(item_id: str, error: str | None, listings: list, now: str) -> Non
         upsert_cm(card_key, cm_url, listings, now)
     except Exception as e:
         _log(f"price_cache {card_key} BLIJVEND mislukt: {e!r}")
+
+
+def _sb_fill_same_url(url: str | None, done_item_id: str, listings: list, now: str,
+                      schema: str = SB_SCHEMA, table: str = SB_TABLE) -> int:
+    """Vul alle nog-wachtende queue-rijen (fetched_at leeg) met dezelfde
+    Cardmarket-URL direct in met dit resultaat, en werk price_cache bij voor
+    hun card_keys — precies wat er gebeurd zou zijn als de worker ze zelf had
+    opgehaald. Alleen bij een écht resultaat (niet-lege listings): een lege
+    lijst kan een mislukte scrape zijn en mag niet 'plakken' op andere kaarten.
+
+    Retourneert het aantal ingevulde rijen (0 bij niks te doen of storing;
+    de worker haalt ze dan gewoon zelf op — nooit erger dan vroeger).
+    """
+    from storage_supabase import _http
+    if not url or not listings:
+        return 0
+    r = _http.patch(table, schema,
+                    {"url": f"eq.{url}", "fetched_at": "is.null", "item_id": f"neq.{done_item_id}"},
+                    {"fetched_at": now, "listings_json": listings, "error": None})
+    if r.status_code != 200:
+        return 0
+    try:
+        rows = r.json() or []
+    except Exception:
+        return 0
+    keys = sorted({row.get("card_key") for row in rows if row.get("card_key")})
+    if keys:
+        from storage_supabase.price_cache import upsert_cm
+        for key in keys:
+            try:
+                upsert_cm(key, url, listings, now, schema=schema)
+            except Exception as e:
+                _log(f"price_cache {key} (same-url-vulling) mislukt: {e!r}")
+    return len(rows)
 
 
 def _sb_enqueue(item_id: str, url: str, grade: str | None, card_key: str | None) -> None:
