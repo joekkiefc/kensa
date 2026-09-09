@@ -110,13 +110,49 @@ def _score_pick(row: dict, slab_tokens: set[str]) -> int:
     return 2 * len(db_tokens & slab_tokens)
 
 
-def lookup(pokemon_name: str, card_number: str, set_hint: str | None = None) -> dict | None:
+# --- set-validatie (2026-09-09, Tommy): de set moet KLOPPEN, geen tiebreak ---------
+# Catalogus schrijft set_number compact ('swshp', 'smp', 's8b'); labels schrijven
+# 'S-P', 'SM-P', 'S8a-P'. Promo-subsets (S8a-P, SV1a-P) vallen in de catalogus onder
+# de familie-promo ('swshp', 'svp').
+_SET_ALIAS = {"sp": "swshp", "svp": "svp", "smp": "smp", "xyp": "xyp", "mp": "mp", "bwp": "bwp", "dpp": "dpp"}
+_RARITY_CODES = {"CSR", "SSR", "SAR", "SR", "AR", "UR", "HR", "CHR", "RR", "RRR", "SIR", "ACE", "IR", "PR", "MUR"}
+_SETCODE_RE = _re.compile(r"^[A-Z]{1,3}\d{0,2}[A-Z]?(?:-P)?$")
+_GENERIEKE_TOKENS = {"pokemon", "jp", "en", "japanese", "english", "japan", "card", "game", "the", "of", "and",
+                     "promo", "promos", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"}
+
+
+def _norm_set(s) -> str:
+    return _re.sub(r"[^a-z0-9]", "", str(s or "").lower())
+
+
+def geldige_setcode(s) -> str | None:
+    """'SV-P' -> 'SV-P'; rommel ('2023POKEMONSVGJP', '10b') en rarity-codes ('CSR') -> None."""
+    s = _re.sub(r"[^A-Za-z0-9\-]", "", str(s or "")).upper()
+    if not s or s in _RARITY_CODES or not _SETCODE_RE.match(s):
+        return None
+    return s
+
+
+def _aanvaarde_setnummers(set_code: str) -> set[str]:
+    code = _norm_set(set_code)
+    ok = {code, _SET_ALIAS.get(code, code)}
+    m = _re.match(r"^(sv|sm|xy|bw|dp|s|m)\d*[a-z]?p$", code)   # promo-subset → familie
+    if m:
+        fam = m.group(1) + "p"
+        ok.add(_SET_ALIAS.get(fam, fam))
+    return ok
+
+
+def lookup(pokemon_name: str, card_number: str, set_hint: str | None = None,
+           set_code: str | None = None) -> dict | None:
     """Zoek de Cardmarket-URL voor deze kaart. pokemon_name lowercase, card_number str.
 
-    Bij meerdere kandidaten wordt tie-break gedaan op set-info uit `set_hint`
-    (bv "2024 POKEMON SV8 JP"). Tokens uit set_hint worden gematcht tegen
-    set_number/set_name/era van elke kandidaat; hoogste score wint.
-    Bij gelijke score of geen set_hint: eerste rij (huidig gedrag).
+    Set-validatie (2026-09-09): als `set_code` (bv 'SV-P') of een betekenisvolle
+    `set_hint` (bv 'VMAX Climax') bekend is, MOET de kandidaat daarbij passen —
+    anders None. Reden: pokemon+nummer is niet uniek (Pikachu-promo's!) en de
+    leading-zero-fallback matchte kaarten uit totaal andere sets (Golden Box
+    Pikachu #005 -> Sapporo's Pikachu SM-P5). Liever geen match dan een verkeerde.
+    Zonder set-info: oud gedrag (eerste kandidaat), ongewijzigd.
 
     Probeert eerst met leading zeros ('068'), dan zonder ('68'). Supabase-data is
     inconsistent op dit punt.
@@ -145,10 +181,19 @@ def lookup(pokemon_name: str, card_number: str, set_hint: str | None = None) -> 
     picks = [r for r in rows if (r.get("language") or "").lower() == "japanese" and r.get("mint")]
     if not picks:
         return None
+    # Set-code uit het nummer-suffix ('218/SV-P') als die niet apart is meegegeven.
+    if not set_code and "/" in card_number:
+        set_code = geldige_setcode(card_number.split("/", 1)[1])
+    set_code = geldige_setcode(set_code) if set_code else None
+    slab_tokens = (_set_tokens(set_hint) if set_hint else set()) - _GENERIEKE_TOKENS
+    # HARDE set-check: bij set-info moet de kandidaat passen, anders geen match.
+    if set_code or slab_tokens:
+        ok_nrs = _aanvaarde_setnummers(set_code) if set_code else set()
+        picks = [r for r in picks if _norm_set(r.get("set_number")) in ok_nrs
+                 or (slab_tokens and _score_pick(r, slab_tokens) > 0)]
+        if not picks:
+            return None
     # Tie-break op set-hint: score elke pick op hoeveel set-tokens overeenkomen.
-    slab_tokens = _set_tokens(set_hint) if set_hint else set()
-    # Verwijder generieke ruis-tokens die overal voorkomen
-    slab_tokens -= {"pokemon", "jp", "en", "japanese", "english", "2024", "2025", "2023", "2022", "2021", "2020"}
     if slab_tokens:
         scored = sorted(picks, key=lambda r: (-_score_pick(r, slab_tokens), picks.index(r)))
         p = scored[0]

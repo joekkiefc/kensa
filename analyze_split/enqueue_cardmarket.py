@@ -171,8 +171,14 @@ def _enq_lookup_and_grade(
     onbepaald). Beide velden gevuld → orkestrator kan verder naar F4/F5.
     """
     # (B9) — cm_lookup call — kan exception gooien
+    # 2026-09-09 (Tommy): set-info standaard meegeven → harde set-check in lookup.
+    # pokemon+nummer is niet uniek (Pikachu-promo's); zonder set matchte de
+    # lookup kaarten uit andere sets. Geen set-info → lookup gedraagt zich als voorheen.
+    ld = llm_data or {}
+    set_code = ld.get("set_code") or slab.get("set_code")
+    set_hint = ld.get("set_name") or slab.get("set_name")
     try:
-        hit = cm_lookup(pokemon, number)
+        hit = cm_lookup(pokemon, number, set_hint=set_hint, set_code=set_code)
     except Exception as e:
         if verbose:
             print(f"  [cm] supabase-lookup fout: {e}", file=sys.stderr)

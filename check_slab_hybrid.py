@@ -32,6 +32,7 @@ def _normalize_multimodal(r: dict) -> dict:
         "grade_text": None,
         "card_name": r.get("name"),
         "set_name": r.get("set_name"),
+        "set_code": r.get("set_code"),   # 2026-09-09: bewaard voor de set-check in cm_lookup
         "number": r.get("number"),
         "year": r.get("year"),
         "found_psa": True if r.get("grade") else False,
