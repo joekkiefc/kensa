@@ -118,7 +118,10 @@ _SET_ALIAS = {"sp": "swshp", "svp": "svp", "smp": "smp", "xyp": "xyp", "mp": "mp
 _RARITY_CODES = {"CSR", "SSR", "SAR", "SR", "AR", "UR", "HR", "CHR", "RR", "RRR", "SIR", "ACE", "IR", "PR", "MUR"}
 _SETCODE_RE = _re.compile(r"^[A-Z]{1,3}\d{0,2}[A-Z]?(?:-P)?$")
 _GENERIEKE_TOKENS = {"pokemon", "jp", "en", "japanese", "english", "japan", "card", "game", "the", "of", "and",
-                     "promo", "promos", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"}
+                     "promo", "promos", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026",
+                     # subtype/rarity-woorden zijn géén set-bewijs ('Terastal Fest ex' ≠ 'mega dream ex')
+                     "ex", "v", "gx", "vmax", "vstar", "sar", "ar", "sr", "ur", "hr", "chr", "break", "holo",
+                     "gem", "mt", "psa", "mint"}
 
 
 def _norm_set(s) -> str:
@@ -144,7 +147,7 @@ def _aanvaarde_setnummers(set_code: str) -> set[str]:
 
 
 def lookup(pokemon_name: str, card_number: str, set_hint: str | None = None,
-           set_code: str | None = None) -> dict | None:
+           set_code: str | None = None, soft_hint: str | None = None) -> dict | None:
     """Zoek de Cardmarket-URL voor deze kaart. pokemon_name lowercase, card_number str.
 
     Set-validatie (2026-09-09): als `set_code` (bv 'SV-P') of een betekenisvolle
@@ -152,6 +155,9 @@ def lookup(pokemon_name: str, card_number: str, set_hint: str | None = None,
     anders None. Reden: pokemon+nummer is niet uniek (Pikachu-promo's!) en de
     leading-zero-fallback matchte kaarten uit totaal andere sets (Golden Box
     Pikachu #005 -> Sapporo's Pikachu SM-P5). Liever geen match dan een verkeerde.
+    `soft_hint` (bv de letterlijke labeltekst 'TAG TEAM GX ALL STARS'): mag een
+    kandidaat alleen BEVESTIGEN (voorrang), nooit afkeuren — labeltekst bevat vaak
+    alleen de kaartnaam, dus ontbreken van set-woorden zegt niks.
     Zonder set-info: oud gedrag (eerste kandidaat), ongewijzigd.
 
     Probeert eerst met leading zeros ('068'), dan zonder ('68'). Supabase-data is
@@ -193,6 +199,12 @@ def lookup(pokemon_name: str, card_number: str, set_hint: str | None = None,
                  or (slab_tokens and _score_pick(r, slab_tokens) > 0)]
         if not picks:
             return None
+    elif soft_hint:
+        # accept-only: kandidaten die de labeltekst bevestigen gaan vóór; niks past → oud gedrag
+        soft = _set_tokens(soft_hint) - _GENERIEKE_TOKENS
+        bevestigd = [r for r in picks if soft and _score_pick(r, soft) > 0]
+        if bevestigd:
+            picks = bevestigd
     # Tie-break op set-hint: score elke pick op hoeveel set-tokens overeenkomen.
     if slab_tokens:
         scored = sorted(picks, key=lambda r: (-_score_pick(r, slab_tokens), picks.index(r)))

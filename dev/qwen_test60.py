@@ -29,12 +29,18 @@ from query_builder import build_query
 from supabase_client import lookup as cm_lookup
 from qwen_backtest import norm_grade, norm_number, cert_digits
 
-OUT = DEV / "qwen_test60"; OUT.mkdir(exist_ok=True)
+OUT = DEV / os.environ.get("T60_OUT", "qwen_test60"); OUT.mkdir(exist_ok=True)
+FILTER_POKEMON = os.environ.get("T60_POKEMON")            # bv 'pikachu' → alleen die kaarten
+UITSLUITEN = set()
+for _d in os.environ.get("T60_EXCLUDE", "").split(","):    # eerdere sets overslaan
+    _f = DEV / _d / "set.json"
+    if _d and _f.exists():
+        UITSLUITEN |= {r["item_id"] for r in json.loads(_f.read_text())}
 SET_F, READS_F, TRUTH_F = OUT / "set.json", OUT / "reads.json", OUT / "truth.json"
 ENDPOINT = "http://100.125.116.37:1234/v1/chat/completions"
 MODEL = "qwen2.5-vl-7b-instruct"
 UA = {"User-Agent": "Mozilla/5.0"}
-N = 60
+N = int(os.environ.get("T60_N", "60"))
 PSA_MAX = int(os.environ.get("PSA_MAX", "10"))
 PSA_PAUZE = float(os.environ.get("PSA_PAUZE", "15"))
 
@@ -157,6 +163,8 @@ def bouw():
         if not r["foto"].get("url") or not r["gemini"].get("card_name"):
             continue
         if not pokemon_uit(r["gemini"]["card_name"]):       # geen trainer/onbekend
+            continue
+        if iid in UITSLUITEN or (FILTER_POKEMON and pokemon_uit(r["gemini"]["card_name"]) != FILTER_POKEMON):
             continue
         gezien.add(iid); kand.append(r)
     stap = max(1, len(kand) // N)
@@ -394,7 +402,8 @@ def sheets():
 import supabase_client as _sc
 
 _GENERIEK = {"pokemon", "japanese", "jp", "japan", "en", "english", "card", "game", "the", "of", "and",
-             "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"}
+             "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026",
+             "ex", "v", "gx", "vmax", "vstar", "sar", "ar", "sr", "ur", "hr", "chr", "break", "holo", "gem", "mt", "psa", "mint", "promo", "promos"}
 
 
 # label-code → catalogus set_number (catalogus schrijft S-P als 'swshp', SM-P als 'smp')
@@ -411,7 +420,7 @@ def setcode_uit_tekst(tekst) -> str | None:
     return f"{m.group(1).lower()}p" if m else None
 
 
-def cm_strict(pokemon, num, set_code=None, set_tekst=None):
+def cm_strict(pokemon, num, set_code=None, set_tekst=None, zacht=None):
     """Zelfde kandidaten als cm_lookup, maar de set MOET passen.
     Return (url, status): status ∈ ok / afgekeurd (kandidaat maar set klopt niet) / geen / ongecontroleerd."""
     if not pokemon or not num:
@@ -429,6 +438,10 @@ def cm_strict(pokemon, num, set_code=None, set_tekst=None):
     code = norm_set(set_code) if set_code else None
     toks = {t for t in re.split(r"[^a-z0-9]+", str(set_tekst or "").lower()) if t} - _GENERIEK
     if not code and not toks:
+        soft = {t for t in re.split(r"[^a-z0-9]+", str(zacht or "").lower()) if t} - _GENERIEK
+        bevestigd = [r for r in picks if soft and _sc._score_pick(r, soft) > 0]
+        if bevestigd:
+            return bevestigd[0]["url"], "ok"          # label-tekst bevestigt (accept-only)
         return picks[0]["url"], "ongecontroleerd"
     aanvaard = set()
     if code:
@@ -457,7 +470,7 @@ def uitkomst5(label_name, name, number, grade, set_code, set_name, jaar, psa_set
     code = geldige_setcode(num.split("/", 1)[1]) if "/" in num else geldige_setcode(set_code)
     if not code and psa_set:
         code = setcode_uit_tekst(psa_set)
-    url, status = cm_strict(pokemon, num, code, set_name or psa_set)
+    url, status = cm_strict(pokemon, num, code, set_name or psa_set, zacht=label_name)
     return q, url, status, pokemon, num
 
 
@@ -495,6 +508,20 @@ def rapport5():
     for l in regels: print(l)
 
 
+def kort():
+    gekozen = json.loads(SET_F.read_text()); reads = json.loads(READS_F.read_text())
+    def slug(u): return u.split("/Singles/")[-1].split("?")[0][:34] if u else "—"
+    same = ok_q = ok_g = 0
+    print(f"{'#':>2} {'nr':9s} {'Qwen set':9s} {'Qwen → CM':46s} {'Gemini set':22s} {'Gemini → CM':46s}")
+    for i, r in enumerate(gekozen, 1):
+        q = reads.get(r["item_id"], {}); g = r["gemini"]
+        _, cq, sq, pq, nq = uitkomst5(q.get("label_name"), q.get("name"), q.get("number"), q.get("grade"), q.get("set_code"), q.get("set_name"), q.get("year"))
+        _, cg, sg, pg, ng = uitkomst5(None, g.get("card_name"), g.get("number"), g.get("grade"), None, g.get("set_name"), None)
+        same += (cq == cg and cq is not None); ok_q += sq == "ok"; ok_g += sg == "ok"
+        print(f"{i:>2} {nq[:9]:9s} {str(q.get('set_code') or '—')[:9]:9s} {slug(cq)[:34]:34s} [{sq[:5]:5s}] {str(g.get('set_name') or '—')[:22]:22s} {slug(cg)[:34]:34s} [{sg[:5]:5s}]")
+    print(f"\nzelfde URL: {same}/{len(gekozen)} · set bevestigd: Qwen {ok_q} · Gemini {ok_g}")
+
+
 if __name__ == "__main__":
     if "--bouw" in sys.argv: bouw()
     elif "--psa" in sys.argv: psa_chunk()
@@ -502,4 +529,5 @@ if __name__ == "__main__":
     elif "--html" in sys.argv: html()
     elif "--sheets" in sys.argv: sheets()
     elif "--fix5" in sys.argv: rapport5()
+    elif "--kort" in sys.argv: kort()
     else: print(__doc__)
