@@ -100,6 +100,16 @@ Tekst-stappen (titel/omschrijving/ROI/oordeel = rest van de ~€79/mnd) via deze
 backwards test → schaduw → flip. Pas bespreken ná een geslaagde fase 4; PC-uptime wordt dan belangrijker.
 
 ## Status-log (nieuwste bovenaan)
+- 2026-09-09 10:30: **Absolute-waarheid-arm toegevoegd (opdracht Tommy: "vergelijk ook met de
+  absolute waarheid").** `dev/qwen_shadow_psa_check.py`: PSA-register als scheidsrechter over
+  (1) alle cert-verschillen (beide kanten), (2) qwen-extra-certs, (3) dagelijkse controle-
+  steekproef op agree-rijen (vangt "allebei fout"). Budget ≤10 lookups/run, 15-20s pauze
+  (PSA-429-les fase 1). Draait mee in het 20:45-dagrapport.
+  **Eerste ronde (8 lookups): PSA bevestigt Qwen op 8/8 cert-verschillen** — alle acht
+  Qwen-certs bestaan én passen exact (naam+nummer+grade) bij de kaart; allemaal Shops-
+  listings waar Gemini een ander (niet op het label staand) cert produceerde. Gemini's
+  kant van deze verschillen wordt in de volgende rondes gecheckt (bestaat-niet vs andere-kaart).
+  Cron-schaduw na 40 min: 135 kaarten vergeleken, 3 runs, 0 fouten.
 - 2026-09-09 10:20: **FASE 3 GESTART (go Tommy).** `dev/qwen_shadow.py` + cron elke 10 min
   (`dev/cron_qwen_shadow.sh`, flock). Ontwerp — appels-met-appels met live:
   * ZELFDE contract: `PHOTO_INTERPRET_PROMPT` geïmporteerd uit `llm_client` + identieke
