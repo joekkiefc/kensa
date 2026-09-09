@@ -32,7 +32,7 @@ RESULTS = GOLD / "backtest_results.json"
 ENDPOINT = "http://100.125.116.37:1234/v1/chat/completions"
 MODEL = "qwen2.5-vl-7b-instruct"
 
-PROMPT_VERSIE = "V2"
+PROMPT_VERSIE = "V4"
 PROMPT_V1 = (
     "Photo of a trading card, possibly in a grading slab. Your ONLY task is to copy text from the "
     "red-and-white PSA LABEL at the top of a PSA slab (the label that says 'PSA').\n"
@@ -47,10 +47,13 @@ PROMPT_V1 = (
     "Return ONLY a JSON object with keys:\n"
     "cert: the certification number\n"
     "grade: the NUMERIC grade on the label (e.g. 10, 9.5, 9)\n"
-    "card_name: the card NAME line in capital letters, including prefix words (e.g. DETECTIVE "
-    "PIKACHU, FA/PIKACHU — never shorten), WITHOUT rarity/variety text such as SPECIAL ART RARE\n"
+    "card_name: the card NAME only, in capital letters, including prefix words that are part of the "
+    "name (e.g. DETECTIVE PIKACHU, FA/PIKACHU — never shorten). Do NOT put rarity/variety/set words "
+    "in this field.\n"
+    "other_label_text: all other text on the label that is not the name/cert/grade/number (for "
+    'example rarity text like SPECIAL ART RARE, or set/year words); use "" if none\n'
     "number: the COMPLETE card number after #, exactly as printed including any suffix after a slash "
-    "(e.g. 205/172, 339/SM-P, 083)\n"
+    "(e.g. 205/172, 083)\n"
     'Or {"no_label": true}. No extra text.'
 )
 
@@ -62,13 +65,23 @@ def norm_ws(s: str) -> str:
     return s
 
 
+# Officiële PSA-schaal: tekst en cijfer zijn dezelfde informatie (notatie, geen inhoud).
+_GRADE_TEKST = {
+    "GEM MT": "10", "GEM-MT": "10", "GEM MINT": "10",
+    "MINT": "9", "NM-MT": "8", "NM MT": "8", "NM": "7",
+    "EX-MT": "6", "EX MT": "6", "EX": "5", "VG-EX": "4", "VG EX": "4",
+    "VG": "3", "GOOD": "2", "FR": "1.5", "FAIR": "1.5", "PR": "1", "POOR": "1",
+}
+
+
 def norm_grade(g) -> str:
-    s = str(g or "").strip()
+    s = str(g or "").strip().upper()
     m = re.search(r"(\d+(?:\.\d+)?)", s)
-    if not m:
-        return ""
-    v = m.group(1)
-    return v[:-2] if v.endswith(".0") else v
+    if m:
+        v = m.group(1)
+        return v[:-2] if v.endswith(".0") else v
+    t = re.sub(r"\s+", " ", re.sub(r"[^A-Z\- ]", "", s)).strip()
+    return _GRADE_TEKST.get(t, "")
 
 
 def norm_number(n) -> str:
@@ -143,6 +156,11 @@ def selftest() -> bool:
         fails.append("nummer-regel (voor-de-slash) faalde")
     if compare_card({**proef, "number": "339/SM-P"}, {**proef, "number": "339"})["number"]:
         fails.append("nummer-regel te soepel: volledige PSA-vorm niet afgedwongen")
+    # grade-notatie: PSA-tekstschaal == cijfer (NM-MT is 8), maar fout cijfer blijft fout
+    if not compare_card({**proef, "grade": "8"}, {**proef, "grade": "NM-MT"})["grade"]:
+        fails.append("grade-notatie NM-MT==8 faalde")
+    if compare_card({**proef, "grade": "10"}, {**proef, "grade": "MINT"})["grade"]:
+        fails.append("grade-notatie te soepel: MINT (9) mag geen 10 zijn")
     for f in fails:
         print("SELFTEST FAIL:", f)
     n = len(data["kaarten"]) + len(data["valstrikken"])

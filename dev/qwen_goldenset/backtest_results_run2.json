@@ -1,12 +1,23 @@
 {
- "gebouwd_op": "2026-09-09 01:08:25",
- "psa_pogingen": 8,
- "kaarten": [
+ "status": "GEFAALD",
+ "prompt": "V2",
+ "model": "qwen2.5-vl-7b-instruct",
+ "kaarten_alles_exact": "13/30",
+ "per_veld": {
+  "cert": 28,
+  "grade": 27,
+  "number": 28,
+  "card_name": 14
+ },
+ "valstrikken_ok": "5/5",
+ "verzonnen_certs": 0,
+ "tijd_gemiddeld_s": 1.38,
+ "gedraaid_op": "2026-09-09 07:21:03",
+ "per_kaart": [
   {
    "item_id": "m91082875856",
-   "photo": "photos/m91082875856.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m91082875856_1.jpg?1788900602",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.31,
    "waarheid": {
     "cert": "159488620",
     "grade": "10",
@@ -15,6 +26,12 @@
     "year": "2020",
     "set": "POKEMON JAPANESE S PROMO",
     "variety": "V S/B PARTICIPATION PRIZE"
+   },
+   "qwen": {
+    "cert": "159488620",
+    "grade": "10",
+    "card_name": "EEVEE-HOLO",
+    "number": "100/5-P"
    },
    "gemini_ref": {
     "cert": "159488620",
@@ -25,13 +42,18 @@
     "year": 2020,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m91082875856_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "z673385310",
-   "photo": "photos/z673385310.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/5549aa2526603843fa9204e1deff0ca95ac94975/i-img759x1200-178824451993899zbdi.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.3,
    "waarheid": {
     "cert": "161479915",
     "grade": "10",
@@ -41,6 +63,12 @@
     "set": "POKEMON JAPANESE SV7a-PARADISE DRAGONA",
     "variety": "SPECIAL ART RARE"
    },
+   "qwen": {
+    "cert": "161479915",
+    "grade": "10",
+    "card_name": "ALOLAN EXEGGUTOR ex SPECIAL ART RARE",
+    "number": "#089"
+   },
    "gemini_ref": {
     "cert": "161479915",
     "grade": "10",
@@ -49,13 +77,19 @@
     "set_name": "Stellar Miracle",
     "year": 2024,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "m64980628961",
-   "photo": "photos/m64980628961.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m64980628961_1.jpg?1788900956",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.17,
    "waarheid": {
     "cert": "161949509",
     "grade": "10",
@@ -64,6 +98,12 @@
     "year": "2023",
     "set": "POKEMON JAPANESE SV3-RULER OF THE BLACK FLAME",
     "variety": "SPECIAL ART RARE"
+   },
+   "qwen": {
+    "cert": "161949509",
+    "grade": "10",
+    "card_name": "CHARIZARD ex SPECIAL ART RARE",
+    "number": "#134"
    },
    "gemini_ref": {
     "cert": "161949509",
@@ -74,13 +114,18 @@
     "year": 2023,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m64980628961_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
+   }
   },
   {
    "item_id": "z672942896",
-   "photo": "photos/z672942896.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0208/users/d3b6c7c032927fec3cd455c8583e58854be274ae/i-img772x1200-1788182504713qxgay9.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.33,
    "waarheid": {
     "cert": "165271135",
     "grade": "10",
@@ -90,6 +135,12 @@
     "set": "POKEMON JAPANESE SV1S-SCARLET ex",
     "variety": "ART RARE"
    },
+   "qwen": {
+    "cert": "165271135",
+    "grade": "10",
+    "card_name": "ARMAROUGE ART RARE",
+    "number": "#080"
+   },
    "gemini_ref": {
     "cert": "165271135",
     "grade": "10",
@@ -98,13 +149,19 @@
     "set_name": "Scarlet ex",
     "year": 2023,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "m67281507864",
-   "photo": "photos/m67281507864.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m67281507864_1.jpg?1783360744",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.37,
    "waarheid": {
     "cert": "141676544",
     "grade": "10",
@@ -113,6 +170,12 @@
     "year": "2021",
     "set": "POKEMON ASIA 25TH ANNIVERSARY PROMO",
     "variety": "25TH ANNIV-GOLDEN BOX"
+   },
+   "qwen": {
+    "cert": "141676544",
+    "grade": "10",
+    "card_name": "RAICHU",
+    "number": "#004"
    },
    "gemini_ref": {
     "cert": "141676544",
@@ -123,13 +186,18 @@
     "year": 2021,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m67281507864_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "z679028312",
-   "photo": "photos/z679028312.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/d6db54a6012a34b0178c60267dcdfa2b0599a143/i-img1200x1200-17888989071957wqilc.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.78,
    "waarheid": {
     "cert": "150945554",
     "grade": "10",
@@ -139,6 +207,12 @@
     "set": "POKEMON JAPANESE SWORD & SHIELD TIME GAZER",
     "variety": "TIME GAZER"
    },
+   "qwen": {
+    "cert": "150945554",
+    "grade": "10",
+    "card_name": "FA/ORGN.FRMDIALGA V TIME GAZER",
+    "number": "#075"
+   },
    "gemini_ref": {
     "cert": "150945554",
     "grade": "10",
@@ -147,13 +221,19 @@
     "set_name": "Time Gazer",
     "year": 2022,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "m44987132527",
-   "photo": "photos/m44987132527.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m44987132527_1.jpg?1788517574",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.28,
    "waarheid": {
     "cert": "172216459",
     "grade": "10",
@@ -162,6 +242,12 @@
     "year": "2025",
     "set": "POKEMON JAPANESE M2a-MEGA DREAM ex",
     "variety": "SPECIAL ART RARE"
+   },
+   "qwen": {
+    "cert": "172216459",
+    "grade": "10",
+    "card_name": "MEGA GENGAR ex SPECIAL ART RARE",
+    "number": "#240"
    },
    "gemini_ref": {
     "cert": "172216459",
@@ -172,13 +258,18 @@
     "year": 2025,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m44987132527_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
+   }
   },
   {
    "item_id": "z648526724",
-   "photo": "photos/z648526724.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0207/users/dcca1f17a1ea6625e59c9365344ba809ab86cee0/i-img675x1200-1784701229355fmk5xa.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.29,
    "waarheid": {
     "cert": "140204406",
     "grade": "10",
@@ -188,6 +279,12 @@
     "set": "POKEMON JAPANESE SUN & MOON STRENGTH EXPANSION PACK NIGHT UNISON",
     "variety": "NIGHT UNISON"
    },
+   "qwen": {
+    "cert": "140204406",
+    "grade": "10",
+    "card_name": "GARDEVOIR & SYLVAN.GX NIGHT UNISON",
+    "number": "#031"
+   },
    "gemini_ref": {
     "cert": "140204406",
     "grade": "10",
@@ -196,13 +293,19 @@
     "set_name": "Night Unison",
     "year": 2019,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "m32604159539",
-   "photo": "photos/m32604159539.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m32604159539_1.jpg?1788076139",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.25,
    "waarheid": {
     "cert": "158963111",
     "grade": "10",
@@ -211,6 +314,12 @@
     "year": "2022",
     "set": "POKEMON JAPANESE SWORD & SHIELD DARK PHANTASMA",
     "variety": "DARK PHANTASMA"
+   },
+   "qwen": {
+    "cert": "158963111",
+    "grade": "10",
+    "card_name": "FA/PIKACHU",
+    "number": "#073"
    },
    "gemini_ref": {
     "cert": "158963111",
@@ -221,13 +330,18 @@
     "year": 2022,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m32604159539_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "z679028458",
-   "photo": "photos/z679028458.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/c39265606405565626f555b64d1b1c6ca8ed485a/i-img900x1200-1788899139470zlpa1t.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.32,
    "waarheid": {
     "cert": "123508259",
     "grade": "10",
@@ -237,6 +351,12 @@
     "set": "POKEMON JAPANESE SV5K-WILD FORCE",
     "variety": "SUPER RARE"
    },
+   "qwen": {
+    "cert": "123508259",
+    "grade": "10",
+    "card_name": "GENGAR ex SUPER RARE",
+    "number": "#088"
+   },
    "gemini_ref": {
     "cert": "123508259",
     "grade": "10",
@@ -245,13 +365,19 @@
     "set_name": "Wild Force",
     "year": 2024,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "m73214558549",
-   "photo": "photos/m73214558549.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m73214558549_1.jpg?1788904724",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.23,
    "waarheid": {
     "cert": "164794549",
     "grade": "10",
@@ -260,6 +386,12 @@
     "year": "2023",
     "set": "POKEMON JAPANESE SV4a-SHINY TREASURE ex",
     "variety": "S"
+   },
+   "qwen": {
+    "cert": "164794549",
+    "grade": "10",
+    "card_name": "PIKACHU",
+    "number": "#236"
    },
    "gemini_ref": {
     "cert": "164794549",
@@ -270,13 +402,18 @@
     "year": 2023,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m73214558549_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "m14038550994",
-   "photo": "photos/m14038550994.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m14038550994_1.jpg?1788904164",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.62,
    "waarheid": {
     "cert": "166403635",
     "grade": "10",
@@ -285,6 +422,12 @@
     "year": "2021",
     "set": "POKEMON JAPANESE SWORD & SHIELD VMAX CLIMAX",
     "variety": "VMAX CLIMAX"
+   },
+   "qwen": {
+    "cert": "166403635",
+    "grade": "10",
+    "card_name": "FA/RAYQUAZA VMAX",
+    "number": "252/184"
    },
    "gemini_ref": {
     "cert": "166403635",
@@ -295,13 +438,18 @@
     "year": 2021,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m14038550994_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "z673935662",
-   "photo": "photos/z673935662.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/40feaf9af0a4a6869a2f14af04e3ba4a8996b1ae/i-img1200x1200-1788304057113jk7bn5.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.81,
    "waarheid": {
     "cert": "141088636",
     "grade": "10",
@@ -311,6 +459,12 @@
     "set": "POKEMON JAPANESE SV-P PROMO",
     "variety": "GYM EVENT CAMPAIGN"
    },
+   "qwen": {
+    "cert": "141088636",
+    "grade": "10",
+    "card_name": "PIKACHU",
+    "number": "#120"
+   },
    "gemini_ref": {
     "cert": "141088636",
     "grade": "10",
@@ -319,13 +473,19 @@
     "set_name": "Gym Event Campaign",
     "year": 2023,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "z679039164",
-   "photo": "photos/z679039164.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/4e6964500fa125c3971a530e317804d681c8b2b4/i-img901x1200-17889031870949z7k3b.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.44,
    "waarheid": {
     "cert": "64090697",
     "grade": "10",
@@ -335,6 +495,12 @@
     "set": "POKEMON JAPANESE PROMO CARD PACK 25TH ANNIVERSARY EDITION",
     "variety": "PCP 25TH ANNIVERSARY ED."
    },
+   "qwen": {
+    "cert": "64090697",
+    "grade": "10",
+    "card_name": "MEW EX - HOLO",
+    "number": "#014"
+   },
    "gemini_ref": {
     "cert": "64090697",
     "grade": "10",
@@ -343,13 +509,19 @@
     "set_name": "25th Anniversary Edition",
     "year": 2021,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "m81879444880",
-   "photo": "photos/m81879444880.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m81879444880_1.jpg?1788904519",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.55,
    "waarheid": {
     "cert": "161052572",
     "grade": "10",
@@ -358,6 +530,12 @@
     "year": "2021",
     "set": "POKEMON JAPANESE PROMO CARD PACK 25TH ANNIVERSARY EDITION",
     "variety": "PCP 25TH ANNIVERSARY ED."
+   },
+   "qwen": {
+    "cert": "161052572",
+    "grade": "10",
+    "card_name": "TM.MAG.GROUDON-HOLO",
+    "number": "#011"
    },
    "gemini_ref": {
     "cert": "161052572",
@@ -368,13 +546,18 @@
     "year": 2021,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m81879444880_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "z679040096",
-   "photo": "photos/z679040096.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/d673547cf11fbae1ec5969ff1b28360a08a07ca3/i-img715x1200-1788903128173owv8tr.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.26,
    "waarheid": {
     "cert": "169381432",
     "grade": "10",
@@ -384,6 +567,12 @@
     "set": "POKEMON JAPANESE SV-P PROMO",
     "variety": "SPECIAL BOX PC TOHOKU"
    },
+   "qwen": {
+    "cert": "169381432",
+    "grade": "10",
+    "card_name": "TOHOKU'S PIKACHU",
+    "number": "#260"
+   },
    "gemini_ref": {
     "cert": "169381432",
     "grade": "10",
@@ -392,13 +581,19 @@
     "set_name": "Special Box PC Tohoku",
     "year": 2025,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "m68898299459",
-   "photo": "photos/m68898299459.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m68898299459_1.jpg?1788783723",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.06,
    "waarheid": {
     "cert": "159170722",
     "grade": "10",
@@ -407,6 +602,12 @@
     "year": "2023",
     "set": "POKEMON JAPANESE SV2a-POKEMON CARD 151",
     "variety": "REVERSE HOLO"
+   },
+   "qwen": {
+    "cert": "159170722",
+    "grade": "10",
+    "card_name": "PIKACHU REVERSE HOLO",
+    "number": "#025"
    },
    "gemini_ref": {
     "cert": "159170722",
@@ -417,13 +618,18 @@
     "year": 2023,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m68898299459_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
+   }
   },
   {
    "item_id": "z678317138",
-   "photo": "photos/z678317138.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/364c49036c951f9a9334bf618ae6749d3d03aaed/i-img900x1200-1788815468517supycq.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.45,
    "waarheid": {
     "cert": "79873717",
     "grade": "10",
@@ -433,6 +639,12 @@
     "set": "POKEMON JAPANESE SWORD & SHIELD EEVEE HEROES",
     "variety": "EEVEE HEROES"
    },
+   "qwen": {
+    "cert": "79873717",
+    "grade": "10",
+    "card_name": "FA/JOLTEON V EEVEE HEROES",
+    "number": "#079"
+   },
    "gemini_ref": {
     "cert": "79873717",
     "grade": "10",
@@ -441,13 +653,19 @@
     "set_name": "Eevee Heroes",
     "year": 2021,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "z678804262",
-   "photo": "photos/z678804262.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/b756b47ecaf50a9fc48dd44f3d0718ca4cb1b61c/i-img900x1200-1788868535673vmwb4a.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.39,
    "waarheid": {
     "cert": "73516094",
     "grade": "10",
@@ -457,6 +675,12 @@
     "set": "POKEMON JAPANESE SWORD & SHIELD PARADIGM TRIGGER",
     "variety": "PARADIGM TRIGGER"
    },
+   "qwen": {
+    "cert": "73516094",
+    "grade": "10",
+    "card_name": "FA/LUGIA V PARADIGM TRIGGER",
+    "number": "#110"
+   },
    "gemini_ref": {
     "cert": "73516094",
     "grade": "10",
@@ -465,13 +689,19 @@
     "set_name": "Paradigm Trigger",
     "year": 2022,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "z679038666",
-   "photo": "photos/z679038666.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/4e6964500fa125c3971a530e317804d681c8b2b4/i-img1200x1003-1788903148656go4ab4.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.75,
    "waarheid": {
     "cert": "105862383",
     "grade": "10",
@@ -480,6 +710,12 @@
     "year": "2024",
     "set": "POKEMON JAPANESE SV8a-TERASTAL FEST ex",
     "variety": "MASTER BALL REVERSE HOLO"
+   },
+   "qwen": {
+    "cert": "105862383",
+    "grade": "10",
+    "card_name": "UMBREON MASTER BALL REVERSE HOLO",
+    "number": "#092"
    },
    "gemini_ref": {
     "cert": "105862383",
@@ -490,13 +726,18 @@
     "year": 2024,
     "_source": "multimodal"
    },
-   "uitgesloten_9sep": "foto bevat TWEE slabs (Umbreon 105862383 + Sylveon 105862384) — oneerlijke input per set-kwaliteitsregel; Qwen las de buurslab foutloos. Vervangen bij volgende set-uitbreiding."
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
+   }
   },
   {
    "item_id": "m96047558499",
-   "photo": "photos/m96047558499.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m96047558499_1.jpg?1788903856",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.21,
    "waarheid": {
     "cert": "77645249",
     "grade": "10",
@@ -505,6 +746,12 @@
     "year": "2021",
     "set": "POKEMON JAPANESE SWORD & SHIELD SKYSCRAPING PERFECTION",
     "variety": "SKYSCRAPING PERFECT-HYPER"
+   },
+   "qwen": {
+    "cert": "77645249",
+    "grade": "10",
+    "card_name": "FA/DURALUDON VMAX",
+    "number": "#083"
    },
    "gemini_ref": {
     "cert": "77645249",
@@ -515,21 +762,32 @@
     "year": 2021,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m96047558499_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "m99255707129",
-   "photo": "photos/m99255707129.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m99255707129_1.jpg?1788250314",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.54,
    "waarheid": {
+    "cert": "88587580",
+    "grade": "8",
+    "card_name": "ICHIRO/A.PUJOLS",
+    "number": "T99",
+    "year": "2001",
+    "set": "TOPPS TRADED",
+    "variety": ""
+   },
+   "qwen": {
     "cert": "161081580",
     "grade": "10",
-    "card_name": "PIKACHU ex",
-    "number": "234",
-    "year": "2025",
-    "set": "POKEMON JAPANESE M2a-MEGA DREAM ex",
-    "variety": "SPECIAL ART RARE"
+    "card_name": "PIKACHU ex SPECIAL ART RARE",
+    "number": "#234"
    },
    "gemini_ref": {
     "cert": "88587580",
@@ -540,14 +798,18 @@
     "year": 2024,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m99255707129_1.jpg",
-   "hersteld_9sep": "pipeline-cert was verhaspeld; waarheid vervangen door PSA-register van de kaart op de foto (door Jowi geverifieerd)"
+   "vergelijk": {
+    "cert": false,
+    "grade": false,
+    "number": false,
+    "card_name": false,
+    "alles": false
+   }
   },
   {
    "item_id": "m57297726830",
-   "photo": "photos/m57297726830.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m57297726830_1.jpg?1788674575",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.2,
    "waarheid": {
     "cert": "127140683",
     "grade": "10",
@@ -556,6 +818,12 @@
     "year": "2021",
     "set": "POKEMON JAPANESE SWORD & SHIELD VMAX CLIMAX",
     "variety": "VMAX CLIMAX-ULTRA RARE"
+   },
+   "qwen": {
+    "cert": "127140683",
+    "grade": "10",
+    "card_name": "FA/PKACHU VMAX",
+    "number": "#279"
    },
    "gemini_ref": {
     "cert": "127140683",
@@ -566,21 +834,32 @@
     "year": 2021,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m57297726830_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
+   }
   },
   {
    "item_id": "2JWXJYaiLZT93vGypeP8Hr",
-   "photo": "photos/2JWXJYaiLZT93vGypeP8Hr.jpg",
-   "photo_url": "https://assets.mercari-shops-static.com/-/small/plain/2JWXJUt4A29sTYSnXPqFRx.jpg@jpg",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 2.1,
    "waarheid": {
+    "cert": "15663398",
+    "grade": "7",
+    "card_name": "JIM McKENNY",
+    "number": "83",
+    "year": "1972",
+    "set": "O-PEE-CHEE",
+    "variety": ""
+   },
+   "qwen": {
     "cert": "156633988",
     "grade": "9",
-    "card_name": "DARK ARBOK-HOLO",
-    "number": "24",
-    "year": "1997",
-    "set": "POKEMON JAPANESE ROCKET",
-    "variety": ""
+    "card_name": "1997 P.M. JAPANESE ROCKET DARK ARBOK-HOLO",
+    "number": "#24"
    },
    "gemini_ref": {
     "cert": "15663398",
@@ -591,14 +870,18 @@
     "year": 1997,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://assets.mercari-shops-static.com/-/large/plain/2JWXJUt4A29sTYSnXPqFRx.jpg@jpg",
-   "hersteld_9sep": "pipeline-cert was verhaspeld; waarheid vervangen door PSA-register van de kaart op de foto (door Jowi geverifieerd)"
+   "vergelijk": {
+    "cert": false,
+    "grade": false,
+    "number": false,
+    "card_name": false,
+    "alles": false
+   }
   },
   {
    "item_id": "2JWXHeHGYAwX8B2nJ3xgcy",
-   "photo": "photos/2JWXHeHGYAwX8B2nJ3xgcy.jpg",
-   "photo_url": "https://assets.mercari-shops-static.com/-/small/plain/2JWXHWZ4cAEMmLXMEA8bDk.jpg@jpg",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 2.09,
    "waarheid": {
     "cert": "102726872",
     "grade": "8",
@@ -607,6 +890,12 @@
     "year": "2010",
     "set": "POKEMON JAPANESE PROMO",
     "variety": "2010 WORLD CHAMPIONSHIP"
+   },
+   "qwen": {
+    "cert": "102726872",
+    "grade": "NM-MT",
+    "card_name": "LUGIA-HOLO",
+    "number": "#047"
    },
    "gemini_ref": {
     "cert": "102726872",
@@ -617,13 +906,18 @@
     "year": 2010,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://assets.mercari-shops-static.com/-/large/plain/2JWXHWZ4cAEMmLXMEA8bDk.jpg@jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": false,
+    "number": true,
+    "card_name": true,
+    "alles": false
+   }
   },
   {
    "item_id": "z678148368",
-   "photo": "photos/z678148368.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/51fd983b2d9fadbb09d123b41d368707caff0d4f/i-img839x1200-1788787203457kdsb0z.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.45,
    "waarheid": {
     "cert": "141157595",
     "grade": "10",
@@ -633,6 +927,12 @@
     "set": "POKEMON JAPANESE SV8a-TERASTAL FEST ex",
     "variety": "MASTER BALL REVERSE HOLO"
    },
+   "qwen": {
+    "cert": "141157595",
+    "grade": "10",
+    "card_name": "VAPOREON",
+    "number": "#030"
+   },
    "gemini_ref": {
     "cert": "141157595",
     "grade": "10",
@@ -641,13 +941,19 @@
     "set_name": "Terastal Festival ex",
     "year": 2024,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "z678157052",
-   "photo": "photos/z678157052.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/51fd983b2d9fadbb09d123b41d368707caff0d4f/i-img918x1200-1788787665449gs0uh9.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.45,
    "waarheid": {
     "cert": "91594196",
     "grade": "10",
@@ -657,6 +963,12 @@
     "set": "POKEMON JAPANESE SV5a-CRIMSON HAZE",
     "variety": "SPECIAL ART RARE"
    },
+   "qwen": {
+    "cert": "91594196",
+    "grade": "10",
+    "card_name": "LANA'S ASSISTANCE",
+    "number": "#093"
+   },
    "gemini_ref": {
     "cert": "91594196",
     "grade": "10",
@@ -665,13 +977,19 @@
     "set_name": "Crimson Haze",
     "year": 2024,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "z679045264",
-   "photo": "photos/z679045264.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/4b11916485913cb2b7ac5578fd511f099c5acbe0/i-img675x1200-1788904503478fbojh0.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.19,
    "waarheid": {
     "cert": "161813129",
     "grade": "10",
@@ -681,6 +999,12 @@
     "set": "POKEMON JAPANESE SV2a-POKEMON CARD 151",
     "variety": "SPECIAL ART RARE"
    },
+   "qwen": {
+    "cert": "161813129",
+    "grade": "10",
+    "card_name": "ZAPDOS ex SPECIAL ART RARE",
+    "number": "#204"
+   },
    "gemini_ref": {
     "cert": "161813129",
     "grade": "10",
@@ -689,13 +1013,19 @@
     "set_name": "Pokemon Card 151",
     "year": 2023,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": false,
+    "alles": false
    }
   },
   {
    "item_id": "m40244068990",
-   "photo": "photos/m40244068990.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m40244068990_1.jpg?1788906762",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.49,
    "waarheid": {
     "cert": "133335750",
     "grade": "10",
@@ -704,6 +1034,12 @@
     "year": "2015",
     "set": "POKEMON JAPANESE XY PROMO",
     "variety": "BATTLE FESTA PROMO"
+   },
+   "qwen": {
+    "cert": "133335750",
+    "grade": "10",
+    "card_name": "EMPoleon BREAK",
+    "number": "#XY-P"
    },
    "gemini_ref": {
     "cert": "133335750",
@@ -714,13 +1050,18 @@
     "year": 2015,
     "_source": "multimodal"
    },
-   "photo_url_hires": "https://static.mercdn.net/item/detail/orig/photos/m40244068990_1.jpg"
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
   },
   {
    "item_id": "z679044258",
-   "photo": "photos/z679044258.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/4798315d3f921dc94707fcd07a36b9b1b8880bda/i-img900x1200-1788695952870cdo1r2.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "moeilijk": false,
+   "type": "kaart",
+   "tijd_s": 1.72,
    "waarheid": {
     "cert": "166147075",
     "grade": "10",
@@ -730,6 +1071,12 @@
     "set": "POKEMON JAPANESE SV-P PROMO",
     "variety": "SPECIAL BOX PC HIROSHIMA"
    },
+   "qwen": {
+    "cert": "166147075",
+    "grade": "10",
+    "card_name": "HIROSHIMA'S PIKACHU",
+    "number": "#261"
+   },
    "gemini_ref": {
     "cert": "166147075",
     "grade": "10",
@@ -738,65 +1085,74 @@
     "set_name": "SV-P Promotional cards",
     "year": 2025,
     "_source": "multimodal"
+   },
+   "vergelijk": {
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
+   }
+  },
+  {
+   "item_id": "trap_m16084278046",
+   "type": "valstrik",
+   "tijd_s": 0.98,
+   "qwen": {
+    "no_label": true
+   },
+   "vergelijk": {
+    "no_label_ok": true,
+    "verzonnen_cert": false
+   }
+  },
+  {
+   "item_id": "trap_m72846635326",
+   "type": "valstrik",
+   "tijd_s": 1.16,
+   "qwen": {
+    "no_label": true
+   },
+   "vergelijk": {
+    "no_label_ok": true,
+    "verzonnen_cert": false
+   }
+  },
+  {
+   "item_id": "trap_z678887348",
+   "type": "valstrik",
+   "tijd_s": 0.7,
+   "qwen": {
+    "no_label": true
+   },
+   "vergelijk": {
+    "no_label_ok": true,
+    "verzonnen_cert": false
+   }
+  },
+  {
+   "item_id": "trap_z679022900",
+   "type": "valstrik",
+   "tijd_s": 1.08,
+   "qwen": {
+    "no_label": true
+   },
+   "vergelijk": {
+    "no_label_ok": true,
+    "verzonnen_cert": false
+   }
+  },
+  {
+   "item_id": "trap_m73527991974",
+   "type": "valstrik",
+   "tijd_s": 0.87,
+   "qwen": {
+    "no_label": true
+   },
+   "vergelijk": {
+    "no_label_ok": true,
+    "verzonnen_cert": false
    }
   }
- ],
- "valstrikken": [
-  {
-   "item_id": "m16084278046",
-   "photo": "photos/trap_m16084278046.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m16084278046_1.jpg?1785317976",
-   "waarheid": {
-    "no_label": true
-   },
-   "geschouwd": true,
-   "photo_url_hires": "orig",
-   "schouw_notitie": "Jowi 9-9: bevestigd geen leesbaar PSA-label (volle resolutie)"
-  },
-  {
-   "item_id": "m72846635326",
-   "photo": "photos/trap_m72846635326.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m72846635326_1.jpg?1788902523",
-   "waarheid": {
-    "no_label": true
-   },
-   "geschouwd": true,
-   "photo_url_hires": "orig",
-   "schouw_notitie": "Jowi 9-9: bevestigd geen leesbaar PSA-label (volle resolutie)"
-  },
-  {
-   "item_id": "z678887348",
-   "photo": "photos/trap_z678887348.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/e1c2a847eb05cea21bb508df0550518369c84d47/i-img554x1200-1788874079786piqn19.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "waarheid": {
-    "no_label": true
-   },
-   "geschouwd": true,
-   "schouw_notitie": "Jowi 9-9: bevestigd geen leesbaar PSA-label (volle resolutie)"
-  },
-  {
-   "item_id": "z679022900",
-   "photo": "photos/trap_z679022900.jpg",
-   "photo_url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/c003e59e2a5086cf09b49b316ec6816f5eb2cff5/i-img900x1200-1788895144844rhqe64.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
-   "waarheid": {
-    "no_label": true
-   },
-   "geschouwd": true,
-   "schouw_notitie": "Jowi 9-9: bevestigd geen leesbaar PSA-label (volle resolutie)"
-  },
-  {
-   "item_id": "m73527991974",
-   "photo": "photos/trap_m73527991974.jpg",
-   "photo_url": "https://static.mercdn.net/thumb/item/jpeg/m73527991974_1.jpg?1788893637",
-   "waarheid": {
-    "no_label": true
-   },
-   "geschouwd": true,
-   "photo_url_hires": "orig",
-   "schouw_notitie": "Jowi 9-9: bevestigd geen leesbaar PSA-label (volle resolutie)"
-  }
- ],
- "status": "bevroren",
- "bevroren_op": "2026-09-09 01:09",
- "set_reparatie_9sep": "18 foto's van 240px-duimnagel naar volle resolutie (Mercari orig / Shops large); 2 nachtelijk toegevoegde valstrikken alsnog geschouwd (beide geldig: sealed promo, ARS-slab zonder PSA-label)"
+ ]
 }

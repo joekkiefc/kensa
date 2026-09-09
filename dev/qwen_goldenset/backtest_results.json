@@ -1,23 +1,23 @@
 {
  "status": "GEFAALD",
- "prompt": "V2",
+ "prompt": "V4",
  "model": "qwen2.5-vl-7b-instruct",
- "kaarten_alles_exact": "13/30",
+ "kaarten_alles_exact": "25/30",
  "per_veld": {
-  "cert": 28,
-  "grade": 27,
-  "number": 28,
-  "card_name": 14
+  "cert": 29,
+  "grade": 30,
+  "number": 29,
+  "card_name": 25
  },
  "valstrikken_ok": "5/5",
  "verzonnen_certs": 0,
- "tijd_gemiddeld_s": 1.38,
- "gedraaid_op": "2026-09-09 07:21:03",
+ "tijd_gemiddeld_s": 1.24,
+ "gedraaid_op": "2026-09-09 07:44:55",
  "per_kaart": [
   {
    "item_id": "m91082875856",
    "type": "kaart",
-   "tijd_s": 1.31,
+   "tijd_s": 1.24,
    "waarheid": {
     "cert": "159488620",
     "grade": "10",
@@ -31,7 +31,8 @@
     "cert": "159488620",
     "grade": "10",
     "card_name": "EEVEE-HOLO",
-    "number": "100/5-P"
+    "other_label_text": "",
+    "number": "#100"
    },
    "gemini_ref": {
     "cert": "159488620",
@@ -53,7 +54,7 @@
   {
    "item_id": "z673385310",
    "type": "kaart",
-   "tijd_s": 1.3,
+   "tijd_s": 1.2,
    "waarheid": {
     "cert": "161479915",
     "grade": "10",
@@ -66,7 +67,8 @@
    "qwen": {
     "cert": "161479915",
     "grade": "10",
-    "card_name": "ALOLAN EXEGGUTOR ex SPECIAL ART RARE",
+    "card_name": "ALOLAN EXEGGUTOR ex",
+    "other_label_text": "",
     "number": "#089"
    },
    "gemini_ref": {
@@ -82,14 +84,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "m64980628961",
    "type": "kaart",
-   "tijd_s": 1.17,
+   "tijd_s": 1.11,
    "waarheid": {
     "cert": "161949509",
     "grade": "10",
@@ -102,7 +104,8 @@
    "qwen": {
     "cert": "161949509",
     "grade": "10",
-    "card_name": "CHARIZARD ex SPECIAL ART RARE",
+    "card_name": "CHARIZARD ex",
+    "other_label_text": "",
     "number": "#134"
    },
    "gemini_ref": {
@@ -118,14 +121,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "z672942896",
    "type": "kaart",
-   "tijd_s": 1.33,
+   "tijd_s": 1.18,
    "waarheid": {
     "cert": "165271135",
     "grade": "10",
@@ -138,7 +141,8 @@
    "qwen": {
     "cert": "165271135",
     "grade": "10",
-    "card_name": "ARMAROUGE ART RARE",
+    "card_name": "ARMAROUGE",
+    "other_label_text": "",
     "number": "#080"
    },
    "gemini_ref": {
@@ -154,14 +158,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "m67281507864",
    "type": "kaart",
-   "tijd_s": 1.37,
+   "tijd_s": 1.26,
    "waarheid": {
     "cert": "141676544",
     "grade": "10",
@@ -175,6 +179,7 @@
     "cert": "141676544",
     "grade": "10",
     "card_name": "RAICHU",
+    "other_label_text": "",
     "number": "#004"
    },
    "gemini_ref": {
@@ -197,7 +202,7 @@
   {
    "item_id": "z679028312",
    "type": "kaart",
-   "tijd_s": 1.78,
+   "tijd_s": 1.65,
    "waarheid": {
     "cert": "150945554",
     "grade": "10",
@@ -210,7 +215,8 @@
    "qwen": {
     "cert": "150945554",
     "grade": "10",
-    "card_name": "FA/ORGN.FRMDIALGA V TIME GAZER",
+    "card_name": "TIME GAZER",
+    "other_label_text": "",
     "number": "#075"
    },
    "gemini_ref": {
@@ -233,7 +239,7 @@
   {
    "item_id": "m44987132527",
    "type": "kaart",
-   "tijd_s": 1.28,
+   "tijd_s": 1.19,
    "waarheid": {
     "cert": "172216459",
     "grade": "10",
@@ -246,7 +252,8 @@
    "qwen": {
     "cert": "172216459",
     "grade": "10",
-    "card_name": "MEGA GENGAR ex SPECIAL ART RARE",
+    "card_name": "MEGA GENGAR ex",
+    "other_label_text": "",
     "number": "#240"
    },
    "gemini_ref": {
@@ -262,14 +269,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "z648526724",
    "type": "kaart",
-   "tijd_s": 1.29,
+   "tijd_s": 1.18,
    "waarheid": {
     "cert": "140204406",
     "grade": "10",
@@ -283,6 +290,7 @@
     "cert": "140204406",
     "grade": "10",
     "card_name": "GARDEVOIR & SYLVAN.GX NIGHT UNISON",
+    "other_label_text": "",
     "number": "#031"
    },
    "gemini_ref": {
@@ -305,7 +313,7 @@
   {
    "item_id": "m32604159539",
    "type": "kaart",
-   "tijd_s": 1.25,
+   "tijd_s": 1.19,
    "waarheid": {
     "cert": "158963111",
     "grade": "10",
@@ -319,6 +327,7 @@
     "cert": "158963111",
     "grade": "10",
     "card_name": "FA/PIKACHU",
+    "other_label_text": "",
     "number": "#073"
    },
    "gemini_ref": {
@@ -341,7 +350,7 @@
   {
    "item_id": "z679028458",
    "type": "kaart",
-   "tijd_s": 1.32,
+   "tijd_s": 1.26,
    "waarheid": {
     "cert": "123508259",
     "grade": "10",
@@ -354,7 +363,8 @@
    "qwen": {
     "cert": "123508259",
     "grade": "10",
-    "card_name": "GENGAR ex SUPER RARE",
+    "card_name": "GENGAR ex",
+    "other_label_text": "",
     "number": "#088"
    },
    "gemini_ref": {
@@ -370,14 +380,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "m73214558549",
    "type": "kaart",
-   "tijd_s": 1.23,
+   "tijd_s": 1.09,
    "waarheid": {
     "cert": "164794549",
     "grade": "10",
@@ -391,6 +401,7 @@
     "cert": "164794549",
     "grade": "10",
     "card_name": "PIKACHU",
+    "other_label_text": "",
     "number": "#236"
    },
    "gemini_ref": {
@@ -413,7 +424,7 @@
   {
    "item_id": "m14038550994",
    "type": "kaart",
-   "tijd_s": 1.62,
+   "tijd_s": 1.47,
    "waarheid": {
     "cert": "166403635",
     "grade": "10",
@@ -427,6 +438,7 @@
     "cert": "166403635",
     "grade": "10",
     "card_name": "FA/RAYQUAZA VMAX",
+    "other_label_text": "",
     "number": "252/184"
    },
    "gemini_ref": {
@@ -449,7 +461,7 @@
   {
    "item_id": "z673935662",
    "type": "kaart",
-   "tijd_s": 1.81,
+   "tijd_s": 1.6,
    "waarheid": {
     "cert": "141088636",
     "grade": "10",
@@ -463,6 +475,7 @@
     "cert": "141088636",
     "grade": "10",
     "card_name": "PIKACHU",
+    "other_label_text": "",
     "number": "#120"
    },
    "gemini_ref": {
@@ -485,7 +498,7 @@
   {
    "item_id": "z679039164",
    "type": "kaart",
-   "tijd_s": 1.44,
+   "tijd_s": 1.36,
    "waarheid": {
     "cert": "64090697",
     "grade": "10",
@@ -498,7 +511,8 @@
    "qwen": {
     "cert": "64090697",
     "grade": "10",
-    "card_name": "MEW EX - HOLO",
+    "card_name": "MEW EX-HOLO",
+    "other_label_text": "",
     "number": "#014"
    },
    "gemini_ref": {
@@ -521,7 +535,7 @@
   {
    "item_id": "m81879444880",
    "type": "kaart",
-   "tijd_s": 1.55,
+   "tijd_s": 1.46,
    "waarheid": {
     "cert": "161052572",
     "grade": "10",
@@ -535,6 +549,7 @@
     "cert": "161052572",
     "grade": "10",
     "card_name": "TM.MAG.GROUDON-HOLO",
+    "other_label_text": "",
     "number": "#011"
    },
    "gemini_ref": {
@@ -557,7 +572,7 @@
   {
    "item_id": "z679040096",
    "type": "kaart",
-   "tijd_s": 1.26,
+   "tijd_s": 1.19,
    "waarheid": {
     "cert": "169381432",
     "grade": "10",
@@ -571,6 +586,7 @@
     "cert": "169381432",
     "grade": "10",
     "card_name": "TOHOKU'S PIKACHU",
+    "other_label_text": "",
     "number": "#260"
    },
    "gemini_ref": {
@@ -593,7 +609,7 @@
   {
    "item_id": "m68898299459",
    "type": "kaart",
-   "tijd_s": 1.06,
+   "tijd_s": 0.96,
    "waarheid": {
     "cert": "159170722",
     "grade": "10",
@@ -606,7 +622,8 @@
    "qwen": {
     "cert": "159170722",
     "grade": "10",
-    "card_name": "PIKACHU REVERSE HOLO",
+    "card_name": "PIKACHU",
+    "other_label_text": "",
     "number": "#025"
    },
    "gemini_ref": {
@@ -622,14 +639,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "z678317138",
    "type": "kaart",
-   "tijd_s": 1.45,
+   "tijd_s": 1.3,
    "waarheid": {
     "cert": "79873717",
     "grade": "10",
@@ -642,7 +659,8 @@
    "qwen": {
     "cert": "79873717",
     "grade": "10",
-    "card_name": "FA/JOLTEON V EEVEE HEROES",
+    "card_name": "FA/JOLTEON V",
+    "other_label_text": "",
     "number": "#079"
    },
    "gemini_ref": {
@@ -658,14 +676,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "z678804262",
    "type": "kaart",
-   "tijd_s": 1.39,
+   "tijd_s": 1.23,
    "waarheid": {
     "cert": "73516094",
     "grade": "10",
@@ -678,7 +696,8 @@
    "qwen": {
     "cert": "73516094",
     "grade": "10",
-    "card_name": "FA/LUGIA V PARADIGM TRIGGER",
+    "card_name": "FA/LUGIA V",
+    "other_label_text": "",
     "number": "#110"
    },
    "gemini_ref": {
@@ -694,14 +713,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "z679038666",
    "type": "kaart",
-   "tijd_s": 1.75,
+   "tijd_s": 1.6,
    "waarheid": {
     "cert": "105862383",
     "grade": "10",
@@ -712,10 +731,11 @@
     "variety": "MASTER BALL REVERSE HOLO"
    },
    "qwen": {
-    "cert": "105862383",
+    "cert": "105862384",
     "grade": "10",
-    "card_name": "UMBREON MASTER BALL REVERSE HOLO",
-    "number": "#092"
+    "card_name": "SYLVEON",
+    "other_label_text": "",
+    "number": "#068"
    },
    "gemini_ref": {
     "cert": "105862383",
@@ -727,9 +747,9 @@
     "_source": "multimodal"
    },
    "vergelijk": {
-    "cert": true,
+    "cert": false,
     "grade": true,
-    "number": true,
+    "number": false,
     "card_name": false,
     "alles": false
    }
@@ -737,7 +757,7 @@
   {
    "item_id": "m96047558499",
    "type": "kaart",
-   "tijd_s": 1.21,
+   "tijd_s": 1.11,
    "waarheid": {
     "cert": "77645249",
     "grade": "10",
@@ -751,6 +771,7 @@
     "cert": "77645249",
     "grade": "10",
     "card_name": "FA/DURALUDON VMAX",
+    "other_label_text": "",
     "number": "#083"
    },
    "gemini_ref": {
@@ -773,20 +794,21 @@
   {
    "item_id": "m99255707129",
    "type": "kaart",
-   "tijd_s": 1.54,
+   "tijd_s": 1.44,
    "waarheid": {
-    "cert": "88587580",
-    "grade": "8",
-    "card_name": "ICHIRO/A.PUJOLS",
-    "number": "T99",
-    "year": "2001",
-    "set": "TOPPS TRADED",
-    "variety": ""
+    "cert": "161081580",
+    "grade": "10",
+    "card_name": "PIKACHU ex",
+    "number": "234",
+    "year": "2025",
+    "set": "POKEMON JAPANESE M2a-MEGA DREAM ex",
+    "variety": "SPECIAL ART RARE"
    },
    "qwen": {
     "cert": "161081580",
     "grade": "10",
-    "card_name": "PIKACHU ex SPECIAL ART RARE",
+    "card_name": "PIKACHU ex",
+    "other_label_text": "SPECIAL ART RARE",
     "number": "#234"
    },
    "gemini_ref": {
@@ -799,17 +821,17 @@
     "_source": "multimodal"
    },
    "vergelijk": {
-    "cert": false,
-    "grade": false,
-    "number": false,
-    "card_name": false,
-    "alles": false
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "m57297726830",
    "type": "kaart",
-   "tijd_s": 1.2,
+   "tijd_s": 1.16,
    "waarheid": {
     "cert": "127140683",
     "grade": "10",
@@ -823,6 +845,7 @@
     "cert": "127140683",
     "grade": "10",
     "card_name": "FA/PKACHU VMAX",
+    "other_label_text": "",
     "number": "#279"
    },
    "gemini_ref": {
@@ -845,20 +868,21 @@
   {
    "item_id": "2JWXJYaiLZT93vGypeP8Hr",
    "type": "kaart",
-   "tijd_s": 2.1,
+   "tijd_s": 1.77,
    "waarheid": {
-    "cert": "15663398",
-    "grade": "7",
-    "card_name": "JIM McKENNY",
-    "number": "83",
-    "year": "1972",
-    "set": "O-PEE-CHEE",
+    "cert": "156633988",
+    "grade": "9",
+    "card_name": "DARK ARBOK-HOLO",
+    "number": "24",
+    "year": "1997",
+    "set": "POKEMON JAPANESE ROCKET",
     "variety": ""
    },
    "qwen": {
     "cert": "156633988",
     "grade": "9",
-    "card_name": "1997 P.M. JAPANESE ROCKET DARK ARBOK-HOLO",
+    "card_name": "DARK ARBOK-HOLO",
+    "other_label_text": "",
     "number": "#24"
    },
    "gemini_ref": {
@@ -871,17 +895,17 @@
     "_source": "multimodal"
    },
    "vergelijk": {
-    "cert": false,
-    "grade": false,
-    "number": false,
-    "card_name": false,
-    "alles": false
+    "cert": true,
+    "grade": true,
+    "number": true,
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "2JWXHeHGYAwX8B2nJ3xgcy",
    "type": "kaart",
-   "tijd_s": 2.09,
+   "tijd_s": 1.89,
    "waarheid": {
     "cert": "102726872",
     "grade": "8",
@@ -893,8 +917,9 @@
    },
    "qwen": {
     "cert": "102726872",
-    "grade": "NM-MT",
+    "grade": "8",
     "card_name": "LUGIA-HOLO",
+    "other_label_text": "",
     "number": "#047"
    },
    "gemini_ref": {
@@ -908,16 +933,16 @@
    },
    "vergelijk": {
     "cert": true,
-    "grade": false,
+    "grade": true,
     "number": true,
     "card_name": true,
-    "alles": false
+    "alles": true
    }
   },
   {
    "item_id": "z678148368",
    "type": "kaart",
-   "tijd_s": 1.45,
+   "tijd_s": 1.25,
    "waarheid": {
     "cert": "141157595",
     "grade": "10",
@@ -931,6 +956,7 @@
     "cert": "141157595",
     "grade": "10",
     "card_name": "VAPOREON",
+    "other_label_text": "",
     "number": "#030"
    },
    "gemini_ref": {
@@ -953,7 +979,7 @@
   {
    "item_id": "z678157052",
    "type": "kaart",
-   "tijd_s": 1.45,
+   "tijd_s": 1.47,
    "waarheid": {
     "cert": "91594196",
     "grade": "10",
@@ -967,6 +993,7 @@
     "cert": "91594196",
     "grade": "10",
     "card_name": "LANA'S ASSISTANCE",
+    "other_label_text": "SPECIAL ART RARE",
     "number": "#093"
    },
    "gemini_ref": {
@@ -989,7 +1016,7 @@
   {
    "item_id": "z679045264",
    "type": "kaart",
-   "tijd_s": 1.19,
+   "tijd_s": 1.11,
    "waarheid": {
     "cert": "161813129",
     "grade": "10",
@@ -1002,7 +1029,8 @@
    "qwen": {
     "cert": "161813129",
     "grade": "10",
-    "card_name": "ZAPDOS ex SPECIAL ART RARE",
+    "card_name": "ZAPDOS ex",
+    "other_label_text": "",
     "number": "#204"
    },
    "gemini_ref": {
@@ -1018,14 +1046,14 @@
     "cert": true,
     "grade": true,
     "number": true,
-    "card_name": false,
-    "alles": false
+    "card_name": true,
+    "alles": true
    }
   },
   {
    "item_id": "m40244068990",
    "type": "kaart",
-   "tijd_s": 1.49,
+   "tijd_s": 1.39,
    "waarheid": {
     "cert": "133335750",
     "grade": "10",
@@ -1039,6 +1067,7 @@
     "cert": "133335750",
     "grade": "10",
     "card_name": "EMPoleon BREAK",
+    "other_label_text": "",
     "number": "#XY-P"
    },
    "gemini_ref": {
@@ -1061,7 +1090,7 @@
   {
    "item_id": "z679044258",
    "type": "kaart",
-   "tijd_s": 1.72,
+   "tijd_s": 1.32,
    "waarheid": {
     "cert": "166147075",
     "grade": "10",
@@ -1075,6 +1104,7 @@
     "cert": "166147075",
     "grade": "10",
     "card_name": "HIROSHIMA'S PIKACHU",
+    "other_label_text": "",
     "number": "#261"
    },
    "gemini_ref": {
@@ -1097,7 +1127,7 @@
   {
    "item_id": "trap_m16084278046",
    "type": "valstrik",
-   "tijd_s": 0.98,
+   "tijd_s": 0.74,
    "qwen": {
     "no_label": true
    },
@@ -1109,7 +1139,7 @@
   {
    "item_id": "trap_m72846635326",
    "type": "valstrik",
-   "tijd_s": 1.16,
+   "tijd_s": 0.89,
    "qwen": {
     "no_label": true
    },
@@ -1121,7 +1151,7 @@
   {
    "item_id": "trap_z678887348",
    "type": "valstrik",
-   "tijd_s": 0.7,
+   "tijd_s": 0.59,
    "qwen": {
     "no_label": true
    },
@@ -1133,7 +1163,7 @@
   {
    "item_id": "trap_z679022900",
    "type": "valstrik",
-   "tijd_s": 1.08,
+   "tijd_s": 0.89,
    "qwen": {
     "no_label": true
    },
@@ -1145,7 +1175,7 @@
   {
    "item_id": "trap_m73527991974",
    "type": "valstrik",
-   "tijd_s": 0.87,
+   "tijd_s": 0.79,
    "qwen": {
     "no_label": true
    },
