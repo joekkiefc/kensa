@@ -1,6 +1,14 @@
 #!/bin/bash
-# TIJDELIJK — PSA-waarheid voor test-60 in porties (429-vriendelijk). Verwijderen na 60/60.
+# PSA-scheidsrechter, elke 20 min, 8 opzoekingen (PSA blokkeert bij meer).
+# Eerst test-60 afmaken; zodra alle 60 geprobeerd zijn schakelt hij VANZELF over
+# op de schaduw (fase 3b): cert-verschillen + controle-steekproef. (Tommy 9-9: "goed idee")
 set -u
-cd /home/pi/.openclaw/workspace/agents/kensa
-exec /usr/bin/flock -n /tmp/kensa-test60-psa.lock env PSA_MAX=8 PSA_PAUZE=14 \
-  /home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3 dev/qwen_test60.py --psa >> dev/qwen_test60/psa_cron.log 2>&1
+KENSA="/home/pi/.openclaw/workspace/agents/kensa"
+PY="/home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3"
+cd "$KENSA"
+KLAAR=$("$PY" -c "import json;t=json.load(open('dev/qwen_test60/truth.json'));print(1 if len(t)>=60 else 0)" 2>/dev/null || echo 0)
+if [ "$KLAAR" = "1" ]; then
+  exec /usr/bin/flock -n /tmp/kensa-psa-check.lock env PSA_MAX=8 PSA_PAUZE=14 "$PY" dev/qwen_shadow_psa_check.py >> dev/qwen_shadow/psa_cron.log 2>&1
+else
+  exec /usr/bin/flock -n /tmp/kensa-psa-check.lock env PSA_MAX=8 PSA_PAUZE=14 "$PY" dev/qwen_test60.py --psa >> dev/qwen_test60/psa_cron.log 2>&1
+fi
