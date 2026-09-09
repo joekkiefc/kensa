@@ -1,15 +1,7 @@
 """Qwen-opdracht mét fix 2 (label-prefix niet uitspellen) en fix 3 (label_name letterlijk).
-Eén plek, zodat schaduw en test-harnas exact dezelfde opdracht gebruiken."""
+Sinds fase 4 (9-9) woont de opdracht in productie: qwen_lezer.PROMPT_FIXED. Dit is een
+doorgeefluik zodat schaduw en test-harnas exact dezelfde opdracht gebruiken als live."""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from llm_client import PHOTO_INTERPRET_PROMPT
-
-PROMPT_FIXED = PHOTO_INTERPRET_PROMPT.replace(
-    '  "subtype":',
-    '  "label_name": "<de NAAM-regel van het PSA-label LETTERLIJK zoals gedrukt, bv \'FA/JOLTEON V\' of \'TM.MAG.GROUDON-HOLO\' — kopieer, interpreteer niet>",\n  "subtype":',
-).replace(
-    "REGELS:",
-    "REGELS:\n- FA/, SA/, RR/ vooraan op het label zijn AFKORTINGEN (Full Art, Special Art). NOOIT uitspellen tot een woord (dus nooit \'Fairy\'); laat staan of weglaten.",
-)
-assert PROMPT_FIXED != PHOTO_INTERPRET_PROMPT
+from qwen_lezer import PROMPT_FIXED  # noqa: E402,F401

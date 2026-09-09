@@ -177,8 +177,11 @@ def _enq_lookup_and_grade(
     ld = llm_data or {}
     set_code = ld.get("set_code") or slab.get("set_code")
     set_hint = ld.get("set_name") or slab.get("set_name")
+    # fase 4 (9-9): letterlijke labelregel van de lezer (Qwen) mag een kandidaat alleen
+    # BEVESTIGEN, nooit afkeuren — gemeten in het harnas, daar hoort 'ie dus ook live.
+    soft_hint = slab.get("label_name")
     try:
-        hit = cm_lookup(pokemon, number, set_hint=set_hint, set_code=set_code)
+        hit = cm_lookup(pokemon, number, set_hint=set_hint, set_code=set_code, soft_hint=soft_hint)
     except Exception as e:
         if verbose:
             print(f"  [cm] supabase-lookup fout: {e}", file=sys.stderr)

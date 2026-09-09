@@ -115,7 +115,8 @@ def _score_pick(row: dict, slab_tokens: set[str]) -> int:
 # 'S-P', 'SM-P', 'S8a-P'. Promo-subsets (S8a-P, SV1a-P) vallen in de catalogus onder
 # de familie-promo ('swshp', 'svp').
 _SET_ALIAS = {"sp": "swshp", "svp": "svp", "smp": "smp", "xyp": "xyp", "mp": "mp", "bwp": "bwp", "dpp": "dpp"}
-_RARITY_CODES = {"CSR", "SSR", "SAR", "SR", "AR", "UR", "HR", "CHR", "RR", "RRR", "SIR", "ACE", "IR", "PR", "MUR"}
+_RARITY_CODES = {"CSR", "SSR", "SAR", "SR", "AR", "UR", "HR", "CHR", "RR", "RRR", "SIR", "ACE", "IR", "PR", "MUR",
+                 "K", "U", "C", "R"}   # losse rarity-letters (gelijkgetrokken met het test-harnas, fase 4)
 _SETCODE_RE = _re.compile(r"^[A-Z]{1,3}\d{0,2}[A-Z]?(?:-P)?$")
 _GENERIEKE_TOKENS = {"pokemon", "jp", "en", "japanese", "english", "japan", "card", "game", "the", "of", "and",
                      "promo", "promos", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026",
