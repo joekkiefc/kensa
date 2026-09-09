@@ -100,6 +100,31 @@ Tekst-stappen (titel/omschrijving/ROI/oordeel = rest van de ~€79/mnd) via deze
 backwards test → schaduw → flip. Pas bespreken ná een geslaagde fase 4; PC-uptime wordt dan belangrijker.
 
 ## Status-log (nieuwste bovenaan)
+- 2026-09-09 10:20: **FASE 3 GESTART (go Tommy).** `dev/qwen_shadow.py` + cron elke 10 min
+  (`dev/cron_qwen_shadow.sh`, flock). Ontwerp — appels-met-appels met live:
+  * ZELFDE contract: `PHOTO_INTERPRET_PROMPT` geïmporteerd uit `llm_client` + identieke
+    user-msg met titel EN/JP; zelfde bronfoto (`source_photo_idx`); temperature 0.
+  * BEWUSTE afwijking: Qwen krijgt volle resolutie (live verkleint naar 768px puur om
+    Gemini-tokens; lokale GPU heeft die kosten niet → we meten de vervangings-configuratie).
+    Foto-upgrade: mercdn `thumb→item/detail/orig` (810×1080) · Shops `-/small→-/large`
+    (tot 952×1600) — empirisch bevestigd; upgrade-status per rij gelogd.
+  * Vergelijking: cert/grade/nummer/naam (fase-2-normalisatie) + business-sleutel-kern
+    (`pokemon:nummer:grade`, want live-keys missen structureel de set_code) via
+    `analyze._build_card_key` over Qwens velden vs `listings.card_key`.
+  * Read-only op live; PC uit → run stopt zonder checkpoint-opschuif ('stekker'-gedrag);
+    achterstand >24u = `missed_offline` (geen backfill). Checkpoint gestart 09:35 UTC.
+  * Bewaking: 1u-proefdraai-oordeel (laag 7) via automation 11:25 · dagrapport 20:45 mét
+    PSA-steekproef op cert-verschillen (max ~8/dag, rustig tempo).
+  **Smoke (8 kaarten) — grote vondst:** op Mercari-Shops-listings staat in de fototabel
+  alléén een 143px-thumbnail → live Gemini **verzint daar certs én kaartnummers**
+  (3 van 3 door Jowi op de foto geverifieerd: label 161320999/997/912 — Qwen alle drie
+  cijfer-perfect; Gemini 61559994/58155061/81129912 = niet op het label, en nummers die
+  de verkoperstitel tegenspreken). Qwens bekende zwakte blijft naam-vertaling
+  (サンダース→"Sandshrew" i.p.v. Jolteon) — precies wat de key-kern-vergelijking vangt.
+  Buyee/Mercari full-res in de smoke: alle velden correct. Qwen 1,49 s/kaart gemiddeld.
+- 2026-09-09 07:50: **Fase 2 eindstand na 2e herkansing (Tommy's go).** V3 (regel-per-veld) was een ontwerpfout van Jowi — veld-hussel + voorbeeld-lek ("339/SM-P" uit de prompt gekopieerd), 6/30, teruggedraaid. **V4** (= bewezen V2 + apart `other_label_text`-laatje, lek-voorbeeld verwijderd): **25/30 alles-exact · cert 29/30 · grade 30/30 · nummer 29/30 · naam 25/30 · valstrikken 5/5 · 0 verzonnen · 1,24 s/kaart.**
+  Ontleding van de 5 restfouten: 1× oneerlijke input (z679038666 = foto met TWEE slabs; Qwen las de buurslab — Sylveon 105862384 #068 — foutloos; kaart uitgesloten per set-kwaliteitsregel) → effectief **26/29, cert 29/29, grade 29/29, nummer 29/29, naam 25/29**. Blijven over: **4 échte naamfouten** (PKACHU mist I; SYLVN→SYLVAN + variety-regel aangeplakt; 1× set-regel als naam gekozen; 1× kennis-substitutie LANA'S AID→ASSISTANCE).
+  **Formeel oordeel: fase 2 NIET gehaald** (lat = 100% op alle velden). Feitelijk: cert/grade/nummer 100% op eerlijke foto's, en Qwen ving 2 échte cert-fouten van de betaalde pijplijn. Naam = 86%. Beslisvraag bij Tommy: door naar fase 3 met naam-lat als head-to-head Qwen vs Gemini op ≥1000 echte kaarten (cert-lat blijft heilig), of stoppen.
 - 2026-09-09 07:25: **FASE 2 na herkansing: GEFAALD op de letter (13/30 alles-exact) — STOP conform plan, beslissing bij Tommy.** Maar de ontleding verandert het beeld:
   - Valstrikken **5/5**, **0 verzonnen certs** (prompt V2 fixte hallucinatie — ook ARS-slab en AXCI-screenshot correct "no_label").
   - **Answer-key-corruptie ontdekt (2×):** pipeline (Gemini) had certs verhaspeld (88587580 i.p.v. 161081580; 15663398 mist een 8) en die foute nummers bestonden bij PSA als honkbal 2001/hockey 1972. **Qwen las beide kaarten GOED — per PSA-register bevestigd** (161081580=PIKACHU ex #234 g10; 156633988=DARK ARBOK-HOLO #24 g9). → Gecorrigeerd scorebeeld: **cert 30/30, number 30/30, grade 29/30** (1 notatie: label "NM-MT" → 8), naam blijft zwak.
