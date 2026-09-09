@@ -108,8 +108,8 @@ def schoon_nummer(number, set_code) -> str:
 
 def uitkomst(label_name, name, number, grade, set_code, set_name, jaar):
     """Fix 1 (gefilterd) + fix 4 toegepast → (eBay-zoekzin, CM-URL, pokemon, nummer)."""
-    pokemon = pokemon_uit(label_name, name)
-    naam = schone_naam(pokemon, subtype_uit(label_name, name))
+    pokemon = pokemon_uit(name, label_name)
+    naam = schone_naam(pokemon, subtype_uit(name, label_name))
     num = schoon_nummer(number, set_code)
     try:
         jaar_i = int(jaar) if jaar not in (None, "", "null") else None
@@ -241,7 +241,7 @@ def rapport():
             continue
         q, g = reads.get(iid, {}), r["gemini"]
         tot["n"] += 1
-        eb_t, cm_t, _, _ = uitkomst(t["card_name"], t["card_name"], t["number"], t["grade"], None, t.get("set"), t.get("year"))
+        eb_t, cm_t, st_, _, _ = uitkomst5(t["card_name"], t["card_name"], t["number"], t["grade"], None, None, t.get("year"), psa_set=t.get("set"))
         eb_q, cm_q, sq, pq, nq = uitkomst5(q.get("label_name"), q.get("name"), q.get("number"), q.get("grade"), q.get("set_code"), q.get("set_name"), q.get("year"))
         eb_g, cm_g, sg, pg, ng = uitkomst5(None, g.get("card_name"), g.get("number"), g.get("grade"), None, g.get("set_name"), None)
         if cm_t: tot["cm_t"] += 1
@@ -358,8 +358,8 @@ def sheets():
         d.text((16, 12), f"Test-60 — kaarten {s+1}-{s+len(chunk)} — QWEN (fixes 1-4, full-res) vs GEMINI (live)", fill="#111", font=FB)
         for j, r in enumerate(chunk):
             y0 = 50 + j * RH; iid = r["item_id"]; q = reads.get(iid, {}); g = r["gemini"]; t = truth.get(iid)
-            eb_q, cm_q, pq, nq = uitkomst(q.get("label_name"), q.get("name"), q.get("number"), q.get("grade"), q.get("set_code"), q.get("set_name"), q.get("year"))
-            eb_g, cm_g, pg, ng = uitkomst(None, g.get("card_name"), g.get("number"), g.get("grade"), None, g.get("set_name"), None)
+            eb_q, cm_q, sq, pq, nq = uitkomst5(q.get("label_name"), q.get("name"), q.get("number"), q.get("grade"), q.get("set_code"), q.get("set_name"), q.get("year"))
+            eb_g, cm_g, sg, pg, ng = uitkomst5(None, g.get("card_name"), g.get("number"), g.get("grade"), None, g.get("set_name"), None)
             same = cm_q == cm_g and cm_q is not None
             kleur = "#2e8b57" if same else ("#c9a227" if (cm_q is None and cm_g is None) else "#c0392b")
             d.rectangle([8, y0 + 4, W - 8, y0 + RH - 6], fill="#ffffff", outline=kleur, width=5)
@@ -444,8 +444,8 @@ def cm_strict(pokemon, num, set_code=None, set_tekst=None):
 
 def uitkomst5(label_name, name, number, grade, set_code, set_name, jaar, psa_set=None):
     """Als uitkomst(), maar CM via cm_strict (fix 5). → (eBay, CM-url, status, pokemon, num)."""
-    pokemon = pokemon_uit(label_name, name)
-    naam = schone_naam(pokemon, subtype_uit(label_name, name))
+    pokemon = pokemon_uit(name, label_name)
+    naam = schone_naam(pokemon, subtype_uit(name, label_name))
     num = schoon_nummer(number, set_code)
     try: jaar_i = int(jaar) if jaar not in (None, "", "null") else None
     except Exception: jaar_i = None
