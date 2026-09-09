@@ -95,24 +95,28 @@ def psa_lookup(scrape, cert: str) -> tuple[dict | None, str | None]:
 
 
 def gedaan_certs() -> set[str]:
-    if not PSA_F.exists():
-        return set()
-    out = set()
-    for l in PSA_F.read_text().splitlines():
-        if l.strip():
-            out.add(json.loads(l).get("cert"))
-    return out
-
-
-def gedaan_url_items() -> set[str]:
-    """item_ids die al een URL-verschil-oordeel hebben (1 rij per kaart)."""
+    """certs met een ECHT oordeel. psa_fail (429/timeout) telt niet → volgende run opnieuw
+    (429-les uit test-60, 9-9 16:30: 5 kaarten waren stil verloren)."""
     if not PSA_F.exists():
         return set()
     out = set()
     for l in PSA_F.read_text().splitlines():
         if l.strip():
             r = json.loads(l)
-            if r.get("categorie") == "url_verschil":
+            if not str(r.get("oordeel", "")).startswith("psa_fail"):
+                out.add(r.get("cert"))
+    return out
+
+
+def gedaan_url_items() -> set[str]:
+    """item_ids die al een ECHT URL-verschil-oordeel hebben (1 rij per kaart); psa_fail → opnieuw."""
+    if not PSA_F.exists():
+        return set()
+    out = set()
+    for l in PSA_F.read_text().splitlines():
+        if l.strip():
+            r = json.loads(l)
+            if r.get("categorie") == "url_verschil" and not str(r.get("oordeel", "")).startswith("psa_fail"):
                 out.add(r.get("item_id"))
     return out
 
@@ -224,6 +228,10 @@ def run() -> int:
         else:
             budget -= 1
             psa, err = psa_lookup(scrape, cert)
+            if psa is None and "429" in str(err):
+                budget = 0                      # PSA remt af: niks vastleggen, volgende run opnieuw
+                print(f"  [url/{soort}] {r['item_id']} cert={cert} -> PSA 429, run gestopt; komt volgende run terug")
+                return
             if psa is None:
                 rij["psa"] = None
                 rij["oordeel"] = f"psa_fail: {err}" if "404" not in str(err) else "cert_bestaat_niet"
@@ -254,6 +262,10 @@ def run() -> int:
             return
         budget -= 1
         psa, err = psa_lookup(scrape, cert)
+        if psa is None and "429" in str(err):
+            budget = 0                          # PSA remt af: niks vastleggen, volgende run opnieuw
+            print(f"  [{categorie}/{kant}] {r['item_id']} cert={cert} -> PSA 429, run gestopt; komt volgende run terug")
+            return
         rij = {"ts": datetime.now(timezone.utc).isoformat(), "item_id": r["item_id"],
                "categorie": categorie, "kant": kant, "cert": cert}
         if psa is None:
@@ -297,8 +309,17 @@ def rapport() -> int:
         print("nog geen psa_checks")
         return 1
     rows = [json.loads(l) for l in PSA_F.read_text().splitlines() if l.strip()]
-    urls = [r for r in rows if r["categorie"] == "url_verschil"]
+    # 1 rij per kaart: een latere (geslaagde) herkansing overschrijft een oude psa_fail-rij
+    laatste = {}
+    for r in rows:
+        if r["categorie"] == "url_verschil":
+            laatste[r["item_id"]] = r
+    urls = list(laatste.values())
     rows = [r for r in rows if r["categorie"] != "url_verschil"]
+    laatste = {}
+    for r in rows:
+        laatste[(r["categorie"], r["kant"], r["cert"])] = r
+    rows = list(laatste.values())
     if urls:
         print(f"URL-VERSCHILLEN tegen PSA ({len(urls)} kaarten):")
         print(f"  {'':14s}{'Qwen':>8s}{'Gemini':>8s}")
