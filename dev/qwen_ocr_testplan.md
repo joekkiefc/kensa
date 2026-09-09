@@ -100,6 +100,16 @@ Tekst-stappen (titel/omschrijving/ROI/oordeel = rest van de ~€79/mnd) via deze
 backwards test → schaduw → flip. Pas bespreken ná een geslaagde fase 4; PC-uptime wordt dan belangrijker.
 
 ## Status-log (nieuwste bovenaan)
+- 2026-09-09 12:35: **MEETLAT AANGESCHERPT DOOR TOMMY (scope-correctie).** Het doel van de
+  lezing is de exacte KAART identificeren → juiste Cardmarket-vergelijking/URL. Het cert is
+  een extra check, géén business-identiteit (code bevestigt: `card_key = pokemon:nummer:
+  grade[:set]`; 0× cert in bevoorrader/queue-flow; cert voedt alleen cert_sightings).
+  **Hoofdlat eindrapport = kaart-identificatie** (key-kern-overeenstemming + wie er bij
+  verschillen gelijk had), cert-lat wordt tweede meting (datakwaliteit). Eerlijke stand op
+  de hoofdlat vandaag: Gemini wint (naamkwestie, oorzaak+fix bekend); op de cert-lat wint
+  Qwen (scheidsrechter 8-0). Consequentie: faalt fase 3 op de hoofdlat met de bekende
+  naam-oorzaak → **fase 3b**: kort schaduwvenster mét naam-fix (label-only + woordenboek)
+  vóór enige flip. Geen flip zonder herbewijs op de hoofdlat.
 - 2026-09-09 10:30: **Absolute-waarheid-arm toegevoegd (opdracht Tommy: "vergelijk ook met de
   absolute waarheid").** `dev/qwen_shadow_psa_check.py`: PSA-register als scheidsrechter over
   (1) alle cert-verschillen (beide kanten), (2) qwen-extra-certs, (3) dagelijkse controle-
