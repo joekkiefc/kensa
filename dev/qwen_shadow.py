@@ -301,10 +301,12 @@ def run_batch(limit: int) -> int:
 
         # 2 pogingen op DEZELFDE rij; faalt allebei -> PC weg: stop zonder
         # checkpoint-opschuif, zodat deze rij bij de volgende run terugkomt.
+        # Titel BEWUST weg (bewezen 9-9: Japanse titel duwt Qwen naar romanisatie,
+        # 0/24 -> 9/24). Dit is de config die we zouden deployen; label heeft alles.
         q = None
         for poging in (1, 2):
             try:
-                q, dt = vraag_qwen(img, listing.get("title_en"), listing.get("title_jp"))
+                q, dt = vraag_qwen(img, None, None)
                 break
             except Exception as e:
                 print(f"  qwen-call faalde ({type(e).__name__}) — poging {poging}")
