@@ -248,15 +248,15 @@ def rapport():
         # eBay op KERN-inhoud (pokemon+subtype, nummer, grade) — de set-code is een
         # optioneel extra; PSA-waarheid heeft die nooit, dus letterlijk vergelijken is oneerlijk.
         def kern(ln, nm, nr, gr):
-            return (pokemon_uit(ln, nm), subtype_uit(ln, nm), schoon_nummer(nr, None).split("/")[0], norm_grade(gr))
+            return (pokemon_uit(nm, ln), subtype_uit(nm, ln), schoon_nummer(nr, None).split("/")[0].lstrip("0") or "0", norm_grade(gr))
         k_t = kern(t["card_name"], t["card_name"], t["number"], t["grade"])
         k_q = kern(q.get("label_name"), q.get("name"), q.get("number"), q.get("grade"))
         k_g = kern(None, g.get("card_name"), g.get("number"), g.get("grade"))
         ok = {"cm_g": bool(cm_t) and cm_g == cm_t, "cm_q": bool(cm_t) and cm_q == cm_t,
               "eb_g": k_g == k_t, "eb_q": k_q == k_t,
               "cert_g": cert_digits(g.get("cert")) == t["cert"], "cert_q": cert_digits(q.get("cert")) == t["cert"],
-              "nr_g": norm_number(ng).split("/")[0] == norm_number(t["number"]).split("/")[0],
-              "nr_q": norm_number(nq).split("/")[0] == norm_number(t["number"]).split("/")[0]}
+              "nr_g": (norm_number(ng).split("/")[0].lstrip("0") or "0") == (norm_number(t["number"]).split("/")[0].lstrip("0") or "0"),
+              "nr_q": (norm_number(nq).split("/")[0].lstrip("0") or "0") == (norm_number(t["number"]).split("/")[0].lstrip("0") or "0")}
         for k, v in ok.items(): tot[k] += v
         if not (ok["cm_q"] and ok["eb_q"]) or not (ok["cm_g"] and ok["eb_g"]):
             missers.append((iid, t, ok, eb_t, cm_t, eb_g, cm_g, eb_q, cm_q, q, g))
