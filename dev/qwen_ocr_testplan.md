@@ -99,7 +99,16 @@ Gemini/Vision zoals nu. Rollback = schakelaar terug.
 Tekst-stappen (titel/omschrijving/ROI/oordeel = rest van de ~€79/mnd) via dezelfde trechter:
 backwards test → schaduw → flip. Pas bespreken ná een geslaagde fase 4; PC-uptime wordt dan belangrijker.
 
-## Status-log
+## Status-log (nieuwste bovenaan)
+- 2026-09-09 07:25: **FASE 2 na herkansing: GEFAALD op de letter (13/30 alles-exact) — STOP conform plan, beslissing bij Tommy.** Maar de ontleding verandert het beeld:
+  - Valstrikken **5/5**, **0 verzonnen certs** (prompt V2 fixte hallucinatie — ook ARS-slab en AXCI-screenshot correct "no_label").
+  - **Answer-key-corruptie ontdekt (2×):** pipeline (Gemini) had certs verhaspeld (88587580 i.p.v. 161081580; 15663398 mist een 8) en die foute nummers bestonden bij PSA als honkbal 2001/hockey 1972. **Qwen las beide kaarten GOED — per PSA-register bevestigd** (161081580=PIKACHU ex #234 g10; 156633988=DARK ARBOK-HOLO #24 g9). → Gecorrigeerd scorebeeld: **cert 30/30, number 30/30, grade 29/30** (1 notatie: label "NM-MT" → 8), naam blijft zwak.
+  - **Naam 14/30**, vrijwel volledig **segmentatie**: Qwen plakt de variety/set-regel achter de naam ("... SPECIAL ART RARE", "... EEVEE HEROES") — geen leesfout, verkeerde regel-afbakening. Fix-idee: aparte JSON-velden voor variety/set (bucket), + grade-tekstmapping (PSA-schaal NM-MT=8 etc.), + 2 corrupte antwoordrijen herstellen.
+  - **Echte leesfouten: 4** (FA/PKACHU mist I; SYLVAN vs SYLVN; FRM-punt weg; "LANA'S ASSISTANCE" = eigen kennis i.p.v. lezen).
+  - Snelheid op GPU: **~1,4 s/kaart gemiddeld** (vol beeld) — sneller dan Gemini's ~1,7 s.
+- 2026-09-09 07:16: Fase 2 run 1: GEFAALD 12/30 — hoofdzaak: 18 setfoto's bleken 240px-duimnagels (set-kwaliteitsfout in de bouw) + 2 verzonnen certs op valstrikken. Set gerepareerd (alle foto's naar volle resolutie: Mercari orig / Shops large), 2 nachtelijk toegevoegde valstrikken alsnog geschouwd (beide geldig), prompt V2 verhard (letterlijk kopiëren, andere graders = no_label). Run 1 gearchiveerd als backtest_results_run1.json.
+- 2026-09-09 ~07:10: Laag 6 bewezen: scheidsrechter-selftest GESLAAGD (35 waarheid-checks + 7 corruptie-checks gevangen).
+- 2026-09-09 ~03:20: **GPU-mysterie opgelost:** 47 s kwam doordat het 27B-model (mijn testcall) de VRAM bezette → VL naar CPU. Na nachtelijke unload: **1,9 s/kaart vol beeld** op de 4070 Ti Super. Geen instelling nodig; les: nooit 27B via dit endpoint aanroepen naast de VL.
 - 2026-09-08: plan opgesteld. Fase 0 half: verbinding bewezen; wacht op geladen VL-model.
 - 2026-09-08 ~21:45: **Fase 0 GESLAAGD op nauwkeurigheid** — qwen2.5-vl-7b-instruct in lijst; 3/3 certs exact op volle resolutie (Pikachu 150469346, Det. Pikachu 158103948, Ho-Oh 74174316); JSON-formaat netjes gevolgd.
 - OPEN PUNT snelheid: vol beeld ~47 s/kaart (ook warm), 1024px ~32 s, 768px ~12 s. MAAR kleiner beeld kost precisie: 768px cert onleesbaar; 1024px plakte Ho-Oh een verzonnen "/172" aan het nummer (strenge test ving dit — bewijs dat exact-matchen werkt). Prefill ~40 tok/s ruikt naar CPU i.p.v. GPU → Tommy checkt GPU-offload in Bionic (Loaded Instances). Rode-label-crop (OpenCV) faalde op testfoto 1 → geen betrouwbare snelweg.

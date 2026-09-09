@@ -48,3 +48,4 @@ cookies.json
 secrets.json
 .env
 cm_bevoorrader_administratie.json
+dev/qwen_goldenset/photos/
