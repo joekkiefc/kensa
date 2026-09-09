@@ -239,7 +239,14 @@ def vergelijk(gem: dict, q: dict, live_key: str | None) -> dict:
 
 
 def _kern(key: str | None) -> str | None:
-    return ":".join(key.split(":")[:3]) if key else None
+    """pokemon:nummer:grade — nummer genormaliseerd naar het deel vóór de slash,
+    want '193' (Gemini) en '193/184' (Qwen) zijn dezelfde kaart (formaat, geen inhoud)."""
+    if not key:
+        return None
+    d = key.split(":")
+    if len(d) < 3:
+        return key
+    return f"{d[0]}:{d[1].lstrip('#').split('/')[0]}:{d[2]}"
 
 
 # ------------------------------------------------------------------ batch

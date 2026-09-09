@@ -162,10 +162,10 @@ def run() -> int:
         print(f"  [{categorie}/{kant}] {r['item_id']} cert={cert} -> {rij['oordeel']}"
               + (f" (PSA: {psa['card_name']} #{psa['number']} g{psa['grade']})" if psa else ""))
 
-    # 1. verschillen: Qwen eerst, dan Gemini (beide kanten willen we op termijn)
+    # 1. verschillen: per geval BEIDE kanten na elkaar, zodat elk gecheckt
+    # verschil meteen een compleet oordeel heeft (Tommy 9-9: absolute waarheid).
     for r in differ:
         check(r, "qwen", "verschil")
-    for r in differ:
         check(r, "gemini", "verschil")
     # 2. qwen-extra
     for r in extra:
