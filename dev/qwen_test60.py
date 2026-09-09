@@ -443,8 +443,12 @@ def cm_strict(pokemon, num, set_code=None, set_tekst=None):
 
 
 def uitkomst5(label_name, name, number, grade, set_code, set_name, jaar, psa_set=None):
-    """Als uitkomst(), maar CM via cm_strict (fix 5). → (eBay, CM-url, status, pokemon, num)."""
+    """Als uitkomst(), maar CM via cm_strict (fix 5) + JP→EN-vangnet. → (eBay, CM-url, status, pokemon, num)."""
     pokemon = pokemon_uit(name, label_name)
+    if not pokemon:                                   # vangnet (Tommy): Japans → officiële Engelse naam
+        from jp_naam_vangnet import naar_engels
+        en = naar_engels(name)[0] or naar_engels(label_name)[0]
+        pokemon = en.lower() if en else None
     naam = schone_naam(pokemon, subtype_uit(name, label_name))
     num = schoon_nummer(number, set_code)
     try: jaar_i = int(jaar) if jaar not in (None, "", "null") else None
