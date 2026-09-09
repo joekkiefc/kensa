@@ -100,6 +100,23 @@ Tekst-stappen (titel/omschrijving/ROI/oordeel = rest van de ~€79/mnd) via deze
 backwards test → schaduw → flip. Pas bespreken ná een geslaagde fase 4; PC-uptime wordt dan belangrijker.
 
 ## Status-log (nieuwste bovenaan)
+- 2026-09-09 16:45: **FASE 4 LIVE — Qwen is de slab-lezer (GO Tommy 16:35: "gewoon overstappen").**
+  Tommy's koers: 48u-schaduw vervalt; Gemini ALLEEN als Qwen niet bereikbaar is; onvolledige
+  lezing → Vision-vangnet zoals altijd. Gebouwd: `qwen_lezer.py` (full-res foto, PROMPT_FIXED
+  nu in productie, QwenOnbereikbaar, stroomonderbreker 120 s, cert-sanity: 'PSA'/'DOPA!'/
+  77777777/komma-lijsten → geen cert), `lezing_opschonen.py` (= uitkomst5-trechter: pokémon-woord
+  + prefix, JP→EN vangnet, échte set-code als nummer-suffix), `check_slab_hybrid.py` schakelaar
+  `KENSA_SLAB_LEZER=qwen` (_source qwen / gemini_fallback / vision_fallback), enqueue geeft
+  label_name als accept-only set-hint door, card_key zonder dubbele set-code. Tests 159 groen.
+  Smoke 3 kaarten + onbereikbaar-smoke ok. Flip 16:44:54 (commit 0d34e3c). Eerste uur live:
+  52 lezingen, 100 % Qwen, vangnet 0 %, 7 rommel-certs terecht afgekeurd, Qwen 7,4 s gem /
+  12 s p95 per foto (6 parallel). Schaduw-cron uit; PSA-cron loopt de URL-verschillen af tot
+  ±17:45 en gaat dan weg. Dagrapport 20:45 = `dev/qwen_live_rapport.py`.
+  **ROLLBACK: regel `export KENSA_SLAB_LEZER=qwen` uit `cron_worker_ocr.sh` → volgende run Gemini.**
+  Uitkomsten vandaag die de flip droegen: test-60 (48 met PSA) URL 31-31, eBay 46-43 Qwen,
+  nummer 48-47 Qwen, cert 48-47 Gemini, 1 verkeerde URL Qwen (Pikachu V Start Deck 100) /
+  0 Gemini; schaduw URL-verschillen tegen PSA (39 gecheckt): Qwen 12 goed / 0 fout, Gemini 0
+  goed / 2 FOUT (Steelix, Articuno: geen set → oude set-URL) / 10 gemist.
 - 2026-09-09 19:40: **FASE 3b GESTART (Tommy: 'die 1000 zijn met de oude opdracht, achterhaald').**
   Schaduw draait nu de deploy-config: PROMPT_FIXED (fix 2+3, gedeeld via dev/qwen_prompt_fixed.py),
   full-res, geen titel, en per kaart de Cardmarket-uitkomst via set-check + JP→EN-vangnet voor
