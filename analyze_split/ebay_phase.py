@@ -67,7 +67,17 @@ def _build_card_key(slab: dict, llm_data: dict | None) -> str | None:
     if not (pokemon and number and grade):
         return None
     set_code = (llm_data or {}).get("set_code") or slab.get("set_code") or ""
-    key = f"{str(pokemon).lower().strip()}:{str(number).strip()}:{str(grade).strip()}"
+    number = str(number).strip()
+    # fase 4 (9-9): zelfde regel als analyze._build_card_key — een échte set-code als
+    # nummer-suffix ('206/SV8A-P') hoort maar één keer in de sleutel. De twee kopieën
+    # MOETEN dezelfde sleutel geven (tests/test_ebay_cache_omweg.py bewaakt dat).
+    if "/" in number:
+        from supabase_client import geldige_setcode as _gsc
+        kop, staart = number.split("/", 1)
+        if _gsc(staart):
+            number = kop
+            set_code = set_code or staart
+    key = f"{str(pokemon).lower().strip()}:{number}:{str(grade).strip()}"
     if set_code:
         key += f":{str(set_code).lower().strip()}"
     return key
@@ -161,8 +171,10 @@ def _cache_is_fresh(fetched_at: str | None) -> bool:
     return ts >= datetime.now(timezone.utc) - timedelta(days=PRICE_CACHE_DAYS)
 
 
-def _price_cache_upsert_ebay(card_key: str, query: str, result: dict) -> None:
-    now = now_iso()
+def _price_cache_upsert_ebay(card_key: str, query: str, result: dict, fetched_at: str | None = None) -> None:
+    # `fetched_at`: alleen voor de cache-omweg (kopie onder de eigen sleutel houdt de
+    # OORSPRONKELIJKE ophaaltijd, anders zou een oud antwoord 3 dagen extra leven).
+    now = fetched_at or now_iso()
     # Dispatcher: env KENSA_WRITE_STORAGE stuurt naar Supabase-native i.p.v. SQLite+sync.
     mode = os.environ.get("KENSA_WRITE_STORAGE", "sqlite")
     if mode == "supabase":
@@ -276,8 +288,10 @@ def _ebay_cache_check(
     llm_data: dict | None,
     query: str,
     verbose: bool,
+    listing: dict | None = None,
 ) -> tuple[str | None, dict | None]:
-    """Check twee cache-lagen (identiteit-cache 3d, query-cache 24u).
+    """Check de cache-lagen: identiteit-cache 3d (exacte sleutel, dan de omweg via
+    Cardmarket-URL / kern — Tommy 9-9), daarna query-cache 24u.
 
     Returns: `(card_key, cached_result)`. Als cached_result niet None,
     dan retourneert de orkestrator die direct.
@@ -298,6 +312,33 @@ def _ebay_cache_check(
                 return (card_key, {**pc_result, "from_cache": True, "cache_source": "price_cache"})
             except Exception:
                 pass
+
+    # (B8b/B8c) — Omweg: dezelfde kaart onder een andere spelling van de sleutel
+    # (via Cardmarket-URL, anders via kern pokemon:nummer:grade zonder set-botsing).
+    if card_key:
+        from analyze_split.ebay_cache_omweg import zoek as _omweg_zoek
+        rij, bron = _omweg_zoek(card_key, (listing or {}).get("item_id"))
+        if rij and _cache_is_fresh(rij.get("ebay_fetched_at")) and rij.get("ebay_result_json"):
+            try:
+                pc_result = json.loads(rij["ebay_result_json"])
+            except Exception:
+                pc_result = None
+            if pc_result is not None:
+                if verbose:
+                    print(
+                        f"  [ebay] price_cache hit via omweg {bron} ({card_key} ← {rij.get('card_key')}) — "
+                        f"{len(pc_result.get('sales') or [])} sales hergebruikt",
+                        file=sys.stderr,
+                    )
+                # Kopie onder de eigen sleutel, mét de oorspronkelijke ophaaltijd → volgende keer exacte hit.
+                try:
+                    _price_cache_upsert_ebay(card_key, rij.get("ebay_query") or query, pc_result,
+                                             fetched_at=rij.get("ebay_fetched_at"))
+                except Exception as e:
+                    if verbose:
+                        print(f"  [ebay] kopie onder eigen sleutel mislukt: {e}", file=sys.stderr)
+                return (card_key, {**pc_result, "from_cache": True, "cache_source": bron,
+                                   "cache_via": rij.get("card_key")})
 
     # (B9) — Query-cache (analysis-tabel, 24u)
     cached = _cached_ebay_for_query(query)
@@ -465,7 +506,7 @@ def run_ebay_phase_v2(
     assert query is not None
 
     # F3 — Cache-check
-    card_key, cached_result = _ebay_cache_check(slab, llm_data, query, verbose)
+    card_key, cached_result = _ebay_cache_check(slab, llm_data, query, verbose, listing=listing)
     if cached_result is not None:
         return cached_result
 
