@@ -13,6 +13,12 @@ PARALLEL="${WORKER_OCR_PARALLEL:-6}"
 # Verwacht ~80% Vision-kostenbesparing. Uitzetten = deze regel weghalen.
 export KENSA_USE_MULTIMODAL=1
 
+# FASE 4 — 2026-09-09 (Tommy GO 16:35): lokale Qwen op Bionic is DE slab-lezer.
+# Gemini ALLEEN als Qwen niet bereikbaar is (PC uit / Tailscale weg / timeout).
+# Onvolledige Qwen-lezing → Vision-vangnet zoals altijd. Zie qwen_lezer.py / check_slab_hybrid.py.
+# ROLLBACK: onderstaande regel weghalen → volgende run leest weer met Gemini.
+export KENSA_SLAB_LEZER=qwen
+
 # Supabase-first: OCR-worker leest listings + photos direct uit Supabase i.p.v.
 # lokale SQLite. Writes gaan nog steeds dual (Pi + Supabase) tot alle workers
 # over zijn. Uitzetten = deze regel weghalen → valt terug op SQLite-reads.
