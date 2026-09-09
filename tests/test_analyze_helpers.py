@@ -120,3 +120,16 @@ class TestNeedsLLM:
             "number": "011",
         })
         assert needs is True
+
+
+def test_card_key_setcode_suffix_niet_dubbel():
+    """fase 4: Qwen-nummer '206/SV8A-P' → sleutel 'glaceon:206:10:sv8a-p' (set-code één keer)."""
+    from analyze import _build_card_key
+    slab = {"card_name": "Glaceon EX", "number": "206/SV8A-P", "grade": "10", "set_code": "SV8A-P"}
+    assert _build_card_key(slab, None) == "glaceon:206:10:sv8a-p"
+    # zonder apart set_code-veld: suffix wordt de set-code
+    slab2 = {"card_name": "Pikachu", "number": "001/SV-P", "grade": "10"}
+    assert _build_card_key(slab2, None) == "pikachu:001:10:sv-p"
+    # 'nummer/totaal' (Gemini-stijl) blijft zoals het was
+    slab3 = {"card_name": "Glaceon", "number": "217/172", "grade": "10", "set_code": "s12a"}
+    assert _build_card_key(slab3, None) == "glaceon:217/172:10:s12a"

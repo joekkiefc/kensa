@@ -97,7 +97,17 @@ def _build_card_key(slab: dict, llm_data: dict | None) -> str | None:
     if not (pokemon and number and grade):
         return None
     set_code = (llm_data or {}).get("set_code") or slab.get("set_code") or ""
-    key = f"{str(pokemon).lower().strip()}:{str(number).strip()}:{str(grade).strip()}"
+    number = str(number).strip()
+    # fase 4 (9-9): de Qwen-lezer zet een échte set-code als nummer-suffix ('206/SV8A-P')
+    # voor de eBay-zoekzin en de CM-zoeker. In de sleutel hoort die maar één keer:
+    # 'glaceon:206:10:sv8a-p', niet 'glaceon:206/SV8A-P:10:sv8a-p'.
+    if "/" in number:
+        from supabase_client import geldige_setcode as _gsc
+        kop, staart = number.split("/", 1)
+        if _gsc(staart):
+            number = kop
+            set_code = set_code or staart
+    key = f"{str(pokemon).lower().strip()}:{number}:{str(grade).strip()}"
     if set_code:
         key += f":{str(set_code).lower().strip()}"
     return key
