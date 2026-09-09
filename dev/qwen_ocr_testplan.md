@@ -100,6 +100,15 @@ Tekst-stappen (titel/omschrijving/ROI/oordeel = rest van de ~€79/mnd) via deze
 backwards test → schaduw → flip. Pas bespreken ná een geslaagde fase 4; PC-uptime wordt dan belangrijker.
 
 ## Status-log (nieuwste bovenaan)
+- 2026-09-09 19:40: **FASE 3b GESTART (Tommy: 'die 1000 zijn met de oude opdracht, achterhaald').**
+  Schaduw draait nu de deploy-config: PROMPT_FIXED (fix 2+3, gedeeld via dev/qwen_prompt_fixed.py),
+  full-res, geen titel, en per kaart de Cardmarket-uitkomst via set-check + JP→EN-vangnet voor
+  Qwen én Gemini (`cm` in het log; hoofdlat in --rapport). Fase-3a-log gearchiveerd
+  (shadow_log_fase3a_oude_opdracht.jsonl). Vandaag LIVE in productie: harde set-check in
+  cm_lookup (2359a46 + vervolg), subtype-woorden geen set-bewijs, soft_hint accept-only.
+  Steekproeven vandaag: gouden set 27-26, test-60 (26 PSA) CM 15-15 / eBay 25-23 / nummer 26-25,
+  Pikachu-30 set-bevestigd Qwen 16 vs Gemini 13, 0 verkeerde URLs. Tommy's oordeel: Qwen is nu
+  beter. Fase 3b = 48u volume-bewijs → dan fase 4 (Qwen lezer, Gemini vangnet) op Tommy's go.
 - 2026-09-09 12:35: **MEETLAT AANGESCHERPT DOOR TOMMY (scope-correctie).** Het doel van de
   lezing is de exacte KAART identificeren → juiste Cardmarket-vergelijking/URL. Het cert is
   een extra check, géén business-identiteit (code bevestigt: `card_key = pokemon:nummer:

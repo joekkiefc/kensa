@@ -48,15 +48,7 @@ POKEDEX_EN = {v.lower() for v in json.load(open(KENSA / "pokedex_ja_en.json")).v
 PREFIX = {"mega", "dark", "light", "shining", "radiant", "galarian", "alolan", "hisuian", "paldean"}
 SUBTYPES = ["VMAX", "VSTAR", "GX", "EX", "V", "BREAK"]
 
-# ---- fix 2 + 3 in de prompt: prefix-regel + label_name-veld ----------------
-PROMPT_FIXED = PHOTO_INTERPRET_PROMPT.replace(
-    '  "subtype":',
-    '  "label_name": "<de NAAM-regel van het PSA-label LETTERLIJK zoals gedrukt, bv \'FA/JOLTEON V\' of \'TM.MAG.GROUDON-HOLO\' — kopieer, interpreteer niet>",\n  "subtype":',
-).replace(
-    "REGELS:",
-    "REGELS:\n- FA/, SA/, RR/ vooraan op het label zijn AFKORTINGEN (Full Art, Special Art). NOOIT uitspellen tot een woord (dus nooit 'Fairy'); laat staan of weglaten.",
-)
-assert PROMPT_FIXED != PHOTO_INTERPRET_PROMPT
+from qwen_prompt_fixed import PROMPT_FIXED  # fix 2 + 3, gedeeld met de schaduw
 
 
 # ---- fix 4: pokemon-woord uit label-tokens ----------------------------------

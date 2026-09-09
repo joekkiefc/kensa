@@ -42,7 +42,7 @@ sys.path.insert(0, str(KENSA))
 sys.path.insert(0, str(DEV))
 
 from storage_supabase import _http  # noqa: E402
-from llm_client import PHOTO_INTERPRET_PROMPT  # noqa: E402
+from qwen_prompt_fixed import PROMPT_FIXED  # noqa: E402  (fase 3b: opdracht mét fixes)
 from analyze import _build_card_key  # noqa: E402
 from qwen_backtest import norm_ws, norm_grade, norm_number, cert_digits, parse_model_json  # noqa: E402
 
@@ -105,7 +105,7 @@ def vraag_qwen(img_bytes: bytes, title_en: str | None, title_jp: str | None) -> 
     payload = {
         "model": MODEL,
         "messages": [
-            {"role": "system", "content": PHOTO_INTERPRET_PROMPT},
+            {"role": "system", "content": PROMPT_FIXED},
             {"role": "user", "content": [
                 {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}},
                 {"type": "text", "text": user_msg},
@@ -249,6 +249,21 @@ def _kern(key: str | None) -> str | None:
     return f"{d[0]}:{d[1].lstrip('#').split('/')[0]}:{d[2]}"
 
 
+def cm_uitkomst(q: dict, gem: dict) -> dict:
+    """Fase 3b: de uitkomst die telt — Cardmarket-URL via set-check + vangnet, beide kanten."""
+    try:
+        from qwen_test60 import uitkomst5
+        _, cq, sq, pq, _ = uitkomst5(q.get("label_name"), q.get("name"), q.get("number"), q.get("grade"),
+                                     q.get("set_code"), q.get("set_name"), q.get("year"))
+        _, cg, sg, pg, _ = uitkomst5(None, gem.get("card_name"), gem.get("number"), gem.get("grade"),
+                                     None, gem.get("set_name"), None)
+        return {"qwen_url": cq, "qwen_status": sq, "qwen_pokemon": pq,
+                "gemini_url": cg, "gemini_status": sg, "gemini_pokemon": pg,
+                "zelfde": bool(cq) and cq == cg}
+    except Exception as e:
+        return {"fout": f"{type(e).__name__}: {e}"}
+
+
 # ------------------------------------------------------------------ batch
 def run_batch(limit: int) -> int:
     OUT.mkdir(exist_ok=True)
@@ -338,9 +353,10 @@ def run_batch(limit: int) -> int:
             "foto": {"url": gebruikt_url, "px": img_px(img), "kb": len(img) // 1024,
                       "upgraded": upgraded},
             "gemini": {k: rj.get(k) for k in ("cert", "grade", "card_name", "number", "set_name")},
-            "qwen": {k: q.get(k) for k in ("cert", "grade", "name", "number", "set_code", "set_name",
+            "qwen": {k: q.get(k) for k in ("cert", "grade", "name", "label_name", "number", "set_code", "set_name",
                                             "subtype", "variant", "confidence")},
             "vergelijk": v,
+            "cm": cm_uitkomst(q, rj),
         })
         st["last_created_at"] = created
         verwerkt += 1
@@ -388,8 +404,20 @@ def rapport() -> int:
     gtijden = sorted(r["gemini_ms"] / 1000.0 for r in ok if r.get("gemini_ms"))
     dagen = sorted({r["created_at"][:10] for r in rows})
 
+    cm = [r["cm"] for r in ok if r.get("cm") and "fout" not in r["cm"]]
+    cm_tal = {
+        "kaarten": len(cm),
+        "qwen_url_set_ok": sum(1 for c in cm if c["qwen_status"] == "ok"),
+        "gemini_url_set_ok": sum(1 for c in cm if c["gemini_status"] == "ok"),
+        "qwen_afgekeurd": sum(1 for c in cm if c["qwen_status"] == "afgekeurd"),
+        "gemini_afgekeurd": sum(1 for c in cm if c["gemini_status"] == "afgekeurd"),
+        "qwen_ongecontroleerd": sum(1 for c in cm if c["qwen_status"] == "ongecontroleerd"),
+        "gemini_ongecontroleerd": sum(1 for c in cm if c["gemini_status"] == "ongecontroleerd"),
+        "zelfde_url": sum(1 for c in cm if c["zelfde"]),
+    }
     out = {
-        "sinds": st.get("started"), "dagen": dagen,
+        "fase": st.get("fase", "3a"), "sinds": st.get("started"), "dagen": dagen,
+        "CARDMARKET (hoofdlat)": cm_tal,
         "vergeleken_multimodal": len(ok), "vs_vision_fallback": len(vsv),
         "counters": st.get("counters", {}),
         "cert": {
