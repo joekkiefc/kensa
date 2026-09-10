@@ -1,0 +1,467 @@
+{
+ "m73795569327": {
+  "cert": "158311858",
+  "card_name": "LILLIE'S RIBOMBEE",
+  "number": "105",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV9-BATTLE PARTNERS",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m96382728745": {
+  "cert": "161276597",
+  "card_name": "BULBASAUR",
+  "number": "050",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SVG-VENUSAUR & CHARIZARD & BLASTOISE SPECIAL DECK SET EX",
+  "year": "2023",
+  "bron": "qwen-cert"
+ },
+ "z679480354": {
+  "cert": "164725801",
+  "card_name": "FA/MEW VMAX",
+  "number": "054",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD VSTAR UNIVERSE",
+  "year": "2022",
+  "bron": "qwen-cert"
+ },
+ "m43175724230": {
+  "cert": "163046390",
+  "card_name": "FA/SYLVEON VMAX",
+  "number": "232",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD VMAX CLIMAX",
+  "year": "2021",
+  "bron": "qwen-cert"
+ },
+ "m13662048823": {
+  "cert": "164936369",
+  "card_name": "ROCKET'S NIDOKING ex",
+  "number": "126",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV10-GLORY OF TEAM ROCKET",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m37359762935": {
+  "cert": "71965403",
+  "card_name": "FA/WISHIWASHI",
+  "number": "053",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SUN & MOON DREAM LEAGUE",
+  "year": "2019",
+  "bron": "qwen-cert"
+ },
+ "m63451919530": {
+  "cert": "168087457",
+  "card_name": "MAGIKARP",
+  "number": "080",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV1a-TRIPLET BEAT",
+  "year": "2023",
+  "bron": "qwen-cert"
+ },
+ "m19338531312": {
+  "cert": "76065041",
+  "card_name": "PIKACHU",
+  "number": "001",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV PROMO",
+  "year": "2022",
+  "bron": "qwen-cert"
+ },
+ "m36139242655": {
+  "cert": "164936356",
+  "card_name": "FA/DRAGONITE V",
+  "number": "078",
+  "grade": "10",
+  "set": "POKEMON GO JAPANESE",
+  "year": "2022",
+  "bron": "qwen-cert"
+ },
+ "m45773396169": {
+  "cert": "167141051",
+  "card_name": "MAGIKARP",
+  "number": "080",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV1a-TRIPLET BEAT",
+  "year": "2023",
+  "bron": "gemini-cert"
+ },
+ "m55378389211": {
+  "_fail": true
+ },
+ "m49659072855": {
+  "_fail": true
+ },
+ "m29054395472": {
+  "cert": "69590587",
+  "card_name": "COSPLAY PIKACHU",
+  "number": "99",
+  "grade": "10",
+  "set": "POKEMON JAPANESE XY PROMO",
+  "year": "2014",
+  "bron": "qwen-cert"
+ },
+ "m41376591738": {
+  "cert": "163326335",
+  "card_name": "UMBREON V",
+  "number": "047",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD EEVEE HEROES",
+  "year": "2021",
+  "bron": "qwen-cert"
+ },
+ "m78593771329": {
+  "cert": "145744739",
+  "card_name": "ZACIAN",
+  "number": "087",
+  "grade": "10",
+  "set": "POKEMON JAPANESE M2-INFERNO X",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m88749418903": {
+  "cert": "165411181",
+  "card_name": "MEOWTH",
+  "number": "192",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV-P PROMO",
+  "year": "2024",
+  "bron": "qwen-cert"
+ },
+ "z679433482": {
+  "_fail": true
+ },
+ "m62183889083": {
+  "cert": "174250808",
+  "card_name": "FA/MEW V",
+  "number": "105",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD FUSION ARTS",
+  "year": "2021",
+  "bron": "qwen-cert"
+ },
+ "m77736154607": {
+  "cert": "166462337",
+  "card_name": "PIKACHU",
+  "number": "003",
+  "grade": "10",
+  "set": "POKEMON ASIA 25TH ANNIVERSARY PROMO",
+  "year": "2021",
+  "bron": "qwen-cert"
+ },
+ "m51474062922": {
+  "cert": "133375373",
+  "card_name": "SYLVEON",
+  "number": "068",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV8a-TERASTAL FEST ex",
+  "year": "2024",
+  "bron": "qwen-cert"
+ },
+ "m79231200368": {
+  "cert": "167580656",
+  "card_name": "PIKACHU V",
+  "number": "001",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD START DECK 100 COROCORO COMIC VERSION",
+  "year": "2022",
+  "bron": "qwen-cert"
+ },
+ "2JWYXUusKYVK37WD5QHiyt": {
+  "cert": "151539751",
+  "card_name": "FA/ROCKRUFF",
+  "number": "202",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD VMAX CLIMAX",
+  "year": "2021",
+  "bron": "qwen-cert"
+ },
+ "m12831157530": {
+  "cert": "161569744",
+  "card_name": "PIKACHU & ZEKROM GX",
+  "number": "041",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SUN & MOON TAG TEAM GX ALL STARS",
+  "year": "2019",
+  "bron": "qwen-cert"
+ },
+ "z679432838": {
+  "cert": "96512825",
+  "card_name": "FA/VAPOREON V",
+  "number": "075",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD EEVEE HEROES",
+  "year": "2021",
+  "bron": "qwen-cert"
+ },
+ "z679428770": {
+  "cert": "165668631",
+  "card_name": "LILLIE'S CLEFAIRY ex",
+  "number": "126",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV9-BATTLE PARTNERS",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m34740128379": {
+  "cert": "165547094",
+  "card_name": "PIKACHU",
+  "number": "218",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV-P PROMO",
+  "year": "2024",
+  "bron": "qwen-cert"
+ },
+ "m77975102486": {
+  "cert": "147868071",
+  "card_name": "FA/VICTINI",
+  "number": "007",
+  "grade": "10",
+  "set": "POKEMON JAPANESE MYTHICAL & LEGENDARY DREAM SHINE COLLECTION",
+  "year": "2016",
+  "bron": "qwen-cert"
+ },
+ "2JWYVfDgTeXERkdYZ69pm4": {
+  "cert": "147853604",
+  "card_name": "FA/HSN.ZOROARK VSTAR",
+  "number": "234",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD VSTAR UNIVERSE",
+  "year": "2022",
+  "bron": "qwen-cert"
+ },
+ "m41050348933": {
+  "_fail": true
+ },
+ "m27433128476": {
+  "cert": "156451148",
+  "card_name": "KARRABLAST",
+  "number": "094",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV11B-BLACK BOLT",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m60437303807": {
+  "cert": "159303530",
+  "card_name": "MEGA DRAGONITE ex",
+  "number": "232",
+  "grade": "10",
+  "set": "POKEMON JAPANESE M2a-MEGA DREAM ex",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "z679393170": {
+  "cert": "173128528",
+  "card_name": "MEGA DARKRAI ex",
+  "number": "114",
+  "grade": "10",
+  "set": "POKEMON JAPANESE M5-ABYSS EYE",
+  "year": "2026",
+  "bron": "qwen-cert"
+ },
+ "m40619657256": {
+  "cert": "139519561",
+  "card_name": "PSYDUCK",
+  "number": "175",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV2a-POKEMON CARD 151",
+  "year": "2023",
+  "bron": "qwen-cert"
+ },
+ "m37789768514": {
+  "cert": "155747498",
+  "card_name": "PIKACHU V",
+  "number": "122",
+  "grade": "10",
+  "set": "POKEMON JAPANESE S PROMO",
+  "year": "2020",
+  "bron": "qwen-cert"
+ },
+ "m61873867070": {
+  "cert": "149489202",
+  "card_name": "CHANSEY",
+  "number": "113",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV6-TRANSFORMATION MASK",
+  "year": "2024",
+  "bron": "qwen-cert"
+ },
+ "m86058058621": {
+  "cert": "134620765",
+  "card_name": "EEVEE ex",
+  "number": "224",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV8a-TERASTAL FEST ex",
+  "year": "2024",
+  "bron": "qwen-cert"
+ },
+ "m94813222977": {
+  "cert": "142005283",
+  "card_name": "TEAM ROCKET'S MIMIKYU",
+  "number": "205",
+  "grade": "10",
+  "set": "POKEMON JAPANESE M2a-MEGA DREAM ex",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "z679396754": {
+  "_fail": true
+ },
+ "z679391484": {
+  "_fail": true
+ },
+ "m97436729638": {
+  "cert": "121637308",
+  "card_name": "VAPOREON EX",
+  "number": "194",
+  "grade": "10",
+  "set": "POKEMON JAPANESE XY PROMO",
+  "year": "2015",
+  "bron": "qwen-cert"
+ },
+ "m79213832036": {
+  "_fail": true
+ },
+ "m20436636331": {
+  "cert": "110708202",
+  "card_name": "FA/HSN.ZOROARK VSTAR",
+  "number": "234",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD VSTAR UNIVERSE",
+  "year": "2022",
+  "bron": "qwen-cert"
+ },
+ "m26928187170": {
+  "cert": "149677344",
+  "card_name": "ROCKET'S HOUNDOOM",
+  "number": "100",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV10-GLORY OF TEAM ROCKET",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m76312649485": {
+  "cert": "162324477",
+  "card_name": "PIKACHU-HOLO",
+  "number": "124",
+  "grade": "10",
+  "set": "POKEMON JAPANESE S PROMO",
+  "year": "2020",
+  "bron": "qwen-cert"
+ },
+ "2JWYNPLPYj9ubagv245wzU": {
+  "_fail": true
+ },
+ "m92330976819": {
+  "cert": "157960420",
+  "card_name": "N'S ZORUA",
+  "number": "108",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV9-BATTLE PARTNERS",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "2JWYMMAxs7QFF6iWz3fhYr": {
+  "_fail": true
+ },
+ "m50614648986": {
+  "cert": "175248977",
+  "card_name": "MEWTWO & MEW GX",
+  "number": "052",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SUN & MOON TAG TEAM GX ALL STARS",
+  "year": "2019",
+  "bron": "qwen-cert"
+ },
+ "z678046724": {
+  "cert": "162575156",
+  "card_name": "MEGA GARDEVOIR ex",
+  "number": "087",
+  "grade": "10",
+  "set": "POKEMON JAPANESE M1S-MEGA SYMPHONIA",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m45275774988": {
+  "cert": "144691576",
+  "card_name": "CHARIZARD ex",
+  "number": "331",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV4a-SHINY TREASURE ex",
+  "year": "2023",
+  "bron": "qwen-cert"
+ },
+ "m51636181420": {
+  "cert": "169705724",
+  "card_name": "PIKACHU",
+  "number": "027",
+  "grade": "10",
+  "set": "POKEMON GO JAPANESE",
+  "year": "2022",
+  "bron": "qwen-cert"
+ },
+ "z679358992": {
+  "cert": "157017480",
+  "card_name": "MACHAMP-HOLO",
+  "number": "121",
+  "grade": "10",
+  "set": "POKEMON JAPANESE EXPEDITION",
+  "year": "2001",
+  "bron": "qwen-cert"
+ },
+ "z669586512": {
+  "cert": "159011879",
+  "card_name": "IONO'S BELLIBOLT ex",
+  "number": "130",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV9-BATTLE PARTNERS",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "z679353102": {
+  "cert": "152648990",
+  "card_name": "PIKACHU ex",
+  "number": "234",
+  "grade": "10",
+  "set": "POKEMON JAPANESE M2a-MEGA DREAM ex",
+  "year": "2025",
+  "bron": "qwen-cert"
+ },
+ "m69419141983": {
+  "cert": "148417895",
+  "card_name": "PIKACHU",
+  "number": "120",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SV-P PROMO",
+  "year": "2023",
+  "bron": "qwen-cert"
+ },
+ "m72593122739": {
+  "cert": "86327433",
+  "card_name": "FA/GLACEON V",
+  "number": "077",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SWORD & SHIELD EEVEE HEROES",
+  "year": "2021",
+  "bron": "qwen-cert"
+ },
+ "2JWYGgHnCxTARbkh5Zw8iq": {
+  "_fail": true
+ },
+ "m56419399139": {
+  "_fail": true
+ },
+ "m50732441044": {
+  "cert": "166182875",
+  "card_name": "FA/CHARIZARD GX",
+  "number": "209",
+  "grade": "10",
+  "set": "POKEMON JAPANESE SUN & MOON ULTRA SHINY GX",
+  "year": "2018",
+  "bron": "qwen-cert"
+ }
+}

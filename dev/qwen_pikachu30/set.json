@@ -1,0 +1,1412 @@
+[
+ {
+  "ts": "2026-09-09T12:31:11.948867+00:00",
+  "item_id": "m57485797066",
+  "created_at": "2026-09-09T12:20:17.808026+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.68,
+  "gemini_ms": 1574,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m57485797066_1.jpg?1788955951",
+   "px": "683x1080",
+   "kb": 127,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "139476570",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "291/SV-P",
+   "set_name": "Gym Event Campaign"
+  },
+  "qwen": {
+   "cert": "139476570",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "291/5V-P",
+   "set_code": "SV-P",
+   "set_name": "Gym Event Campaign",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:291/5V-P:10:sv-p",
+   "key_live": "pikachu:291/SV-P:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T12:30:48.415030+00:00",
+  "item_id": "2JWYkXXDsTBS7JZANBXuAh",
+  "created_at": "2026-09-09T12:20:12.665957+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.0,
+  "gemini_ms": 1354,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JPxEBYpzYRjMDErw96Gs7.jpg@jpg",
+   "px": "800x1338",
+   "kb": 159,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "001",
+   "set_name": "25th Anniversary Collection"
+  },
+  "qwen": {
+   "cert": "PSA10",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#001/028",
+   "set_code": "SV-P",
+   "set_name": "FA/Pikachu 25th Anniversary Coll.",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#001/028:10:sv-p",
+   "key_live": "pikachu:001:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T12:10:59.291038+00:00",
+  "item_id": "m71898632295",
+  "created_at": "2026-09-09T12:04:14.695702+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.12,
+  "gemini_ms": 2553,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m71898632295_1.jpg?1788954739",
+   "px": "1080x1080",
+   "kb": 217,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "161136651",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "003/015",
+   "set_name": "25th Anniversary Golden Box"
+  },
+  "qwen": {
+   "cert": "161136651",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#003/015",
+   "set_code": "SV-P",
+   "set_name": "25th Anniv-Golden Box",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#003/015:10:sv-p",
+   "key_live": "pikachu:003/015:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T12:10:39.852620+00:00",
+  "item_id": "m72938577241",
+  "created_at": "2026-09-09T12:04:09.878345+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.8,
+  "gemini_ms": 2410,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m72938577241_1.jpg?1788954580",
+   "px": "810x1080",
+   "kb": 126,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "114799135",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "206",
+   "set_name": "XY-P Promo"
+  },
+  "qwen": {
+   "cert": "14799135",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "206/XY-P",
+   "set_code": "XY-P",
+   "set_name": "2016 P.M. JPN. XY PROMO",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:206/XY-P:10:xy-p",
+   "key_live": "pikachu:206:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T12:10:26.044285+00:00",
+  "item_id": "m60729862507",
+  "created_at": "2026-09-09T12:04:07.231779+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.79,
+  "gemini_ms": 2086,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m60729862507_1.jpg?1788255827",
+   "px": "666x1080",
+   "kb": 92,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "163463423",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "001/028",
+   "set_name": "25th Anniversary Collection"
+  },
+  "qwen": {
+   "cert": "163463423",
+   "grade": "9.5",
+   "name": "Pikachu",
+   "number": "001/028",
+   "set_code": "SV-P",
+   "set_name": "FA/Pikachu-Rev.Foil 25th Anniversary Coll.",
+   "subtype": null,
+   "variant": "Reverse Holo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": false,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:001/028:9.5:sv-p",
+   "key_live": "pikachu:001/028:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T12:10:13.667229+00:00",
+  "item_id": "m52336839629",
+  "created_at": "2026-09-09T12:04:06.342964+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.2,
+  "gemini_ms": 3012,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m52336839629_1.jpg?1788954383",
+   "px": "1080x1080",
+   "kb": 158,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "135274677",
+   "grade": "10",
+   "card_name": "Birthday Pikachu",
+   "number": "007/025",
+   "set_name": "25th Anniversary Edition"
+  },
+  "qwen": {
+   "cert": "135274677",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#007",
+   "set_code": "SV1a",
+   "set_name": "2021 Pokemon Japanese Birthday Pikachu-Holo PCP 25th Anniversary Ed.",
+   "subtype": null,
+   "variant": "Holo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "pikachu:#007:10:sv1a",
+   "key_live": "pikachu:007/025:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T12:00:11.391603+00:00",
+  "item_id": "m25042137892",
+  "created_at": "2026-09-09T11:50:06.272834+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.13,
+  "gemini_ms": 2735,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m25042137892_1.jpg?1788953530",
+   "px": "1080x1080",
+   "kb": 239,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "166462351",
+   "grade": "10",
+   "card_name": "Pikachu ex",
+   "number": "033/106",
+   "set_name": "Super Electric Breaker"
+  },
+  "qwen": {
+   "cert": "166462351",
+   "grade": "10",
+   "name": "Pikachu ex",
+   "number": "#033/106",
+   "set_code": "SV8a-P",
+   "set_name": null,
+   "subtype": "EX",
+   "variant": "Rainbow Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#033/106:10:sv8a-p",
+   "key_live": "pikachu:033/106:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:50:22.192687+00:00",
+  "item_id": "z678295674",
+  "created_at": "2026-09-09T11:42:07.176221+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.76,
+  "gemini_ms": 2142,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/eb7c98a17e914b857199cbc046dc4ef2bff6974b/i-img722x1200-1788805364357acap87.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "722x1200",
+   "kb": 214,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu ex",
+   "number": "234/193",
+   "set_name": "Mega Dream"
+  },
+  "qwen": {
+   "cert": "#234",
+   "grade": "10",
+   "name": "Pikachu ex",
+   "number": "234/193 SAR",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "EX",
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:234/193 SAR:10",
+   "key_live": "pikachu:234/193:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:40:36.792640+00:00",
+  "item_id": "2JWYffQ99VVrFrN7aqWKTD",
+  "created_at": "2026-09-09T11:34:09.616073+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 3.72,
+  "gemini_ms": 1703,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYffP9WqAfbVffZG2DYE.jpg@jpg",
+   "px": "1600x1600",
+   "kb": 268,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "006/013",
+   "set_name": "Pokemon Mega Battle Deck"
+  },
+  "qwen": {
+   "cert": "8-10 cijfers",
+   "grade": "10",
+   "name": "Pikachu ex",
+   "number": "#006/023",
+   "set_code": "MP1",
+   "set_name": "2025 Pokemon",
+   "subtype": "EX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "pikachu:#006/023:10:mp1",
+   "key_live": "pikachu:006/013:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:32:15.738039+00:00",
+  "item_id": "z679482744",
+  "created_at": "2026-09-09T11:28:04.730878+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.22,
+  "gemini_ms": 1849,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/18f2d6101241da90816634545473199ee1d1c219/i-img1200x1200-1788952292873n6mvef.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "1200x1200",
+   "kb": 287,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "120",
+   "set_name": "Gym Event Campaign"
+  },
+  "qwen": {
+   "cert": "#120",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "120/SV-P",
+   "set_code": "SV-P",
+   "set_name": "Gym Event Campaign",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:120/SV-P:10:sv-p",
+   "key_live": "pikachu:120:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:11:30.252369+00:00",
+  "item_id": "m47444331122",
+  "created_at": "2026-09-09T11:04:19.110789+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.67,
+  "gemini_ms": 2290,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m47444331122_1.jpg?1788951472",
+   "px": "810x1080",
+   "kb": 154,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu V",
+   "number": "104/100",
+   "set_name": "Amazing Volt Tackle"
+  },
+  "qwen": {
+   "cert": "DOPA",
+   "grade": "10",
+   "name": "Pikachu V",
+   "number": "#104",
+   "set_code": "S8a-P",
+   "set_name": null,
+   "subtype": "V",
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": false,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#104:10:s8a-p",
+   "key_live": "pikachu:104/100:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:00:43.749166+00:00",
+  "item_id": "m51114659463",
+  "created_at": "2026-09-09T10:50:19.972722+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.87,
+  "gemini_ms": 3567,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m51114659463_1.jpg?1788950452",
+   "px": "810x1080",
+   "kb": 176,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "134940137",
+   "grade": "10",
+   "card_name": "Fukuoka's Pikachu",
+   "number": "289/SV-P",
+   "set_name": "SV-P Promotional cards"
+  },
+  "qwen": {
+   "cert": "134940137",
+   "grade": "10",
+   "name": "Fukuoka's Pikachu",
+   "number": "#289",
+   "set_code": "SV-P",
+   "set_name": "Special Box PC FUKUOKA",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#289:10:sv-p",
+   "key_live": "pikachu:289/SV-P:10:sv-p",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:00:26.303468+00:00",
+  "item_id": "m52471346944",
+  "created_at": "2026-09-09T10:50:13.675036+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.88,
+  "gemini_ms": 4070,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m52471346944_1.jpg?1788950224",
+   "px": "1080x917",
+   "kb": 131,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "165411184",
+   "grade": "10",
+   "card_name": "Surfing Pikachu VMAX",
+   "number": "022/028",
+   "set_name": "25th Anniversary Collection"
+  },
+  "qwen": {
+   "cert": "165411184",
+   "grade": "10",
+   "name": "Surfing Pikachu VMAX",
+   "number": "#022",
+   "set_code": null,
+   "set_name": "25th Anniversary Collection - FA",
+   "subtype": "VMAX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#022:10",
+   "key_live": "pikachu:022/028:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:40:33.475158+00:00",
+  "item_id": "m79488598152",
+  "created_at": "2026-09-09T10:34:11.701844+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.09,
+  "gemini_ms": 1869,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m79488598152_1.jpg?1788949313",
+   "px": "1080x1080",
+   "kb": 236,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "156711669",
+   "grade": "10",
+   "card_name": "Pikachu & Zekrom GX",
+   "number": "041/173",
+   "set_name": "Tag Team GX All Stars"
+  },
+  "qwen": {
+   "cert": "156711669",
+   "grade": "10",
+   "name": "Pikachu & Zekrom GX",
+   "number": "041/173",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "GX",
+   "variant": "RR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:041/173:10",
+   "key_live": "pikachu:041/173:10:sm12a",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:33:48.270163+00:00",
+  "item_id": "z679434426",
+  "created_at": "2026-09-09T10:22:14.874925+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.98,
+  "gemini_ms": 1832,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/8e8da4a63f70e1c9a8f7adb8981a071e2af6c2e9/i-img900x1200-17889151211905qv0tf.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 191,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "53617200",
+   "grade": "10",
+   "card_name": "Easter's Pikachu",
+   "number": "055/SM-P",
+   "set_name": "SM-P Promo"
+  },
+  "qwen": {
+   "cert": "53617200",
+   "grade": "10",
+   "name": "Easter's Pikachu",
+   "number": "055/187",
+   "set_code": "SM-P",
+   "set_name": "2017 P.M. JPN.",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:055/187:10:sm-p",
+   "key_live": "pikachu:055/SM-P:10:sm-p",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:33:17.539631+00:00",
+  "item_id": "m58963901993",
+  "created_at": "2026-09-09T10:22:10.341588+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.77,
+  "gemini_ms": 1934,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m58963901993_1.jpg?1788948747",
+   "px": "810x1080",
+   "kb": 152,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "165411182",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "173/165",
+   "set_name": "Pokemon Card 151"
+  },
+  "qwen": {
+   "cert": "165411182",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "173/165",
+   "set_code": "SV2a",
+   "set_name": "Pokemon SV2a JP",
+   "subtype": null,
+   "variant": "Art Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:173/165:10:sv2a",
+   "key_live": "pikachu:173/165:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:31:50.200179+00:00",
+  "item_id": "2JWYXVZm2DtVE46yVgGHix",
+  "created_at": "2026-09-09T10:20:12.639865+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 3.75,
+  "gemini_ms": 1535,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYXVXTjwXuKPifqNNXDM.jpg@jpg",
+   "px": "1600x1600",
+   "kb": 268,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": "163890801",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "173",
+   "set_name": "Pokemon Card 151"
+  },
+  "qwen": {
+   "cert": "163890801",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "173/165 AR",
+   "set_code": "SV2a",
+   "set_name": "2023 POKEMON SV2a JP",
+   "subtype": null,
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:173/165 AR:10:sv2a",
+   "key_live": "pikachu:173:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:30:34.170423+00:00",
+  "item_id": "2JWYXUWqDFiFf2T6b3dfrr",
+  "created_at": "2026-09-09T10:20:07.582021+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 3.7,
+  "gemini_ms": 1544,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYXUV9ihCZaE6zymBpK6.jpg@jpg",
+   "px": "1600x1600",
+   "kb": 260,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": "180318925",
+   "grade": "10",
+   "card_name": "Tohoku's Pikachu",
+   "number": "260",
+   "set_name": "Special Box PC Tohoku"
+  },
+  "qwen": {
+   "cert": "160318926",
+   "grade": "10",
+   "name": "Tohoku's Pikachu",
+   "number": "260/068/187",
+   "set_code": "SV-P",
+   "set_name": "Special Box PC Tohoku",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:260/068/187:10:sv-p",
+   "key_live": "pikachu:260:10:sv-p",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:20:07.198833+00:00",
+  "item_id": "z679428776",
+  "created_at": "2026-09-09T10:12:05.308795+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.95,
+  "gemini_ms": 1560,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/81500dcfb46dede9a4a01a75ea1f4832a1f59a9b/i-img900x1200-1788947474237g9pvwy.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 209,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "163534275",
+   "grade": "10",
+   "card_name": "Tohoku's Pikachu",
+   "number": "260/SV-P",
+   "set_name": "Special Box PC Tohoku"
+  },
+  "qwen": {
+   "cert": "163534275",
+   "grade": "10",
+   "name": "Tohoku's Pikachu",
+   "number": "260/187",
+   "set_code": "SV-P",
+   "set_name": "Special Box PC Tohoku",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:260/187:10:sv-p",
+   "key_live": "pikachu:260/SV-P:10:sv-p",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:10:32.253752+00:00",
+  "item_id": "m17559575198",
+  "created_at": "2026-09-09T10:04:08.682555+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.73,
+  "gemini_ms": 2352,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m17559575198_1.jpg?1788947499",
+   "px": "810x1080",
+   "kb": 170,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "163665756",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "291",
+   "set_name": "Gym Event Campaign"
+  },
+  "qwen": {
+   "cert": "163665756",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "291",
+   "set_code": "SV-P",
+   "set_name": "Gym Event Campaign",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:291:10:sv-p",
+   "key_live": "pikachu:291:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:10:12.230783+00:00",
+  "item_id": "m51502902769",
+  "created_at": "2026-09-09T10:04:05.940182+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.66,
+  "gemini_ms": 2081,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m51502902769_1.jpg?1788947283",
+   "px": "810x1080",
+   "kb": 83,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "124542268",
+   "grade": "10",
+   "card_name": "Poncho-Wear. Pikachu",
+   "number": "203/XY-P",
+   "set_name": "XY-P Promo"
+  },
+  "qwen": {
+   "cert": "124542268",
+   "grade": "10",
+   "name": "Poncho-Wear Pikachu",
+   "number": "203",
+   "set_code": "XY-P",
+   "set_name": "Mega Campaign",
+   "subtype": null,
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "pikachu:203:10:xy-p",
+   "key_live": "pikachu:203/XY-P:10:xy-p",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:01:32.433631+00:00",
+  "item_id": "m65341044396",
+  "created_at": "2026-09-09T09:50:20.047266+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.47,
+  "gemini_ms": 1933,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m65341044396_1.jpg?1788947045",
+   "px": "500x1080",
+   "kb": 57,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "133615272",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "265",
+   "set_name": "S-P Promo"
+  },
+  "qwen": {
+   "cert": "133615272",
+   "grade": "10",
+   "name": "FA/Pikachu VMAX",
+   "number": "#265",
+   "set_code": "S-P",
+   "set_name": null,
+   "subtype": "VMAX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "pikachu:#265:10:s-p",
+   "key_live": "pikachu:265:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:00:25.291413+00:00",
+  "item_id": "m88172353092",
+  "created_at": "2026-09-09T09:50:08.540496+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.01,
+  "gemini_ms": 1976,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m88172353092_1.jpg?1788946297",
+   "px": "1080x1080",
+   "kb": 167,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "163200767",
+   "grade": "10",
+   "card_name": "Fukuoka's Pikachu",
+   "number": "289",
+   "set_name": "Special Box PC Fukuoka"
+  },
+  "qwen": {
+   "cert": "163200767",
+   "grade": "10",
+   "name": "Fukuoka's Pikachu",
+   "number": "#289",
+   "set_code": "SV-P",
+   "set_name": "Special Box PC FUKUOKA",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#289:10:sv-p",
+   "key_live": "pikachu:289:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:41:00.615212+00:00",
+  "item_id": "m21527880146",
+  "created_at": "2026-09-09T09:34:13.956149+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.65,
+  "gemini_ms": 1572,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m21527880146_1.jpg?1788946071",
+   "px": "647x1080",
+   "kb": 91,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "175248964",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "032/131",
+   "set_name": "GX Starter Decks"
+  },
+  "qwen": {
+   "cert": "175248964",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#032/131",
+   "set_code": "SV-P",
+   "set_name": "GX Starter Decks",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#032/131:10:sv-p",
+   "key_live": "pikachu:032/131:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:30:17.297521+00:00",
+  "item_id": "m40792067464",
+  "created_at": "2026-09-09T09:20:07.258507+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.96,
+  "gemini_ms": 3168,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m40792067464_1.jpg?1788944386",
+   "px": "1080x810",
+   "kb": 123,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "170612040",
+   "grade": "10",
+   "card_name": "Tohoku's Pikachu",
+   "number": "260",
+   "set_name": "Special Box PC Tohoku"
+  },
+  "qwen": {
+   "cert": "170612040,170612041,170612042",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#260 #261 #289",
+   "set_code": "SV-P",
+   "set_name": "Special Box PC",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": false,
+   "name_agree": false,
+   "key_qwen": "pikachu:#260 #261 #289:10:sv-p",
+   "key_live": "pikachu:260:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:20:41.333644+00:00",
+  "item_id": "z677337454",
+  "created_at": "2026-09-09T09:14:06.598115+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.94,
+  "gemini_ms": 1732,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/322249ce67dc491b74ba62c8b1b2849f73a19fb7/i-img901x1200-1788699492893q9h40x.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "901x1200",
+   "kb": 168,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "164515959",
+   "grade": "10",
+   "card_name": "Pikachu ex",
+   "number": "234/193",
+   "set_name": "Terastal Fest ex"
+  },
+  "qwen": {
+   "cert": "164515959",
+   "grade": "10",
+   "name": "Pikachu ex",
+   "number": "234/193",
+   "set_code": "M2a",
+   "set_name": null,
+   "subtype": "SAR",
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:234/193:10:m2a",
+   "key_live": "pikachu:234/193:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:10:44.018647+00:00",
+  "item_id": "m23582703035",
+  "created_at": "2026-09-09T09:04:12.724602+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.98,
+  "gemini_ms": 1544,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m23582703035_1.jpg?1788944172",
+   "px": "1080x1080",
+   "kb": 218,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "020/M-P",
+   "set_name": "McDonald's Promo"
+  },
+  "qwen": {
+   "cert": "psa10",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "020",
+   "set_code": "M-P",
+   "set_name": "2015 Pokemon M-P JP",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:020:10:m-p",
+   "key_live": "pikachu:020/M-P:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:01:15.772110+00:00",
+  "item_id": "m62913027731",
+  "created_at": "2026-09-09T08:50:18.529808+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.81,
+  "gemini_ms": 1609,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m62913027731_1.jpg?1788686106",
+   "px": "810x1080",
+   "kb": 96,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "164132309",
+   "grade": "10",
+   "card_name": "Tohoku's Pikachu",
+   "number": "260/SV-P",
+   "set_name": "Special Box PC Tohoku"
+  },
+  "qwen": {
+   "cert": "164132309",
+   "grade": "10",
+   "name": "Tohoku's Pikachu",
+   "number": "260/187",
+   "set_code": "SV-P",
+   "set_name": "Pokémon SV-P",
+   "subtype": null,
+   "variant": "Promo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:260/187:10:sv-p",
+   "key_live": "pikachu:260/SV-P:10:sv-p",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:40:50.507252+00:00",
+  "item_id": "2JWYMM2Pp5ke6wXG8P8sGa",
+  "created_at": "2026-09-09T08:34:11.116269+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 3.61,
+  "gemini_ms": 1603,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYMVSqqL8VcuhaKDTSYA.jpg@jpg",
+   "px": "1600x1600",
+   "kb": 358,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Fukuoka's Pikachu",
+   "number": "289",
+   "set_name": "SV-P Promos"
+  },
+  "qwen": {
+   "cert": "PSA",
+   "grade": "10",
+   "name": "Fukuoka's Pikachu",
+   "number": "289/187",
+   "set_code": "SV-P",
+   "set_name": "Special Box PC Fukuoka",
+   "subtype": null,
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": false,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:289/187:10:sv-p",
+   "key_live": "pikachu:289:10:sv-p",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:31:20.504883+00:00",
+  "item_id": "z677021702",
+  "created_at": "2026-09-09T08:20:15.441993+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.22,
+  "gemini_ms": 2134,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/08b501fd3bf82fde0b463f30542b6460634ca4e5/i-img900x1200-1788676268287bl3ojs.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 244,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "170760359",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "001/030",
+   "set_name": "Pokemon World Championships 2023 Yokohama Deck Pikachu"
+  },
+  "qwen": {
+   "cert": "170760359",
+   "grade": "10",
+   "name": "Pikachu ex",
+   "number": "001/030",
+   "set_code": "WCS23",
+   "set_name": "World Championships 2023 Yokohama Commemorative Deck",
+   "subtype": null,
+   "variant": "Promo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "pikachu:001/030:10:wcs23",
+   "key_live": "pikachu:001/030:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ }
+]

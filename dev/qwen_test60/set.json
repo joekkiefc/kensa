@@ -1,0 +1,2822 @@
+[
+ {
+  "ts": "2026-09-09T11:41:01.644423+00:00",
+  "item_id": "m55378389211",
+  "created_at": "2026-09-09T11:34:14.337726+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.71,
+  "gemini_ms": 1660,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m55378389211_1.jpg?1786860875",
+   "px": "649x1080",
+   "kb": 107,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu V",
+   "number": "005/015",
+   "set_name": "25th Anniversary Golden Box"
+  },
+  "qwen": {
+   "cert": "PSA",
+   "grade": "9",
+   "name": "Pikachu V",
+   "number": "#005/015",
+   "set_code": "S8e-G",
+   "set_name": "2021 POKEMON JPN. 25TH ANNIV-GOLDEN BOX",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": false,
+   "grade_agree": false,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#005/015:9:s8e-g",
+   "key_live": "pikachu:005/015:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:40:30.890038+00:00",
+  "item_id": "m73795569327",
+  "created_at": "2026-09-09T11:34:09.112792+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.76,
+  "gemini_ms": 2076,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m73795569327_1.jpg?1788952834",
+   "px": "810x1080",
+   "kb": 119,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "158311858",
+   "grade": "10",
+   "card_name": "Lillie's Ribombee",
+   "number": "105/100",
+   "set_name": "Battle Partners"
+  },
+  "qwen": {
+   "cert": "158311858",
+   "grade": "10",
+   "name": "Lillie's Ribombee",
+   "number": "105/100 AR",
+   "set_code": "SV9",
+   "set_name": null,
+   "subtype": "AR",
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "ribombee:105/100 AR:10:sv9",
+   "key_live": "ribombee:105/100:10:sv10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:40:07.656842+00:00",
+  "item_id": "m96382728745",
+  "created_at": "2026-09-09T11:34:04.96769+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.6,
+  "gemini_ms": 2462,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m96382728745_1.jpg?1788952709",
+   "px": "1080x670",
+   "kb": 103,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "161276597",
+   "grade": "10",
+   "card_name": "Bulbasaur",
+   "number": "001/049",
+   "set_name": "Pokémon Card 151"
+  },
+  "qwen": {
+   "cert": "161276597",
+   "grade": "10",
+   "name": "Bulbasaur",
+   "number": "#050",
+   "set_code": "2023 POKEMON SVG JP",
+   "set_name": "2023 Pokemon SVG JP",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": false,
+   "name_agree": true,
+   "key_qwen": "bulbasaur:#050:10:2023 pokemon svg jp",
+   "key_live": "bulbasaur:001/049:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:31:52.288267+00:00",
+  "item_id": "z679480354",
+  "created_at": "2026-09-09T11:24:06.832988+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.91,
+  "gemini_ms": 1530,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/e536f8292ea15b2f6467ab09ab97af34c62d82e8/i-img719x1200-1788951990802dawcjm.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "719x1200",
+   "kb": 184,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "164725801",
+   "grade": "10",
+   "card_name": "Mew VMAX",
+   "number": "054/172",
+   "set_name": "VSTAR Universe"
+  },
+  "qwen": {
+   "cert": "164725801",
+   "grade": "10",
+   "name": "Mew VMAX",
+   "number": "054/172",
+   "set_code": "S8a-P",
+   "set_name": null,
+   "subtype": "VMAX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "mew:054/172:10:s8a-p",
+   "key_live": "mew:054/172:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:31:17.762091+00:00",
+  "item_id": "m49659072855",
+  "created_at": "2026-09-09T11:20:19.449874+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.75,
+  "gemini_ms": 1567,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m49659072855_1.jpg?1786187749",
+   "px": "810x1080",
+   "kb": 182,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "008/032",
+   "set_name": "Classic Collection"
+  },
+  "qwen": {
+   "cert": "DOPA",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "008/032",
+   "set_code": "CLL",
+   "set_name": "2023 POKEMON CLL JP",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": false,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:008/032:10:cll",
+   "key_live": "pikachu:008/032:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:30:44.449973+00:00",
+  "item_id": "m43175724230",
+  "created_at": "2026-09-09T11:20:11.794431+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.7,
+  "gemini_ms": 1979,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m43175724230_1.jpg?1788951921",
+   "px": "643x1080",
+   "kb": 113,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "163046390",
+   "grade": "10",
+   "card_name": "Sylveon VMAX",
+   "number": "232/184",
+   "set_name": "VMAX Climax"
+  },
+  "qwen": {
+   "cert": "163046390",
+   "grade": "10",
+   "name": "Ninphia VMAX",
+   "number": "232/184",
+   "set_code": "S8b",
+   "set_name": null,
+   "subtype": "VMAX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "ninphia:232/184:10:s8b",
+   "key_live": "sylveon:232/184:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T11:30:17.731638+00:00",
+  "item_id": "m13662048823",
+  "created_at": "2026-09-09T11:20:06.774902+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.94,
+  "gemini_ms": 2487,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m13662048823_1.jpg?1788951596",
+   "px": "1080x910",
+   "kb": 165,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "164936369",
+   "grade": "10",
+   "card_name": "Rocket's Nidoking ex",
+   "number": "126/098",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "164936369",
+   "grade": "10",
+   "name": "Rocket's Nidoking ex",
+   "number": "126/098 SAB",
+   "set_code": "SV10",
+   "set_name": null,
+   "subtype": "EX",
+   "variant": "Special Art Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "nidoking:126/098 SAB:10:sv10",
+   "key_live": "nidoking:126/098:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:11:28.075350+00:00",
+  "item_id": "m37359762935",
+  "created_at": "2026-09-09T11:04:18.2445+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.71,
+  "gemini_ms": 2138,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m37359762935_1.jpg?1788951523",
+   "px": "686x1080",
+   "kb": 85,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "71965403",
+   "grade": "10",
+   "card_name": "Wishiwashi",
+   "number": "053/049",
+   "set_name": "Dream League"
+  },
+  "qwen": {
+   "cert": "71965403",
+   "grade": "10",
+   "name": "Wishiwashi",
+   "number": "#053",
+   "set_code": "SV1a",
+   "set_name": "2019 P.M. JPN. SUN & MOON",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "wishiwashi:#053:10:sv1a",
+   "key_live": "wishiwashi:053/049:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:11:07.824338+00:00",
+  "item_id": "m63451919530",
+  "created_at": "2026-09-09T11:04:14.235902+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.73,
+  "gemini_ms": 1869,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m63451919530_1.jpg?1788951347",
+   "px": "810x1080",
+   "kb": 92,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "168087457",
+   "grade": "10",
+   "card_name": "Magikarp",
+   "number": "080/073",
+   "set_name": "Triplet Beat"
+  },
+  "qwen": {
+   "cert": "168087457",
+   "grade": "10",
+   "name": "Magikarp",
+   "number": "080/073",
+   "set_code": "SV1a",
+   "set_name": "2023 Pokemon SV1a JP",
+   "subtype": null,
+   "variant": "Art Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "magikarp:080/073:10:sv1a",
+   "key_live": "magikarp:080/073:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:10:43.851306+00:00",
+  "item_id": "m19338531312",
+  "created_at": "2026-09-09T11:04:09.924551+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.1,
+  "gemini_ms": 1895,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m19338531312_1.jpg?1788269362",
+   "px": "1080x1080",
+   "kb": 161,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "76065041",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "001",
+   "set_name": "Scarlet/Violet Pre-Order"
+  },
+  "qwen": {
+   "cert": "76065041",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "001/068",
+   "set_code": "SV-P",
+   "set_name": "Scarlet/Violet Pre-Order",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:001/068:10:sv-p",
+   "key_live": "pikachu:001:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:10:21.287745+00:00",
+  "item_id": "m36139242655",
+  "created_at": "2026-09-09T11:04:05.759181+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.74,
+  "gemini_ms": 1610,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m36139242655_1.jpg?1788950809",
+   "px": "1080x909",
+   "kb": 160,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "164936356",
+   "grade": "10",
+   "card_name": "Dragonite V",
+   "number": "078/071",
+   "set_name": "Pokemon GO"
+  },
+  "qwen": {
+   "cert": "164936356",
+   "grade": "10",
+   "name": "Dragonite V",
+   "number": "#078/187",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "V",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "dragonite:#078/187:10",
+   "key_live": "dragonite:078/071:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:00:54.934681+00:00",
+  "item_id": "m45773396169",
+  "created_at": "2026-09-09T10:50:23.402936+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.91,
+  "gemini_ms": 3946,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m45773396169_1.jpg?1788950605",
+   "px": "810x1080",
+   "kb": 237,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "167141051",
+   "grade": "10",
+   "card_name": "Magikarp",
+   "number": "080/073",
+   "set_name": "Triplet Beat"
+  },
+  "qwen": {
+   "cert": "6741051",
+   "grade": "10",
+   "name": "Koikung",
+   "number": "#080",
+   "set_code": "SV1b-JP",
+   "set_name": "2023 POKEMON SV1b JP",
+   "subtype": null,
+   "variant": "ART RARE",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "koikung:#080:10:sv1b-jp",
+   "key_live": "magikarp:080/073:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T11:00:31.236264+00:00",
+  "item_id": "m29054395472",
+  "created_at": "2026-09-09T10:50:14.898579+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.56,
+  "gemini_ms": 3840,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m29054395472_1.jpg?1788950360",
+   "px": "608x1080",
+   "kb": 104,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "69590587",
+   "grade": "10",
+   "card_name": "Cosplay Pikachu",
+   "number": "099/XY-P",
+   "set_name": "XY-P Promo"
+  },
+  "qwen": {
+   "cert": "69590587",
+   "grade": "10",
+   "name": "Cosplay Pikachu",
+   "number": "#99",
+   "set_code": "XY-P",
+   "set_name": "2014 Pokemon Japanese XY",
+   "subtype": null,
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": false,
+   "name_agree": true,
+   "key_qwen": "pikachu:#99:10:xy-p",
+   "key_live": "pikachu:099/XY-P:10:xy-p",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T11:00:07.306004+00:00",
+  "item_id": "m41376591738",
+  "created_at": "2026-09-09T10:50:06.751491+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.61,
+  "gemini_ms": 3364,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m41376591738_1.jpg?1788949932",
+   "px": "645x1080",
+   "kb": 108,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "163326335",
+   "grade": "10",
+   "card_name": "Umbreon V",
+   "number": "047/069",
+   "set_name": "Eevee Heroes"
+  },
+  "qwen": {
+   "cert": "163326335",
+   "grade": "10",
+   "name": "Umbreon V",
+   "number": "#047",
+   "set_code": null,
+   "set_name": "Eevee Heroes",
+   "subtype": "V",
+   "variant": "Rainbow Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "umbreon:#047:10",
+   "key_live": "umbreon:047/069:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:40:48.361089+00:00",
+  "item_id": "m78593771329",
+  "created_at": "2026-09-09T10:34:15.297615+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.22,
+  "gemini_ms": 2492,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m78593771329_1.jpg?1788949433",
+   "px": "1080x1080",
+   "kb": 370,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "145744739",
+   "grade": "10",
+   "card_name": "Zacian",
+   "number": "087",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "145744739",
+   "grade": "10",
+   "name": "Zacian",
+   "number": "#087",
+   "set_code": "M2.JP",
+   "set_name": "2025 POKEMON M2 JP",
+   "subtype": "ART RARE",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "zacian:#087:10:m2.jp",
+   "key_live": "zacian:087:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:40:15.830815+00:00",
+  "item_id": "m88749418903",
+  "created_at": "2026-09-09T10:34:06.79755+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.59,
+  "gemini_ms": 1825,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m88749418903_1.jpg?1788948964",
+   "px": "686x1080",
+   "kb": 128,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "165411181",
+   "grade": "10",
+   "card_name": "MEOWTH",
+   "number": "192/SV-P",
+   "set_name": "SVM Special Battle Set"
+  },
+  "qwen": {
+   "cert": "165411181",
+   "grade": "10",
+   "name": "Meowth",
+   "number": "192",
+   "set_code": "SV-P",
+   "set_name": "SVM Special Battle Set",
+   "subtype": null,
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "meowth:192:10:sv-p",
+   "key_live": "meowth:192/SV-P:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:33:38.105782+00:00",
+  "item_id": "z679433482",
+  "created_at": "2026-09-09T10:22:13.522728+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.94,
+  "gemini_ms": 1597,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/d16dfcccfbdcd83c255e0c62b11073fec73e6457/i-img900x1200-1788947078899pswqmx.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 275,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Jolteon V",
+   "number": "079/069",
+   "set_name": "Eevee Heroes"
+  },
+  "qwen": {
+   "cert": "DOPA",
+   "grade": "10",
+   "name": "Jolteon V",
+   "number": "079/069",
+   "set_code": null,
+   "set_name": "Eevee Heroes",
+   "subtype": "V",
+   "variant": "SR SA",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": false,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "jolteon:079/069:10",
+   "key_live": "jolteon:079/069:10",
+   "key_agree": true,
+   "key_exact": true,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:33:10.423266+00:00",
+  "item_id": "m62183889083",
+  "created_at": "2026-09-09T10:22:09.116304+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.6,
+  "gemini_ms": 1904,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m62183889083_1.jpg?1788948738",
+   "px": "644x1080",
+   "kb": 121,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "174250808",
+   "grade": "10",
+   "card_name": "Mew V",
+   "number": "105/100",
+   "set_name": "Fusion Arts"
+  },
+  "qwen": {
+   "cert": "174250808",
+   "grade": "10",
+   "name": "Mew V",
+   "number": "105/100",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "V",
+   "variant": "SR Fusion Arts",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "mew:105/100:10",
+   "key_live": "mew:105/100:10",
+   "key_agree": true,
+   "key_exact": true,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:32:43.133998+00:00",
+  "item_id": "m77736154607",
+  "created_at": "2026-09-09T10:22:04.338789+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.06,
+  "gemini_ms": 2203,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m77736154607_1.jpg?1788948525",
+   "px": "1080x1080",
+   "kb": 208,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "166462337",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "003/015",
+   "set_name": "25th Anniversary Golden Box"
+  },
+  "qwen": {
+   "cert": "166462337",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#003/015",
+   "set_code": "SV-P",
+   "set_name": "25th ANNIV-GOLDEN BOX",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#003/015:10:sv-p",
+   "key_live": "pikachu:003/015:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:32:14.885480+00:00",
+  "item_id": "m51474062922",
+  "created_at": "2026-09-09T10:20:16.856376+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.94,
+  "gemini_ms": 1689,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m51474062922_1.jpg?1788948320",
+   "px": "810x1080",
+   "kb": 163,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "133375373",
+   "grade": "10",
+   "card_name": "Sylveon",
+   "number": "068/187",
+   "set_name": "Super Electric Breaker"
+  },
+  "qwen": {
+   "cert": "133375373",
+   "grade": "10",
+   "name": "Ninphia",
+   "number": "068/187",
+   "set_code": "SV8a",
+   "set_name": "2024 Pokemon SV8a JP",
+   "subtype": null,
+   "variant": "Master Ball Reverse Holo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "ninphia:068/187:10:sv8a",
+   "key_live": "sylveon:068/187:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T10:31:52.482195+00:00",
+  "item_id": "m79231200368",
+  "created_at": "2026-09-09T10:20:12.819049+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.74,
+  "gemini_ms": 1560,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m79231200368_1.jpg?1788948139",
+   "px": "642x1080",
+   "kb": 119,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "167580656",
+   "grade": "10",
+   "card_name": "Pikachu V",
+   "number": "001/024",
+   "set_name": "Corocoro Comic Promo"
+  },
+  "qwen": {
+   "cert": "167580656",
+   "grade": "10",
+   "name": "Pikachu V",
+   "number": "#001",
+   "set_code": "SD.100 COROCORO COMIC VER.",
+   "set_name": "(geen)",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#001:10:sd.100 corocoro comic ver.",
+   "key_live": "pikachu:001/024:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:30:58.641806+00:00",
+  "item_id": "2JWYXUusKYVK37WD5QHiyt",
+  "created_at": "2026-09-09T10:20:09.591756+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 3.57,
+  "gemini_ms": 1584,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYXUse9caYDiD8FdLaZB.jpg@jpg",
+   "px": "1600x1600",
+   "kb": 249,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": "151539751",
+   "grade": "10",
+   "card_name": "Rockruff",
+   "number": "202/184",
+   "set_name": "Vmax Climax"
+  },
+  "qwen": {
+   "cert": "151539751",
+   "grade": "10",
+   "name": "Iwanko",
+   "number": "202/184",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "CHR",
+   "variant": "CHR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "iwanko:202/184:10",
+   "key_live": "rockruff:202/184:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T10:30:19.079963+00:00",
+  "item_id": "m12831157530",
+  "created_at": "2026-09-09T10:20:05.9205+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.9,
+  "gemini_ms": 2154,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m12831157530_1.jpg?1788515200",
+   "px": "842x1080",
+   "kb": 105,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "161569744",
+   "grade": "10",
+   "card_name": "Pikachu & Zekrom GX",
+   "number": "041/173",
+   "set_name": "Tag Team GX All Stars"
+  },
+  "qwen": {
+   "cert": "161569744",
+   "grade": "10",
+   "name": "Pikachu & Zekrom GX",
+   "number": "041/173",
+   "set_code": "SM12a",
+   "set_name": null,
+   "subtype": "GX",
+   "variant": "Rainbow Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:041/173:10:sm12a",
+   "key_live": "pikachu:041/173:10:sm12a",
+   "key_agree": true,
+   "key_exact": true,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:20:37.312938+00:00",
+  "item_id": "z679432838",
+  "created_at": "2026-09-09T10:18:05.066707+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.07,
+  "gemini_ms": 2837,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/08e268d723b63ba3c88324e59589087f32583000/i-img900x1200-1788947662045egzjva.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 239,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "96512825",
+   "grade": "10",
+   "card_name": "Vaporeon V",
+   "number": "075/069",
+   "set_name": "Eevee Heroes"
+  },
+  "qwen": {
+   "cert": "96512825",
+   "grade": "10",
+   "name": "Shaymin V",
+   "number": "#075/069",
+   "set_code": "S8a-P",
+   "set_name": "Eevee Heroes",
+   "subtype": "V",
+   "variant": "SR SA",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "shaymin:#075/069:10:s8a-p",
+   "key_live": "vaporeon:075/069:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T10:20:11.985613+00:00",
+  "item_id": "z679428770",
+  "created_at": "2026-09-09T10:12:05.827614+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.96,
+  "gemini_ms": 1901,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/3b76f78594acc33020d135295a9aa185445acf21/i-img900x1200-1788947272774p9bc2k.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 190,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "165668631",
+   "grade": "10",
+   "card_name": "Lillie's Clefairy",
+   "number": "126/100",
+   "set_name": "Battle Partners"
+  },
+  "qwen": {
+   "cert": "165668631",
+   "grade": "10",
+   "name": "Lillie's Clefairy ex",
+   "number": "#126",
+   "set_code": "SV9",
+   "set_name": "Pokémon SV9",
+   "subtype": "EX",
+   "variant": "SPECIAL ART RARE",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "clefairy:#126:10:sv9",
+   "key_live": "clefairy:126/100:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:10:54.915432+00:00",
+  "item_id": "m34740128379",
+  "created_at": "2026-09-09T10:04:12.480125+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.96,
+  "gemini_ms": 1516,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m34740128379_1.jpg?1788689733",
+   "px": "1080x1080",
+   "kb": 208,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "165547094",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "218/SV-P",
+   "set_name": "Summer Get Campaign Pack"
+  },
+  "qwen": {
+   "cert": "165547094",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#218",
+   "set_code": "SV-P",
+   "set_name": "SUMMER GET CAMPAIGN PACK",
+   "subtype": null,
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#218:10:sv-p",
+   "key_live": "pikachu:218/SV-P:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:10:25.561550+00:00",
+  "item_id": "m77975102486",
+  "created_at": "2026-09-09T10:04:07.996251+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.08,
+  "gemini_ms": 2079,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m77975102486_1.jpg?1788947471",
+   "px": "1080x1080",
+   "kb": 128,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "147868071",
+   "grade": "10",
+   "card_name": "Victini",
+   "number": "007/036",
+   "set_name": "Mythical & Legendary Dream Shine Collection"
+  },
+  "qwen": {
+   "cert": "147868071",
+   "grade": "10",
+   "name": "Victini",
+   "number": "007/036",
+   "set_code": "SV1a",
+   "set_name": "MYTH. & LEG. DRM.SHN.COL.",
+   "subtype": null,
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "victini:007/036:10:sv1a",
+   "key_live": "victini:007/036:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:01:45.716919+00:00",
+  "item_id": "2JWYVfDgTeXERkdYZ69pm4",
+  "created_at": "2026-09-09T09:50:21.416556+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 3.84,
+  "gemini_ms": 1371,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYVVYYrNjGJRKBvzE2rv.jpg@jpg",
+   "px": "1600x1600",
+   "kb": 399,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": "147853604",
+   "grade": "10",
+   "card_name": "Hisuian Zoroark VSTAR",
+   "number": "234",
+   "set_name": "VSTAR Universe"
+  },
+  "qwen": {
+   "cert": "147853604",
+   "grade": "10",
+   "name": "Hisuizoroark VSTAR",
+   "number": "#234/172",
+   "set_code": "SAR",
+   "set_name": null,
+   "subtype": "VSTAR",
+   "variant": "SAR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "hisuizoroark:#234/172:10:sar",
+   "key_live": "zoroark:234:10:s12a",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T10:01:16.067770+00:00",
+  "item_id": "m41050348933",
+  "created_at": "2026-09-09T09:50:16.170997+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.96,
+  "gemini_ms": 1485,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m41050348933_1.jpg?1788606868",
+   "px": "1080x1080",
+   "kb": 105,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Pikachu ex",
+   "number": "234/193",
+   "set_name": "MEGA Dream ex"
+  },
+  "qwen": {
+   "cert": "DOPA",
+   "grade": "10",
+   "name": "Pikachu ex",
+   "number": "234/193 SAR",
+   "set_code": "M2a JP",
+   "set_name": "2025 Pokemon",
+   "subtype": null,
+   "variant": "SAR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": false,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:234/193 SAR:10:m2a jp",
+   "key_live": "pikachu:234/193:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:00:48.482991+00:00",
+  "item_id": "m27433128476",
+  "created_at": "2026-09-09T09:50:12.623405+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.69,
+  "gemini_ms": 1456,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m27433128476_1.jpg?1788946615",
+   "px": "641x1080",
+   "kb": 121,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "156451148",
+   "grade": "10",
+   "card_name": "Karrablast",
+   "number": "094/086",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "156451148",
+   "grade": "10",
+   "name": "Karrablast",
+   "number": "094/086 AR",
+   "set_code": "SV11B",
+   "set_name": null,
+   "subtype": "ART RARE",
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "karrablast:094/086 AR:10:sv11b",
+   "key_live": "karrablast:094/086:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T10:00:17.878785+00:00",
+  "item_id": "m60437303807",
+  "created_at": "2026-09-09T09:50:06.720295+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.81,
+  "gemini_ms": 1968,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m60437303807_1.jpg?1788946182",
+   "px": "812x1080",
+   "kb": 229,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "159303530",
+   "grade": "10",
+   "card_name": "MEGA DRAGONITE ex",
+   "number": "232/193",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "159303530",
+   "grade": "10",
+   "name": "Mega Charizard ex",
+   "number": "232/193",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "EX",
+   "variant": "MA (Master Ball)",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "charizard:232/193:10",
+   "key_live": "dragonite:232/193:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T09:41:14.701425+00:00",
+  "item_id": "z679393170",
+  "created_at": "2026-09-09T09:34:16.880749+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.93,
+  "gemini_ms": 1565,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/1c5fb24307067ca4bb7ed23bd4408acebbccd400/i-img900x1200-1788943730858erklbm.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 222,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "173128528",
+   "grade": "10",
+   "card_name": "Mega Darkrai ex",
+   "number": "114/081",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "173128528",
+   "grade": "10",
+   "name": "Mega Darkrai ex",
+   "number": "114/081",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "SAR",
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "darkrai:114/081:10",
+   "key_live": "darkrai:114/081:10",
+   "key_agree": true,
+   "key_exact": true,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:40:45.291121+00:00",
+  "item_id": "m40619657256",
+  "created_at": "2026-09-09T09:34:11.381943+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.71,
+  "gemini_ms": 1508,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m40619657256_1.jpg?1788945849",
+   "px": "741x1080",
+   "kb": 103,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "139519561",
+   "grade": "10",
+   "card_name": "Psyduck",
+   "number": "175/165",
+   "set_name": "Pokemon Card 151"
+  },
+  "qwen": {
+   "cert": "139519561",
+   "grade": "10",
+   "name": "Psyduck",
+   "number": "175/165",
+   "set_code": "SV2a",
+   "set_name": "Pokemon Card 151 SV2a",
+   "subtype": null,
+   "variant": "AR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "psyduck:175/165:10:sv2a",
+   "key_live": "psyduck:175/165:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:40:18.852749+00:00",
+  "item_id": "m37789768514",
+  "created_at": "2026-09-09T09:34:06.487349+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.57,
+  "gemini_ms": 1916,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m37789768514_1.jpg?1788945642",
+   "px": "650x1080",
+   "kb": 112,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "155747498",
+   "grade": "10",
+   "card_name": "Pikachu V",
+   "number": "122",
+   "set_name": "S-P Promo"
+  },
+  "qwen": {
+   "cert": "155747498",
+   "grade": "10",
+   "name": "Pikachu V",
+   "number": "#122",
+   "set_code": "S-P",
+   "set_name": "2020 POKEMON JPN.",
+   "subtype": null,
+   "variant": "Promo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#122:10:s-p",
+   "key_live": "pikachu:122:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:31:08.527285+00:00",
+  "item_id": "m61873867070",
+  "created_at": "2026-09-09T09:20:16.264616+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.96,
+  "gemini_ms": 1519,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m61873867070_1.jpg?1782044239",
+   "px": "1080x1080",
+   "kb": 119,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "149489202",
+   "grade": "10",
+   "card_name": "Chansey",
+   "number": "113/101",
+   "set_name": "Mask of Change"
+  },
+  "qwen": {
+   "cert": "149489202",
+   "grade": "10",
+   "name": "Chansey",
+   "number": "113/101",
+   "set_code": "SV6",
+   "set_name": "2024 Pokemon SV6 JP",
+   "subtype": null,
+   "variant": "Art Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "chansey:113/101:10:sv6",
+   "key_live": "chansey:113/101:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:30:46.374407+00:00",
+  "item_id": "m86058058621",
+  "created_at": "2026-09-09T09:20:12.329967+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.65,
+  "gemini_ms": 1837,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m86058058621_1.jpg?1788945035",
+   "px": "643x1080",
+   "kb": 105,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "134620765",
+   "grade": "10",
+   "card_name": "EEVEE ex",
+   "number": "224/187",
+   "set_name": "Terastal Festival ex"
+  },
+  "qwen": {
+   "cert": "134620765",
+   "grade": "10",
+   "name": "Eevee ex",
+   "number": "224/187",
+   "set_code": "SV8a",
+   "set_name": "2024 POKEMON",
+   "subtype": null,
+   "variant": "SAR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "eevee:224/187:10:sv8a",
+   "key_live": "eevee:224/187:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:30:19.626378+00:00",
+  "item_id": "m94813222977",
+  "created_at": "2026-09-09T09:20:08.919579+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.79,
+  "gemini_ms": 1895,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m94813222977_1.jpg?1788944513",
+   "px": "810x1080",
+   "kb": 167,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "142005283",
+   "grade": "10",
+   "card_name": "Team Rocket's Mimikyu",
+   "number": "205/193",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "142005283",
+   "grade": "10",
+   "name": "Team Rocket's Mimikyu",
+   "number": "#205",
+   "set_code": "M2a JP",
+   "set_name": "2025 Pokemon",
+   "subtype": null,
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "mimikyu:#205:10:m2a jp",
+   "key_live": "mimikyu:205/193:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:20:54.887439+00:00",
+  "item_id": "z679396754",
+  "created_at": "2026-09-09T09:16:05.537052+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.2,
+  "gemini_ms": 1699,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/11919864446ff0f366bcb39d456214147fee3ad6/i-img1200x1200-1788943730531i8ricu.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "1200x1200",
+   "kb": 149,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Zamazenta",
+   "number": "107/098",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "PSA10",
+   "grade": "10",
+   "name": "Zamazenta",
+   "number": "107/098",
+   "set_code": "SV10",
+   "set_name": "Pokemon SV10",
+   "subtype": null,
+   "variant": "AR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "zamazenta:107/098:10:sv10",
+   "key_live": "zamazenta:107/098:10:sv10",
+   "key_agree": true,
+   "key_exact": true,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:20:26.395648+00:00",
+  "item_id": "z679391484",
+  "created_at": "2026-09-09T09:14:04.516012+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.82,
+  "gemini_ms": 1772,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/b31b547429d7e7ce5278af511a4164253c3bacb5/i-img900x1200-17889434326727zvcgq.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 227,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "43636096",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "020",
+   "set_name": "McDonald's Promo"
+  },
+  "qwen": {
+   "cert": "438566966",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "#020",
+   "set_code": "M-P",
+   "set_name": "Pokemon M-P",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:#020:10:m-p",
+   "key_live": "pikachu:020:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:11:00.474478+00:00",
+  "item_id": "m97436729638",
+  "created_at": "2026-09-09T09:04:14.632106+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.0,
+  "gemini_ms": 2019,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m97436729638_1.jpg?1788944217",
+   "px": "1080x1080",
+   "kb": 216,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "121637308",
+   "grade": "10",
+   "card_name": "Vaporeon EX",
+   "number": "194",
+   "set_name": "XY-P Promotional cards"
+  },
+  "qwen": {
+   "cert": "121637308",
+   "grade": "10",
+   "name": "Vaporeon EX",
+   "number": "194/187",
+   "set_code": "XY-P",
+   "set_name": null,
+   "subtype": "EX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "vaporeon:194/187:10:xy-p",
+   "key_live": "vaporeon:194:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:10:24.552325+00:00",
+  "item_id": "m79213832036",
+  "created_at": "2026-09-09T09:04:09.050898+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.16,
+  "gemini_ms": 1985,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m79213832036_1.jpg?1788943826",
+   "px": "1080x1080",
+   "kb": 225,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "85405678",
+   "grade": "10",
+   "card_name": "VENUSAUR ex",
+   "number": "003/165",
+   "set_name": "Pokemon Card 151"
+  },
+  "qwen": {
+   "cert": "85405678",
+   "grade": "10",
+   "name": "Venusaur ex",
+   "number": "#003/165",
+   "set_code": "SV2a",
+   "set_name": "2023 POKEMON SV2a JP",
+   "subtype": "EX",
+   "variant": "RR (Rainbow Rare)",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "venusaur:#003/165:10:sv2a",
+   "key_live": "venusaur:003/165:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:01:51.836243+00:00",
+  "item_id": "m20436636331",
+  "created_at": "2026-09-09T08:52:05.528089+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.83,
+  "gemini_ms": 2225,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m20436636331_1.jpg?1788943393",
+   "px": "810x1080",
+   "kb": 136,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "110708202",
+   "grade": "10",
+   "card_name": "Hisuian Zoroark VSTAR",
+   "number": "234/172",
+   "set_name": "VSTAR Universe"
+  },
+  "qwen": {
+   "cert": "110708202",
+   "grade": "10",
+   "name": "Hisuizoroark VSTAR",
+   "number": "234",
+   "set_code": "SAR",
+   "set_name": null,
+   "subtype": "VSTAR",
+   "variant": "null",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "hisuizoroark:234:10:sar",
+   "key_live": "zoroark:234/172:10:s12a",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T09:01:18.260877+00:00",
+  "item_id": "m26928187170",
+  "created_at": "2026-09-09T08:50:18.980842+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.89,
+  "gemini_ms": 1785,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m26928187170_1.jpg?1788943146",
+   "px": "810x1080",
+   "kb": 123,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "149677344",
+   "grade": "10",
+   "card_name": "Rocket's Houndoom",
+   "number": "100/098",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "149677344",
+   "grade": "10",
+   "name": "Rocket's Houndoom",
+   "number": "100/098",
+   "set_code": "SV10",
+   "set_name": "2025 POKEMON SV10 JP",
+   "subtype": null,
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "houndoom:100/098:10:sv10",
+   "key_live": "houndoom:100/098:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:00:53.126349+00:00",
+  "item_id": "m76312649485",
+  "created_at": "2026-09-09T08:50:15.51577+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.07,
+  "gemini_ms": 1674,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m76312649485_1.jpg?1788621648",
+   "px": "1080x1080",
+   "kb": 109,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "162324477",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "124",
+   "set_name": "S-P Promo"
+  },
+  "qwen": {
+   "cert": "162324477",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "124/5-P",
+   "set_code": "S-P",
+   "set_name": "2020 Pokemon JPN S-P",
+   "subtype": null,
+   "variant": "Reverse Holo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:124/5-P:10:s-p",
+   "key_live": "pikachu:124:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T09:00:28.703121+00:00",
+  "item_id": "2JWYNPLPYj9ubagv245wzU",
+  "created_at": "2026-09-09T08:50:10.603398+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.43,
+  "gemini_ms": 1396,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYNPJpxEjQFYqwTpZ8GS.jpg@jpg",
+   "px": "750x750",
+   "kb": 65,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Mew ex",
+   "number": "347",
+   "set_name": "Shiny Treasure ex"
+  },
+  "qwen": {
+   "cert": "PSA10",
+   "grade": "10",
+   "name": "Mew ex",
+   "number": "347/190",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "SAR",
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "mew:347/190:10",
+   "key_live": "mew:347:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:41:26.214898+00:00",
+  "item_id": "m92330976819",
+  "created_at": "2026-09-09T08:34:18.252346+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.8,
+  "gemini_ms": 2005,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m92330976819_1.jpg?1788942548",
+   "px": "810x1080",
+   "kb": 101,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "157960420",
+   "grade": "10",
+   "card_name": "N'S ZORUA",
+   "number": "108/100",
+   "set_name": "Battle Partners"
+  },
+  "qwen": {
+   "cert": "157960420",
+   "grade": "10",
+   "name": "N'S ZORUA",
+   "number": "108/100 AR",
+   "set_code": "SV9 JP",
+   "set_name": null,
+   "subtype": "AR",
+   "variant": "ART RARE",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "zorua:108/100 AR:10:sv9 jp",
+   "key_live": "zorua:108/100:10:sv8a",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:40:53.145526+00:00",
+  "item_id": "2JWYMMAxs7QFF6iWz3fhYr",
+  "created_at": "2026-09-09T08:34:12.404243+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.66,
+  "gemini_ms": 1472,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYMM9b7nXasZWVHAn9ML.jpg@jpg",
+   "px": "750x750",
+   "kb": 76,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Eevee & Snorlax GX",
+   "number": "297",
+   "set_name": "Tag Bolt Boost Box Campaign"
+  },
+  "qwen": {
+   "cert": "PSA10",
+   "grade": "10",
+   "name": "Eevee & Cubchoo GX",
+   "number": "297/068/187",
+   "set_code": "SM-P",
+   "set_name": null,
+   "subtype": "GX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "eevee:297/068/187:10:sm-p",
+   "key_live": "eevee:297:10:sm-p",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:40:20.483375+00:00",
+  "item_id": "m50614648986",
+  "created_at": "2026-09-09T08:34:05.345216+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.78,
+  "gemini_ms": 2153,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m50614648986_1.jpg?1788941756",
+   "px": "644x1080",
+   "kb": 123,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "175248977",
+   "grade": "10",
+   "card_name": "Mewtwo & Mew GX",
+   "number": "052/173",
+   "set_name": "Tag Team GX All Stars"
+  },
+  "qwen": {
+   "cert": "175248977",
+   "grade": "10",
+   "name": "Mewtwo & Mew GX",
+   "number": "052/173",
+   "set_code": null,
+   "set_name": "2019 P.M. JPN. SUN & MOON",
+   "subtype": "GX",
+   "variant": "Rainbow Rare",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "mewtwo:052/173:10",
+   "key_live": "mewtwo:052/173:10",
+   "key_agree": true,
+   "key_exact": true,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:31:28.175052+00:00",
+  "item_id": "z678046724",
+  "created_at": "2026-09-09T08:20:17.298744+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.89,
+  "gemini_ms": 2062,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/e263485d9d96502dd026cb59c4d8cd5b824607a2/i-img900x1200-1788780835773prpsm3.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 148,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "162575156",
+   "grade": "10",
+   "card_name": "MEGA GARDEVOIR ex",
+   "number": "087/063",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "162575156",
+   "grade": "10",
+   "name": "Mega Sarnia ex",
+   "number": "087/063",
+   "set_code": "M1S",
+   "set_name": null,
+   "subtype": "EX",
+   "variant": "SAR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "mega sarnia:087/063:10:m1s",
+   "key_live": "gardevoir:087/063:10:m1s",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T08:31:04.166116+00:00",
+  "item_id": "m45275774988",
+  "created_at": "2026-09-09T08:20:12.77371+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.71,
+  "gemini_ms": 2170,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m45275774988_1.jpg?1788941553",
+   "px": "810x1080",
+   "kb": 120,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "144691576",
+   "grade": "10",
+   "card_name": "Charizard ex",
+   "number": "331/190",
+   "set_name": "Shiny Treasure ex"
+  },
+  "qwen": {
+   "cert": "144691576",
+   "grade": "10",
+   "name": "Charizard ex",
+   "number": "331/190 SSR",
+   "set_code": "SV4a",
+   "set_name": null,
+   "subtype": "EX",
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "charizard:331/190 SSR:10:sv4a",
+   "key_live": "charizard:331/190:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:30:24.761063+00:00",
+  "item_id": "m51636181420",
+  "created_at": "2026-09-09T08:20:08.00263+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.99,
+  "gemini_ms": 2105,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m51636181420_1.jpg?1788571039",
+   "px": "1080x1080",
+   "kb": 134,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "169705724",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "027/071",
+   "set_name": "Pokemon GO"
+  },
+  "qwen": {
+   "cert": "169705724",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "027/071",
+   "set_code": "SV-P",
+   "set_name": "Pokémon GO",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:027/071:10:sv-p",
+   "key_live": "pikachu:027/071:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:21:02.987571+00:00",
+  "item_id": "z679358992",
+  "created_at": "2026-09-09T08:18:05.052569+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.9,
+  "gemini_ms": 1928,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/6fd29aff346f9d47b272ea0d057ed0bb05cb1a6d/i-img849x1200-1788940445988sfh463.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "849x1200",
+   "kb": 179,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "157017480",
+   "grade": "10",
+   "card_name": "Machamp",
+   "number": "121/128",
+   "set_name": "Expedition"
+  },
+  "qwen": {
+   "cert": "157017480",
+   "grade": "10",
+   "name": "Kairiki",
+   "number": "121/128",
+   "set_code": "SV-P",
+   "set_name": "Expedition-1st Edition",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "kairiki:121/128:10:sv-p",
+   "key_live": "machamp:121/128:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T08:20:33.273380+00:00",
+  "item_id": "z669586512",
+  "created_at": "2026-09-09T08:14:05.640051+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.23,
+  "gemini_ms": 1948,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0208/users/95e5e84ef827a61a9a50fee6b4e98d61e4f310a5/i-img1200x998-1787751247949xz2s17.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "1200x998",
+   "kb": 258,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "159011879",
+   "grade": "10",
+   "card_name": "Iono's Bellibolt ex",
+   "number": "130/100",
+   "set_name": "Battle Partners"
+  },
+  "qwen": {
+   "cert": "159011879",
+   "grade": "10",
+   "name": "Nanjamo's Harabari ex",
+   "number": "130/100",
+   "set_code": "SV9",
+   "set_name": null,
+   "subtype": "EX",
+   "variant": "Master Ball",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "nanjamo's harabari:130/100:10:sv9",
+   "key_live": "bellibolt:130/100:10:sv8a",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T08:20:04.811835+00:00",
+  "item_id": "z679353102",
+  "created_at": "2026-09-09T08:12:05.547795+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.16,
+  "gemini_ms": 2014,
+  "foto": {
+   "url": "https://cdnyauction-pctr.buyee.jp/i/auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0209/users/aad56262c5d9d542712b1b810577d25b2ac2e1a2/i-img900x1200-17889399105397k7l4f.jpg?pri=l&w=300&h=300&up=0&nf_src=sy&nf_path=images/auc/pc/top/image/1.0.3/na_170x170.png&nf_st=200",
+   "px": "900x1200",
+   "kb": 180,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "152648990",
+   "grade": "10",
+   "card_name": "Pikachu ex",
+   "number": "234/193",
+   "set_name": "Terastal Fest ex"
+  },
+  "qwen": {
+   "cert": "152648990",
+   "grade": "10",
+   "name": "Pikachu ex",
+   "number": "234/193",
+   "set_code": "M2a",
+   "set_name": null,
+   "subtype": "SAR",
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:234/193:10:m2a",
+   "key_live": "pikachu:234/193:10",
+   "key_agree": true,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:10:39.602283+00:00",
+  "item_id": "m69419141983",
+  "created_at": "2026-09-09T08:04:11.095136+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.81,
+  "gemini_ms": 1609,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m69419141983_1.jpg?1788940124",
+   "px": "810x1080",
+   "kb": 94,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "148417895",
+   "grade": "10",
+   "card_name": "Pikachu",
+   "number": "120/SV-P",
+   "set_name": "Gym Event Campaign"
+  },
+  "qwen": {
+   "cert": "148417895",
+   "grade": "10",
+   "name": "Pikachu",
+   "number": "120/187",
+   "set_code": "SV-P",
+   "set_name": "Gym Event Campaign",
+   "subtype": null,
+   "variant": null,
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:120/187:10:sv-p",
+   "key_live": "pikachu:120/SV-P:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:10:14.882326+00:00",
+  "item_id": "m72593122739",
+  "created_at": "2026-09-09T08:04:05.293016+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.98,
+  "gemini_ms": 2261,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m72593122739_1.jpg?1788940025",
+   "px": "1080x1041",
+   "kb": 246,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "86327433",
+   "grade": "10",
+   "card_name": "Glaceon V",
+   "number": "077/069",
+   "set_name": "Eevee Heroes"
+  },
+  "qwen": {
+   "cert": "86327433",
+   "grade": "10",
+   "name": "Glacia V",
+   "number": "#077",
+   "set_code": null,
+   "set_name": "EEVEE HEROES",
+   "subtype": "V",
+   "variant": "SR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "glacia:#077:10",
+   "key_live": "glaceon:077/069:10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T08:02:48.863410+00:00",
+  "item_id": "2JWYGgHnCxTARbkh5Zw8iq",
+  "created_at": "2026-09-09T07:50:11.115915+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.54,
+  "gemini_ms": 1356,
+  "foto": {
+   "url": "https://assets.mercari-shops-static.com/-/large/plain/2JWYGgGdQediZwqWaugHa9.jpg@jpg",
+   "px": "750x750",
+   "kb": 65,
+   "upgraded": true
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "10",
+   "card_name": "Detective Pikachu",
+   "number": "098",
+   "set_name": "SV-P Promo"
+  },
+  "qwen": {
+   "cert": "PSA10",
+   "grade": "10",
+   "name": "Detective Pikachu",
+   "number": "098/187",
+   "set_code": "SV-P",
+   "set_name": "2023 Pokemon SV-P JP",
+   "subtype": null,
+   "variant": "Promo",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "pikachu:098/187:10:sv-p",
+   "key_live": "pikachu:098/SV-P:10:sv-p",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:02:18.642700+00:00",
+  "item_id": "m56419399139",
+  "created_at": "2026-09-09T07:50:05.354465+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 2.0,
+  "gemini_ms": 2476,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m56419399139_1.jpg?1788939024",
+   "px": "1080x1080",
+   "kb": 84,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": null,
+   "grade": "9",
+   "card_name": "Machamp EX",
+   "number": "088/081",
+   "set_name": "Bandit Ring"
+  },
+  "qwen": {
+   "cert": null,
+   "grade": "9",
+   "name": "Kairiki EX",
+   "number": "#088",
+   "set_code": "XY-P",
+   "set_name": "2015 P.M. JAPANESE XY",
+   "subtype": "EX",
+   "variant": "SR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": false,
+   "gemini_cert": false,
+   "qwen_cert": false,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "kairiki:#088:9:xy-p",
+   "key_live": "machamp:088/081:9",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": false
+  }
+ },
+ {
+  "ts": "2026-09-09T08:01:35.726935+00:00",
+  "item_id": "m50732441044",
+  "created_at": "2026-09-09T07:34:12.531377+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.68,
+  "gemini_ms": 1546,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m50732441044_1.jpg?1788938606",
+   "px": "745x1080",
+   "kb": 79,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "166182875",
+   "grade": "10",
+   "card_name": "Charizard",
+   "number": "209/150",
+   "set_name": "Ultra Shiny GX"
+  },
+  "qwen": {
+   "cert": "166182875",
+   "grade": "10",
+   "name": "Charizard GX",
+   "number": "209/150",
+   "set_code": null,
+   "set_name": "Sun & Moon",
+   "subtype": "GX",
+   "variant": "SSR",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": true,
+   "number_prefix_agree": true,
+   "name_agree": false,
+   "key_qwen": "charizard:209/150:10",
+   "key_live": "charizard:209/150:10",
+   "key_agree": true,
+   "key_exact": true,
+   "pokemon_agree": true
+  }
+ },
+ {
+  "ts": "2026-09-09T08:01:10.235775+00:00",
+  "item_id": "m67572047690",
+  "created_at": "2026-09-09T07:34:07.426681+00:00",
+  "status": "ok",
+  "source": "multimodal",
+  "qwen_s": 1.63,
+  "gemini_ms": 2020,
+  "foto": {
+   "url": "https://static.mercdn.net/item/detail/orig/photos/m67572047690_1.jpg?1788938294",
+   "px": "810x1080",
+   "kb": 120,
+   "upgraded": false
+  },
+  "gemini": {
+   "cert": "149424540",
+   "grade": "10",
+   "card_name": "Oricorio ex",
+   "number": "111/080",
+   "set_name": null
+  },
+  "qwen": {
+   "cert": "149424540",
+   "grade": "10",
+   "name": "Oricorio ex",
+   "number": "#111",
+   "set_code": null,
+   "set_name": null,
+   "subtype": "SAR",
+   "variant": "Alt Art",
+   "confidence": 1.0
+  },
+  "vergelijk": {
+   "cert_agree": true,
+   "gemini_cert": true,
+   "qwen_cert": true,
+   "grade_agree": true,
+   "number_agree": false,
+   "number_prefix_agree": true,
+   "name_agree": true,
+   "key_qwen": "oricorio:#111:10",
+   "key_live": "oricorio:111/080:10:sv10",
+   "key_agree": false,
+   "key_exact": false,
+   "pokemon_agree": true
+  }
+ }
+]
