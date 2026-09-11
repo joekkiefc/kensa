@@ -99,6 +99,31 @@ def schoon_nummer(number, set_code) -> str:
     return f"{num}/{code}" if code else num
 
 
+# 11-9 (Tommy): Qwen maakt van een gewone set-code vaak een promo-code: label '2024 POKEMON SV8a JP'
+# → set_code 'SV8a-P'. Het 'S8a-P'-voorbeeld in de prompt lokt dat uit (dev/onderzoek_setcode_p), maar
+# de prompt blijft staan (schrappen maakte echte promo's fout). Dus hier opruimen: toont het label de
+# gewone code LETTERLIJK, dan gaat de -P eraf. Aangescherpt op de replay (dev/fix_setcode_p):
+#   - alleen codes mét cijfer: 'POKEMON SV' / 'JAPANESE XY' / 'JPN.SWSH' is een tijdperk, geen set
+#     (anders sneuvelen echte SV-P/XY-P/SWSH-P-promo's);
+#   - alleen in de PSA-vorm '<code> JP': zonder JP is de set_name vaak door Qwen verzonnen
+#     ('FA/JOLTEON V | 2024 POKEMON SV8A', promo 'JPN.SWSH #021 | 2020 POKEMON S8A');
+#   - nooit als het label zelf '-P' of 'PROMO' noemt.
+def zonder_valse_p(code: str | None, labeltekst: str | None) -> str | None:
+    """'SV8A-P' + label '2024 POKEMON SV8a JP …' → 'SV8A'. Alle andere gevallen: code ongewijzigd."""
+    if not code or not code.endswith("-P"):
+        return code
+    basis = code[:-2]
+    if not re.search(r"\d", basis):
+        return code
+    tekst = str(labeltekst or "").upper()
+    los = rf"(?<![A-Z0-9]){re.escape(basis)}"
+    if "PROMO" in tekst or re.search(los + r"\s*-\s*P\b", tekst):
+        return code
+    if re.search(los + r"\s*JP", tekst):
+        return basis
+    return code
+
+
 def opschonen(lezing: dict) -> dict:
     """Ruwe Qwen-lezing → zelfde dict, met nette 'name'/'number'/'set_code' + 'name_raw'/'pokemon'."""
     if not lezing or lezing.get("_error"):
@@ -114,8 +139,13 @@ def opschonen(lezing: dict) -> dict:
         pokemon = en.lower() if en else None
     subtype = subtype_uit(name_raw, label)
     naam = schone_naam(pokemon, subtype)
-    set_code = geldige_setcode(lezing.get("set_code"))
+    # labelregel staat bij Qwen in label_name óf in set_name ('#008' + '2024 POKEMON SV8a JP')
+    labeltekst = " | ".join(t for t in (label, lezing.get("set_name")) if isinstance(t, str))
+    set_code = zonder_valse_p(geldige_setcode(lezing.get("set_code")), labeltekst)
     nummer = schoon_nummer(lezing.get("number"), set_code)
+    if "/" in nummer:                                 # de -P zit ook in de nummer-suffix ('205/SV8a-P')
+        kop, code = nummer.split("/", 1)
+        nummer = f"{kop}/{zonder_valse_p(code, labeltekst)}"
     out = dict(lezing)
     out["name_raw"] = name_raw
     out["name"] = naam or name_raw            # geen pokémon herkend → ruwe naam, rest van Kensa beslist (LLM-gate)
