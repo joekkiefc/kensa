@@ -30,6 +30,22 @@ def pick_batch(limit: int) -> list[str]:
     return claim_ebay_batch(WORKER_NAME, limit)
 
 
+CRASH_STATUS = "ebay_error"   # ≠ 'ocr_done' → pick_ebay_batch_supabase / claim_ebay_batch zien 'm niet meer
+
+
+def _sluit_af_na_crash(item_id: str, exc: BaseException) -> None:
+    """Een crash in analyze_score_only liet het item op 'ocr_done' staan → elke run
+    opnieuw (462x/24u op 2 lots, 11-9). Er was geen fout-pad: 'error'-dicts markeren
+    niets. Minimaal vangnet: slab_status → 'ebay_error' zodat de picker 'm uitsluit.
+    Schrijft via dezelfde dispatcher als de score-fase (KENSA_WRITE_STORAGE)."""
+    try:
+        from analyze_split.score_only import _mark_slab_status
+        _mark_slab_status(item_id, CRASH_STATUS)
+        print(f"  [ebay] {item_id} → slab_status={CRASH_STATUS} ({type(exc).__name__})", file=sys.stderr)
+    except Exception as e2:
+        print(f"  [ebay] {item_id} afsluiten na crash MISLUKT: {type(e2).__name__}: {e2}", file=sys.stderr)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=20)
@@ -66,7 +82,8 @@ def main() -> int:
                         live_hits += 1
             except Exception as e:
                 fail += 1
-                print(f"  [ebay] {iid} crash: {e}", file=sys.stderr)
+                print(f"  [ebay] {iid} crash: {type(e).__name__}: {e}", file=sys.stderr)
+                _sluit_af_na_crash(iid, e)
 
     if live_hits >= 5:
         pause = random.uniform(30.0, 60.0)

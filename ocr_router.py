@@ -38,6 +38,7 @@ MULTI_SLAB_PATTERNS = [
     r"\blot\s+of\s+\d+\b",
     r"\bbundle\b",
     r"(?:psa\s*10.*?){2,}",         # 2+ x "PSA10" in titel
+    r"psa\s*\d{1,2}(?:\.5)?\s*/\s*\d{1,2}",   # "PSA10/9" = meerdere grades in één titel → lot (11-9)
 ]
 MULTI_SLAB_RE = re.compile("|".join(MULTI_SLAB_PATTERNS), re.IGNORECASE | re.UNICODE)
 

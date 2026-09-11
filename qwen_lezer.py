@@ -31,7 +31,7 @@ import urllib.error
 import urllib.request
 
 from llm_client import PHOTO_INTERPRET_PROMPT
-from lezing_opschonen import opschonen
+from lezing_opschonen import is_lot_lezing, opschonen
 
 BASIS = os.environ.get("KENSA_QWEN_URL", "http://100.125.116.37:1234").rstrip("/")
 ENDPOINT = f"{BASIS}/v1/chat/completions"
@@ -46,9 +46,11 @@ PROMPT_FIXED = PHOTO_INTERPRET_PROMPT.replace(
     '  "label_name": "<de NAAM-regel van het PSA-label LETTERLIJK zoals gedrukt, bv \'FA/JOLTEON V\' of \'TM.MAG.GROUDON-HOLO\' — kopieer, interpreteer niet>",\n  "subtype":',
 ).replace(
     "REGELS:",
-    "REGELS:\n- FA/, SA/, RR/ vooraan op het label zijn AFKORTINGEN (Full Art, Special Art). NOOIT uitspellen tot een woord (dus nooit \'Fairy\'); laat staan of weglaten.",
+    "REGELS:\n- FA/, SA/, RR/ vooraan op het label zijn AFKORTINGEN (Full Art, Special Art). NOOIT uitspellen tot een woord (dus nooit \'Fairy\'); laat staan of weglaten."
+    "\n- Als de foto MEERDERE PSA-slabs toont: zet \"multi_slab\": true en geef number/grade/cert als lijst per slab.",
 )
 assert PROMPT_FIXED != PHOTO_INTERPRET_PROMPT
+assert "multi_slab" in PROMPT_FIXED
 
 USER_MSG = "Analyseer deze PSA-slab foto.\nListing titel EN: (geen)\nListing titel JP: (geen)\n\nGeef JSON."
 
@@ -207,10 +209,16 @@ def lees_slab_foto(photo_url: str) -> dict:
         ruw["_lezer"] = "qwen"
         ruw["_qwen_s"] = round(dt, 2)
         return ruw
+    # Lot-herkenning op de RUWE lezing, vóór cert-sanity en opschonen die de lijst-/reeks-
+    # signalen weghalen (Tommy 11-9: multi-slab = afbreken, check_slab_hybrid sluit af).
+    is_lot, lot_reden = is_lot_lezing(ruw)
     if ruw.get("cert") is not None and not cert_plausibel(ruw.get("cert")):
         ruw["_cert_afgekeurd"] = str(ruw.get("cert"))
         ruw["cert"] = None
     lezing = opschonen(ruw)
+    if is_lot:
+        lezing["multi_slab"] = True
+        lezing["_lot_reden"] = lot_reden
     lezing["_lezer"] = "qwen"
     lezing["_qwen_s"] = round(dt, 2)
     lezing["_foto"] = {"url": gebruikt, "kb": len(img) // 1024, "upgraded": upgraded}

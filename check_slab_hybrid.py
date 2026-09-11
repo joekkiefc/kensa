@@ -26,8 +26,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from check_slab import check_slab as _classic_check_slab, _load_photo_urls, _merge_best, DB_PATH
 from ocr_router import is_multi_slab_lot
+from lezing_opschonen import is_lot_lezing
 from llm_client import interpret_slab_photo
 from qwen_lezer import QwenOnbereikbaar, lees_slab_foto as _qwen_lees
+
+
+class _LotGezien(Exception):
+    """De lezer zag meerdere slabs in de foto → lot → afbreken (Tommy 11-9)."""
 
 LEZER = os.environ.get("KENSA_SLAB_LEZER", "gemini").strip().lower()   # 'qwen' = fase 4
 
@@ -53,12 +58,35 @@ def _normalize_multimodal(r: dict) -> dict:
     }
 
 
+def _lot_skip(reason: str) -> dict:
+    """Skip-resultaat voor een multi-slab lot (titel óf lezing). Downstream: analyze_ocr_only
+    slaat slab_ocr op met status 'skip' (0%), card_key None → eBay-worker: 0%-item, geen
+    eBay, summary + 'analyzed'. Precies het pad dat titel-lots al liepen."""
+    return {
+        "status": "skip",
+        **_LEEG,
+        "source_photo_idx": None,
+        "photos_tried": 0,
+        "ocr_calls": 0,
+        "per_photo": [],
+        "_source": "skip",
+        "_reason": reason,
+    }
+
+
 def _is_multimodal_complete(fields: dict) -> bool:
     """Zelfde als check_slab._is_complete: grade + card_name volstaan."""
     return bool(fields.get("grade") and fields.get("card_name"))
 
 
 def _fetch_titles(item_id: str, db_path: Path) -> tuple[str | None, str | None]:
+    # Supabase-first switch (11-9): zelfde dispatcher als _load_photo_urls/_load_listing.
+    # Zonder deze tak las de titel-lotfilter uit de bevroren Pi-mirror → nieuwe items
+    # hadden geen titel → 【連番】-lots gleden door naar de lezer (m95047245587).
+    if os.environ.get("KENSA_READ_STORAGE", "").lower() == "supabase":
+        from storage_supabase import load_listing_supabase
+        row = load_listing_supabase(item_id)
+        return (row.get("title_jp"), row.get("title_en")) if row else (None, None)
     conn = sqlite3.connect(str(db_path))
     conn.row_factory = sqlite3.Row
     try:
@@ -80,6 +108,9 @@ def _lees_fotos(candidates, lees, lezer: str) -> tuple[dict, int | None, list, i
         raw = lees(url)
         took_ms = int((time.perf_counter() - t0) * 1000)
         calls += 1
+        is_lot, lot_reden = is_lot_lezing(raw)
+        if is_lot:
+            raise _LotGezien(lot_reden)
         fields = _normalize_multimodal(raw)
         err = raw.get("_error") if raw else "no_response"
         per_photo.append({
@@ -109,16 +140,7 @@ def check_slab_hybrid(item_id: str, max_photos: int = 3, db_path: Path = DB_PATH
     # Stap 1: titel-filter
     is_lot, pat = is_multi_slab_lot(title_jp, title_en)
     if is_lot:
-        return {
-            "status": "skip",
-            **_LEEG,
-            "source_photo_idx": None,
-            "photos_tried": 0,
-            "ocr_calls": 0,
-            "per_photo": [],
-            "_source": "skip",
-            "_reason": f"multi_slab_lot:{pat}",
-        }
+        return _lot_skip(f"multi_slab_lot:{pat}")
 
     # Stap 2: lezer op de orig foto's
     photos = _load_photo_urls(item_id, db_path)
@@ -131,15 +153,21 @@ def check_slab_hybrid(item_id: str, max_photos: int = 3, db_path: Path = DB_PATH
     lezer = LEZER
     reden_lezer = None
     best_fields, source_idx, per_photo, calls = dict(_LEEG), None, [], 0
-    if lezer == "qwen":
-        try:
-            best_fields, source_idx, per_photo, calls = _lees_fotos(candidates, _qwen_lees, "qwen")
-        except QwenOnbereikbaar as e:
-            # Tommy 9-9: dit is de ENIGE weg naar Gemini.
-            lezer, reden_lezer = "gemini_fallback", f"qwen_onbereikbaar: {str(e)[:120]}"
-    if lezer != "qwen":
-        best_fields, source_idx, per_photo, calls = _lees_fotos(
-            candidates, lambda url: interpret_slab_photo(url, title_en, title_jp), "gemini")
+    try:
+        if lezer == "qwen":
+            try:
+                best_fields, source_idx, per_photo, calls = _lees_fotos(candidates, _qwen_lees, "qwen")
+            except QwenOnbereikbaar as e:
+                # Tommy 9-9: dit is de ENIGE weg naar Gemini.
+                lezer, reden_lezer = "gemini_fallback", f"qwen_onbereikbaar: {str(e)[:120]}"
+        if lezer != "qwen":
+            best_fields, source_idx, per_photo, calls = _lees_fotos(
+                candidates, lambda url: interpret_slab_photo(url, title_en, title_jp), "gemini")
+    except _LotGezien as e:
+        # Lot uit de LEZING (lijst-nummers/-grades, meerdere certs, multi_slab-flag):
+        # zelfde afsluiting als een titel-lot. Bewust GEEN Vision-vangnet — die zou
+        # het lot alsnog als 1 kaart lezen (Tommy 11-9).
+        return _lot_skip(f"multi_slab_lot_lezing:{e}")
 
     source = {"qwen": "qwen", "gemini_fallback": "gemini_fallback"}.get(lezer, "multimodal")
 

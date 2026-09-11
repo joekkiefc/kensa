@@ -56,8 +56,39 @@ def schone_naam(pokemon: str | None, subtype: str | None) -> str | None:
     return f"{naam} {subtype}" if subtype else naam
 
 
+_SCALAR = (str, int, float, type(None))
+_CERT_RE = re.compile(r"\d{8,10}")
+_MEER_GRADES_RE = re.compile(r"\d{1,2}(?:\.5)?\s*[/,]\s*\d{1,2}")   # '10/9', '10, 9, 10'
+
+
+def is_lot_lezing(lezing: dict | None) -> tuple[bool, str]:
+    """Herkent een multi-slab lot in de RUWE lezing (Tommy 11-9: lots worden nooit
+    ondersteund → afbreken). True als:
+      - Qwen zelf 'multi_slab': true zegt (prompt-zin in qwen_lezer.PROMPT_FIXED)
+      - number/grade/cert/name een lijst is (Qwen geeft per slab een waarde)
+      - cert ≥2 certs (8-10 cijfers) bevat: '164173497 164173498 164173499'
+      - grade meerdere grades bevat: '10/9', '10, 9, 10'
+    Retourneert (is_lot, reden). Geen netwerk, geen state."""
+    if not lezing or not isinstance(lezing, dict):
+        return False, ""
+    if lezing.get("multi_slab") is True:
+        return True, "multi_slab_flag"
+    for veld in ("number", "grade", "cert", "name"):
+        if isinstance(lezing.get(veld), (list, tuple)):
+            return True, f"{veld}_lijst"
+    cert = lezing.get("cert")
+    if isinstance(cert, str) and len(_CERT_RE.findall(cert)) >= 2:
+        return True, "meerdere_certs"
+    grade = lezing.get("grade")
+    if isinstance(grade, str) and _MEER_GRADES_RE.search(grade):
+        return True, "meerdere_grades"
+    return False, ""
+
+
 def schoon_nummer(number, set_code) -> str:
     """Cijfers + alleen een ÉCHTE set-code als suffix. '' als er geen cijfers zijn."""
+    if not isinstance(number, _SCALAR):          # lijst/dict → geen nummer (contract: scalar)
+        return ""
     raw = str(number or "").strip().lstrip("#")
     m = re.match(r"\d{1,4}", raw.split("/")[0])
     if not m:
@@ -88,7 +119,13 @@ def opschonen(lezing: dict) -> dict:
     out = dict(lezing)
     out["name_raw"] = name_raw
     out["name"] = naam or name_raw            # geen pokémon herkend → ruwe naam, rest van Kensa beslist (LLM-gate)
-    out["number"] = nummer or lezing.get("number")
+    # Contract-hardening (11-9): number/grade/cert zijn scalars. Een lijst (multi-slab lot)
+    # komt er NIET door — anders lekt "['#260', '#261']" de card_key in en crasht de eBay-fase.
+    ruw_nummer = lezing.get("number")
+    out["number"] = nummer or (ruw_nummer if isinstance(ruw_nummer, _SCALAR) else "")
+    for veld in ("grade", "cert"):
+        if not isinstance(lezing.get(veld), _SCALAR):
+            out[veld] = None
     out["set_code"] = set_code                # '2023 POKEMON SV' / 'CSR' → None; 'SV-P' blijft
     out["pokemon"] = pokemon
     out["subtype"] = subtype
