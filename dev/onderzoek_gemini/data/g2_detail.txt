@@ -1,0 +1,176 @@
+in_tokens per foto-groep (alleen echte Gemini-calls):
+  sqlite_foto=False hash_velden=False n=   54 min=755 med=784.5 max=824
+  sqlite_foto=False hash_velden=True  n= 2126 min=747 med=779.0 max=829
+  sqlite_foto=True  hash_velden=False n=   93 min=756 med=908 max=1348
+  sqlite_foto=True  hash_velden=True  n=   13 min=760 med=778 max=824
+
+54-groep (geen sqlite-foto, geen hash): {('ocr', 'gemini-flash-lite-latest'): 50, ('score_retry', 'gemini-flash-lite-latest'): 4}; in_tokens max=824
+
+card_key-verschil per onderdeel (zonder Gemini → met Gemini):
+  gelijk                              730
+  nummer-schrijfwijze                 390
+      2JKz96PMosTCy58JbQGxwP: serena:081:9.5:s11a  →  serena:081/068:9.5:s11a   label='FA/セレナ V'
+      2JUGuuUREcgKEvrcGG9Q6c: xerneas:023:10:s8a-p  →  xerneas:023/025:10:s8a-p   label='2021 POKEMON JAPANESE #023 GEM MT PCP 25TH ANNIVERSARY ED.'
+      2JUPnuUhnkP67VqBK5ghxW: xerneas:023:10:s8a-p  →  xerneas:023/025:10:s8a-p   label='2021 POKEMON JAPANESE #023 GEM MT PCP 25TH ANNIVERSARY ED.'
+  nummer-schrijfwijze+set             365
+      2JHYEzJQeRtYgJCdTe6sXw: pikachu:127:10  →  pikachu:127/414:10:si   label='PIKACHU-REV.FOIL'
+      2JUsvdbKDhvRUWeFGRJzV4: sylveon:212:10:sv8a-p  →  sylveon:212/187:10:sv8a   label='2024 POKEMON SV8a JP #212 GEM MT 10'
+      2JUt73c4fULuzRobwQ2Fay: canary:248:null  →  canary:248/193:null:sv2p   label='20XX POKEMON XXX XXX CARD NAME'
+  pokemon                             349
+      2JUt6TYHRSsRPA9eMC7rFQ: mega gengar:003:9.5  →  gengar:003:9.5   label='FA/MEGA.GENGAR EX'
+      2JUt7xfxpZMinhYHj92VB4: galarian:117:9.5  →  gardevoir:117:9.5   label='FA/MEGA GARDEOVOIR EX'
+      2JWQtVUVWhHragw7va5Voz: kilegma:076:10:sv6a  →  bewear:076:10:sv6a   label='2024 POKEMON SV6a JP'
+  pokemon+nummer-schrijfwijze         171
+      2JUsxZsphRhpJBvUVjBz8y: soul:109:XX:sv8  →  ceruledge:109/106:XX:sv8   label='FA/SOUL BLAZE'
+      2JUsztMxrp4bsXXd5MmgaU: radiant blastoise:018:10:s-p  →  blastoise:018/071:10:s-p   label='2022 POKEMON GO JPN.'
+      2JUt3pFyvopA6xJBqfaBgZ: mega lucario:088:9.5  →  lucario:088/063:9.5   label='FA/MEGA LUCARIO V'
+  set                                 155
+      2JWdbMLs5mwq33RvkQ9fcx: flareon:001:10  →  flareon:001:10:004   label='FA/FLAREON VMAX'
+      m10927577982: reshiram:020:8  →  reshiram:020:8:s-p   label='FA/RESHIRAM'
+      m10930016621: arbok:187:10:sv2a-p  →  arbok:187:10:sv2a   label='2023 POKEMON SV2a JP #187 ARBOK ex SUPER RARE'
+  pokemon+nummer-schrijfwijze+set     94
+      2JW3Sfkh552acyHY3WmW6F: mega gengar:230:10  →  gengar:230/193:10:m2a   label='2025 POKEMON M2a JP #230'
+      2JWaWHpTuw5sCuHs2WweRG: sky:060:10  →  moltres:060/054:10:s10   label='2019 P.M. JPN. SUN & MOON #060 MLTRS/ZPDS/ARTCN.GX SKY LEGEND-FULL ART GEM MT 10'
+      2JWaf4rykxcX7uoPJuUSay: galarian:074:10  →  articuno:074/070:10:s5a   label='2021 POKEMON JPN.SWSH #074 GEM MT PEERLESS FIGHTERS-FA 10'
+  pokemon+set                         21
+      2JWQtVzHuzAvqfTo6zzDsk: mega sharpedo:098:10  →  sharpedo:098:10:m2   label='2025 POKEMON M2 JP #098 GEM MT'
+      2JWQtW5HNYezdscccD2wXB: mega heracross:093:10  →  heracross:093:10:m2   label='2025 POKEMON M2 JP #093 GEM MT SUPER RARE 10 156506403'
+      m17248688479: shining magikarp:010:10  →  magikarp:010:10:s8a-p   label='FA/JOLTEON V'
+  één van beide None                  19
+  nummer                              12
+      2JUt6viGdQTTB7sjEodTEa: touko:086:9.5  →  touko:173/086:9.5   label='SV11W'
+      2JWbD8JaSom34GZzoCFDAP: hilda:068:10:sv11w  →  hilda:173/086:10:sv11w   label='#173 POKEMON SV11W JP'
+      2JWdSZ6kvhZymFy2ddwZes: rotom:12:10  →  rotom:112/080:10   label='RO/ROTOM ex'
+  nummer+set                          10
+      2JWcAwvBgseRViDS8wq4aQ: lucario:123:10  →  lucario:226/172:10:s12a   label='FA/LUCARIO V'
+      2JWdeGNMkg3YT4PR63Riv3: pikachu:068:10:sv2a-p  →  pikachu:173/165:10:sv2a   label='#173'
+      m37634129550: shiny:175:9.5  →  shiny:198/190:9.5:s4a   label='FA/MAR/CE SHINY STAR V'
+  pokemon+nummer+set                  9
+      2JWZfwRLbe5mPtcFzEMdFP: vaporon:068:10  →  vaporeon:205/187:10:sv8a   label='FA/VAPORON EX'
+      2JWZhjb5bhTz92fS5SmLMG: mega lucario:068:10  →  lucario:088/063:10:m1l   label='FA/MEGA LUCARIO EX'
+      2JWcAknUgDLBEstDh8oLkh: feranidifit:123:10  →  okidogi:244/193:10:m2a   label='TAG'
+  pokemon+nummer                      6
+      m11758161099: mega gengar:240:10  →  gengar:034:10   label='2025 POKEMON M2a JP'
+      m36061424953: team rocket's spidoppi:7099:10:sv10  →  spidops:099:10:sv10   label="2025 POKEMON SV10 JP TEAM ROCKET'S SPIDOPPI ART FARE"
+      m55464007562: mega zelentross:7225:10  →  eelektross:060/100:10   label='2025 POKEMON M2a JP'
+
+kaart-KERN (pokemon/nummer/grade) anders: 672
+
+pokemon 'anders' voorbeelden (Qwen card_name → Gemini name):
+  2JUsxZsphRhpJBvUVjBz8y: q='Soul Blaze' (soul) g='Ceruledge' (ceruledge)
+  2JUsztMxrp4bsXXd5MmgaU: q='Radiant Blastoise' (radiant blastoise) g='Radiant Blastoise' (blastoise)
+  2JUt3pFyvopA6xJBqfaBgZ: q='Mega Lucario EX' (mega lucario) g='Mega Lucario EX' (lucario)
+  2JUt6TYHRSsRPA9eMC7rFQ: q='Mega Gengar EX' (mega gengar) g='Mega Gengar EX' (gengar)
+  2JUt7o8y3T6fSsc59gZAdV: q='Galarian Latias EX' (galarian) g='Mega Latias EX' (latias)
+  2JUt7xfxpZMinhYHj92VB4: q='Galarian Gardevoir EX' (galarian) g='Galarian Gardevoir EX' (gardevoir)
+  2JW3Sfkh552acyHY3WmW6F: q='Mega Gengar EX' (mega gengar) g='Mega Gengar EX' (gengar)
+  2JWJd3SDQwuWm3TawNgu4o: q='Mega Charizard EX' (mega charizard) g='Mega Charizard X' (charizard)
+  2JWQtVUVWhHragw7va5Voz: q='Kilegma' (kilegma) g='Bewear' (bewear)
+  2JWQtVzHuzAvqfTo6zzDsk: q='Mega Sharpedo EX' (mega sharpedo) g='Mega Sharpedo EX' (sharpedo)
+  2JWQtW5HNYezdscccD2wXB: q='Mega Heracross EX' (mega heracross) g='Mega Heracross EX' (heracross)
+  2JWQtWSUURmkAXRXJrxzpT: q='Galarian Obstagoon' (galarian) g='Galarian Obstagoon' (obstagoon)
+pokemon: q_pokemon zit in pokedex?
+  {(True, True): 1087, (False, False): 512, (False, True): 637, (True, False): 70, (None, False): 7, (None, True): 18}  (sleutel: (qwen-naam in pokedex, gemini-naam bevat pokedex-woord))
+  Gemini-pokemon ≠ Qwen-pokemon terwijl BEIDE in pokedex:
+  n=15
+    2JWaq8o3MKeG4P3PwxLvwD: q='Yanmega VMAX' g='Oranguru' label='FA/ORANGURU VMAX CLIMAX'
+    2JWcphfdnmjJifJnEDk48h: q='Pikachu GX' g='Dedenne GX' label='FA/DEDENNE GX'
+    m10168906877: q='Quagsire' g='Quaxly' label="2025 POKEMON M-P JP #019 QUAXLY McDONALD'S"
+    m14022489326: q='Reshiram V' g='Charizard V' label='FA/RESHIRAM V'
+    m38737362438: q='Palkia GX' g='Arceus & Dialga & Palkia GX' label='ARCS/DLGA/PALKIA GX ALTER GENESIS-FA'
+    m44598266743: q='Magmar EX' g='M Camerupt EX' label='M バクーダEX'
+    m55621696365: q='Jigglypuff GX' g='Mega Lopunny & Jigglypuff GX' label='FA/M.LPNY.& JGLYPF.GX'
+    m57811298918: q='Ditto' g='Fuecoco' label='#09'
+    m59046825286: q='Eevee VMAX' g='Espeon VMAX' label='FA/ESPEON VMAX'
+    m71297118229: q='Darkrai GX' g='Umbreon & Darkrai GX' label='FA/DARKRAI V'
+    m92010377527: q='Leafeon EX' g='Sylveon ex' label='FA/LEAFLEON EX'
+    m95246174732: q='Darkrai GX' g='Umbreon & Darkrai GX' label='FA/DARKRAI V'
+    m99226747534: q='Gyarados V' g='Dark Tyranitar' label='FA/WARIOR GYARADOS V'
+    z642042994: q='Mewtwo EX' g='Mega Glalie EX' label='2025 POKEMON M2a JP #233 GEM MT 10 157153902'
+    z680324724: q='Aerodactyl EX' g='Espeon' label='FA/AERODACTYL EX'
+
+NUMMER-verschillen (alle):
+  2JUt6viGdQTTB7sjEodTEa: q='086' g='173/086' label='SV11W'
+  2JWZfwRLbe5mPtcFzEMdFP: q='068' g='205/187' label='FA/VAPORON EX'
+  2JWZhjb5bhTz92fS5SmLMG: q='068' g='088/063' label='FA/MEGA LUCARIO EX'
+  2JWbD8JaSom34GZzoCFDAP: q='068/SV11W' g='173/086' label='#173 POKEMON SV11W JP'
+  2JWcAknUgDLBEstDh8oLkh: q='123' g='244/193' label='TAG'
+  2JWcAwvBgseRViDS8wq4aQ: q='123' g='226/172' label='FA/LUCARIO V'
+  2JWdSZ6kvhZymFy2ddwZes: q='12' g='112/080' label='RO/ROTOM ex'
+  2JWdeGNMkg3YT4PR63Riv3: q='068/SV2A-P' g='173/165' label='#173'
+  m11758161099: q='240' g='034' label='2025 POKEMON M2a JP'
+  m12998314358: q='764' g='064' label='2025 POKEMON MC JP PIKACHU ex'
+  m21834634367: q='1591/SV-P' g='159/SV-P' label='2019 POKEMON OLD MAID MEOWTH'
+  m36061424953: q='7099/SV10' g='099/SV10' label="2025 POKEMON SV10 JP TEAM ROCKET'S SPIDOPPI ART FARE"
+  m37634129550: q='175' g='198/190' label='FA/MAR/CE SHINY STAR V'
+  m45953973675: q='068/SM-P' g='107/095' label="TRAINER'S エリカのおもてなし"
+  m55151387667: q='165' g='205/165' label='2023 POKEMON SV2w JP MEW ex SPECIAL ART RARE'
+  m55464007562: q='7225' g='060/100' label='2025 POKEMON M2a JP'
+  m65167045682: q='180' g='113/100' label='#039'
+  m71297118229: q='010' g='215' label='FA/DARKRAI V'
+  m71407431611: q='360' g='223/193' label='FA/INFERNO X'
+  m76774523111: q='0224' g='022/166' label='#224 MEGA FROSCLASS ex MEGA ATTACK RARE'
+  m77911535393: q='0211' g='021/172' label='#211 FA/CHARIZARD V GEM MT VSTAR UNIVERSE'
+  m78069444901: q='068' g='217/187' label='2C14 POK MO LVR8'
+  m80161568449: q='068' g='223/193' label='#223 MEGA CHARIZARD X ex GEM MT'
+  m92010377527: q='063' g='069' label='FA/LEAFLEON EX'
+  m93241999689: q='260' g='142/172' label='VSTAR UNIVERSE-FA-UR'
+  z663856792: q='086/S8A-P' g='076/070' label='FA/SR CALYREX VMAX'
+  z665952936: q='068/MC' g='225' label='#225'
+  z666857488: q='107' g='110/076' label='FA/MEGA.RAYQUAZA.V'
+  z671086202: q='001' g='005/025' label='FA/PIKACHU V'
+  z676917404: q='234' g='0' label='ピカチュウEX'
+  z679161938: q='068/SV-P' g='115/080' label="#115 ROSA'S ENCOURAGEMENT GEM MT SPECIAL ART RARE"
+  z679970048: q='100' g='189/169' label='FA/UMBREON V'
+  z680044720: q='176' g='116/080' label='2025 POKEMON M2 JP #116'
+  z680232354: q='068' g='110/076' label='FA/MEGA.RAYQUAZA.V'
+
+GRADE-verschillen (alle):
+  2JUsxZsphRhpJBvUVjBz8y: q='XX' g='10' label='FA/SOUL BLAZE' conf=0.95
+  2JUt73c4fULuzRobwQ2Fay: q='' g='10' label='20XX POKEMON XXX XXX CARD NAME' conf=0.95
+  2JUt7o8y3T6fSsc59gZAdV: q='9.5' g='10' label='FA/MEG.LATIAS EX' conf=0.95
+  2JWatR6xoeVWpqeVgZfDEw: q='9.5' g='' label='ミュウEX' conf=0.95
+  m14022489326: q='10+' g='10' label='FA/RESHIRAM V' conf=0.95
+  m36110958899: q='9.5' g='' label="TRAINER'S アセロラの予感" conf=0.85
+  m39371993243: q='9' g='10' label='#051' conf=0.95
+  m51008116760: q='9.5' g='' label='108/076 SAR' conf=0.95
+  m53347264676: q='10+' g='10' label='FA/MIMOSA V' conf=0.95
+  m66247848292: q='9.5' g='10' label='FA/SERENA INCANDESCENT ARCANA' conf=0.95
+  m78069444901: q='9.5' g='10' label='2C14 POK MO LVR8' conf=0.95
+  m90794847903: q='MINT' g='9' label='NOBAT' conf=0.95
+  m91696432400: q='10+' g='10' label="FA/ERIKA'S INVITATION" conf=0.95
+  z622364670: q='9.5' g='' label='たね そらをとぶピカチュウV' conf=0.85
+  z653856960: q='9.5' g='' label='たね ピカチュウ&ゼクロム GX HP240' conf=0.95
+  z679972672: q='10+' g='10' label='FA/デジモンカードゲーム' conf=0.95
+  z680042264: q='9+' g='9' label='EX カメックス' conf=0.95
+  z680325588: q='10+' g='10' label='FA/LIZARDON V' conf=0.95
+  z680346622: q='10+' g='10' label='FA/Erika no Shoutai' conf=0.95
+
+SET 'anders' categorieën:
+  qwen geen set, gemini wel      464
+      ('2JHYEzJQeRtYgJCdTe6sXw', '', 'SI', 'PIKACHU-REV.FOIL')
+      ('2JUt73c4fULuzRobwQ2Fay', '', 'SV2P', '20XX POKEMON XXX XXX CARD NAME')
+      ('2JUt8Si4GagKZNMoaTS5Ks', '', 'S9', 'FA/POKE KID SHINY STAR V')
+      ('2JVyp7VbwUuRn3KC8nSiQA', '', 'S6a', 'FA/PEONIA')
+  echt andere set                99
+      ('2JWaNkcNu9CCG9DpFCUMzZ', 'M2A', 'SV2P', '2025 POKEMON M2a JP #219 GEM MT 10')
+      ('2JWbARNU4XHFpiuaHT6A72', 'PM', 'SM12a', "FA/ERIKA'S HOSPITALITY.")
+      ('2JWbGd5DsFn2N6JjT98cQh', 'SV-P', 'SV11W', '2025 POKEMON SV11W JP #174 RESHIRAM ex GEM MT BW RARE')
+      ('2JWcpgq2HzBJSWYmpePqDE', 'SM1T', 'SM11', 'FA/MEWTOO&M')
+  gemini haalt -P weg            64
+      ('2JUsvdbKDhvRUWeFGRJzV4', 'SV8A-P', 'SV8A', '2024 POKEMON SV8a JP #212 GEM MT 10')
+      ('2JWKLentD4yCkv3uMrWzs7', 'SV8A-P', 'SV8a', '2024 POKEMON SV8a JP #202 FLAREON ex SPECIAL ART RARE')
+      ('2JWaoQkCzQZL8mLvyBrrrt', 'SV2A-P', 'SV2a', '2023 POKEMON SV2a JP #195 MEW ex SUPER RARE')
+      ('2JWcpghfAAsQuigJG2iUAa', 'SV8A-P', 'SV8A', '2024 POKEMON SV8a JP #230')
+  gemini geen (geldige) set      47
+      ('2JWaPaj3vgR9pRGHedwtTp', 'M2', None, '2025 POKEMON M2 JP #106 GEM MT 10')
+      ('2JWaZZaxZp55KKFiwh7seL', 'XY-P', None, 'FA/DARK.GYARADOS-HOLO')
+      ('2JWarjDBNdBavC58NPjSTM', 'M1L', None, "2025 POKEMON M1L JP #091 LILLIE'S DETERMINATION GEM MT SPECIAL ART RARE 10 159791239")
+      ('2JWb69g2hbFR7M7bLKkBqz', 'M2', None, '2025 POKEMON M2 JP #106 GEM MT 10')
+
+Qwen -P terwijl labelregel een gewone set-code zonder -P toont: 96; gemini_set daarbij: {False: 60, True: 36} (True = Gemini houdt -P)
+
+eBay verse fetch met LLM-zoekzin: n=675; q_llm == ebay_prices.query: 675
+eBay-resultaat per llm-item: {('llm', True, 'price_cache'): 665, ('llm', False, None): 675, ('regex', True, 'price_cache'): 352, ('regex', True, 'price_cache_kern'): 125, ('llm', True, 'price_cache_url'): 96, ('llm', True, 'price_cache_kern'): 198, ('regex', True, 'price_cache_url'): 75, (None, False, None): 5, ('llm', True, None): 1}
+score-retry: ebay na retry query_source={'llm': 63, 'regex': 198, None: 2} from_cache={True: 245, False: 18}; ck_llm==ck_none: 157
+judge (filter_source=llm) bij llm-items: {(True, 'llm'): 71, (False, 'regex'): 635, (True, 'regex'): 1441, (False, 'llm'): 40, (False, None): 5}

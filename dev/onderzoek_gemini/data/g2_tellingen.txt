@@ -1,0 +1,94 @@
+Qwen-items: 4930   met llm_slab: 2331
+
+GATE (_needs_llm) × pad:
+  gate_open=False pad=geen_llm    n= 2595  reden=compleet — regex volstaat
+  gate_open=True  pad=ocr         n=  999  reden=slab-name '…' niet in pokedex
+  gate_open=True  pad=ocr         n=  891  reden=geen set_name
+  gate_open=False pad=score_retry n=  263  reden=compleet — regex volstaat
+  gate_open=True  pad=ocr         n=   21  reden=slab-name '…'s determination' niet in pokedex
+  gate_open=True  pad=ocr         n=   19  reden=slab-name '…'s mischief' niet in pokedex
+  gate_open=True  pad=ocr         n=   12  reden=slab-name '…'s pride' niet in pokedex
+  gate_open=True  pad=ocr         n=   11  reden=slab-name '…'s sparkle' niet in pokedex
+  gate_open=True  pad=ocr         n=   10  reden=slab-name '…'s invitation' niet in pokedex
+  gate_open=True  pad=ocr         n=    9  reden=slab-name '…'s exploration' niet in pokedex
+  gate_open=True  pad=ocr         n=    8  reden=slab-name '…'s encouragement' niet in pokedex
+  gate_open=True  pad=ocr         n=    7  reden=slab-name '…'s appeal' niet in pokedex
+  gate_open=True  pad=ocr         n=    6  reden=slab-name '…'s hospitality' niet in pokedex
+  gate_open=True  pad=ocr         n=    6  reden=slab-name '…'s full' niet in pokedex
+  gate_open=True  pad=ocr         n=    5  reden=slab-name '…'s prophesy' niet in pokedex
+  gate_open=True  pad=ocr         n=    4  reden=slab-name '…'s gaze' niet in pokedex
+  gate_open=True  pad=ocr         n=    4  reden=slab-name '…'s omotenashi' niet in pokedex
+  gate_open=True  pad=ocr         n=    4  reden=slab-name '…'s prediction' niet in pokedex
+  gate_open=True  pad=ocr         n=    3  reden=slab-name '…'s vigor' niet in pokedex
+  gate_open=True  pad=ocr         n=    3  reden=multi-word naam (n tokens)
+  gate_open=True  pad=ocr         n=    3  reden=slab-name '…'s introduction' niet in pokedex
+  gate_open=True  pad=ocr         n=    3  reden=slab-name '…'s devotion' niet in pokedex
+  gate_open=True  pad=ocr         n=    3  reden=slab-name '…'s resolve' niet in pokedex
+  gate_open=True  pad=ocr         n=    3  reden=slab-name '…'s ambition' niet in pokedex
+  gate_open=True  pad=ocr         n=    3  reden=slab-name '…'s plot' niet in pokedex
+  gate_open=True  pad=ocr         n=    3  reden=slab-name '…'s fighting' niet in pokedex
+  gate_open=True  pad=ocr         n=    2  reden=slab-name '…'s premonition' niet in pokedex
+  gate_open=True  pad=geen_llm    n=    2  reden=slab-name '…' niet in pokedex
+  gate_open=True  pad=ocr         n=    2  reden=slab-name '…'s spidoppi' niet in pokedex
+  gate_open=True  pad=ocr         n=    2  reden=slab-name '…'s prophecy' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s water' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s research' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s trick' niet in pokedex
+  gate_open=True  pad=geen_llm    n=    1  reden=geen set_name
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s maintenance' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s conviction' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s vision' niet in pokedex
+  gate_open=True  pad=geen_llm    n=    1  reden=slab-name '…'s determination' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s welcome' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s performance' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s order' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s assistance' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s force' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s hat' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s daisaiiden' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s challenge' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s giovanni' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s gablith' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s fluffball' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s compassion' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s charisma' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s dtrmntn' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s favor' niet in pokedex
+  gate_open=True  pad=ocr         n=    1  reden=slab-name '…'s dream' niet in pokedex
+
+PAD × meta_model:
+  ('ocr', 'gemini-flash-lite-latest'): 2024
+  ('score_retry', 'gemini-flash-lite-latest'): 262
+  ('ocr', 'cache'): 44
+  ('score_retry', 'cache'): 1
+
+FOTO-bewijs (alle llm-items):
+  sqlite_heeft_foto=False hash(alleen-velden) in llm_slab_cache=True: 2150
+  sqlite_heeft_foto=True hash(alleen-velden) in llm_slab_cache=False: 114
+  sqlite_heeft_foto=False hash(alleen-velden) in llm_slab_cache=False: 54
+  sqlite_heeft_foto=True hash(alleen-velden) in llm_slab_cache=True: 13
+
+Gemini-calls (niet cache): 2286; in_tokens sum=1793253 out sum=311869; latency sum=1949s gem=852ms
+  pad ocr: 2024 calls, latency sum 1719s
+  pad score_retry: 262 calls, latency sum 230s
+
+VELD-VERSCHIL Qwen vs Gemini (llm-items):
+  pokemon : {'gelijk': 1079, 'gemini_leeg': 582, 'anders': 652, 'qwen_leeg': 18}
+  nr      : {'gelijk': 2290, 'anders': 34, 'qwen_leeg': 3, 'gemini_leeg': 4}
+  grade   : {'gelijk': 2312, 'anders': 13, 'qwen_leeg': 1, 'gemini_leeg': 5}
+  set     : {'qwen_leeg': 464, 'gelijk': 1657, 'anders': 163, 'gemini_leeg': 47}
+  set -P detail: {'anders': 610, 'gelijk': 1657, 'gemini haalt -P weg': 64}
+  set_name (genormaliseerd): {'gelijk': 659, 'anders': 712, 'qwen_leeg': 855, 'gemini_leeg': 105}
+
+UITKOMST card_key (met Gemini vs zonder):
+  {'anders': 1582, 'gelijk': 730, 'alleen_met_gemini': 19}
+  replay-trouw (OCR-pad): ck_llm == live listings.card_key: 2066/2068
+  replay-trouw (score-pad): ck_none == live listings.card_key: 262/263; ck_llm==live 156
+
+UITKOMST eBay-zoekzin:
+  {'anders': 2250, 'gelijk': 81}
+  skip met gemini=7  skip zonder=21
+  alleen zonder-gemini skip (Gemini redt zoekzin): 18
+  replay-trouw: q_llm == summary.ebay_query: 848/2331
+
+SCHRIJF-SLOT: {"http_non_get": 0, "urllib": 0, "writer_calls": 0}  (sqlite opens ro-geforceerd: 3)

@@ -1,0 +1,123 @@
+calls: 105
+
+FASE A (herhaling 1) — per groep x variant
+('SV2a live=fout(-P)', 'P1') {'n': 5, 'raw -P': 5, 'opgeschoond -P': 5, 'raw setcode leeg': 0, 'errors': 0}
+('SV2a live=fout(-P)', 'P2') {'n': 5, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+('SV2a live=fout(-P)', 'P3') {'n': 5, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+('SV2a live=goed', 'P1') {'n': 5, 'raw -P': 1, 'opgeschoond -P': 1, 'raw setcode leeg': 0, 'errors': 0}
+('SV2a live=goed', 'P2') {'n': 5, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+('SV2a live=goed', 'P3') {'n': 5, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+('SV8a live=fout(-P)', 'P1') {'n': 15, 'raw -P': 15, 'opgeschoond -P': 15, 'raw setcode leeg': 0, 'errors': 0}
+('SV8a live=fout(-P)', 'P2') {'n': 15, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+('SV8a live=fout(-P)', 'P3') {'n': 15, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+('SV8a live=goed', 'P1') {'n': 5, 'raw -P': 2, 'opgeschoond -P': 2, 'raw setcode leeg': 0, 'errors': 0}
+('SV8a live=goed', 'P2') {'n': 5, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+('SV8a live=goed', 'P3') {'n': 5, 'raw -P': 0, 'opgeschoond -P': 0, 'raw setcode leeg': 0, 'errors': 0}
+
+VARIANTIE (zelfde foto, zelfde prompt, meerdere runs)
+2JWdZyJWHpX2zavuL83qRU P1 runs= 3 raw identiek= True foto identiek= True set_codes= ['SV8a-P', 'SV8a-P', 'SV8a-P']
+2JWdZyJWHpX2zavuL83qRU P2 runs= 2 raw identiek= True foto identiek= True set_codes= ['SV8a', 'SV8a']
+2JWdZyNiPVnugC6qzx9SCL P1 runs= 3 raw identiek= True foto identiek= True set_codes= ['SV8a-P', 'SV8a-P', 'SV8a-P']
+2JWdZyNiPVnugC6qzx9SCL P2 runs= 2 raw identiek= True foto identiek= True set_codes= ['SV8a', 'SV8a']
+m59822763731 P1 runs= 3 raw identiek= True foto identiek= True set_codes= ['SV8a-P', 'SV8a-P', 'SV8a-P']
+m59822763731 P2 runs= 2 raw identiek= False foto identiek= True set_codes= ['SV8a', 'SV8a']
+m83313819997 P1 runs= 3 raw identiek= True foto identiek= True set_codes= ['SV8a-P', 'SV8a-P', 'SV8a-P']
+m83313819997 P2 runs= 2 raw identiek= True foto identiek= True set_codes= ['SV8a', 'SV8a']
+m84401892600 P1 runs= 3 raw identiek= True foto identiek= True set_codes= ['SV8a-P', 'SV8a-P', 'SV8a-P']
+m84401892600 P2 runs= 2 raw identiek= False foto identiek= True set_codes= ['SV8a', 'SV8a']
+
+foto sha1 identiek over alle calls per item: 30 / 30
+
+P1 reproduceert live?
+('SV2a live=fout(-P)', 'P1==live') 5
+('SV2a live=goed', 'P1==live') 4
+('SV2a live=goed', 'P1=SV2A-P live=SV2A') 1
+('SV8a live=fout(-P)', 'P1==live') 15
+('SV8a live=goed', 'P1==live') 3
+('SV8a live=goed', 'P1=SV8A-P live=SV8A') 2
+
+GOED-groep raw per variant:
+m49385442675 P1 raw_set= SV8a raw_nr= #217 label= 2024 POKEMON SV8a JP #217 GEM MT
+m49385442675 P2 raw_set= SV8a raw_nr= #217 label= 2024 POKEMON SV8a JP #217 GEM MT
+m49385442675 P3 raw_set= SV8a raw_nr= #217 label= 2024 POKEMON SV8a JP #217 GEM MT
+z676177460 P1 raw_set= SV8a raw_nr= #200/187 label= LEAFEON ex
+z676177460 P2 raw_set= SV8a raw_nr= #200/187 label= LEAFEON ex
+z676177460 P3 raw_set= SV8a raw_nr= #200/187 label= LEAFEON ex
+m51095492581 P1 raw_set= SV8a-P raw_nr= 217 label= 2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE
+m51095492581 P2 raw_set= SV8a raw_nr= 217 label= 2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE
+m51095492581 P3 raw_set= SV8a raw_nr= 217 label= 2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE
+m58263430568 P1 raw_set= SV8a-P raw_nr= #206/187 label= 2024 POKEMON SV8a JP #206 GLACEON ex SPECIAL ART R
+m58263430568 P2 raw_set= SV8a raw_nr= #206 label= 2024 POKEMON SV8a JP
+m58263430568 P3 raw_set= SV8a raw_nr= #206/187 label= 2024 POKEMON SV8a JP
+m49479979956 P1 raw_set= SV8a raw_nr= #217 label= 2024 POKEMON SV8a JP #217 GEM MT
+m49479979956 P2 raw_set= SV8a raw_nr= #217 label= 2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE
+m49479979956 P3 raw_set= SV8a raw_nr= #217 label= 2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE
+m67434401865 P1 raw_set= SV2a raw_nr= #166 label= 2023 POKEMON SV2a JP #166 BULBASAUR GEM MT ART RAR
+m67434401865 P2 raw_set= SV2a raw_nr= #166 label= 2023 POKEMON SV2a JP #166 BULBASAUR GEM MT ART RAR
+m67434401865 P3 raw_set= SV2a raw_nr= #166 label= 2023 POKEMON SV2a JP #166 BULBASAUR GEM MT ART RAR
+m37234676005 P1 raw_set= SV2a raw_nr= #183/165 AR label= 2023 POKEMON SV2a JP #183 GEM MT
+m37234676005 P2 raw_set= SV2a raw_nr= #183/165 AR label= 2023 POKEMON SV2a JP #183 GEM MT
+m37234676005 P3 raw_set= SV2a raw_nr= #183/165 AR label= 2023 POKEMON SV2a JP #183 GEM MT
+2JWdYQKiUtuizekyo2BusC P1 raw_set= SV2a-P raw_nr= #149/165 R label= 2023 POKEMON SV2a JP #149 DRAGONITE GEM MT MASTER 
+2JWdYQKiUtuizekyo2BusC P2 raw_set= SV2a raw_nr= #149/165 R label= 2023 POKEMON SV2a JP #149 DRAGONITE GEM MT MASTER 
+2JWdYQKiUtuizekyo2BusC P3 raw_set= SV2a raw_nr= #149/165 R label= 2023 POKEMON SV2a JP #149 DRAGONITE GEM MT MASTER 
+m33104862981 P1 raw_set= SV2a raw_nr= 201/165 GAR label= 2023 POKEMON SV2a JP #201 CHARIZARD ex SPECIAL ART
+m33104862981 P2 raw_set= SV2a raw_nr= 201/165 GAR label= 2023 POKEMON SV2a JP #201 CHARIZARD ex SPECIAL ART
+m33104862981 P3 raw_set= SV2a raw_nr= 201/165 GAR label= 2023 POKEMON SV2a JP #201 CHARIZARD ex SPECIAL ART
+2JWQtUtHYKLM4voBa3JiW8 P1 raw_set= SV2a raw_nr= #179 label= MR. MIME
+2JWQtUtHYKLM4voBa3JiW8 P2 raw_set= SV2a raw_nr= #179/165 label= 2023 POKEMON SV2a JP #179 MR. MIME GEM MT ART RARE
+2JWQtUtHYKLM4voBa3JiW8 P3 raw_set= SV2a raw_nr= #179/165 label= MR. MIME
+
+verschil raw_number P1 vs P2 (fout-groep):
+{'nummer gelijk': 19, 'nummer anders': 1}
+
+VOORBEELD P1 RAW: ```json
+{
+  "name": "Eevee ex",
+  "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE",
+  "subtype": null,
+  "number": "#223",
+  "set_code": "SV8a-P",
+  "set_name": "2024 Pokemon SV8a",
+  "variant": "Special Art",
+  "grade": "10",
+  "cert": "156717698",
+  "year": 2024,
+  "ebay_query": "Eevee ex #223 SV8a-P Special Art PSA 10",
+  "confidence": 1.0
+}
+```
+
+VOORBEELD P2 RAW: ```json
+{
+  "name": "Eevee ex",
+  "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE",
+  "subtype": null,
+  "number": "#223",
+  "set_code": "SV8a",
+  "set_name": "2024 Pokemon SV8a",
+  "variant": "SPECIAL ART",
+  "grade": "10",
+  "cert": "156717698",
+  "year": 2024,
+  "ebay_query": "'Eevee ex' 'Special Art' '#223' SV8a PSA 10",
+  "confidence": 1.0
+}
+```
+
+VOORBEELD P3 RAW: ```json
+{
+  "name": "Eevee ex",
+  "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE",
+  "subtype": null,
+  "number": "#223",
+  "set_code": "SV8a",
+  "set_name": "2024 Pokemon SV8a",
+  "variant": "SPECIAL ART",
+  "grade": "10",
+  "cert": "156717698",
+  "year": null,
+  "ebay_query": "'Eevee ex' 'Special Art' '#223' 'SV8a' PSA 10",
+  "confidence": 1.0
+}
+```

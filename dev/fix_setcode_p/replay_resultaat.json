@@ -1,0 +1,2913 @@
+{
+ "analyses": 5092,
+ "qwen_fotos": 5113,
+ "geraakt": [
+  {
+   "analysis_id": 1683424,
+   "item_id": "m17018992199",
+   "created_at": "2026-09-09T14:50:26.038575+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #206 GLACEON ex GEM MT SPECIAL ART RARE",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1683810,
+   "item_id": "m14568503784",
+   "created_at": "2026-09-09T15:04:38.434943+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE #223 GEM MT 10 164517713",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1683832,
+   "item_id": "m82284382101",
+   "created_at": "2026-09-09T15:04:57.578031+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP JOLTEON ex SPECIAL ART RARE #209 GEM MT 10 129810361",
+   "set_name": "JAPAN TRADING CARD CENTER"
+  },
+  {
+   "analysis_id": 1683996,
+   "item_id": "z679664666",
+   "created_at": "2026-09-09T15:14:08.953894+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #223 EEVEE ex SPECIAL ART RARE GEM MT 10 139605147",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1684443,
+   "item_id": "m23837578725",
+   "created_at": "2026-09-09T15:34:24.98338+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "218/SV8A-P",
+    "218/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP ROARING MOON ex SPECIAL ART RARE #218 GEM MT",
+   "set_name": "ROARING MOON ex"
+  },
+  {
+   "analysis_id": 1684631,
+   "item_id": "m58229969585",
+   "created_at": "2026-09-09T15:50:42.704023+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #206",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1686043,
+   "item_id": "z679730610",
+   "created_at": "2026-09-09T18:46:08.598652+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "224/SV8A-P",
+    "224/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #224",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1686087,
+   "item_id": "m86994598563",
+   "created_at": "2026-09-09T18:52:16.463009+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #223 EEVEE ex SPECIAL ART RARE",
+   "set_name": "Pokemon Card Game"
+  },
+  {
+   "analysis_id": 1686205,
+   "item_id": "m34493616117",
+   "created_at": "2026-09-09T19:16:12.168461+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #209 JOLTEON ex GEM MT SPECIAL ART RARE 10 103964350",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1686493,
+   "item_id": "m88727357979",
+   "created_at": "2026-09-09T20:16:10.709809+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "082/SV2A-P",
+    "082/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #082 MAGNETON GEM MT MASTER BALL REVERSE HOLO 10 85945144",
+   "set_name": "2023 POKEMON SV2a JP"
+  },
+  {
+   "analysis_id": 1686494,
+   "item_id": "m21016787243",
+   "created_at": "2026-09-09T20:16:12.322619+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "138/SV2A-P",
+    "138/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #138 OMANYTE GEM MT MASTER BALL REVERSE HOLO 10",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1686607,
+   "item_id": "z679741774",
+   "created_at": "2026-09-09T20:44:19.466592+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1686825,
+   "item_id": "m57809901444",
+   "created_at": "2026-09-09T21:04:09.858344+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "002/SV8A-P",
+    "002/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP LEAFEON #002 GEM MT",
+   "set_name": "null"
+  },
+  {
+   "analysis_id": 1687098,
+   "item_id": "z679753204",
+   "created_at": "2026-09-09T21:54:18.556835+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 UMBREON GEM MT MASTER BALL REVERSE HOLO 10 116037579",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1687136,
+   "item_id": "z679408058",
+   "created_at": "2026-09-09T21:56:14.811149+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "UMBREON ex",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1687348,
+   "item_id": "m14500489776",
+   "created_at": "2026-09-09T22:16:13.036092+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1687395,
+   "item_id": "m78443973807",
+   "created_at": "2026-09-09T22:28:16.466543+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "201/SV2A-P",
+    "201/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #201 CHARIZARD ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1687649,
+   "item_id": "z673855104",
+   "created_at": "2026-09-09T22:52:13.605238+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV4A-P",
+    "SV4A"
+   ],
+   "number": [
+    "115/SV4A-P",
+    "115/SV4A"
+   ],
+   "label_name": "2023 POKEMON SV4a JP #115 GEM MT 10 158549720",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1687684,
+   "item_id": "z679646036",
+   "created_at": "2026-09-09T22:54:15.818966+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1688012,
+   "item_id": "m10769125692",
+   "created_at": "2026-09-09T23:28:14.299583+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "025/SV2A-P",
+    "025/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #025 PIKACHU",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1688487,
+   "item_id": "m76350872165",
+   "created_at": "2026-09-10T00:04:08.655247+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1688719,
+   "item_id": "m70315173686",
+   "created_at": "2026-09-10T00:28:23.531373+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #212 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1688819,
+   "item_id": "m84261965124",
+   "created_at": "2026-09-10T00:40:18.455594+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #212 SYLVEON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1688907,
+   "item_id": "m25945426774",
+   "created_at": "2026-09-10T00:52:11.501089+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1689081,
+   "item_id": "z629510992",
+   "created_at": "2026-09-10T01:14:09.610923+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "211/SV8A-P",
+    "211/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #211 ESPEON ex SPECIAL ART RARE GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1689315,
+   "item_id": "m11356139097",
+   "created_at": "2026-09-10T01:28:17.711568+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV7A-P",
+    "SV7A"
+   ],
+   "number": [
+    "091/SV7A-P",
+    "091/SV7A"
+   ],
+   "label_name": "2024 POKEMON SV7a JP #091 LISA'S APPEAL SPECIAL ART RARE GEM MT 10 126043926",
+   "set_name": "Japan Trading Card Center"
+  },
+  {
+   "analysis_id": 1689740,
+   "item_id": "z679853072",
+   "created_at": "2026-09-10T02:12:14.849823+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "211/SV8A-P",
+    "211/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP ESPEON ex SPECIAL ART RARE #211 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1690001,
+   "item_id": "z678482050",
+   "created_at": "2026-09-10T02:24:16.341333+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV4A-P",
+    "SV4A"
+   ],
+   "number": [
+    "331/SV4A-P",
+    "331/SV4A"
+   ],
+   "label_name": "2023 POKEMON SV4a JP #331 CHARIZARD ex SSR",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1690153,
+   "item_id": "z679869418",
+   "created_at": "2026-09-10T02:30:08.591598+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV4A-P",
+    "SV4A"
+   ],
+   "number": [
+    "236/SV4A-P",
+    "236/SV4A"
+   ],
+   "label_name": "2023 POKEMON SV4a JP #236 PIKACHU GEM MT S 10 168519413",
+   "set_name": "2023 POKEMON SV4a JP"
+  },
+  {
+   "analysis_id": 1690484,
+   "item_id": "m12236791140",
+   "created_at": "2026-09-10T03:04:21.621234+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 UMBREON ex GEM MT SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1690496,
+   "item_id": "m37752856331",
+   "created_at": "2026-09-10T03:04:31.80914+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "200/SV8A-P",
+    "200/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #200 LEAFEON ex GEM MT SPECIAL ART RARE 10 152786976",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1690903,
+   "item_id": "m73934809674",
+   "created_at": "2026-09-10T03:28:10.211709+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #209 JOLTEON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1690912,
+   "item_id": "m82361325630",
+   "created_at": "2026-09-10T03:28:21.238416+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1690933,
+   "item_id": "m47377773670",
+   "created_at": "2026-09-10T03:28:44.629072+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "051/SV8A-P",
+    "051/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #051 JOLTEON GEM MT MASTER BALL REVERSE HOLO 10 121171881",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1690944,
+   "item_id": "m56630227239",
+   "created_at": "2026-09-10T03:28:57.339437+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1691026,
+   "item_id": "z673631124",
+   "created_at": "2026-09-10T03:32:12.411296+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "203/SV8A-P",
+    "203/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP CERULEDGE ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1691411,
+   "item_id": "m71809683923",
+   "created_at": "2026-09-10T03:42:17.317604+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "207/SV8A-P",
+    "207/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #207",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1691685,
+   "item_id": "m96804347179",
+   "created_at": "2026-09-10T03:52:12.88501+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "211/SV8A-P",
+    "211/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP ESPEON ex SPECIAL ART RARE #211 GEM MT",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1691715,
+   "item_id": "m92165179561",
+   "created_at": "2026-09-10T03:52:39.309141+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "062/SV8A-P",
+    "062/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #062 ESPEON GEM MT MASTER BALL REVERSE HOLO 10 159307078",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1692291,
+   "item_id": "m12122222624",
+   "created_at": "2026-09-10T04:40:13.258793+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "134/SV2A-P",
+    "134/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #134 VAPOREON GEM MT MASTER BALL REVERSE HOLO 160805190",
+   "set_name": "2023 POKEMON SV2a JP"
+  },
+  {
+   "analysis_id": 1692309,
+   "item_id": "m86940393051",
+   "created_at": "2026-09-10T04:40:26.366554+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 UMBREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1692472,
+   "item_id": "z679945014",
+   "created_at": "2026-09-10T04:48:10.122929+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "125/SV8A-P",
+    "125/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE MASTER BALL REVERSE HOLO",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1692598,
+   "item_id": "m70541504220",
+   "created_at": "2026-09-10T05:04:09.22437+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "211/SV8A-P",
+    "211/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP ESPEON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1692699,
+   "item_id": "m39885393534",
+   "created_at": "2026-09-10T05:16:21.434048+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #223 EEVEE ex SPECIAL ART RARE GEM MT",
+   "set_name": "2024 POKEMON SV8a"
+  },
+  {
+   "analysis_id": 1692819,
+   "item_id": "m68388470425",
+   "created_at": "2026-09-10T05:28:10.972272+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "021/SV8A-P",
+    "021/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #021 FLAREON GEM MT MASTER BALL REVERSE HOLO 10 146227870",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1692824,
+   "item_id": "m72283920494",
+   "created_at": "2026-09-10T05:28:16.991667+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 GEM MT REVERSE HOLO",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1692831,
+   "item_id": "m56955860456",
+   "created_at": "2026-09-10T05:28:23.906977+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "031/SV8A-P",
+    "031/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #031 GEM MT 10 154797724",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1693115,
+   "item_id": "2JWadufxxgNQCzwLE7iZQr",
+   "created_at": "2026-09-10T05:52:15.567465+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1693125,
+   "item_id": "m12705847848",
+   "created_at": "2026-09-10T05:52:28.813259+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #206 GEM MT SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1693241,
+   "item_id": "z679976374",
+   "created_at": "2026-09-10T05:54:18.124741+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "202/SV8A-P",
+    "202/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP FLAREON ex SPECIAL ART RARE GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1693436,
+   "item_id": "m73451034767",
+   "created_at": "2026-09-10T06:04:26.888408+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "201/SV2A-P",
+    "201/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #201 CHARIZARD ex GEM MT 10",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1693444,
+   "item_id": "m47610650064",
+   "created_at": "2026-09-10T06:04:34.267912+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "168/SV2A-P",
+    "168/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP BULBASAUR ART RARE",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1693973,
+   "item_id": "m24862822583",
+   "created_at": "2026-09-10T06:52:33.333645+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1693975,
+   "item_id": "m16486909231",
+   "created_at": "2026-09-10T06:52:35.174388+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1694051,
+   "item_id": "z678071364",
+   "created_at": "2026-09-10T06:54:20.253707+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "211/SV8A-P",
+    "211/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP ESPEON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1694055,
+   "item_id": "z678069562",
+   "created_at": "2026-09-10T06:54:21.372344+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE #223 GEM MT 10",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1694424,
+   "item_id": "2JWaoQkCzQZL8mLvyBrrrt",
+   "created_at": "2026-09-10T07:16:52.22321+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "195/SV2A-P",
+    "195/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #195 MEW ex SUPER RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1694588,
+   "item_id": "m82957629455",
+   "created_at": "2026-09-10T07:28:33.841573+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 UMBREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1694850,
+   "item_id": "m64296393874",
+   "created_at": "2026-09-10T07:41:25.922405+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "030/SV8A-P",
+    "030/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #030 VAPOREON GEM MT MASTER BALL REVERSE HOLO 10",
+   "set_name": "Japan Trading Card Center"
+  },
+  {
+   "analysis_id": 1695406,
+   "item_id": "m71790581973",
+   "created_at": "2026-09-10T08:04:15.364568+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV7A-P",
+    "SV7A"
+   ],
+   "number": [
+    "070/SV7A-P",
+    "070/SV7A"
+   ],
+   "label_name": "#070 LATIOS ART RARE",
+   "set_name": "2024 POKEMON SV7a JP"
+  },
+  {
+   "analysis_id": 1695549,
+   "item_id": "z663137670",
+   "created_at": "2026-09-10T08:12:16.891602+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "224/SV8A-P",
+    "224/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE #224",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1696302,
+   "item_id": "2JWKLentD4yCkv3uMrWzs7",
+   "created_at": "2026-09-10T08:54:26.917082+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "202/SV8A-P",
+    "202/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #202 FLAREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1696435,
+   "item_id": "z680091406",
+   "created_at": "2026-09-10T09:00:10.657656+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "205/SV8A-P",
+    "205/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP Vaporeon ex SPECIAL ART RARE",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1696546,
+   "item_id": "m83291315337",
+   "created_at": "2026-09-10T09:04:10.174325+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 UMBREON GEM MT MASTER BALL REVERSE HOLO",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1696547,
+   "item_id": "2JWKHcvL4zQVVCcuxHdC3r",
+   "created_at": "2026-09-10T09:04:12.481182+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "224/SV8A-P",
+    "224/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #224 EEVEE ex SPECIAL ART RARE GEM MT",
+   "set_name": "2024 Pokemon"
+  },
+  {
+   "analysis_id": 1696990,
+   "item_id": "m65574505805",
+   "created_at": "2026-09-10T09:40:27.786137+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "168/SV2A-P",
+    "168/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP BULBASAUR GEM MT ART RARE",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1697109,
+   "item_id": "m67079304538",
+   "created_at": "2026-09-10T09:52:19.729677+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "218/SV8A-P",
+    "218/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP ROARING MOON ex SPECIAL ART RARE #218",
+   "set_name": "Roaring Moon ex"
+  },
+  {
+   "analysis_id": 1697297,
+   "item_id": "2JWb7iXhbKwK2bDZMhY8CP",
+   "created_at": "2026-09-10T10:04:58.324244+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "068/SV8A-P",
+    "068/SV8A"
+   ],
+   "label_name": "#068",
+   "set_name": "2024 Pokemon SV8a JP"
+  },
+  {
+   "analysis_id": 1697478,
+   "item_id": "z679864144",
+   "created_at": "2026-09-10T10:12:12.64831+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP GLACEON ex SPECIAL ART RARE",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1697551,
+   "item_id": "2JWb7wapqanDAf55HK97G9",
+   "created_at": "2026-09-10T10:16:10.240557+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "062/SV8A-P",
+    "062/SV8A"
+   ],
+   "label_name": "ESPEON",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1697569,
+   "item_id": "m53471988773",
+   "created_at": "2026-09-10T10:16:33.739409+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 GEM MT",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1697777,
+   "item_id": "m70523358436",
+   "created_at": "2026-09-10T10:28:49.846483+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1697788,
+   "item_id": "m91443435460",
+   "created_at": "2026-09-10T10:28:59.265746+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1698541,
+   "item_id": "2JWbCnoNRaZrnFnpzHeQTn",
+   "created_at": "2026-09-10T11:04:06.820602+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "068/SV8A-P",
+    "068/SV8A"
+   ],
+   "label_name": "SV8a JP",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1698558,
+   "item_id": "m58075210004",
+   "created_at": "2026-09-10T11:04:25.840391+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "125/SV8A-P",
+    "125/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #125 EEVEE MASTER BALL REVERSE HOLO GEM MT",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1698716,
+   "item_id": "2JWKEZfo5Dtb8Cxxci8qKm",
+   "created_at": "2026-09-10T11:16:34.194967+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "030/SV8A-P",
+    "030/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #030 VAPOREON GEM MT",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1698992,
+   "item_id": "m11430440999",
+   "created_at": "2026-09-10T11:28:34.504814+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "068/SV8A-P",
+    "068/SV8A"
+   ],
+   "label_name": "#125 EEVEE MASTER BALL REVERSE HOLO",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1698998,
+   "item_id": "m87798687047",
+   "created_at": "2026-09-10T11:28:40.273559+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "194/SV2A-P",
+    "194/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #194 ZAPDOS ex SUPER RARE GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1699007,
+   "item_id": "z594484734",
+   "created_at": "2026-09-10T11:28:51.803121+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "126/SV8A-P",
+    "126/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1699327,
+   "item_id": "z680180088",
+   "created_at": "2026-09-10T11:42:14.470319+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV9A-P",
+    "SV9A"
+   ],
+   "number": [
+    "086/SV9A-P",
+    "086/SV9A"
+   ],
+   "label_name": "2025 POKEMON SV9a JP #086 ETHAN'S HO-OH ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1699569,
+   "item_id": "m20743158564",
+   "created_at": "2026-09-10T11:54:11.625726+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "184/SV2A-P",
+    "184/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #184 GEM MT",
+   "set_name": "2023 POKEMON SV2a JP"
+  },
+  {
+   "analysis_id": 1699967,
+   "item_id": "m42449051520",
+   "created_at": "2026-09-10T12:16:18.971318+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "004/SV2A-P",
+    "004/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #004 CHARMANDER MASTER BALL REVERSE HOLO GEM MT",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1699980,
+   "item_id": "m26610976642",
+   "created_at": "2026-09-10T12:16:34.218802+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "168/SV2A-P",
+    "168/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #168 CHARMANDER ART RARE",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1700282,
+   "item_id": "z680234386",
+   "created_at": "2026-09-10T12:34:14.145135+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1700331,
+   "item_id": "z680238990",
+   "created_at": "2026-09-10T12:36:20.686989+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "202/SV8A-P",
+    "202/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #202 FLAREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1701542,
+   "item_id": "z678946270",
+   "created_at": "2026-09-10T13:50:11.350222+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "236/SV8A-P",
+    "236/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #236 PIKACHU ex ULTRA RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1701582,
+   "item_id": "m69615104372",
+   "created_at": "2026-09-10T13:52:13.824269+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "051/SV8A-P",
+    "051/SV8A"
+   ],
+   "label_name": "FA/JOLTEON V",
+   "set_name": "2024 Pokemon SV8a JP"
+  },
+  {
+   "analysis_id": 1702115,
+   "item_id": "m77896602797",
+   "created_at": "2026-09-10T14:16:15.607611+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #212 SYLVEON ex GEM MT SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1702120,
+   "item_id": "m40148070382",
+   "created_at": "2026-09-10T14:16:22.787215+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "149/SV2A-P",
+    "149/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #149 DRAGONITE GEM MT MASTER BALL REVERSE HOLO 10 156250117",
+   "set_name": "Serebii Premium"
+  },
+  {
+   "analysis_id": 1702122,
+   "item_id": "m52179014949",
+   "created_at": "2026-09-10T14:16:23.01331+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "205/SV8A-P",
+    "205/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1702411,
+   "item_id": "m28536629510",
+   "created_at": "2026-09-10T14:28:31.602602+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #212 GEM MT 10",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1702415,
+   "item_id": "m33285837758",
+   "created_at": "2026-09-10T14:28:35.416782+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "021/SV8A-P",
+    "021/SV8A"
+   ],
+   "label_name": "#021 FLAREON REVERSE HOLO",
+   "set_name": "2024 Pokemon SV8a JP"
+  },
+  {
+   "analysis_id": 1702553,
+   "item_id": "m12947857118",
+   "created_at": "2026-09-10T14:30:12.520474+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE #217 GEM MT 10 121401268",
+   "set_name": "Serebii V8a"
+  },
+  {
+   "analysis_id": 1702823,
+   "item_id": "m15180832714",
+   "created_at": "2026-09-10T14:42:23.49678+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1702984,
+   "item_id": "z680343802",
+   "created_at": "2026-09-10T14:46:13.066483+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "201/SV2A-P",
+    "201/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #201 CHARIZARD ex SPECIAL ART RARE GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1703080,
+   "item_id": "m73235710091",
+   "created_at": "2026-09-10T14:52:26.043221+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #209 JOLTEON ex SPECIAL ART RARE",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1703100,
+   "item_id": "m26922183200",
+   "created_at": "2026-09-10T14:52:47.658198+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "SV8a JP",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1703262,
+   "item_id": "z680258704",
+   "created_at": "2026-09-10T15:02:13.593671+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "200/SV2A-P",
+    "200/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #200 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1703339,
+   "item_id": "m28735421340",
+   "created_at": "2026-09-10T15:04:40.529933+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "030/SV8A-P",
+    "030/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP VAPOREON REVERSE HOLO",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1703352,
+   "item_id": "m69529792919",
+   "created_at": "2026-09-10T15:04:56.10644+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "033/SV2A-P",
+    "033/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #033 NIDORINO GEM MT MASTER BALL REVERSE HOLO 10 150847455",
+   "set_name": "2023 POKEMON SV2a JP"
+  },
+  {
+   "analysis_id": 1703885,
+   "item_id": "m81163877603",
+   "created_at": "2026-09-10T15:28:37.38784+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 GEM MT REVERSE HOLO",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1704071,
+   "item_id": "m81519567610",
+   "created_at": "2026-09-10T15:40:12.243061+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "053/SV2A-P",
+    "053/SV2A"
+   ],
+   "label_name": "FA/PERSIAN V",
+   "set_name": "2023 POKEMON SV2a JP"
+  },
+  {
+   "analysis_id": 1704075,
+   "item_id": "m63865764547",
+   "created_at": "2026-09-10T15:40:17.53716+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "051/SV8A-P",
+    "051/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP JOLTEON REVERSE HOLO",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1704084,
+   "item_id": "m68558292881",
+   "created_at": "2026-09-10T15:40:28.382759+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #209 JOLTEON ex GEM MT SPECIAL ART RARE",
+   "set_name": "JAPAN TRADING CARD CENTER"
+  },
+  {
+   "analysis_id": 1704800,
+   "item_id": "m97757124818",
+   "created_at": "2026-09-10T16:40:22.0259+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV4A-P",
+    "SV4A"
+   ],
+   "number": [
+    "349/SV4A-P",
+    "349/SV4A"
+   ],
+   "label_name": "2023 POKEMON SV4a JP #349 CHARIZARD ex SPECIAL ART RARE GEM MT 10 164794539",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1704914,
+   "item_id": "m41576366049",
+   "created_at": "2026-09-10T17:04:12.211651+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #209 JOLTEON ex SPECIAL ART RARE GEM MT 10 140514794",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1705319,
+   "item_id": "m51340495965",
+   "created_at": "2026-09-10T17:28:25.69248+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "040/SV8A-P",
+    "040/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #040 GLACEON GEM MT MASTER BALL REVERSE HOLO 10 105077166",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1705482,
+   "item_id": "m12209146295",
+   "created_at": "2026-09-10T18:04:13.653067+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "205/SV8A-P",
+    "205/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #205 VAPOREON ex SPECIAL ART RARE GEM MT 10 103061741",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1705484,
+   "item_id": "m51582681301",
+   "created_at": "2026-09-10T18:04:13.893521+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP JOLTEON ex SPECIAL ART RARE #209 GEM MT 10 108545390",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1705528,
+   "item_id": "m64636827453",
+   "created_at": "2026-09-10T18:16:23.236123+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "224/SV8A-P",
+    "224/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #224 EEVEE ex GEM MT SPECIAL ART RARE",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1705775,
+   "item_id": "m97767559010",
+   "created_at": "2026-09-10T18:40:13.99735+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 GEM MT MASTER BALL REVERSE HOLO",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1705786,
+   "item_id": "z680140532",
+   "created_at": "2026-09-10T18:42:08.78291+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE #223 GEM MT",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1705854,
+   "item_id": "m69822639267",
+   "created_at": "2026-09-10T19:04:14.9363+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1706122,
+   "item_id": "m45651755426",
+   "created_at": "2026-09-10T20:40:09.046112+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE #217",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1706192,
+   "item_id": "z680430976",
+   "created_at": "2026-09-10T20:46:11.674288+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "062/SV8A-P",
+    "062/SV8A"
+   ],
+   "label_name": "ESPEON",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1706225,
+   "item_id": "m62540414777",
+   "created_at": "2026-09-10T21:04:06.650558+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "040/SV8A-P",
+    "040/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP GLACEON REVERSE HOLO",
+   "set_name": "null"
+  },
+  {
+   "analysis_id": 1706227,
+   "item_id": "m39946827371",
+   "created_at": "2026-09-10T21:04:07.701798+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #206",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1706306,
+   "item_id": "m78704050171",
+   "created_at": "2026-09-10T21:40:10.543116+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "206/SV8A-P",
+    "206/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #206 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1706334,
+   "item_id": "z676560342",
+   "created_at": "2026-09-10T21:52:18.467374+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "236/SV8A-P",
+    "236/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #236",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1706889,
+   "item_id": "z675664004",
+   "created_at": "2026-09-10T23:12:15.866847+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "025/SV2A-P",
+    "025/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #025",
+   "set_name": "2023 Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1706932,
+   "item_id": "z680464540",
+   "created_at": "2026-09-10T23:14:14.056395+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #223 EEVEE ex GEM MT SPECIAL ART RARE 10 156634380",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1707232,
+   "item_id": "m69268076245",
+   "created_at": "2026-09-10T23:40:13.214189+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "205/SV8A-P",
+    "205/SV8A"
+   ],
+   "label_name": "#205 GEM MT",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1707490,
+   "item_id": "m46231286625",
+   "created_at": "2026-09-11T00:16:11.457684+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "196/SV2A-P",
+    "196/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #196",
+   "set_name": "2023 Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1707732,
+   "item_id": "m26777378017",
+   "created_at": "2026-09-11T00:40:09.032904+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "236/SV8A-P",
+    "236/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP",
+   "set_name": "null"
+  },
+  {
+   "analysis_id": 1707737,
+   "item_id": "m93892392506",
+   "created_at": "2026-09-11T00:40:19.047368+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "185/SV2A-P",
+    "185/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #185 CHARIZARD ex SUPER RARE GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1707869,
+   "item_id": "m89415419643",
+   "created_at": "2026-09-11T01:04:09.994319+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP UMBREON ex SPECIAL ART RARE",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1708157,
+   "item_id": "m54783233599",
+   "created_at": "2026-09-11T01:40:21.331199+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "002/SV8A-P",
+    "002/SV8A"
+   ],
+   "label_name": "FA/LEAFEON V",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1708345,
+   "item_id": "m55789905660",
+   "created_at": "2026-09-11T02:04:11.260025+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "002/SV8A-P",
+    "002/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #002 LEAFEON GEM MT MASTER BALL REVERSE HOLO 10",
+   "set_name": "JAPAN TRADING CARD CENTER"
+  },
+  {
+   "analysis_id": 1708353,
+   "item_id": "2JWcpghfAAsQuigJG2iUAa",
+   "created_at": "2026-09-11T02:04:19.62482+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "230/SV8A-P",
+    "230/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #230",
+   "set_name": "null"
+  },
+  {
+   "analysis_id": 1708377,
+   "item_id": "2JWcpiAk3gRGSzGY5LGzyH",
+   "created_at": "2026-09-11T02:04:52.572537+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "008/SV2A-P",
+    "008/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #008 WARTORTLE GEM MT MASTER BALL REVERSE HOLO 10",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1708383,
+   "item_id": "2JWcpiP6H5ycQKaeLwS7dK",
+   "created_at": "2026-09-11T02:05:02.276976+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "214/SV8A-P",
+    "214/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #214 GEM MT 10",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1708410,
+   "item_id": "2JWcpiUuQyMrCaZApFoBag",
+   "created_at": "2026-09-11T02:05:04.43538+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "004/SV2A-P",
+    "004/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #004 CHARMANDER GEM MT MASTER BALL REVERSE HOLO 10",
+   "set_name": "2023 POKEMON SV2a JP"
+  },
+  {
+   "analysis_id": 1708463,
+   "item_id": "2JUsvdbKDhvRUWeFGRJzV4",
+   "created_at": "2026-09-11T02:06:36.663043+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #212 GEM MT 10",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1708470,
+   "item_id": "m56644060968",
+   "created_at": "2026-09-11T02:06:39.546954+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "M2-P",
+    "M2"
+   ],
+   "number": [
+    "094/M2-P",
+    "094/M2"
+   ],
+   "label_name": "#094 MEGA CHARIZARD X ex",
+   "set_name": "Pokemon M2 JP"
+  },
+  {
+   "analysis_id": 1709558,
+   "item_id": "m92961410737",
+   "created_at": "2026-09-11T03:04:29.832513+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "211/SV8A-P",
+    "211/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #211 ESPEON ex GEM MT SPECIAL ART RARE 10 106730523",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1710285,
+   "item_id": "m33361191470",
+   "created_at": "2026-09-11T04:04:31.220622+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV6A-P",
+    "SV6A"
+   ],
+   "number": [
+    "233/SV6A-P",
+    "233/SV6A"
+   ],
+   "label_name": "2024 POKEMON SV6a JP",
+   "set_name": "Pokemon SV6a"
+  },
+  {
+   "analysis_id": 1710403,
+   "item_id": "m31292833031",
+   "created_at": "2026-09-11T04:16:10.637874+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #212 SYLVEON ex GEM MT SPECIAL ART RARE 10 116848534",
+   "set_name": "JAPAN TRADING CARD CENTER"
+  },
+  {
+   "analysis_id": 1710417,
+   "item_id": "m38911459988",
+   "created_at": "2026-09-11T04:16:26.528234+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "200/SV8A-P",
+    "200/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #200 LEAFEON ex SPECIAL ART RARE",
+   "set_name": "2024 POKEMON SV8a"
+  },
+  {
+   "analysis_id": 1710907,
+   "item_id": "m50064225973",
+   "created_at": "2026-09-11T04:52:10.529476+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "224/SV8A-P",
+    "224/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #224 EEVEE ex GEM MT SPECIAL ART RARE",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1710966,
+   "item_id": "z679119538",
+   "created_at": "2026-09-11T05:02:07.370981+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "209/SV8A-P",
+    "209/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #209 JOLTEON ex SPECIAL ART RARE",
+   "set_name": "Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1711082,
+   "item_id": "m37264243764",
+   "created_at": "2026-09-11T05:16:34.008994+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1711331,
+   "item_id": "m89140579685",
+   "created_at": "2026-09-11T05:40:41.177862+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "185/SV2A-P",
+    "185/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #185 CHARIZARD ex SUPER RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1711766,
+   "item_id": "m89334305797",
+   "created_at": "2026-09-11T06:04:46.854213+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 UMBREON GEM MT MASTER BALL REVERSE HOLO 10 172926288",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1712109,
+   "item_id": "m44079042713",
+   "created_at": "2026-09-11T06:40:13.622977+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 UMBREON GEM MT MASTER BALL REVERSE HOLO 10 140667005",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1712126,
+   "item_id": "m70613522833",
+   "created_at": "2026-09-11T06:40:29.995028+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "236/SV8A-P",
+    "236/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #236 PIKACHU ex ULTRA RARE GEM MT",
+   "set_name": "null"
+  },
+  {
+   "analysis_id": 1712532,
+   "item_id": "z680704266",
+   "created_at": "2026-09-11T07:12:13.096266+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "008/SV8A-P",
+    "008/SV8A"
+   ],
+   "label_name": "#008",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1712566,
+   "item_id": "z680707498",
+   "created_at": "2026-09-11T07:14:18.778147+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "222/SV8A-P",
+    "222/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #222 RAGING BOLT ex SPECIAL ART RARE GEM MT 161528492",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1712568,
+   "item_id": "z680712208",
+   "created_at": "2026-09-11T07:14:20.104105+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "217/SV8A-P",
+    "217/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #217 UMBREON ex GEM MT SPECIAL ART RARE 10",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1713410,
+   "item_id": "2JWdWJ33fdceC3dfrnGzEo",
+   "created_at": "2026-09-11T08:16:39.234154+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "051/SV8A-P",
+    "051/SV8A"
+   ],
+   "label_name": "FA/JOLTEON V",
+   "set_name": "2024 Pokemon SV8a JP"
+  },
+  {
+   "analysis_id": 1713484,
+   "item_id": "z679404548",
+   "created_at": "2026-09-11T08:18:09.479831+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "FA/JOLTEON V",
+   "set_name": "2024 Pokemon SV8a JP"
+  },
+  {
+   "analysis_id": 1713558,
+   "item_id": "z680749024",
+   "created_at": "2026-09-11T08:20:07.106218+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "200/SV8A-P",
+    "200/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP LEAFEON ex SPECIAL ART RARE",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1713572,
+   "item_id": "m10930016621",
+   "created_at": "2026-09-11T08:28:08.85486+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "187/SV2A-P",
+    "187/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #187 ARBOK ex SUPER RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1713837,
+   "item_id": "2JWdYKAr4CY2vXLgUHEgeU",
+   "created_at": "2026-09-11T08:40:31.429153+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "092/SV8A-P",
+    "092/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #092 UMBREON GEM MT MASTER BALL REVERSE HOLO 10",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1713845,
+   "item_id": "2JWdYKdUqYHCyRUwqxVXfs",
+   "created_at": "2026-09-11T08:40:50.030706+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "051/SV8A-P",
+    "051/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #051 JOLTEON GEM MT MASTER BALL REVERSE HOLO 10",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1713846,
+   "item_id": "2JWdYKhSQ2rZd8nfebVfnK",
+   "created_at": "2026-09-11T08:40:50.143585+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "051/SV8A-P",
+    "051/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #051 JOLTEON GEM MT MASTER BALL REVERSE HOLO 10 138125159",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1713877,
+   "item_id": "2JWdYeu5dkKEHhgowU2p5t",
+   "created_at": "2026-09-11T08:41:03.908053+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "068/SV2A-P",
+    "068/SV2A"
+   ],
+   "label_name": "#169 POKEMON SV2a JP CHARMLEON ART RARE",
+   "set_name": "Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1713883,
+   "item_id": "m74035127665",
+   "created_at": "2026-09-11T08:41:04.032003+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "223/SV8A-P",
+    "223/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP EEVEE ex SPECIAL ART RARE",
+   "set_name": "2024 Pokemon SV8a"
+  },
+  {
+   "analysis_id": 1713986,
+   "item_id": "m84401892600",
+   "created_at": "2026-09-11T08:52:15.9535+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "236/SV8A-P",
+    "236/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #236 PIKACHU ex ULTRA RARE MINT 9 161705935",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1714092,
+   "item_id": "2JWdZyJWHpX2zavuL83qRU",
+   "created_at": "2026-09-11T08:53:09.262276+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "212/SV8A-P",
+    "212/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #212 SYLVEON ex GEM MT SPECIAL ART RARE 10 110553430",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1714094,
+   "item_id": "2JWdZyNiPVnugC6qzx9SCL",
+   "created_at": "2026-09-11T08:53:12.130714+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "224/SV8A-P",
+    "224/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #224 EEVEE ex GEM MT SPECIAL ART RARE 10 102021025",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1714265,
+   "item_id": "m83313819997",
+   "created_at": "2026-09-11T09:05:03.304513+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "205/SV8A-P",
+    "205/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #205 VAPOREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1714451,
+   "item_id": "m59822763731",
+   "created_at": "2026-09-11T09:16:13.581223+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "236/SV8A-P",
+    "236/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #236 PIKACHU ex ULTRA RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1714596,
+   "item_id": "z680781194",
+   "created_at": "2026-09-11T09:20:07.203678+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "200/SV8A-P",
+    "200/SV8A"
+   ],
+   "label_name": "FA/LEAFEON V",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1714847,
+   "item_id": "2JWdeGNMkg3YT4PR63Riv3",
+   "created_at": "2026-09-11T09:40:29.151197+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "068/SV2A-P",
+    "068/SV2A"
+   ],
+   "label_name": "#173",
+   "set_name": "2023 POKEMON SV2a JP"
+  },
+  {
+   "analysis_id": 1714909,
+   "item_id": "m54308023165",
+   "created_at": "2026-09-11T09:41:05.04217+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "134/SV2A-P",
+    "134/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #134 VAPOREON MASTER BALL REVERSE HOLO GEM MT 10 153228285",
+   "set_name": "null"
+  },
+  {
+   "analysis_id": 1715078,
+   "item_id": "m86183792660",
+   "created_at": "2026-09-11T09:52:17.890005+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV4A-P",
+    "SV4A"
+   ],
+   "number": [
+    "327/SV4A-P",
+    "327/SV4A"
+   ],
+   "label_name": "2023 POKEMON SV4a JP #327 GEM MT",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1715226,
+   "item_id": "m68317478801",
+   "created_at": "2026-09-11T10:04:32.452136+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV2A-P",
+    "SV2A"
+   ],
+   "number": [
+    "168/SV2A-P",
+    "168/SV2A"
+   ],
+   "label_name": "2023 POKEMON SV2a JP #168 CHARMANDER ART RARE",
+   "set_name": "2023 Pokemon SV2a"
+  },
+  {
+   "analysis_id": 1715578,
+   "item_id": "z680819854",
+   "created_at": "2026-09-11T10:24:08.768006+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "021/SV8A-P",
+    "021/SV8A"
+   ],
+   "label_name": "FA/FLAREON V",
+   "set_name": "2024 POKEMON SV8a JP"
+  },
+  {
+   "analysis_id": 1715581,
+   "item_id": "z680688290",
+   "created_at": "2026-09-11T10:24:11.69859+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "202/SV8A-P",
+    "202/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP FLAREON ex SPECIAL ART RARE",
+   "set_name": null
+  },
+  {
+   "analysis_id": 1715632,
+   "item_id": "m20660601194",
+   "created_at": "2026-09-11T10:28:18.835966+00:00",
+   "source": "qwen",
+   "photo_idx": 1,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "024/SV8A-P",
+    "024/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP #024 IRON MOTH GEM MT MASTER BALL REVERSE HOLO 10 153162999",
+   "set_name": "null"
+  },
+  {
+   "analysis_id": 1715713,
+   "item_id": "z680820260",
+   "created_at": "2026-09-11T10:29:06.074015+00:00",
+   "source": "qwen",
+   "photo_idx": 0,
+   "set_code": [
+    "SV8A-P",
+    "SV8A"
+   ],
+   "number": [
+    "236/SV8A-P",
+    "236/SV8A"
+   ],
+   "label_name": "2024 POKEMON SV8a JP",
+   "set_name": null
+  }
+ ]
+}

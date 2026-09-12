@@ -1,0 +1,245 @@
+Items: 47; beoordeeld (ok+stockfoto): 41; lots: 4; niet-PSA: 2
+CM-waarheid gevonden in catalogus: 33/41
+
+STAND per variant (goed/ontbreekt/fout):
+  live  naam={'goed': 39, 'fout': 2}  nummer={'goed': 40, 'fout': 1}  set={'goed': 20, 'fout': 7, 'ontbreekt': 13, 'n.v.t.': 1}  grade={'goed': 36, 'fout': 1, 'n.v.t.': 4}  z_naam={'goed': 39, 'fout': 2}  z_nummer={'goed': 40, 'fout': 1}  z_set={'goed': 19, 'fout': 4, 'ontbreekt': 17, 'n.v.t.': 1}  cm={'geen_waarheid_link': 7, 'goed': 23, 'ontbreekt': 10, 'link_terwijl_catalogus_geen_ware_link': 1}
+  foto  naam={'goed': 38, 'fout': 3}  nummer={'goed': 41}  set={'goed': 28, 'fout': 3, 'ontbreekt': 9, 'n.v.t.': 1}  grade={'goed': 36, 'fout': 1, 'n.v.t.': 4}  z_naam={'goed': 38, 'fout': 3}  z_nummer={'goed': 41}  z_set={'goed': 22, 'ontbreekt': 16, 'fout': 2, 'n.v.t.': 1}  cm={'geen_waarheid_link': 8, 'goed': 21, 'ontbreekt': 12}
+  geen  naam={'goed': 33, 'fout': 7, 'ontbreekt': 1}  nummer={'goed': 36, 'fout': 4, 'ontbreekt': 1}  set={'fout': 10, 'ontbreekt': 20, 'goed': 10, 'n.v.t.': 1}  grade={'goed': 35, 'fout': 1, 'n.v.t.': 4, 'ontbreekt': 1}  z_naam={'goed': 33, 'fout': 8}  z_nummer={'goed': 37, 'fout': 4}  z_set={'fout': 10, 'ontbreekt': 19, 'goed': 11, 'n.v.t.': 1}  cm={'geen_waarheid_link': 7, 'ontbreekt': 18, 'fout': 1, 'goed': 14, 'link_terwijl_catalogus_geen_ware_link': 1}
+
+G3: Gemini MÉT foto t.o.v. live (Gemini zonder foto)  (per onderdeel: beter / gelijk / slechter)
+  naam      beter= 0 gelijk=40 slechter= 1   beter:[] slechter:['2JWQtWSUURmkAXRXJrxzpT']
+  nummer    beter= 1 gelijk=40 slechter= 0   beter:['m55464007562'] slechter:[]
+  set       beter=10 gelijk=28 slechter= 2   beter:['m83313819997', '2JWdaaLFFmKYAnwhXPLsT7', 'm46215587619', 'm60926875975', 'm21017617550', 'm55756634882'] slechter:['m55464007562', 'm33253872497']
+  grade     beter= 0 gelijk=37 slechter= 0   beter:[] slechter:[]
+  z_naam    beter= 0 gelijk=40 slechter= 1   beter:[] slechter:['2JWQtWSUURmkAXRXJrxzpT']
+  z_nummer  beter= 1 gelijk=40 slechter= 0   beter:['m55464007562'] slechter:[]
+  z_set     beter= 8 gelijk=27 slechter= 5   beter:['m83313819997', '2JWdaaLFFmKYAnwhXPLsT7', '2JWdZyNiPVnugC6qzx9SCL', 'm60926875975', 'm21017617550', 'm15975049004'] slechter:['2JWdZyJWHpX2zavuL83qRU', 'm55464007562', '2JUsxZsphRhpJBvUVjBz8y', '2JWddaJ6e6x3P6ChtLXv3v', 'm33253872497']
+  cm        beter= 2 gelijk=36 slechter= 3   beter:['z679659678', 'm55756634882'] slechter:['2JWdZyJWHpX2zavuL83qRU', '2JWQtWSUURmkAXRXJrxzpT', '2JWdbMLs5mwq33RvkQ9fcx']
+
+G4: ZONDER Gemini t.o.v. live  (per onderdeel: beter / gelijk / slechter)
+  naam      beter= 0 gelijk=35 slechter= 6   beter:[] slechter:['m55464007562', '2JUt7o8y3T6fSsc59gZAdV', '2JUsxZsphRhpJBvUVjBz8y', 'm45503458756', '2JWQtWSUURmkAXRXJrxzpT', 'm35362154909']
+  nummer    beter= 0 gelijk=37 slechter= 4   beter:[] slechter:['m37634129550', '2JWdSZ6kvhZymFy2ddwZes', '2JUt6viGdQTTB7sjEodTEa', 'm45503458756']
+  set       beter= 3 gelijk=27 slechter=10   beter:['2JUt73c4fULuzRobwQ2Fay', 'm46215587619', 'm35362154909'] slechter:['m86183792660', 'm59822763731', '2JWdZyNiPVnugC6qzx9SCL', 'm84401892600', 'm63832527078', 'm37634129550']
+  grade     beter= 0 gelijk=36 slechter= 1   beter:[] slechter:['m45503458756']
+  z_naam    beter= 1 gelijk=33 slechter= 7   beter:['m69225999458'] slechter:['2JWdaaLFFmKYAnwhXPLsT7', 'm37634129550', 'm55464007562', '2JWddaJ6e6x3P6ChtLXv3v', 'm15975049004', 'z674899744']
+  z_nummer  beter= 0 gelijk=38 slechter= 3   beter:[] slechter:['m37634129550', '2JWdSZ6kvhZymFy2ddwZes', '2JUt6viGdQTTB7sjEodTEa']
+  z_set     beter= 2 gelijk=28 slechter=10   beter:['2JUt73c4fULuzRobwQ2Fay', 'm69225999458'] slechter:['m86183792660', 'm59822763731', '2JWdZyNiPVnugC6qzx9SCL', '2JWdZyJWHpX2zavuL83qRU', 'm84401892600', 'm63832527078']
+  cm        beter= 2 gelijk=28 slechter=11   beter:['m69225999458', 'z674899744'] slechter:['m59822763731', 'm83313819997', '2JWdZyNiPVnugC6qzx9SCL', '2JWdZyJWHpX2zavuL83qRU', 'm84401892600', 'm63832527078']
+
+extra: zonder Gemini t.o.v. Gemini-met-foto  (per onderdeel: beter / gelijk / slechter)
+  naam      beter= 0 gelijk=36 slechter= 5   beter:[] slechter:['m55464007562', '2JUt7o8y3T6fSsc59gZAdV', '2JUsxZsphRhpJBvUVjBz8y', 'm45503458756', 'm35362154909']
+  nummer    beter= 0 gelijk=36 slechter= 5   beter:[] slechter:['m37634129550', '2JWdSZ6kvhZymFy2ddwZes', 'm55464007562', '2JUt6viGdQTTB7sjEodTEa', 'm45503458756']
+  set       beter= 2 gelijk=20 slechter=18   beter:['m55464007562', '2JUt73c4fULuzRobwQ2Fay'] slechter:['m86183792660', 'm59822763731', 'm83313819997', '2JWdaaLFFmKYAnwhXPLsT7', '2JWdZyNiPVnugC6qzx9SCL', 'm84401892600']
+  grade     beter= 0 gelijk=36 slechter= 1   beter:[] slechter:['m45503458756']
+  z_naam    beter= 2 gelijk=32 slechter= 7   beter:['2JWQtWSUURmkAXRXJrxzpT', 'm69225999458'] slechter:['2JWdaaLFFmKYAnwhXPLsT7', 'm37634129550', 'm55464007562', '2JWddaJ6e6x3P6ChtLXv3v', 'm15975049004', 'z674899744']
+  z_nummer  beter= 0 gelijk=37 slechter= 4   beter:[] slechter:['m37634129550', '2JWdSZ6kvhZymFy2ddwZes', 'm55464007562', '2JUt6viGdQTTB7sjEodTEa']
+  z_set     beter= 5 gelijk=19 slechter=16   beter:['m55464007562', '2JUt73c4fULuzRobwQ2Fay', '2JUsxZsphRhpJBvUVjBz8y', '2JWddaJ6e6x3P6ChtLXv3v', 'm69225999458'] slechter:['m86183792660', 'm59822763731', 'm83313819997', '2JWdaaLFFmKYAnwhXPLsT7', '2JWdZyNiPVnugC6qzx9SCL', '2JWdZyJWHpX2zavuL83qRU']
+  cm        beter= 4 gelijk=25 slechter=12   beter:['2JWQtWSUURmkAXRXJrxzpT', 'm69225999458', 'z674899744', '2JWdbMLs5mwq33RvkQ9fcx'] slechter:['m59822763731', 'm83313819997', '2JWdZyNiPVnugC6qzx9SCL', 'm84401892600', 'm63832527078', '2JWdSZ6kvhZymFy2ddwZes']
+
+KAART-IDENTITEIT volledig goed (naam+nummer+set in card_key):
+  live: 20/41
+  foto: 27/41
+  geen: 9/41
+
+VERANDERINGEN in uitkomst (ongeacht goed/fout):
+  live→foto: card_key anders=21/47  zoekzin anders=40  cm-link anders=6
+  live→geen: card_key anders=37/47  zoekzin anders=45  cm-link anders=13
+
+PER CATEGORIE kaart-identiteit goed (live / foto / geen):
+  qwen_verdacht_grade      n= 3  live=1 foto=1 geen=0
+  qwen_verdacht_naam       n= 3  live=1 foto=1 geen=0
+  qwen_verdacht_nummer     n= 4  live=0 foto=0 geen=0
+  qwen_verdacht_valsP      n= 8  live=5 foto=7 geen=0
+  willekeurig              n=23  live=13 foto=18 geen=9
+
+DETAIL per item (sleutel | cm):
+  m86183792660 [ok/qwen_verdacht_valsP] waarheid='Mew ex' cm_waar=nee
+     live key=mew:327/190:10:sv4a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew EX 327/190 SV4a SSR PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     foto key=mew:327/190:10:sv4a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew ex 327/190 SV4a SSR PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     geen key=mew:327:10:sv4a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Mew EX 327 SV4A-P PSA 10' z=goed/goed/fout cm=geen_waarheid_link
+  m59822763731 [ok/qwen_verdacht_valsP] waarheid='Pikachu ex' cm_waar=ja
+     live key=pikachu:236/187:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Pikachu EX 236/187 SV8A UR PSA 10' z=goed/goed/goed cm=goed
+     foto key=pikachu:236/187:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Pikachu ex 236/187 SV8a UR PSA 10' z=goed/goed/goed cm=goed
+     geen key=pikachu:236:10:sv8a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Pikachu EX 236 SV8A-P PSA 10' z=goed/goed/fout cm=ontbreekt
+  m83313819997 [ok/qwen_verdacht_valsP] waarheid='Vaporeon ex' cm_waar=ja
+     live key=vaporeon:205:10:sv8a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Vaporeon ex 205/SV8A-P SAR PSA 10' z=goed/goed/fout cm=goed
+     foto key=vaporeon:205/167:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Vaporeon ex 205/167 SV8a SAR PSA 10' z=goed/goed/goed cm=goed
+     geen key=vaporeon:205:10:sv8a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Vaporeon EX 205 SV8A-P PSA 10' z=goed/goed/fout cm=ontbreekt
+  2JWdaaLFFmKYAnwhXPLsT7 [ok/qwen_verdacht_valsP] waarheid="Erika's Invitation" cm_waar=ja
+     live key=erika's invitation:206/165:10:sv-p n/nr/set/gr=goed/goed/fout/goed zoekzin="Erika's Invitation SAR 206/165 SV-P PSA 10" z=goed/goed/fout cm=ontbreekt
+     foto key=erika's invitation:206/165:10:sv2a n/nr/set/gr=goed/goed/goed/goed zoekzin="Erika's Invitation SAR 206/165 SV2a PSA 10" z=goed/goed/goed cm=ontbreekt
+     geen key=erika's invitation:206:10:sv-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Invitation 206 SV-P PSA 10' z=fout/goed/fout cm=ontbreekt
+  2JWdZyNiPVnugC6qzx9SCL [ok/qwen_verdacht_valsP] waarheid='Eevee ex' cm_waar=ja
+     live key=eevee:224/187:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Eevee ex 224/187 SAR PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=eevee:224/187:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Eevee SAR 224/187 SV8a PSA 10' z=goed/goed/goed cm=goed
+     geen key=eevee:224:10:sv8a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Eevee EX 224 SV8A-P PSA 10' z=goed/goed/fout cm=ontbreekt
+  2JWdZyJWHpX2zavuL83qRU [ok/qwen_verdacht_valsP] waarheid='Sylveon ex' cm_waar=ja
+     live key=sylveon:212/187:10:sv8a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Sylveon EX 212/187 SV8a SAR PSA 10' z=goed/goed/goed cm=goed
+     foto key=sylveon:212/187:10:sv3a n/nr/set/gr=goed/goed/fout/goed zoekzin='Sylveon ex 212/187 SAR PSA 10' z=goed/goed/ontbreekt cm=ontbreekt
+     geen key=sylveon:212:10:sv8a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Sylveon EX 212 SV8A-P PSA 10' z=goed/goed/fout cm=ontbreekt
+  m84401892600 [ok/qwen_verdacht_valsP] waarheid='Pikachu ex' cm_waar=ja
+     live key=pikachu:236/187:9:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Pikachu EX UR 236/187 SV8a PSA 9' z=goed/goed/goed cm=goed
+     foto key=pikachu:236/187:9:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Pikachu ex UR 236/187 SV8a PSA 9' z=goed/goed/goed cm=goed
+     geen key=pikachu:236:9:sv8a-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Pikachu EX 236 SV8A-P PSA 9' z=goed/goed/fout cm=ontbreekt
+  m63832527078 [ok/qwen_verdacht_valsP] waarheid='Reshiram ex' cm_waar=ja
+     live key=reshiram:174/086:10:sv11w n/nr/set/gr=goed/goed/goed/goed zoekzin='Reshiram ex 174/086 SV11W BWR PSA 10' z=goed/goed/goed cm=goed
+     foto key=reshiram:174/086:10:sv11w n/nr/set/gr=goed/goed/goed/goed zoekzin='Reshiram ex 174/086 SV11W BWR PSA 10' z=goed/goed/goed cm=goed
+     geen key=reshiram:174:10:sv-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Reshiram EX 174 SV-P PSA 10' z=goed/goed/fout cm=ontbreekt
+  m37634129550 [ok/qwen_verdacht_nummer] waarheid='Marnie' cm_waar=ja
+     live key=shiny:198/190:9.5:s4a n/nr/set/gr=fout/goed/goed/fout zoekzin='Marnie SR 198/190 S4a PSA 9.5' z=goed/goed/goed cm=ontbreekt
+     foto key=shiny:198/190:9.5:s4a n/nr/set/gr=fout/goed/goed/fout zoekzin='Marnie SR 198/190 S4a Shiny Star V PSA 10' z=goed/goed/goed cm=ontbreekt
+     geen key=shiny:175:9.5 n/nr/set/gr=fout/fout/ontbreekt/fout zoekzin='Shiny Star V 175 PSA 9.5' z=fout/fout/ontbreekt cm=ontbreekt
+  2JWdSZ6kvhZymFy2ddwZes [ok/qwen_verdacht_nummer] waarheid='Rotom ex' cm_waar=ja
+     live key=rotom:112/080:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Rotom ex SAR 112/080 PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=rotom:112/080:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Rotom ex 112/080 SAR PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=rotom:12:10 n/nr/set/gr=goed/fout/ontbreekt/goed zoekzin='Rotom EX 12 PSA 10' z=goed/fout/ontbreekt cm=ontbreekt
+  m55464007562 [ok/qwen_verdacht_nummer] waarheid='Mega Eelektross ex' cm_waar=ja
+     live key=eelektross:060/100:10 n/nr/set/gr=goed/fout/ontbreekt/goed zoekzin='Mega Eelektross ex PSA 10' z=goed/fout/ontbreekt cm=ontbreekt
+     foto key=eelektross:225:10:m2r n/nr/set/gr=goed/goed/fout/goed zoekzin='Mega Eelektross ex 225 M2R PSA 10' z=goed/goed/fout cm=ontbreekt
+     geen key=mega zelentross:7225:10 n/nr/set/gr=fout/fout/ontbreekt/goed zoekzin='Alakazam EX 7225 PSA 10' z=fout/fout/ontbreekt cm=ontbreekt
+  2JUt6viGdQTTB7sjEodTEa [stockfoto/qwen_verdacht_nummer] waarheid='Touko (Hilda)' cm_waar=ja
+     live key=touko:173/086:9.5 n/nr/set/gr=goed/goed/ontbreekt/n.v.t. zoekzin='Touko SAR 173/086 PSA 9.5' z=goed/goed/ontbreekt cm=ontbreekt
+     foto key=touko:173/086:9.5 n/nr/set/gr=goed/goed/ontbreekt/n.v.t. zoekzin='Hilda SAR 173/086 PSA 10' z=goed/goed/ontbreekt cm=ontbreekt
+     geen key=touko:086:9.5 n/nr/set/gr=goed/fout/ontbreekt/n.v.t. zoekzin='Touko 086 PSA 9.5' z=goed/fout/ontbreekt cm=ontbreekt
+  m71407431611 [lot/qwen_verdacht_nummer] waarheid='3x Mega Charizard X ex M2a #223' cm_waar=nee
+     live key=charizard:223/193:10:sv10 n/nr/set/gr=goed/goed/fout/goed zoekzin='Mega Charizard X ex 223/193 Master Ball PSA 10' z=goed/goed/ontbreekt cm=geen_waarheid_link
+     foto key=charizard:223/197:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mega Charizard X ex 223/197 Mega Attack Rare PSA 10' z=goed/goed/ontbreekt cm=link_terwijl_catalogus_geen_ware_link
+     geen key=inferno:360:10 n/nr/set/gr=fout/fout/ontbreekt/goed zoekzin='Charizard 360 PSA 10' z=goed/fout/ontbreekt cm=geen_waarheid_link
+  2JWcAknUgDLBEstDh8oLkh [niet_psa/qwen_verdacht_nummer] waarheid='Fezandipiti ex' cm_waar=nee
+     live key=okidogi:244/193:10:m2a n/nr/set/gr=fout/goed/goed/goed zoekzin='Okidogi EX 244/193 M2a PSA 10' z=fout/goed/goed cm=geen_waarheid_link
+     foto key=okidogi:244/193:10:m2a n/nr/set/gr=fout/goed/goed/goed zoekzin='Okidogi ex 244/193 MEGA Dream ex PSA 10' z=fout/goed/ontbreekt cm=geen_waarheid_link
+     geen key=feranidifit:123:10 n/nr/set/gr=fout/fout/ontbreekt/goed zoekzin='Fezandipiti EX 123 PSA 10' z=goed/fout/ontbreekt cm=geen_waarheid_link
+  2JUt7o8y3T6fSsc59gZAdV [stockfoto/qwen_verdacht_grade] waarheid='Mega Latias ex' cm_waar=ja
+     live key=latias:088/063:9.5 n/nr/set/gr=goed/goed/ontbreekt/n.v.t. zoekzin='Mega Latias EX SAR 088/063 PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=latias:088/063:9.5 n/nr/set/gr=goed/goed/ontbreekt/n.v.t. zoekzin='Mega Latias ex SAR 088/063 PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=galarian:088:9.5 n/nr/set/gr=fout/goed/ontbreekt/n.v.t. zoekzin='Latias EX 088 PSA 9.5' z=goed/goed/ontbreekt cm=fout
+  2JUt73c4fULuzRobwQ2Fay [stockfoto/qwen_verdacht_grade] waarheid='Canari' cm_waar=ja
+     live key=canary:248/193:null:sv2p n/nr/set/gr=fout/goed/fout/n.v.t. zoekzin='Dendra SAR 248/193 SV2P PSA 10' z=fout/goed/fout cm=ontbreekt
+     foto key=canary:248/193:null:sv2p n/nr/set/gr=fout/goed/fout/n.v.t. zoekzin='Dendra SAR 248/193 SV2P PSA 10' z=fout/goed/fout cm=ontbreekt
+     geen key=canary:248:null n/nr/set/gr=fout/goed/ontbreekt/n.v.t. zoekzin='Canary 248 PSA null' z=fout/goed/ontbreekt cm=ontbreekt
+  2JUsxZsphRhpJBvUVjBz8y [stockfoto/qwen_verdacht_grade] waarheid='Ceruledge' cm_waar=ja
+     live key=ceruledge:109/106:XX:sv8 n/nr/set/gr=goed/goed/goed/n.v.t. zoekzin='Ceruledge AR 109/106 SV8 PSA 10' z=goed/goed/goed cm=goed
+     foto key=ceruledge:109/106:XX:sv8 n/nr/set/gr=goed/goed/goed/n.v.t. zoekzin='Ceruledge AR 109/106 PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=soul:109:XX:sv8 n/nr/set/gr=fout/goed/goed/n.v.t. zoekzin='Ceruledge 109 SV8 PSA XX' z=goed/goed/goed cm=ontbreekt
+  m45503458756 [ok/qwen_verdacht_naam] waarheid="Ethan's Ho-Oh ex" cm_waar=ja
+     live key=ho-oh:086:10:sv9a n/nr/set/gr=goed/goed/goed/goed zoekzin="Ethan's Ho-Oh ex SAR 086/SV9A SV9a PSA 10" z=goed/goed/goed cm=goed
+     foto key=ho-oh:086/063:10:sv9a n/nr/set/gr=goed/goed/goed/goed zoekzin="Ethan's Ho-Oh ex 086/063 SV9a SAR PSA 10" z=goed/goed/goed cm=goed
+     geen key=geen n/nr/set/gr=ontbreekt/ontbreekt/ontbreekt/ontbreekt zoekzin='Ho-oh EX 086 SV9A PSA 10' z=goed/goed/goed cm=ontbreekt
+  2JWdfukEewb4MGfynDKomw [lot/qwen_verdacht_naam] waarheid='3x Radiant (Venusaur/Charizard/Blastoise) Pokemon GO' cm_waar=nee
+     live key=venusaur:004:10:sv-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Radiant Venusaur 004/SV-P SV-P PSA 10' z=goed/goed/fout cm=geen_waarheid_link
+     foto key=venusaur:004:10:sv-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Radiant Venusaur 004/SV-P SV-P PSA 10' z=goed/goed/fout cm=geen_waarheid_link
+     geen key=radiant venusaur:004:10:sv-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Venusaur 004 SV-P PSA 10' z=goed/goed/fout cm=geen_waarheid_link
+  m70585279028 [niet_psa/qwen_verdacht_naam] waarheid='Mega Rayquaza ex (AXCI-app screenshot)' cm_waar=nee
+     live key=zapdos:068:10 n/nr/set/gr=fout/n.v.t./n.v.t./n.v.t. zoekzin='Galarian Zapdos EX 068 PSA 10' z=fout/n.v.t./n.v.t. cm=geen_waarheid_link
+     foto key=rayquaza:086/078:10 n/nr/set/gr=goed/n.v.t./n.v.t./n.v.t. zoekzin='M Rayquaza EX 086/078 MUR PSA 10' z=goed/n.v.t./n.v.t. cm=geen_waarheid_link
+     geen key=galarian:068:10 n/nr/set/gr=fout/n.v.t./n.v.t./n.v.t. zoekzin='Rayquaza EX 068 PSA 10' z=goed/n.v.t./n.v.t. cm=geen_waarheid_link
+  2JWdfEccmX9LhToKN2VRj3 [ok/qwen_verdacht_naam] waarheid='Mega Gardevoir ex' cm_waar=ja
+     live key=gardevoir:092/063:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Mega Gardevoir ex 092/063 MUR PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=gardevoir:092/063:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Mega Gardevoir ex 092/063 MUR PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=mega gardevoir:092:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Gardevoir EX 092 PSA 10' z=goed/goed/ontbreekt cm=goed
+  m46215587619 [ok/qwen_verdacht_naam] waarheid='Mega Charizard X ex' cm_waar=ja
+     live key=charizard:110/080:10:sv10 n/nr/set/gr=goed/goed/fout/goed zoekzin='Mega Charizard EX SAR 110/080 PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=charizard:110/080:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Mega Charizard X ex 110/080 SAR PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=mega charizard:110:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Charizard EX 110 PSA 10' z=goed/goed/ontbreekt cm=goed
+  z679659678 [ok/willekeurig] waarheid='Mega Zygarde ex' cm_waar=ja
+     live key=zygarde:113/080:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Mega Zygarde ex SAR 113/080 PSA 10' z=goed/goed/ontbreekt cm=ontbreekt
+     foto key=zygarde:113/080:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Mega Zygarde ex SAR 113/080 Special Art Rare PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=mega zygardex:113:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Zygarde 113 PSA 10' z=goed/goed/ontbreekt cm=ontbreekt
+  m81791009430 [ok/willekeurig] waarheid='Mew ex' cm_waar=nee
+     live key=mew:347/190:10:sv4a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew EX 347/190 SV4A SAR PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     foto key=mew:347/190:10:sv4a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew ex SAR 347/190 SV4a PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     geen key=mew:347:10:sv4a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew EX 347 SV4A PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+  m48614022863 [ok/willekeurig] waarheid='Mew ex' cm_waar=nee
+     live key=mew:205/165:10:sv2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew ex 205/165 SV2a SAR PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     foto key=mew:205/165:10:sv2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew ex SAR 205/165 SV2a PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     geen key=mew:205:10:sv2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mew EX 205 SV2A PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+  2JWQtWSUURmkAXRXJrxzpT [ok/willekeurig] waarheid='Galarian Obstagoon' cm_waar=ja
+     live key=obstagoon:209:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Galarian Obstagoon 209 M2a AR PSA 10' z=goed/goed/goed cm=goed
+     foto key=linoone:209:10:m2a n/nr/set/gr=fout/goed/goed/goed zoekzin='Galarian Linoone AR 209 M2a PSA 10' z=fout/goed/goed cm=ontbreekt
+     geen key=galarian:209:10:m2a n/nr/set/gr=fout/goed/goed/goed zoekzin='Obstagoon 209 M2A PSA 10' z=goed/goed/goed cm=goed
+  m60926875975 [ok/willekeurig] waarheid='Mega Greninja ex' cm_waar=ja
+     live key=greninja:114:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Mega Greninja EX 114 SAR PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=greninja:114:10:m4 n/nr/set/gr=goed/goed/goed/goed zoekzin='Mega Greninja ex SAR 114 M4 PSA 10' z=goed/goed/goed cm=goed
+     geen key=mega greninja:114:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Greninja EX 114 PSA 10' z=goed/goed/ontbreekt cm=goed
+  z680515950 [ok/willekeurig] waarheid='Jolteon ex' cm_waar=ja
+     live key=jolteon:209:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Jolteon ex SAR 209/SV8A SV8A PSA 10' z=goed/goed/goed cm=goed
+     foto key=jolteon:209:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Jolteon ex SAR 209 SV8a PSA 10' z=goed/goed/goed cm=goed
+     geen key=jolteon:209:10:sv8a n/nr/set/gr=goed/goed/goed/goed zoekzin='Jolteon EX 209 SV8A PSA 10' z=goed/goed/goed cm=goed
+  2JWddaJ6e6x3P6ChtLXv3v [ok/willekeurig] waarheid="Acerola's Mischief" cm_waar=ja
+     live key=acerola's mischief:090/063:10:m1s n/nr/set/gr=goed/goed/goed/goed zoekzin="Acerola's Mischief SAR 090/063 M1S PSA 10" z=goed/goed/goed cm=ontbreekt
+     foto key=acerola's mischief:090/063:10:m1s n/nr/set/gr=goed/goed/goed/goed zoekzin="Acerola's Mischief SAR 090/063 PSA 10" z=goed/goed/ontbreekt cm=ontbreekt
+     geen key=acerola's mischief:090:10:m1s n/nr/set/gr=goed/goed/goed/goed zoekzin='Mischief 090 M1S PSA 10' z=fout/goed/goed cm=ontbreekt
+  m90261910680 [lot/willekeurig] waarheid='3 verschillende slabs' cm_waar=nee
+     live key=gardevoir:068:10:sv-p n/nr/set/gr=goed/n.v.t./n.v.t./goed zoekzin='Gardevoir ex 068 SV-P PSA 10' z=goed/n.v.t./n.v.t. cm=geen_waarheid_link
+     foto key=gardevoir:086:10:sv9 n/nr/set/gr=goed/n.v.t./n.v.t./goed zoekzin='Gardevoir ex 086 SV9 PSA 10' z=goed/n.v.t./n.v.t. cm=geen_waarheid_link
+     geen key=gardevoir:068:10:sv-p n/nr/set/gr=goed/n.v.t./n.v.t./goed zoekzin='Gardevoir EX 068 SV-P PSA 10' z=goed/n.v.t./n.v.t. cm=geen_waarheid_link
+  m21017617550 [ok/willekeurig] waarheid="N's Zoroark ex" cm_waar=ja
+     live key=zoroark:242:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin="N's Zoroark ex 242 Mega Dream ex SAR PSA 10" z=goed/goed/ontbreekt cm=goed
+     foto key=zoroark:242/193:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin="N's Zoroark ex 242/193 M2a Special Art Rare PSA 10" z=goed/goed/goed cm=goed
+     geen key=zoroark:242:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Zoroark EX 242 PSA 10' z=goed/goed/ontbreekt cm=goed
+  m69225999458 [ok/willekeurig] waarheid='Canari' cm_waar=ja
+     live key=canari:248/193:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Canary SAR 248/193 PSA 10' z=fout/goed/ontbreekt cm=ontbreekt
+     foto key=canari:248/193:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Dendra SAR 248/193 Special Art Rare PSA 10' z=fout/goed/ontbreekt cm=ontbreekt
+     geen key=canari:248:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Canari 248 M2A PSA 10' z=goed/goed/goed cm=goed
+  z679737268 [ok/willekeurig] waarheid="Rocket's Moltres ex" cm_waar=ja
+     live key=moltres:124:10:sv10 n/nr/set/gr=goed/goed/goed/goed zoekzin="Rocket's Moltres EX 124/SV10 SAR PSA 10" z=goed/goed/goed cm=goed
+     foto key=moltres:124:10:sv10 n/nr/set/gr=goed/goed/goed/goed zoekzin="Rocket's Moltres ex SAR 124 SV10 PSA 10" z=goed/goed/goed cm=goed
+     geen key=moltres:124:10:sv10 n/nr/set/gr=goed/goed/goed/goed zoekzin='Moltres EX 124 SV10 PSA 10' z=goed/goed/goed cm=goed
+  m55756634882 [ok/willekeurig] waarheid='Pikachu V (25th Golden Box)' cm_waar=nee
+     live key=pikachu:001:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Pikachu V 001 PSA 10' z=goed/goed/ontbreekt cm=link_terwijl_catalogus_geen_ware_link
+     foto key=pikachu:001:10:s8a-g n/nr/set/gr=goed/goed/goed/goed zoekzin='Pikachu V 001 25th Anniversary Golden Box PSA 10' z=goed/goed/ontbreekt cm=geen_waarheid_link
+     geen key=pikachu:001:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Pikachu V 001 PSA 10' z=goed/goed/ontbreekt cm=link_terwijl_catalogus_geen_ware_link
+  m43092550869 [ok/willekeurig] waarheid='Arceus V' cm_waar=ja
+     live key=arceus:112:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Arceus V 112 Full Art PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=arceus:112/100:10:s9 n/nr/set/gr=goed/goed/goed/goed zoekzin='Arceus V 112/100 Star Birth Full Art PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=arceus:112:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Arceus V 112 PSA 10' z=goed/goed/ontbreekt cm=goed
+  m67454234322 [lot/willekeurig] waarheid='2x Mega Hawlucha ex M2a #229' cm_waar=nee
+     live key=hawlucha:229:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mega Hawlucha EX 229/M2A M2A PSA 10' z=goed/goed/goed cm=link_terwijl_catalogus_geen_ware_link
+     foto key=hawlucha:229/193:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mega Hawlucha ex 229/193 Mega Attack Rare PSA 10' z=goed/goed/ontbreekt cm=link_terwijl_catalogus_geen_ware_link
+     geen key=mega hawlucha:229:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Hawlucha EX 229 M2A PSA 10' z=goed/goed/goed cm=link_terwijl_catalogus_geen_ware_link
+  m33253872497 [ok/willekeurig] waarheid='Umbreon VMAX' cm_waar=ja
+     live key=umbreon:048/069:10:s6a n/nr/set/gr=goed/goed/goed/goed zoekzin='Umbreon VMAX 048/069 S6a PSA 10' z=goed/goed/goed cm=goed
+     foto key=umbreon:048/069:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Umbreon VMAX 048/069 Eevee Heroes PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=umbreon:048:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Umbreon VMAX 048 PSA 10' z=goed/goed/ontbreekt cm=goed
+  m15975049004 [ok/willekeurig] waarheid="Elesa's Sparkle" cm_waar=nee
+     live key=elesa's sparkle:246:10:swsh-p n/nr/set/gr=goed/goed/fout/goed zoekzin="Elesa's Sparkle SR 246/SWSH-P PSA 10" z=goed/goed/fout cm=geen_waarheid_link
+     foto key=elesa's sparkle:246/172:10:s12a n/nr/set/gr=goed/goed/goed/goed zoekzin="Elesa's Sparkle SR 246/172 VSTAR Universe PSA 10" z=goed/goed/ontbreekt cm=geen_waarheid_link
+     geen key=elesa's sparkle:246:10:swsh-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Sparkle 246 SWSH-P PSA 10' z=fout/goed/fout cm=geen_waarheid_link
+  m77343435769 [ok/willekeurig] waarheid='Greninja ex' cm_waar=nee
+     live key=greninja:083:10:sv5a n/nr/set/gr=goed/goed/goed/goed zoekzin='Greninja EX 083/SV5A SV5A Full Art PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     foto key=greninja:083/066:10:sv5a n/nr/set/gr=goed/goed/goed/goed zoekzin='Greninja ex 083/066 SV5a SR PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+     geen key=greninja:083:10:sv5a n/nr/set/gr=goed/goed/goed/goed zoekzin='Greninja EX 083 SV5A PSA 10' z=goed/goed/goed cm=geen_waarheid_link
+  z674899744 [ok/willekeurig] waarheid="Jasmine's Gaze" cm_waar=ja
+     live key=jasmine's gaze:135/106:10:sv8 n/nr/set/gr=goed/goed/goed/goed zoekzin="Jasmine's Gaze SAR 135/106 SV8 PSA 10" z=goed/goed/goed cm=ontbreekt
+     foto key=jasmine's gaze:135/106:10:sv8 n/nr/set/gr=goed/goed/goed/goed zoekzin="Jasmine's Gaze SAR 135/106 SV8 PSA 10" z=goed/goed/goed cm=ontbreekt
+     geen key=jasmine's gaze:135:10:sv8 n/nr/set/gr=goed/goed/goed/goed zoekzin='Gaze 135 SV8 PSA 10' z=fout/goed/goed cm=goed
+  m35362154909 [ok/willekeurig] waarheid='Mega Dragonite ex' cm_waar=ja
+     live key=dragonite:232/193:10:sv8 n/nr/set/gr=goed/goed/fout/goed zoekzin='Mega Dragonite ex 232/193 PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=dragonite:232/193:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mega Dragonite ex 232/193 M2a Mega Attack Rare PSA 10' z=goed/goed/goed cm=goed
+     geen key=mega dragalier:232:10 n/nr/set/gr=fout/goed/ontbreekt/goed zoekzin='Dragonite EX 232 PSA 10' z=goed/goed/ontbreekt cm=ontbreekt
+  z671250062 [ok/willekeurig] waarheid="Lillie's Clefairy ex" cm_waar=nee
+     live key=clefairy:765:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Clefairy EX 765 PSA 10' z=goed/goed/ontbreekt cm=geen_waarheid_link
+     foto key=clefairy:765:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin="Lillie's Clefairy 765 PSA 10" z=goed/goed/ontbreekt cm=geen_waarheid_link
+     geen key=clefairy:765:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Clefairy EX 765 PSA 10' z=goed/goed/ontbreekt cm=geen_waarheid_link
+  m69228660639 [ok/willekeurig] waarheid="Acerola's Premonition" cm_waar=nee
+     live key=acerola's prophesy:255/184:10:s8b n/nr/set/gr=goed/goed/goed/goed zoekzin="Acerola's Premonition 255/184 S8b Full Art PSA 10" z=goed/goed/goed cm=geen_waarheid_link
+     foto key=acerola's prophesy:255/184:10:s8b n/nr/set/gr=goed/goed/goed/goed zoekzin="Acerola's Premition 255/184 S8b SR PSA 10" z=goed/goed/goed cm=geen_waarheid_link
+     geen key=acerola's prophesy:255:10:swsh-p n/nr/set/gr=goed/goed/fout/goed zoekzin='Prophesy 255 SWSH-P PSA 10' z=fout/goed/fout cm=geen_waarheid_link
+  2JWdbMLs5mwq33RvkQ9fcx [ok/willekeurig] waarheid='Flareon VMAX (Eevee Heroes VMAX special set)' cm_waar=ja
+     live key=flareon:001:10:004 n/nr/set/gr=goed/goed/n.v.t./goed zoekzin='Flareon VMAX 001/004 PSA 10' z=goed/goed/n.v.t. cm=goed
+     foto key=flareon:001/004:10 n/nr/set/gr=goed/goed/n.v.t./goed zoekzin='Flareon VMAX 001/004 PSA 10' z=goed/goed/n.v.t. cm=ontbreekt
+     geen key=flareon:001:10 n/nr/set/gr=goed/goed/n.v.t./goed zoekzin='Flareon VMAX 001 PSA 10' z=goed/goed/n.v.t. cm=goed
+  m59331815315 [ok/willekeurig] waarheid='Charcadet' cm_waar=ja
+     live key=charcadet:083/080:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Charcadet AR 083/080 Inferno X PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=charcadet:083/080:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Charcadet 083/080 Art Rare PSA 10' z=goed/goed/ontbreekt cm=goed
+     geen key=charcadet:083:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Charcadet 083 PSA 10' z=goed/goed/ontbreekt cm=goed
+  m51063039293 [ok/willekeurig] waarheid='Mega Gengar ex' cm_waar=ja
+     live key=gengar:230:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Mega Gengar EX 230 PSA 10' z=goed/goed/ontbreekt cm=goed
+     foto key=gengar:230/193:10:m2a n/nr/set/gr=goed/goed/goed/goed zoekzin='Mega Gengar ex 230/193 M2a Mega Attack Rare PSA 10' z=goed/goed/goed cm=goed
+     geen key=mega gengar:230:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Gengar EX 230 PSA 10' z=goed/goed/ontbreekt cm=goed
+  m13858692778 [ok/willekeurig] waarheid='Detective Yoshida' cm_waar=ja
+     live key=detective:025/024:10:smp2 n/nr/set/gr=goed/goed/goed/goed zoekzin='Detective Yoshida SR 025/024 SMP2 PSA 10' z=goed/goed/goed cm=ontbreekt
+     foto key=detective:025/024:10:smp2 n/nr/set/gr=goed/goed/goed/goed zoekzin='Detective Yoshida SR 025/024 SMP2 PSA 10' z=goed/goed/goed cm=ontbreekt
+     geen key=detective:025:10 n/nr/set/gr=goed/goed/ontbreekt/goed zoekzin='Detective Yoshida 025 PSA 10' z=goed/goed/ontbreekt cm=ontbreekt
+
+SCHRIJF-SLOT: {"http_non_get": 0, "urllib": 0, "writer_calls": 0}
