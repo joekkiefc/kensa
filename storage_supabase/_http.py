@@ -90,6 +90,16 @@ def get(table: str, schema: str, params: dict, timeout=TIMEOUT) -> list[dict]:
     return []
 
 
+def rpc(fn: str, schema: str, args: dict, timeout=TIMEOUT) -> list:
+    """Database-functie aanroepen: POST /rest/v1/rpc/<fn>. Leesfuncties (pickers) —
+    geen vangnet/parkeren, fout = exception zoals bij get()."""
+    url = f"{_creds()[0]}/rest/v1/rpc/{fn}"
+    r = _session().post(url, json=args, headers=_headers(schema, prefer="count=none"), timeout=timeout)
+    if r.status_code >= 300:
+        raise RuntimeError(f"rpc {schema}.{fn}: HTTP {r.status_code} {r.text[:200]}")
+    return r.json()
+
+
 # ---------------------------------------------------------------------------
 # Vangnet: tijdelijke fouten parkeren in sync_retry (zie module-docstring)
 # ---------------------------------------------------------------------------

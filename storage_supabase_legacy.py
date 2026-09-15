@@ -167,7 +167,7 @@ def load_analysis_by_trap_since_supabase(trap: str, cutoff_iso: str,
     return r.json()
 
 
-def pick_cache_batch_supabase(limit: int, cache_days: int, timeout=TIMEOUT) -> list[str]:
+def pick_cache_batch_supabase_rest(limit: int, cache_days: int, timeout=TIMEOUT) -> list[str]:
     """Supabase-equivalent van worker_cache.pick_batch().
 
     SQLite: JOIN listings + price_cache WHERE slab_status='ocr_done'
@@ -235,7 +235,7 @@ def pick_cache_batch_supabase(limit: int, cache_days: int, timeout=TIMEOUT) -> l
     return result[:limit]
 
 
-def pick_ebay_batch_supabase(limit: int, cache_days: int, timeout=TIMEOUT) -> list[str]:
+def pick_ebay_batch_supabase_rest(limit: int, cache_days: int, timeout=TIMEOUT) -> list[str]:
     """Supabase-equivalent van worker_claim.claim_ebay_batch() — READ-only.
 
     Selecteert items met slab_status='ocr_done' waar GEEN verse ebay-cache is
@@ -360,7 +360,7 @@ def pick_mercapi_batch_supabase(limit: int | None = None, timeout=TIMEOUT) -> li
     return [row["item_id"] for row in r.json()]
 
 
-def pick_mercapi_recheck_batch_supabase(limit: int = 100, min_age_hours: int = 4, timeout=TIMEOUT) -> list[str]:
+def pick_mercapi_recheck_batch_supabase_rest(limit: int = 100, min_age_hours: int = 4, timeout=TIMEOUT) -> list[str]:
     """Supabase-equivalent van fetch_detail_mercapi._deal_recheck_ids().
 
     Mercari-items die als deal zichtbaar zijn (roi>0, niet onbetrouwbaar), nog niet sold,
@@ -510,3 +510,26 @@ def pick_ocr_batch_supabase(limit: int, timeout=TIMEOUT) -> list[str]:
     if r.status_code >= 300:
         raise RuntimeError(f"pick_ocr_batch: HTTP {r.status_code} {r.text[:200]}")
     return [row["item_id"] for row in r.json()]
+
+
+# ---------------------------------------------------------------------------
+# Pickers via database-functie (15-9): 1 request i.p.v. 1 + N chunks.
+# De *_rest-varianten hierboven blijven staan als referentie; tests/test_picker_rpc.py
+# vergelijkt live dat beide hetzelfde antwoord geven.
+# ---------------------------------------------------------------------------
+def _rpc_ids(fn: str, args: dict) -> list[str]:
+    from storage_supabase import _http
+    return [r["item_id"] for r in _http.rpc(fn, "kensa", args)]
+
+
+def pick_cache_batch_supabase(limit: int, cache_days: int, timeout=TIMEOUT) -> list[str]:
+    return _rpc_ids("pick_cache_batch", {"p_limit": int(limit), "p_cache_days": int(cache_days)})
+
+
+def pick_ebay_batch_supabase(limit: int, cache_days: int, timeout=TIMEOUT) -> list[str]:
+    return _rpc_ids("pick_ebay_batch", {"p_limit": int(limit), "p_cache_days": int(cache_days)})
+
+
+def pick_mercapi_recheck_batch_supabase(limit: int = 100, min_age_hours: int = 4, timeout=TIMEOUT) -> list[str]:
+    return _rpc_ids("pick_mercapi_recheck_batch",
+                    {"p_limit": int(limit), "p_min_age_hours": int(min_age_hours)})
