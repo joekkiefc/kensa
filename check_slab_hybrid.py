@@ -133,9 +133,17 @@ def _lees_fotos(candidates, lees, lezer: str) -> tuple[dict, int | None, list, i
     return best_fields, source_idx, per_photo, calls
 
 
-def check_slab_hybrid(item_id: str, max_photos: int = 3, db_path: Path = DB_PATH) -> dict:
-    """Lezer-first (Qwen of Gemini), Vision-fallback. Drop-in vervanger voor check_slab.check_slab()."""
-    title_jp, title_en = _fetch_titles(item_id, db_path)
+def check_slab_hybrid(item_id: str, max_photos: int = 3, db_path: Path = DB_PATH,
+                      listing: dict | None = None) -> dict:
+    """Lezer-first (Qwen of Gemini), Vision-fallback. Drop-in vervanger voor check_slab.check_slab().
+
+    `listing`: al geladen listing-row (analyze_ocr_only heeft 'm net opgehaald). Scheelt
+    de tweede volledige Supabase-load per kaart (15-9: 2× select=* binnen 0,1 s).
+    """
+    if listing is not None:
+        title_jp, title_en = listing.get("title_jp"), listing.get("title_en")
+    else:
+        title_jp, title_en = _fetch_titles(item_id, db_path)
 
     # Stap 1: titel-filter
     is_lot, pat = is_multi_slab_lot(title_jp, title_en)

@@ -65,6 +65,32 @@ def fetch_latest_trap(item_id: str, trap: str,
         return rows[0] if rows else None
 
 
+def fetch_latest_traps(item_id: str, traps: list[str] | tuple[str, ...],
+                       schema: str = "kensa", table: str = "analysis") -> dict[str, dict]:
+    """Meest recente rij per trap voor één item, in ÉÉN request.
+
+    Vervangt N losse fetch_latest_trap-calls (score-fase deed er 3 per kaart).
+    Return: {trap: row} — traps zonder rij ontbreken in de dict. Row-shape identiek
+    aan fetch_latest_trap.
+    """
+    traps = [t for t in traps if t]
+    if not traps:
+        return {}
+    quoted = ",".join('"' + t.replace('"', '""') + '"' for t in traps)
+    with timed("analysis.fetch_latest_traps", key=f"{item_id}/{'+'.join(traps)}") as ctx:
+        rows = _http.get(table, schema, {
+            "item_id": f"eq.{item_id}",
+            "trap": f"in.({quoted})",
+            "select": "analysis_id,item_id,trap,result_json,confidence,card_id,created_at",
+            "order": "analysis_id.desc",
+        })
+        ctx["n"] = len(rows)
+    out: dict[str, dict] = {}
+    for r in rows:  # DESC → eerste per trap = meest recente
+        out.setdefault(r["trap"], r)
+    return out
+
+
 def fetch_all_traps(item_id: str,
                     schema: str = "kensa", table: str = "analysis") -> list[dict]:
     """Alle analysis-rijen voor een item, ORDER analysis_id DESC.

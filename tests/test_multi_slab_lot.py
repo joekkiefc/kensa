@@ -167,3 +167,14 @@ def test_worker_ebay_crash_zet_item_op_fout(monkeypatch):
     WE._sluit_af_na_crash("m1", AttributeError("'list' object has no attribute 'split'"))
     assert gezien == [("m1", "ebay_error")]
     assert WE.CRASH_STATUS != "ocr_done"
+
+
+def test_listing_meegeven_slaat_titel_load_over(route, monkeypatch):
+    """15-9: analyze_ocr_only geeft de al geladen listing mee → geen 2e Supabase-load."""
+    def boem(*a, **k):
+        raise AssertionError("_fetch_titles mag niet aangeroepen worden als listing meegegeven is")
+    monkeypatch.setattr(CSH, "_fetch_titles", boem)
+    lot = {"title_jp": "PSA10 ピカチュウ 3枚セット", "title_en": "PSA10 Pikachu 3 cards set lot"}
+    r = CSH.check_slab_hybrid("m1", db_path="x", listing=lot)
+    assert r["status"] == "skip" and r["_reason"].startswith("multi_slab_lot:")
+    assert route == {"vision": 0, "qwen": 0, "gemini": 0}

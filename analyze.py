@@ -385,7 +385,12 @@ def analyze_ocr_only(item_id: str, verbose: bool = False) -> dict:
         return {"error": f"listing {item_id} not found"}
 
     t0 = time.perf_counter()
-    slab = check_slab(item_id, max_photos=2)
+    # Hybride lezer krijgt de listing mee (geen 2e load); klassieke Vision-check_slab kent
+    # die parameter niet.
+    if check_slab is _check_slab_vision:
+        slab = check_slab(item_id, max_photos=2)
+    else:
+        slab = check_slab(item_id, max_photos=2, listing=listing)
 
     llm_data = None
     llm_needed_but_failed = False

@@ -84,10 +84,12 @@ def _load_stored_slab_llm(
     llm_retry_count (of 0).
     """
     if _read_via_supabase():
-        from storage_supabase.analysis import fetch_latest_trap as _sb_trap
-        slab_row = _sb_trap(item_id, "slab_ocr")
-        llm_row = _sb_trap(item_id, "llm_slab")
-        prev_sum = _sb_trap(item_id, "summary")
+        # 1 request i.p.v. 3 (15-9): zelfde rij-shape, meest recente per trap.
+        from storage_supabase.analysis import fetch_latest_traps as _sb_traps
+        traps = _sb_traps(item_id, ("slab_ocr", "llm_slab", "summary"))
+        slab_row = traps.get("slab_ocr")
+        llm_row = traps.get("llm_slab")
+        prev_sum = traps.get("summary")
         slab = slab_row["result_json"] if slab_row else None
         llm = llm_row["result_json"] if llm_row else None
         prev_retry = 0

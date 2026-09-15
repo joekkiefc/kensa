@@ -53,6 +53,19 @@ def test_fetch_latest_nonexistent_returns_none():
     assert row is None
 
 
+def test_fetch_latest_traps_matches_single_calls():
+    """1-request variant moet per trap exact dezelfde rij geven als fetch_latest_trap."""
+    from storage_supabase.analysis import fetch_latest_traps
+    traps = ("slab_ocr", "llm_slab", "summary", "trap-does-not-exist")
+    combined = fetch_latest_traps(BASELINE_ITEM, traps)
+    assert "trap-does-not-exist" not in combined
+    for trap in traps[:3]:
+        single = fetch_latest_trap(BASELINE_ITEM, trap)
+        assert combined[trap] == single, f"mismatch op trap={trap}"
+    assert fetch_latest_traps("m00000000000", traps) == {}
+    assert fetch_latest_traps(BASELINE_ITEM, []) == {}
+
+
 def test_fetch_all_traps_count_and_order():
     rows = fetch_all_traps(BASELINE_ITEM)
     # Baseline: minstens de 7 bekende traps + evt latere reruns
