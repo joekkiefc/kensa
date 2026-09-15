@@ -15,9 +15,28 @@ from ._logging import timed
 
 
 def upsert_photos(item_id: str, photo_urls, schema: str = "kensa", table: str = "photos") -> int:
+    """1 request via database-functie kensa.upsert_photos (15-9): zelfde regels als de
+    REST-route hieronder. Bij een fout van de functie-aanroep: terugvallen op REST."""
     if not photo_urls:
         return 0
+    urls = [u for u in photo_urls if u]
+    if not urls:
+        return 0
+    if schema == "kensa" and table in ("photos", "test_photos"):
+        try:
+            with timed("photos.upsert_rpc", key=item_id) as ctx:
+                n = _http.rpc("upsert_photos", schema,
+                              {"p_item_id": item_id, "p_urls": urls, "p_table": table})
+                ctx["n"] = int(n or 0)
+            return int(n or 0)
+        except Exception as e:
+            print(f"[storage_supabase] upsert_photos rpc faalt ({type(e).__name__}: {e}) → REST-route",
+                  file=__import__("sys").stderr)
+    return _upsert_photos_rest(item_id, photo_urls, schema, table)
 
+
+def _upsert_photos_rest(item_id: str, photo_urls, schema: str = "kensa", table: str = "photos") -> int:
+    """Oude 2-staps route (bestaande GET + POST). Referentie + vangnet."""
     # Max index nu (per item)
     existing = _http.get(table, schema, {
         "item_id": f"eq.{item_id}",

@@ -66,32 +66,34 @@ def upsert_listing(row: dict, schema: str = "kensa", table: str = "listings") ->
     item_id = payload["item_id"]
     ts = _now_iso()
 
-    existing = _http.get(table, schema, {
-        "item_id": f"eq.{item_id}",
-        "select": "item_id,first_seen_at",
-    })
-    is_new = not existing
-
     # Strip None-waarden — SQLite COALESCE(:col, col) laat oude waarde staan.
+    # Upsert (merge-duplicates) overschrijft alleen de meegestuurde kolommen → zelfde
+    # semantiek als de vroegere PATCH.
     non_null = {k: v for k, v in payload.items() if v is not None}
     non_null["item_id"] = item_id
     non_null["last_seen_at"] = ts
+    # Geboortedatum: bij INSERT de meegegeven waarde (bv. oude Pi-listing) of nu. Bij
+    # UPDATE zet de database-trigger listings_keep_first_seen 'm terug op de oude waarde,
+    # dus we hoeven niet meer vooraf te kijken of de rij bestaat (15-9: 1 request i.p.v. 2).
+    non_null["first_seen_at"] = row.get("first_seen_at") or ts
 
-    if is_new:
-        # Bewaar de ECHTE geboortedatum als de aanroeper 'm meegeeft (bv. een
-        # bestaande Pi-listing die voor 't eerst naar Supabase geschreven wordt).
-        # Anders = nu (echt nieuwe listing). Voorkomt de first_seen-corruptie die
-        # bij de 5-sept cutover ~31k rijen raakte (INSERT stempelde first_seen=nu).
-        non_null["first_seen_at"] = row.get("first_seen_at") or ts
-        r = _http.post(table, schema, non_null, prefer="return=minimal")
-        if r.status_code not in (200, 201, 204):
-            raise RuntimeError(f"insert {table} failed {r.status_code}: {r.text[:200]}")
-    else:
-        patch_body = {k: v for k, v in non_null.items() if k != "item_id"}
-        r = _http.patch(table, schema, {"item_id": f"eq.{item_id}"}, patch_body)
-        if r.status_code not in (200, 204):
-            raise RuntimeError(f"update {table} failed {r.status_code}: {r.text[:200]}")
-    return is_new
+    r = _http.post(table, schema, non_null,
+                   prefer="resolution=merge-duplicates,return=representation",
+                   params={"on_conflict": "item_id", "select": "item_id,first_seen_at,last_seen_at"})
+    if r.status_code not in (200, 201, 204):
+        raise RuntimeError(f"upsert {table} failed {r.status_code}: {r.text[:200]}")
+    # is_new afleiden uit de teruggestuurde rij: bij INSERT zijn first_seen_at en
+    # last_seen_at allebei `ts` (tenzij de aanroeper een eigen first_seen_at meegaf —
+    # alleen migraties; productie gebruikt de returnwaarde niet). Geparkeerde write
+    # (vangnet) → geen rij bekend → False.
+    try:
+        body = r.json()
+        rec = body[0] if isinstance(body, list) and body else {}
+    except Exception:
+        rec = {}
+    if not rec:
+        return False
+    return rec.get("first_seen_at") is not None and rec.get("first_seen_at") == rec.get("last_seen_at")
 
 
 # --- Read-functies (Supabase-native, backwards-compat met analyze._load_listing) ---
