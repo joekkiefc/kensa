@@ -58,6 +58,11 @@ def _read_via_supabase() -> bool:
     return os.environ.get("KENSA_READ_STORAGE", "").lower() == "supabase"
 
 
+def _write_via_supabase() -> bool:
+    """True als env KENSA_WRITE_STORAGE=supabase staat (Supabase-only writes)."""
+    return os.environ.get("KENSA_WRITE_STORAGE", "sqlite").lower() == "supabase"
+
+
 def _load_listing(item_id: str) -> dict | None:
     """Dispatcher: Supabase-read als env-flag aan, anders SQLite (Pi)."""
     if _read_via_supabase():
@@ -366,22 +371,31 @@ def _score_post_process(
     if slab.get("cert"):
         sighting = record_cert_sighting(slab["cert"], item_id, listing.get("seller_id"))
 
-    # Trap-writes — volgorde exact als origineel
-    _save_trap(item_id, "title_match", tit)
-    _save_trap(item_id, "desc_match", desc)
+    # Trap-writes — volgorde exact als origineel. Supabase-route (15-9, stap 6): niet per
+    # trap schrijven maar verzamelen; F6 schrijft ze samen met 'summary' in ÉÉN request.
+    pending: list[tuple] = []
+
+    def _trap(trap, result, confidence=None, card_id=None):
+        if _write_via_supabase():
+            pending.append((trap, result, confidence, card_id))
+        else:
+            _save_trap(item_id, trap, result, confidence, card_id)
+
+    _trap("title_match", tit)
+    _trap("desc_match", desc)
     # (B30, B31) — ebay_prices trap
     if ebay and ebay.get("query"):
-        _save_trap(item_id, "ebay_prices", ebay, card_id=slab.get("cert"))
+        _trap("ebay_prices", ebay, card_id=slab.get("cert"))
 
     # (B32-B35) — ROI-berekening + trap
     roi_data = None
     if ebay and ebay.get("stats") and listing.get("price_eur"):
         roi_data = compute_roi(listing["price_eur"], ebay["stats"])
         if roi_data:
-            _save_trap(item_id, "roi", roi_data, card_id=slab.get("cert"))
+            _trap("roi", roi_data, card_id=slab.get("cert"))
 
     # Cardmarket-enqueue is verhuisd naar cm_bevoorrader.py (één beslisser).
-    return {"sighting": sighting, "roi_data": roi_data}
+    return {"sighting": sighting, "roi_data": roi_data, "pending_traps": pending}
 
 
 # ---------------------------------------------------------------------------
@@ -404,6 +418,7 @@ def _score_summary_write(
     mode: str,
     verbose: bool,
     has_cache: bool,
+    pending_traps: list | None = None,
 ) -> dict:
     """Bouw summary-dict, schrijf `trap='summary'`, flip `slab_status='analyzed'`.
 
@@ -432,7 +447,13 @@ def _score_summary_write(
         "query_source": (ebay or {}).get("query_source", "regex"),
         "score_phase_mode": mode,
     }
-    _save_trap(item_id, "summary", summary, confidence=float(score["score"]), card_id=slab.get("cert"))
+    if _write_via_supabase():
+        # 1 request voor title/desc/ebay/roi + summary (upsert op (item_id, trap)).
+        from storage_supabase.analysis import save_traps as _sb_save_traps
+        _sb_save_traps(item_id, list(pending_traps or []) +
+                       [("summary", summary, float(score["score"]), slab.get("cert"))])
+    else:
+        _save_trap(item_id, "summary", summary, confidence=float(score["score"]), card_id=slab.get("cert"))
     _mark_slab_status(item_id, "analyzed")
     # (B41) — verbose log-regel
     if verbose:
@@ -491,6 +512,7 @@ def analyze_score_only_v2(item_id: str, verbose: bool = False, mode: str = "auto
         item_id, listing, slab, ebay, roi_data, tit, desc, score,
         sighting, is_bundle, llm_needed_but_failed, prev_retry_count,
         took_ms, mode, verbose, has_cache,
+        pending_traps=post.get("pending_traps"),
     )
 
     return {
