@@ -99,29 +99,27 @@ def schoon_nummer(number, set_code) -> str:
     return f"{num}/{code}" if code else num
 
 
-# 11-9 (Tommy): Qwen maakt van een gewone set-code vaak een promo-code: label '2024 POKEMON SV8a JP'
-# → set_code 'SV8a-P'. Het 'S8a-P'-voorbeeld in de prompt lokt dat uit (dev/onderzoek_setcode_p), maar
-# de prompt blijft staan (schrappen maakte echte promo's fout). Dus hier opruimen: toont het label de
-# gewone code LETTERLIJK, dan gaat de -P eraf. Aangescherpt op de replay (dev/fix_setcode_p):
-#   - alleen codes mét cijfer: 'POKEMON SV' / 'JAPANESE XY' / 'JPN.SWSH' is een tijdperk, geen set
-#     (anders sneuvelen echte SV-P/XY-P/SWSH-P-promo's);
-#   - alleen in de PSA-vorm '<code> JP': zonder JP is de set_name vaak door Qwen verzonnen
-#     ('FA/JOLTEON V | 2024 POKEMON SV8A', promo 'JPN.SWSH #021 | 2020 POKEMON S8A');
-#   - nooit als het label zelf '-P' of 'PROMO' noemt.
-def zonder_valse_p(code: str | None, labeltekst: str | None) -> str | None:
-    """'SV8A-P' + label '2024 POKEMON SV8a JP …' → 'SV8A'. Alle andere gevallen: code ongewijzigd."""
+# 16-9 (Tommy): een échte Japanse promo-set is ALTIJD een letter-only code (S-P, SV-P,
+# SM-P, XY-P, SWSH-P). Een code met een cijfer erin (SV8A, S8E, SV2A) is een gewone
+# genummerde set en heeft géén promo-tegenhanger — een '-P' daarachter is dus Qwen-
+# hallucinatie (uitgelokt door het oude 'S8a-P'-promptvoorbeeld, nu weg). Regel:
+#   cijfer in de basiscode + eindigt op '-P'  →  '-P' eraf.
+# UITZONDERING: 'S8A-P' bestaat WEL als echte set (25th Anniversary promo, naast de
+# gewone 25th-set 'S8A'). Die blijft staan; de CM-zoeker doorzoekt sinds 16-9 beide
+# 25th-sets, dus S8A ↔ S8A-P hoeft niet meer geraden te worden.
+_S8A_PROMO = "S8A-P"
+
+
+def zonder_valse_p(code: str | None, labeltekst: str | None = None) -> str | None:
+    """'SV8A-P' → 'SV8A' (valse promo). 'S8A-P' blijft (echte set). Letter-only promo blijft."""
     if not code or not code.endswith("-P"):
         return code
+    if code.upper() == _S8A_PROMO:
+        return code
     basis = code[:-2]
-    if not re.search(r"\d", basis):
+    if not re.search(r"\d", basis):   # letter-only (SV-P/XY-P/…) = echte promo → laten staan
         return code
-    tekst = str(labeltekst or "").upper()
-    los = rf"(?<![A-Z0-9]){re.escape(basis)}"
-    if "PROMO" in tekst or re.search(los + r"\s*-\s*P\b", tekst):
-        return code
-    if re.search(los + r"\s*JP", tekst):
-        return basis
-    return code
+    return basis
 
 
 def opschonen(lezing: dict) -> dict:

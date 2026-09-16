@@ -144,6 +144,12 @@ def _aanvaarde_setnummers(set_code: str) -> set[str]:
     if m:
         fam = m.group(1) + "p"
         ok.add(_SET_ALIAS.get(fam, fam))
+    # 16-9 (Tommy): twee echte 25th-sets bestaan naast elkaar — 's8a' (25th Anniversary
+    # Collection) en 's8ap' (25th Anniversary promo/Golden Box). Qwen raadt geregeld de
+    # verkeerde. Doorzoek daarom BEIDE zodra één van de twee gelezen is, dan hoeft de
+    # -P niet meer geraden te worden.
+    if code in {"s8a", "s8ap"}:
+        ok |= {"s8a", "s8ap"}
     return ok
 
 
