@@ -198,6 +198,31 @@ def _enq_lookup_and_grade(
     return (hit, grade)
 
 
+def _cache_upsert_own_key(card_key: str, url: str, listings_json, now: str, verbose: bool) -> None:
+    """price_cache-rij voor de eigen card_key vullen met het URL-fallback
+    resultaat (cm_url + listings + fetched_at). Faalt stil: de queue-rij is al
+    gevuld, dus de deal-pijplijn loopt gewoon door; alleen de per-key lezers
+    (HoS wachtkamer/dashboard) missen dan deze ene prijs tot de volgende run.
+    """
+    listings = listings_json
+    if isinstance(listings, str):
+        try:
+            listings = json.loads(listings)
+        except Exception:
+            listings = []
+    if not listings:
+        return  # lege lijst niet laten "plakken" op een variant-sleutel
+    try:
+        from storage_supabase.price_cache import upsert_cm
+        upsert_cm(card_key, url, listings, now)
+        if verbose:
+            print(f"  [cm] price_cache eigen sleutel gevuld via URL-fallback: {card_key}",
+                  file=sys.stderr)
+    except Exception as e:
+        if verbose:
+            print(f"  [cm] price_cache eigen sleutel {card_key} mislukt: {e!r}", file=sys.stderr)
+
+
 # ---------------------------------------------------------------------------
 # F4 — Cache-hit fast-path  (baseline branches: B16, B17, B18, B19, B20)
 # ---------------------------------------------------------------------------
@@ -245,6 +270,16 @@ def _enq_try_cache_hit(
     if mode == "supabase":
         from storage_supabase.cardmarket_queue import enqueue_from_cache as _sb_enqueue_cache
         _sb_enqueue_cache(item_id, hit["url"], grade, card_key, listings_json)
+        # BUGFIX 2026-09-16: bij de URL-fallback kreeg alleen de queue-rij de
+        # prijs; price_cache voor de EIGEN card_key (de variant, bv
+        # 'groudon:069:10:sv3a') bleef zonder cm_url/listings. Alles dat per
+        # card_key leest (HoS wachtkamer, dashboard list_deals) zag dan "geen
+        # prijs" terwijl de queue 'm wél had (728 sleutels, 16-9 gemeten).
+        # Daarom: eigen sleutel óók in price_cache zetten. Alleen in het
+        # fallback-geval (andere sleutel geleverd) — bij een eigen verse hit
+        # staat 't er al en besparen we de write.
+        if cached.get("card_key") != card_key:
+            _cache_upsert_own_key(card_key, hit["url"], listings_json, now, verbose)
     else:
         # (B19) — SQLite upsert MET fetched_at + listings_json
         conn = sqlite3.connect(str(DB_PATH))
