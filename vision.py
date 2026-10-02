@@ -9,7 +9,10 @@ import base64
 import json
 import re
 import sys
+import time
+import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 # Refactored PSA-fields parser — CC 42 → max 16 per sub-functie.
@@ -23,6 +26,26 @@ SECRETS_PATH = Path("/home/pi/.openclaw/secrets.json")
 POKEDEX_PATH = SCRIPT_DIR / "pokedex_ja_en.json"
 
 VISION_URL = "https://vision.googleapis.com/v1/images:annotate?key={key}"
+
+# Append-only teller voor betaalde Vision API-calls. Elke daadwerkelijke
+# urlopen naar Vision (succes of HTTP-fout) schrijft hier één regel.
+# Puur meet-logging; mag NOOIT de OCR laten crashen (zie _log_vision_call).
+VISION_CALLS_CSV = SCRIPT_DIR / "vision_calls.csv"
+_VISION_CSV_HEADER = "timestamp_iso,source_type,status,chars_returned,latency_ms\n"
+
+
+def _log_vision_call(source_type: str, status: str, chars: int, latency_ms: int) -> None:
+    """Schrijf één regel naar vision_calls.csv. Faalt stil — een fout hier
+    mag de OCR nooit breken. source_type = 'url' of 'local' (lokaal bestand)."""
+    try:
+        need_header = not VISION_CALLS_CSV.exists()
+        with open(VISION_CALLS_CSV, "a", encoding="utf-8") as f:
+            if need_header:
+                f.write(_VISION_CSV_HEADER)
+            ts = datetime.now(timezone.utc).isoformat()
+            f.write(f"{ts},{source_type},{status},{chars},{latency_ms}\n")
+    except Exception:
+        pass
 
 _POKEDEX_CACHE: dict | None = None
 _POKEMON_EN_SET: set[str] | None = None
@@ -113,9 +136,11 @@ def ocr_image(source: str, timeout: int = 30) -> dict:
     """
     if source.startswith(("http://", "https://")):
         image_field = {"source": {"imageUri": source}}
+        source_type = "url"
     else:
         data = Path(source).read_bytes()
         image_field = {"content": base64.b64encode(data).decode()}
+        source_type = "local"
 
     body = {"requests": [{"image": image_field, "features": [{"type": "TEXT_DETECTION", "maxResults": 1}]}]}
     req = urllib.request.Request(
@@ -123,18 +148,26 @@ def ocr_image(source: str, timeout: int = 30) -> dict:
         data=json.dumps(body).encode(),
         headers={"Content-Type": "application/json"},
     )
+    t0 = time.monotonic()
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = json.loads(resp.read())
     except urllib.error.HTTPError as e:
+        latency_ms = int((time.monotonic() - t0) * 1000)
+        _log_vision_call(source_type, f"http_{e.code}", 0, latency_ms)
         return {"full_text": "", "chars": 0, "error": f"HTTP {e.code}: {e.read().decode()[:200]}"}
     except Exception as e:
+        latency_ms = int((time.monotonic() - t0) * 1000)
+        _log_vision_call(source_type, type(e).__name__, 0, latency_ms)
         return {"full_text": "", "chars": 0, "error": f"{type(e).__name__}: {e}"}
 
+    latency_ms = int((time.monotonic() - t0) * 1000)
     resp0 = (data.get("responses") or [{}])[0]
     if "error" in resp0:
+        _log_vision_call(source_type, "api_error", 0, latency_ms)
         return {"full_text": "", "chars": 0, "error": resp0["error"].get("message", "unknown")}
     text = resp0.get("fullTextAnnotation", {}).get("text", "")
+    _log_vision_call(source_type, "ok", len(text), latency_ms)
     return {"full_text": text, "chars": len(text)}
 
 
