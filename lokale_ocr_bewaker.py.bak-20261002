@@ -5,7 +5,7 @@ Waarom: de lokale lezers (GOT-OCR poort 8898 + Qwen poort 1234) op Tommy's
 thuis-PC gaan STIL uit zonder waarschuwing. Kensa valt dan terug op de BETAALDE
 Google Vision/Gemini en Tommy merkt het pas aan de Google-afschrijving. Deze
 bewaker checkt elke 5 min (cron) of beide lezers leven en stuurt bij een
-STATUSWISSEL één Discord-melding naar #errorhandling (met mention Tommy). Zie:
+STATUSWISSEL één Discord-melding naar #algemeen. Zie:
 memory/kensa-vision-lokaal-analyse.md
 
 Checks (BEIDE moeten leven om "WERKEND" te zijn):
@@ -13,7 +13,7 @@ Checks (BEIDE moeten leven om "WERKEND" te zijn):
   (b) Qwen 1234 /v1/models geeft NIET-leeg terug (model echt geladen).
 
 Anti-spam: alleen pingen bij overgang (down->up of up->down). Laatste status in
-lokale_ocr_status.json. Post direct via Discord REST (community_bot_token).
+lokale_ocr_status.json. Hergebruikt post_discord uit report_supabase_writes.py.
 """
 
 import json
@@ -75,9 +75,8 @@ def _in_stille_uren() -> bool:
     uur = datetime.now(STILLE_TZ).hour
     return STILLE_START_UUR <= uur < STILLE_EIND_UUR
 
-# NB: NIET post_discord uit report_supabase_writes importeren — die ging via de
-# openclaw-CLI naar #algemeen en overschreef de REST-poster hierboven (bug 2 okt).
-TOMMY_MENTION = "<@375411895580098570>"
+# Hergebruik de bestaande, werkende Discord-helper (openclaw message send -> #algemeen).
+from report_supabase_writes import post_discord
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 STATE_PATH = SCRIPT_DIR / "lokale_ocr_status.json"
@@ -169,12 +168,12 @@ def main() -> int:
               file=sys.stderr, flush=True)
     elif wissel:
         if status == "down":
-            tekst = (f"{TOMMY_MENTION} ⚠️ Lokale slab-OCR ligt eruit (poort 8898/Qwen). "
+            tekst = ("⚠️ Lokale slab-OCR ligt eruit (poort 8898/Qwen). "
                      "Kensa valt nu terug op betaalde Google Vision = kost geld. "
                      "Zet Ollama/OCR weer aan op je PC.\n"
                      f"(detail: {reden})")
         else:
-            tekst = (f"{TOMMY_MENTION} ✅ Lokale slab-OCR is weer online (poort 8898 + Qwen geladen). "
+            tekst = ("✅ Lokale slab-OCR is weer online (poort 8898 + Qwen geladen). "
                      "Kensa leest weer gratis lokaal.")
         melding_verstuurd = post_discord(tekst)
         print(f"[{nu}] WISSEL {vorige}->{status}: Discord {'VERSTUURD' if melding_verstuurd else 'MISLUKT'}",
