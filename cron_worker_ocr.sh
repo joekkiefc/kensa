@@ -7,7 +7,12 @@ KENSA_DIR="/home/pi/.openclaw/workspace/agents/kensa"
 VENV_PY="/home/pi/.openclaw/workspace/agents/scraper-tools/venv/bin/python3"
 LOCK="/tmp/kensa-worker-ocr.lock"
 LIMIT="${WORKER_OCR_LIMIT:-40}"
-PARALLEL="${WORKER_OCR_PARALLEL:-6}"
+PARALLEL_OVERRIDE="$KENSA_DIR/.worker_ocr_parallel_override"
+if [ -f "$PARALLEL_OVERRIDE" ]; then
+  PARALLEL="$(cat "$PARALLEL_OVERRIDE" 2>/dev/null || echo 6)"
+else
+  PARALLEL="${WORKER_OCR_PARALLEL:-6}"
+fi
 
 # Opt-in hybride multimodal-first flow (Gemini multimodal + Vision-fallback).
 # Verwacht ~80% Vision-kostenbesparing. Uitzetten = deze regel weghalen.

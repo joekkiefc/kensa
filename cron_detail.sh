@@ -20,6 +20,7 @@ BUYEE_LIMIT=35
 PROXY_ACTIVATE_THRESHOLD=150
 PROXY_DRAIN_THRESHOLD=50
 PROXY_LIMIT=30
+SKIP_CHROMIUM="$KENSA_DIR/.noodklep_skip_chromium"
 
 # Storage-migratie: writes via storage.py (upsert_listing/upsert_photos/download-metadata)
 # dispatchen op Supabase. `save_raw_page` blijft LOKAAL op Pi (Tommy 2026-09-03:
@@ -54,8 +55,12 @@ echo "--- fetch_detail_mercapi --recheck $MERCAPI_RECHECK_LIMIT ${MERCAPI_RECHEC
 
 # Rest via Buyee-scrape: PayPay (z*-ids) + eventuele mercapi-fails (m*-ids die faalden)
 # CUTOVER 2026-09-05 17:52 — fetch_detail leest queue uit Supabase (mercapi/proxy nog Pi).
-echo "--- fetch_detail --all $BUYEE_LIMIT (max 10 min, READ=supabase) ---"
-/usr/bin/timeout --kill-after=30s 600s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail.py --all "$BUYEE_LIMIT" 2>&1 | tail -20
+if [ -f "$SKIP_CHROMIUM" ]; then
+  echo "--- fetch_detail SKIPPED (noodklep actief — hoog geheugengebruik) ---"
+else
+  echo "--- fetch_detail --all $BUYEE_LIMIT (max 10 min, READ=supabase) ---"
+  /usr/bin/timeout --kill-after=30s 600s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail.py --all "$BUYEE_LIMIT" 2>&1 | tail -20
+fi
 
 # Backlog-check: proxy alleen inzetten bij grote inhaal (bijv. na een captcha-storm)
 # CUTOVER 2026-09-05 17:55 — leest count uit Supabase (Pi-fallback bij HTTP-fail).
@@ -76,7 +81,9 @@ except Exception:
     print(c.execute('SELECT COUNT(*) FROM listings WHERE detail_scraped_at IS NULL').fetchone()[0])
 " 2>/dev/null)
 echo "--- detail-fetch backlog: $BACKLOG (activate proxy >= $PROXY_ACTIVATE_THRESHOLD, drain < $PROXY_DRAIN_THRESHOLD) ---"
-if [ "$BACKLOG" -ge "$PROXY_ACTIVATE_THRESHOLD" ]; then
+if [ -f "$SKIP_CHROMIUM" ]; then
+  echo "  [proxy] SKIPPED (noodklep actief — hoog geheugengebruik)"
+elif [ "$BACKLOG" -ge "$PROXY_ACTIVATE_THRESHOLD" ]; then
   echo "--- fetch_detail_proxy --all $PROXY_LIMIT (via boilingproxies NL residential, max 8 min, READ=supabase) ---"
   /usr/bin/timeout --kill-after=30s 480s env KENSA_READ_STORAGE=supabase KENSA_WRITE_STORAGE=supabase "$VENV_PY" fetch_detail_proxy.py --all "$PROXY_LIMIT" 2>&1 | tail -20
 elif [ "$BACKLOG" -lt "$PROXY_DRAIN_THRESHOLD" ]; then
