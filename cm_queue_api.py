@@ -49,13 +49,18 @@ SB_TABLE = "cardmarket_queue"
 #
 # Meting (cm_queue_api.log, POST /api/cm/result = één echte CM-pagina door de
 # worker), 38 volle dagen 14 sep t/m 21 okt 2026: gemiddeld 221,7 per dag,
-# piek 319. 221,7 × 1,10 = 243,9 → limiet 240 (naar beneden afgerond).
+# piek 319. Tommy (26 okt): tel op UNIEKE Cardmarket-URL's, 250 nieuwe per dag.
+#
+# Werking: per Amsterdam-dag onthouden we welke URL's al naar de worker zijn
+# gegaan. Een URL die vandaag al uitgedeeld is, gaat NIET nog een keer (dubbele
+# kaarten met dezelfde CM-pagina, of een rij die na een worker-fout opnieuw
+# pending staat). Nieuwe unieke URL's stoppen bij CM_DAGLIMIET.
 #
 # De limiet is BEWUST vast (geen berekening op het moment zelf). Zodra de cache
 # weer bijgewerkt is en het risico weg is, mag hij eraf: constante op 0 zetten
-# (= geen limiet) en de service herstarten. Teller per Amsterdam-dag staat in
-# een bestandje zodat een herstart van de service de telling niet wist.
-CM_DAGLIMIET = 240
+# (= geen limiet) en de service herstarten. De dagstand staat in een bestandje
+# zodat een herstart van de service hem niet wist.
+CM_DAGLIMIET = 250
 CM_DAG_TZ = ZoneInfo("Europe/Amsterdam")
 CM_DAGTELLER_PAD = Path(os.environ.get(
     "KENSA_CM_DAGTELLER",
@@ -70,42 +75,57 @@ def _vandaag() -> str:
     return datetime.now(CM_DAG_TZ).date().isoformat()
 
 
-def _lees_dagteller() -> tuple[str, int]:
-    """(dag, uitgedeeld). Een andere/ontbrekende dag telt als 0."""
+def _lees_dagteller() -> tuple[str, list[str]]:
+    """(dag, lijst van vandaag uitgedeelde unieke URL's). Andere/ontbrekende dag = leeg."""
     try:
         d = json.loads(CM_DAGTELLER_PAD.read_text())
         if d.get("dag") == _vandaag():
-            return d["dag"], int(d.get("uitgedeeld", 0))
+            return d["dag"], list(d.get("urls", []))
     except Exception:
         pass
-    return _vandaag(), 0
+    return _vandaag(), []
 
 
-def _schrijf_dagteller(dag: str, uitgedeeld: int) -> None:
+def _schrijf_dagteller(dag: str, urls: list[str]) -> None:
     tmp = CM_DAGTELLER_PAD.with_suffix(".tmp")
-    tmp.write_text(json.dumps({"dag": dag, "uitgedeeld": uitgedeeld, "limiet": CM_DAGLIMIET}))
+    tmp.write_text(json.dumps({"dag": dag, "uitgedeeld": len(urls), "limiet": CM_DAGLIMIET,
+                               "urls": urls}))
     tmp.replace(CM_DAGTELLER_PAD)
 
 
 def _ruimte_vandaag() -> int:
-    """Hoeveel URL's mogen er vandaag nog naar de worker. 0 = limiet bereikt.
-    Zonder limiet (CM_DAGLIMIET <= 0) altijd 'onbeperkt' (groot getal)."""
+    """Hoeveel NIEUWE unieke URL's mogen er vandaag nog naar de worker. 0 = limiet
+    bereikt. Zonder limiet (CM_DAGLIMIET <= 0) altijd 'onbeperkt' (groot getal)."""
     if CM_DAGLIMIET <= 0:
         return 10**9
-    _, uitgedeeld = _lees_dagteller()
-    return max(0, CM_DAGLIMIET - uitgedeeld)
+    _, urls = _lees_dagteller()
+    return max(0, CM_DAGLIMIET - len(urls))
 
 
-def _tel_uitgedeeld(n: int) -> int:
-    """Telt n uitgedeelde URL's bij de dagteller op; geeft de nieuwe stand terug.
+def _kies_uit_te_delen(rows: list[dict], limit: int) -> tuple[list[dict], int]:
+    """Filtert pending rijen tot wat vandaag écht naar de worker mag:
+    - URL's die vandaag al uitgedeeld zijn vallen af (dubbele = niet nog eens scrapen)
+    - binnen de batch telt elke URL één keer
+    - maximaal `limit` rijen én nooit meer nieuwe URL's dan er vandaag ruimte is
+    Schrijft de nieuwe URL's meteen in de dagstand. Geeft (rijen, dagstand) terug.
     Geteld wordt bij UITDELEN (niet bij het resultaat): elke uitgedeelde URL
     wordt door de worker gescraped, ook als hij fout gaat. Dat is de veilige kant."""
-    if n <= 0:
-        return _lees_dagteller()[1]
-    dag, uitgedeeld = _lees_dagteller()
-    uitgedeeld += n
-    _schrijf_dagteller(dag, uitgedeeld)
-    return uitgedeeld
+    dag, urls = _lees_dagteller()
+    gezien = set(urls)
+    ruimte = 10**9 if CM_DAGLIMIET <= 0 else max(0, CM_DAGLIMIET - len(urls))
+    keuze: list[dict] = []
+    for r in rows:
+        url = r.get("url")
+        if not url or url in gezien:
+            continue
+        if len(keuze) >= limit or len(keuze) >= ruimte:
+            break
+        gezien.add(url)
+        urls.append(url)
+        keuze.append(r)
+    if keuze:
+        _schrijf_dagteller(dag, urls)
+    return keuze, len(urls)
 
 
 def _db() -> sqlite3.Connection:
@@ -370,16 +390,18 @@ def api_cm_pending():
                 _limiet_gemeld_voor_dag = dag
                 _log(f"daglimiet {CM_DAGLIMIET} bereikt voor {dag} — geen URL's meer naar de worker tot morgen")
             return jsonify([])
-        limit = min(limit, ruimte)
+        # Ruimer ophalen dan we uitdelen: rijen met een vandaag al bekende URL
+        # vallen zo meteen af en mogen de batch niet leegtrekken.
         try:
-            rows = _sb_pending(limit) if _supabase_only() else _pi_pending(limit)
+            rows = _sb_pending(100) if _supabase_only() else _pi_pending(100)
         except Exception as e:
             _log(f"pending mislukt ({STORAGE}): {e!r}")
             return jsonify({"error": "storage unavailable"}), 503
-        if rows:
-            stand = _tel_uitgedeeld(len(rows))
-            _log(f"pending: {len(rows)} URL's uitgedeeld, dagstand {stand}/{CM_DAGLIMIET}")
-    return jsonify(rows)
+        keuze, stand = _kies_uit_te_delen(rows, limit)
+        if keuze:
+            _log(f"pending: {len(keuze)} nieuwe URL's uitgedeeld "
+                 f"({len(rows) - len(keuze)} dubbel/overgeslagen), dagstand {stand}/{CM_DAGLIMIET}")
+    return jsonify(keuze)
 
 
 @app.route("/api/cm/result", methods=["POST"])
@@ -421,12 +443,12 @@ def health():
     except Exception as e:
         _log(f"health mislukt ({STORAGE}): {e!r}")
         return jsonify({"ok": False, "storage": STORAGE, "port": PORT}), 503
-    dag, uitgedeeld = _lees_dagteller()
+    dag, urls = _lees_dagteller()
     return jsonify({"ok": True, "pending": pending, "storage": STORAGE, "port": PORT,
-                    "daglimiet": CM_DAGLIMIET, "dag": dag, "uitgedeeld_vandaag": uitgedeeld})
+                    "daglimiet": CM_DAGLIMIET, "dag": dag, "uitgedeeld_vandaag": len(urls)})
 
 
 if __name__ == "__main__":
-    _log(f"start op poort {PORT}, storage={STORAGE}, daglimiet={CM_DAGLIMIET} "
-         f"(vandaag al uitgedeeld: {_lees_dagteller()[1]})")
+    _log(f"start op poort {PORT}, storage={STORAGE}, daglimiet={CM_DAGLIMIET} unieke URL's/dag "
+         f"(vandaag al uitgedeeld: {len(_lees_dagteller()[1])})")
     app.run(host="0.0.0.0", port=PORT, debug=False)
