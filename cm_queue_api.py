@@ -26,8 +26,10 @@ import json
 import os
 import sqlite3
 import sys
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from flask import Flask, jsonify, request
 
@@ -37,7 +39,73 @@ STORAGE = os.environ.get("KENSA_STORAGE", "dual")  # "supabase" | "dual"
 SB_SCHEMA = "kensa"
 SB_TABLE = "cardmarket_queue"
 
+# ---------------------------------------------------------------------------
+# Vaste daglimiet Cardmarket (herstart 2026-10-26)
+# ---------------------------------------------------------------------------
+# Kensa stond uit van 23 t/m 26 okt; de price_cache (3 dagen vers) is daardoor
+# leeg en zou bij herstart in één dag honderden kaarten tegelijk willen
+# ophalen. Dat is een ban-risico bij Cardmarket. Daarom: NIET meer URL's aan de
+# Windows-worker uitdelen dan we vóór de stop per dag deden, plus 10%.
+#
+# Meting (cm_queue_api.log, POST /api/cm/result = één echte CM-pagina door de
+# worker), 38 volle dagen 14 sep t/m 21 okt 2026: gemiddeld 221,7 per dag,
+# piek 319. 221,7 × 1,10 = 243,9 → limiet 240 (naar beneden afgerond).
+#
+# De limiet is BEWUST vast (geen berekening op het moment zelf). Zodra de cache
+# weer bijgewerkt is en het risico weg is, mag hij eraf: constante op 0 zetten
+# (= geen limiet) en de service herstarten. Teller per Amsterdam-dag staat in
+# een bestandje zodat een herstart van de service de telling niet wist.
+CM_DAGLIMIET = 240
+CM_DAG_TZ = ZoneInfo("Europe/Amsterdam")
+CM_DAGTELLER_PAD = Path(os.environ.get(
+    "KENSA_CM_DAGTELLER",
+    "/home/pi/.openclaw/workspace/agents/kensa/cm_dagteller.json"))
+_dagteller_slot = threading.Lock()
+_limiet_gemeld_voor_dag: str | None = None
+
 app = Flask(__name__)
+
+
+def _vandaag() -> str:
+    return datetime.now(CM_DAG_TZ).date().isoformat()
+
+
+def _lees_dagteller() -> tuple[str, int]:
+    """(dag, uitgedeeld). Een andere/ontbrekende dag telt als 0."""
+    try:
+        d = json.loads(CM_DAGTELLER_PAD.read_text())
+        if d.get("dag") == _vandaag():
+            return d["dag"], int(d.get("uitgedeeld", 0))
+    except Exception:
+        pass
+    return _vandaag(), 0
+
+
+def _schrijf_dagteller(dag: str, uitgedeeld: int) -> None:
+    tmp = CM_DAGTELLER_PAD.with_suffix(".tmp")
+    tmp.write_text(json.dumps({"dag": dag, "uitgedeeld": uitgedeeld, "limiet": CM_DAGLIMIET}))
+    tmp.replace(CM_DAGTELLER_PAD)
+
+
+def _ruimte_vandaag() -> int:
+    """Hoeveel URL's mogen er vandaag nog naar de worker. 0 = limiet bereikt.
+    Zonder limiet (CM_DAGLIMIET <= 0) altijd 'onbeperkt' (groot getal)."""
+    if CM_DAGLIMIET <= 0:
+        return 10**9
+    _, uitgedeeld = _lees_dagteller()
+    return max(0, CM_DAGLIMIET - uitgedeeld)
+
+
+def _tel_uitgedeeld(n: int) -> int:
+    """Telt n uitgedeelde URL's bij de dagteller op; geeft de nieuwe stand terug.
+    Geteld wordt bij UITDELEN (niet bij het resultaat): elke uitgedeelde URL
+    wordt door de worker gescraped, ook als hij fout gaat. Dat is de veilige kant."""
+    if n <= 0:
+        return _lees_dagteller()[1]
+    dag, uitgedeeld = _lees_dagteller()
+    uitgedeeld += n
+    _schrijf_dagteller(dag, uitgedeeld)
+    return uitgedeeld
 
 
 def _db() -> sqlite3.Connection:
@@ -290,12 +358,27 @@ def api_cm_pending():
     slabs zouden anders met PSA 10 CM-listings vergeleken worden).
     Bij een storing 503 (geen lege lijst): de worker wacht en pollt opnieuw.
     """
+    global _limiet_gemeld_voor_dag
     limit = min(int(request.args.get("limit", 20)), 100)
-    try:
-        rows = _sb_pending(limit) if _supabase_only() else _pi_pending(limit)
-    except Exception as e:
-        _log(f"pending mislukt ({STORAGE}): {e!r}")
-        return jsonify({"error": "storage unavailable"}), 503
+    with _dagteller_slot:
+        ruimte = _ruimte_vandaag()
+        if ruimte <= 0:
+            # Limiet bereikt: lege lijst, de worker wacht 60s en vraagt opnieuw.
+            # De wachtrij blijft staan; morgen (Amsterdam-dag) gaat de teller op 0.
+            dag = _vandaag()
+            if _limiet_gemeld_voor_dag != dag:
+                _limiet_gemeld_voor_dag = dag
+                _log(f"daglimiet {CM_DAGLIMIET} bereikt voor {dag} — geen URL's meer naar de worker tot morgen")
+            return jsonify([])
+        limit = min(limit, ruimte)
+        try:
+            rows = _sb_pending(limit) if _supabase_only() else _pi_pending(limit)
+        except Exception as e:
+            _log(f"pending mislukt ({STORAGE}): {e!r}")
+            return jsonify({"error": "storage unavailable"}), 503
+        if rows:
+            stand = _tel_uitgedeeld(len(rows))
+            _log(f"pending: {len(rows)} URL's uitgedeeld, dagstand {stand}/{CM_DAGLIMIET}")
     return jsonify(rows)
 
 
@@ -338,9 +421,12 @@ def health():
     except Exception as e:
         _log(f"health mislukt ({STORAGE}): {e!r}")
         return jsonify({"ok": False, "storage": STORAGE, "port": PORT}), 503
-    return jsonify({"ok": True, "pending": pending, "storage": STORAGE, "port": PORT})
+    dag, uitgedeeld = _lees_dagteller()
+    return jsonify({"ok": True, "pending": pending, "storage": STORAGE, "port": PORT,
+                    "daglimiet": CM_DAGLIMIET, "dag": dag, "uitgedeeld_vandaag": uitgedeeld})
 
 
 if __name__ == "__main__":
-    _log(f"start op poort {PORT}, storage={STORAGE}")
+    _log(f"start op poort {PORT}, storage={STORAGE}, daglimiet={CM_DAGLIMIET} "
+         f"(vandaag al uitgedeeld: {_lees_dagteller()[1]})")
     app.run(host="0.0.0.0", port=PORT, debug=False)
