@@ -64,7 +64,7 @@ SB_TABLE = "cardmarket_queue"
 # weer bijgewerkt is en het risico weg is, mag hij eraf: constante op 0 zetten
 # (= geen limiet) en de service herstarten. De dagstand staat in een bestandje
 # zodat een herstart van de service hem niet wist.
-CM_DAGLIMIET = 250
+CM_DAGLIMIET = 0  # 28 okt 2026: limiet eraf op go van Tommy (cache warm, vers-cm ~970)
 CM_DAG_TZ = ZoneInfo("Europe/Amsterdam")
 CM_DAGTELLER_PAD = Path(os.environ.get(
     "KENSA_CM_DAGTELLER",
