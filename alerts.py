@@ -14,7 +14,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 DB_PATH = Path(__file__).resolve().parent / "kensa.db"
-OPENCLAW_BIN = "/home/pi/.nvm/versions/node/v24.18.0/bin/openclaw"
+OPENCLAW_BIN = "/home/pi/.nvm/versions/node/v24.22.1/bin/openclaw"
 CHANNEL_ID = "channel:1379489498835976424"  # #algemeen
 
 
